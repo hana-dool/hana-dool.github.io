@@ -1,14 +1,17 @@
 ---
-title:  "github.io 블로그 시작하기"
-excerpt: "GitHub Blog 서비스인 github.io 블로그 시작하기로 했다."
-
+title:  "dplyr 전처리"
+excerpt: "첫 포스트"
 categories:
-  - Blog
+  - R
 tags:
-  - Blog
+  - 전처리
 last_modified_at: 2020-12-31T08:06:00-05:00
----
 
+toc: true
+toc_label: "Table Of Contents"
+toc_icon: "cog"
+toc_sticky: true
+---
 
 dplyr 기초 전처리
 ================
