@@ -1,4 +1,4 @@
----
+﻿---
 title:  "ggplot2 Geom 예시"
 excerpt: "ggplot2 의 기본적인 생김새들을 알아봅시다."
 categories:
@@ -44,7 +44,7 @@ a + geom_area(stat = "bin")
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ## density plot
 
@@ -52,7 +52,7 @@ a + geom_area(stat = "bin")
 a + geom_density(kernel = "gaussian")
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](/assets/images/시각화-[ggplot2-Geom]_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ## 쌓인 점 plot
 
@@ -62,7 +62,7 @@ a + geom_dotplot()
 
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 ## 빈도수 plot
 
@@ -72,7 +72,7 @@ a + geom_freqpoly()
 
     ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ## 히스토그램
 
@@ -80,7 +80,7 @@ a + geom_freqpoly()
 a + geom_histogram(binwidth = 5)
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 # 1범주형
 
@@ -91,7 +91,7 @@ b <- ggplot(mpg, aes(fl))
 b + geom_bar()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 # 2연속+연속
 
@@ -102,7 +102,7 @@ e <- ggplot(mpg, aes(cty, hwy))
 e + geom_jitter()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ## scatter
 
@@ -110,7 +110,7 @@ e + geom_jitter()
 e + geom_point()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 ## quantile plot
 
@@ -122,7 +122,7 @@ e + geom_quantile()
 
     ## Smoothing formula not specified. Using: y ~ x
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 ## 축에 rug표시
 
@@ -130,7 +130,7 @@ e + geom_quantile()
 e + geom_rug(sides = "bl")
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ## smooth line
 
@@ -140,7 +140,7 @@ e + geom_smooth(method = lm)
 
     ## `geom_smooth()` using formula 'y ~ x'
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ## text plot
 
@@ -148,7 +148,7 @@ e + geom_smooth(method = lm)
 e + geom_text(aes(label = cty))
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ## 2d histogram
 
@@ -171,7 +171,7 @@ h <- ggplot(diamonds, aes(carat, price))
 h + geom_bin2d(binwidth = c(0.25, 500))
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ## 2d density
 
@@ -179,7 +179,7 @@ h + geom_bin2d(binwidth = c(0.25, 500))
 h + geom_density2d()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ## 2d hexagon
 
@@ -187,7 +187,7 @@ h + geom_density2d()
 h + geom_hex()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ## Area plot
 
@@ -196,7 +196,7 @@ i <- ggplot(economics, aes(date, unemploy))
 i + geom_area()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
 ## Line plot
 
@@ -204,7 +204,7 @@ i + geom_area()
 i + geom_line()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](/assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ## Step plot
 
@@ -212,7 +212,7 @@ i + geom_line()
 i + geom_step(direction = "hv")
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 # 2범주+연속
 
@@ -225,7 +225,7 @@ f <- ggplot(mpg, aes(class, hwy))
 f + geom_col()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ``` r
 tapply(mpg$hwy,mpg$class,sum)
@@ -240,7 +240,7 @@ tapply(mpg$hwy,mpg$class,sum)
 f + geom_boxplot()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 ## scatter
 
@@ -250,7 +250,7 @@ f + geom_dotplot(binaxis = "y", stackdir ="center",dotsize=0.3)
 
     ## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ## violin
 
@@ -258,7 +258,7 @@ f + geom_dotplot(binaxis = "y", stackdir ="center",dotsize=0.3)
 f + geom_violin(scale = "area")
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 # 2범주+범주
 
@@ -269,7 +269,7 @@ g <- ggplot(diamonds, aes(cut, color))
 g + geom_count()
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 # 3변수
 
@@ -295,7 +295,7 @@ l <- ggplot(seals, aes(long, lat))
 l + geom_contour(aes(z = z))
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 ## raster plot
 
@@ -306,7 +306,7 @@ l + geom_raster(aes(fill = z), hjust=0.5, vjust=0.5,
 interpolate=FALSE)
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
 ## tile plot
 
@@ -314,4 +314,4 @@ interpolate=FALSE)
 l + geom_tile(aes(fill = z))
 ```
 
-![](시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+![](/assets/images//assets/images/시각화-%5Bggplot2-Geom%5D_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
