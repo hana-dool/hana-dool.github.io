@@ -9,24 +9,24 @@ docs:
   - title: R 
     children:
       - title: "R Basic"
-        url: /categories/R_Basic/
+        url: /categories/R_Basic
       - title: "R Preprocessing"
-        url: /categories/R_Preprocessing/
+        url: /categories/R_Preprocessing
       - title: "R Visualization"
-        url: /categories/R_Visualization/
+        url: /categories/R_Visualization
       - title: "R Analysis"
-        url: /categories/R_Analysis/
+        url: /categories/R_Analysis
   - title: Python
     children:
       - title: "Py Basic"
-        url: /categories/Py_Basic/
+        url: /categories/Py_Basic
       - title: "Py Preprocessing"
-        url: /categories/Py_Preprocessing/
+        url: /categories/Py_Preprocessing
       - title: "Py Visualization"
-        url: /categories/Py_Visualization/
+        url: /categories/Py_Visualization
       - title: "Py Analysis"
-        url: /categories/Py_Analysis/
+        url: /categories/Py_Analysis
   - title: Project
     children:
       - title: "Project"
-        url: /categories/Project/
+        url: /categories/Project
