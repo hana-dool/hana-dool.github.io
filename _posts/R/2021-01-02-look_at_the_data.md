@@ -2,7 +2,7 @@
 title:  "데이터 살펴보기"
 excerpt: "R 데이터를 어떻게 살펴볼 지 알아봅시다."
 categories:
-  - R Basic
+  - R_Basic
 tags:
   - 전처리
 last_modified_at: 2021-01-02T06:24:00

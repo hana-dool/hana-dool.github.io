@@ -2,7 +2,7 @@
 title:  "Pandas 전처리 속도 향상"
 excerpt: "Pandas 의 올바른 코드짜기를 알아봅시다."
 categories:
-  - Py Preprocessing
+  - Py_Preprocessing
 tags:
   - 전처리
 last_modified_at: 2021-01-15
