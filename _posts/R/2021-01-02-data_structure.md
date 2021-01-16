@@ -2,7 +2,7 @@
 title:  "데이터 구조 및 변환"
 excerpt: "R 데이터 구조의 기초적인 내용을 알아봅시다."
 categories:
-  - R Basic
+  - R-Preprocessing
 tags:
   - 기초
 last_modified_at: 2021-01-02T06:20:00
