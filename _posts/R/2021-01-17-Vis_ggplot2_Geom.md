@@ -1,11 +1,11 @@
 ---
-title:  "ggplot2 Geom 예시 두번째"
-excerpt: "ggplot2 의 기본적인 생김새들을 알아봅시다."
+title:  "ggplot2 Geom Cheat sheet"
+excerpt: "ggplot2 의 기본적 plot 예시를 알아봅시다."
 categories:
   - R_Visualization
 tags:
   - 시각화
-last_modified_at: 2021-01-03T23:52:00
+last_modified_at: 2021-01-16
 
 toc: true
 toc_label: "Table Of Contents"
