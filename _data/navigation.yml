@@ -4,3 +4,29 @@ main:
     url: /about/
   - title: "All posts"
     url: /categories/
+
+docs:
+  - title: R 
+    children:
+      - title: "R Basic"
+        url: /categories/R Basic/
+      - title: "R Preprocessing"
+        url: /categories/R Preprocessing/
+      - title: "R Visualization"
+        url: /categories/R Visualization/
+      - title: "R Analysis"
+        url: /categories/R Analysis/
+  - title: Python
+    children:
+      - title: "Py Basic"
+        url: /categories/Py Basic/
+      - title: "Py Preprocessing"
+        url: /categories/Py Preprocessing/
+      - title: "Py Visualization"
+        url: /categories/Py Visualization/
+      - title: "Py Analysis"
+        url: /categories/Py Analysis/
+  - title: Project
+    children:
+      - title: "Project"
+        url: /categories/Project/

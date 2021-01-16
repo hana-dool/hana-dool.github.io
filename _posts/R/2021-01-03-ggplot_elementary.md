@@ -2,9 +2,9 @@
 title:  "ggplot2 Geom 예시"
 excerpt: "ggplot2 의 기본적인 생김새들을 알아봅시다."
 categories:
-  - R
+  - R Visualization
 tags:
-  - 시각화
+  - 기초
 last_modified_at: 2021-01-03T22:33:00
 
 toc: true

@@ -2,15 +2,18 @@
 title:  "데이터 구조 및 변환"
 excerpt: "R 데이터 구조의 기초적인 내용을 알아봅시다."
 categories:
-  - R
+  - R Basic
 tags:
-  - 전처리
+  - 기초
 last_modified_at: 2021-01-02T06:20:00
 
 toc: true
 toc_label: "Table Of Contents"
 toc_icon: "cog"
 toc_sticky: true
+sidebar:
+  nav: "docs"
+
 ---
 데이터 구조및 변환
 ================
