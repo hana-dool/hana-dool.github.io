@@ -10,7 +10,7 @@ last_modified_at: 2021-01-17
 toc: true
 toc_label: "Table Of Contents"
 toc_icon: "cog"
-toc_sticky: false
+toc_sticky: true
 ---
 # intro
 - 여기서 다룰 방법은 OLS 방법을 이용하는 전통적인 선형회귀 방법을 설명하겠다. <br>
