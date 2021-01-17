@@ -514,7 +514,7 @@ caption = "왼쪽 아래에 캡션 달기")
 
 ![plot of chunk unnamed-chunk-36](/assets/images/Vis_ggplot2_elementary/unnamed-chunk-36-1.png)
 
-# 출처
+# Reference
 - https://wikidocs.net/73434 <br>
 - ggplot2 cheat sheet rstudio <br>
 - https://m.blog.naver.com/definitice/221128096345 <br>
