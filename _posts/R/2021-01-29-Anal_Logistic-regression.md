@@ -16,11 +16,11 @@ toc_sticky: true
 
 # logistic regresssion
 - 로지스틱 회귀분석은 '회귀' 를 y 가 범주형의 경우에도 사용하려고 할 때에 쓰는 방법입니다.
-- glm 의 일종으로 g(E[Y|X]) =  Xb 형태로 link function g 를 통해 선형으로 예측하기 힘든 y 를 변형을 통해서 선형으로 예측하게 된다.
-  - E[Y|X] 는 X 가 주어졌을 때의 Y 값으로 우리가 예측하고자 하는 값이다.
-  - y=0,1 이므로 E[Y|X] = p(x) 가 된다. 
+- glm 의 일종으로 g(E[YlX]) =  Xb 형태로 link function g 를 통해 선형으로 예측하기 힘든 y 를 변형을 통해서 선형으로 예측하게 된다.
+  - E[YlX] 는 X 가 주어졌을 때의 Y 값으로 우리가 예측하고자 하는 값이다.
+  - y=0,1 이므로 E[YlX] = p(x) 가 된다. 
 - logistic regression 에서 link function은 g(x) = log(x/(1-x)) 가 된다.
-  - 이 때에 E[Y|X] = p(x) 이므로 결국 lof(p(x)/(1-p(x))) 를 선형으로 예측하려 한다.
+  - 이 때에 E[YlX] = p(x) 이므로 결국 lof(p(x)/(1-p(x))) 를 선형으로 예측하려 한다.
 - 왜 굳이 위의 형태로 link function 을 정의하였을까?
   - log(p(x)/1-p(x)) 로 g 가 정의된다면, 이 값의 범위는 -inf ~ inf 의 값을 가지게된다. (확률은 0~1 의 값을 가지므로)
   - 만약 범위가 -5~5 로 제한된다면 우리는 Xb 모델에도 제한식을 달게 되고 그러면 통상적인 OLS 방법 등을 쓸 수 없게 된다. 이런 제한을 피하기 위해 link function g 를 위와 같이 정하게 된 것이다.
@@ -127,8 +127,8 @@ head(predicted.classes)
 
 # Assumption check
 - 결국 logistic 도 link function 을 통해서 regression 이 된것은 똑같다. 
-- 즉 g(E[Y|X]) = Xb 에서, log(p(x)/(1-p(x))) = Xb 의 형식이 되는것이다. 
-- fitted 된 g(E[Y|X]) 값을 이용하여 regression 과 같은 Assumption check 를 할 수 있다.
+- 즉 g(E[YlX]) = Xb 에서, log(p(x)/(1-p(x))) = Xb 의 형식이 되는것이다. 
+- fitted 된 g(E[YlX]) 값을 이용하여 regression 과 같은 Assumption check 를 할 수 있다.
 - Assumption 에 잘 맞게 variable 을 조정해 주어야 품질이 올라감을 명심하자!
 - 하지만 logit 모형의 경우 strict 하게 가정사항을 맞추지 않아도 된다고 한다.
 ## Linearlity
@@ -159,7 +159,8 @@ ggplot(mydata, aes(predictor.value,logit))+
 {% endhighlight %}
 
 ![plot of chunk unnamed-chunk-4](/assets/images/Anal_Logistic-regression/unnamed-chunk-4-1.png)
-나름 선형이 맞는거 같다. 인슐린, 혈압의 경우 약간의 변환이 필요해보인다.
+
+- 나름 선형이 맞는거 같다. 인슐린, 혈압의 경우 약간의 변환이 필요해보인다.
 
 ## 이상치 탐지
 
@@ -192,7 +193,8 @@ model.data %>% top_n(3, .cooksd)
 ## # ... with 7 more variables: .fitted <dbl>, .resid <dbl>, .std.resid <dbl>, .hat <dbl>,
 ## #   .sigma <dbl>, .cooksd <dbl>, index <int>
 {% endhighlight %}
-이 3개의 값들이 이상치이다. 어떤점에서 이상치가 왜 생기는지 잘 생각해보자.
+
+- 이 3개의 값들이 이상치이다. 어떤점에서 이상치가 왜 생기는지 잘 생각해보자.
 
 
 ## 등분산
@@ -233,7 +235,8 @@ car::vif(model)
 ## pregnant  glucose pressure  triceps  insulin     mass pedigree      age 
 ## 1.892387 1.378937 1.191287 1.638865 1.384038 1.832416 1.031715 1.974053
 {% endhighlight %}
-넘는게 없어보인다.
+
+- 넘는게 없어보인다.
 
 # Interpret
 
