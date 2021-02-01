@@ -336,13 +336,13 @@ autoplot(BoxCox(elec,lambda))
 # Basic Analysis
 - Basic 으로 적용할 수 있는 Analysis 를 기본값으로 둔 후에, 다른 다양한 model 들을 fitting  이 basic 모델과 비교하면 좋은 모델을 고를 수 있다.
 
-![images](/assets/Images/TS_Mean.PNG)
+![images](/assets/images/Images/TS_Mean.PNG)
 
-![images](/assets/Images/TS_Naive.PNG)
+![images](/assets/images/Images/TS_Naive.PNG)
 
-![images](/assets/Images/TS_Seasonal Naive.PNG)
+![images](/assets/images/Images/TS_Seasonal Naive.PNG)
 
-![images](/assets/Images/TS_Drift.PNG)
+![images](/assets/images/Images/TS_Drift.PNG)
 
 
 {% highlight r %}
@@ -440,7 +440,7 @@ accuracy(googfc3, googtest)
 - 단 시계열 이기 떄문에 우리는 random 으로 데이터를 추출할 수는 없고, 맨 뒤 부분의 20% 정도를 TEST Set 으로 설정한다.
 - 기본적으로 test data 는 약 20% 정도로 맞춘다.
 
-![images](./Images/TS_Train Test.PNG)
+![images](./Images/Images/TS_Train Test.PNG)
 
 ## 일부분을 선택하는 함수
 
@@ -536,7 +536,7 @@ subset(ausbeer, quarter = 1)
 - 아래 그림에서 빨간색 데이터는 test data 이고, 파란색 데이터는 Training data 이다. 
 - 예측 데이터는 테스트 데이터에 대한 평균으로 저장된다.
 
-![images](/assets/Images/TS_Cross validation.PNG)
+![images](/assets/Images/Images/TS_Cross validation.PNG)
 
 - 이를 구현하는 함수는 tsCV() 함수로 구현되다. 
 -잔차 RMSE 와 CV 를 통해 얻은RMSE 를 비교하여 보자.
