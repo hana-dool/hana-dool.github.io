@@ -1,9 +1,18 @@
 ---
-title: "NA_imputation"
-output: github_document
-editor_options: 
-  chunk_output_type: console
+title:  "NA imputation"
+excerpt: "곁측치가 있는 경우 처리하는방법에 대해 알아봅시다."
+categories:
+  - R_Analysis
+tags:
+  - NA
+last_modified_at: 2021-02-03
+
+toc: true
+toc_label: "Table Of Contents"
+toc_icon: "cog"
+toc_sticky: true
 ---
+
 
 - 결측치가 존재하게 되면 R 에서는계산도 하지 않게 될 뿐더러 많은 통계패키지를 적용할 수 없다. <br>
 - hair et al.(2006) 에 의하면 결측치 비율에 따라 추천하는 처리 방법이 있다.
@@ -23,7 +32,7 @@ editor_options:
       - 그래서 FA, PCA 등으로 Dimension reduction 이후에 진행하기도 한다.
   - CIA 가정으로 Regression 을 쓸 수 있다.
       - CIA 가정이란, conditional indipendence assumption 으로서, 예를 들어 변수 X,Y,Z가 있다고 하자. 그리고 Y,Z 에 NA가 섞여 있다고 하자.
-      - 세 변수는 완벽히 독립은 아닐것이다.(실제 데이터가 그렇듯) 하지만 (Y|X)ㅛ(Z|X) 가 보장된다면(CIA 가정) X 의 데이터만으로 Y에 Regression 을 적합시켜서 Z 값 없이 Y 의 NA를 채울 수 있을것이다.
+      - 세 변수는 완벽히 독립은 아닐것이다.(실제 데이터가 그렇듯) 하지만 (YlX)ㅛ(ZlX) 가 보장된다면(CIA 가정) X 의 데이터만으로 Y에 Regression 을 적합시켜서 Z 값 없이 Y 의 NA를 채울 수 있을것이다.
       - 위 가정은 Test 할 수 없다는게 단점이다. 현실적인 Insight 에 합리적이 되게 CIA 가정을 이용해야 할 것이다.
 
 - Na 를 채우려면 우선 다음과 같은 고려를 해야할 것이다.
@@ -991,10 +1000,10 @@ fit_full$coefficients
   - bootstrap 과, EM algorithm 을 이용해 p(mu,sigma|observed data) 를 알 수 있게 되고, 그러면 mu,sigma 의 분포를 알게 되므로 missing data 를 generating 할 수 있게된다. 
   - 그리고 bootstrap 과 EM 으로 생성된 데이터를 이용해, Mice 와 같이 모겔을 각각 세운 후 , eastimates 들을 합쳐서 추정
   
-![images](./Images/Amelia algorithm.PNG)
+![images](/assets/images/Images/Amelia algorithm.PNG)
 
 
-![images](./Images/Amelia algorithm2.png)
+![images](/assets/images/Images/Amelia algorithm2.png)
 
 - Mice 와의 비교 (https://www.analyticsvidhya.com/blog/2016/03/tutorial-powerful-packages-imputing-missing-values/)
   - MICE imputes data on variable by variable basis whereas MVN uses a joint modeling approach based on multivariate normal distribution.
