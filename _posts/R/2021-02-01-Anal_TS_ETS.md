@@ -16,13 +16,13 @@ toc_sticky: true
 
 # 단순지수 평활법
 
-![images](/assets/Images/TS_Simple exponential smoothing.png)
+![images](./assets/images/Images/TS_Simple exponential smoothing.png)
 
 - 위처럼 지수의 형태로 이전 관측치를 이용해 다음 관측치를 예측하게 된다.
 - a 는 0~1 사이의 값으로, a 가 1에 가까울수록 최근의 추세를 많이 반영하고 변화에 민감하다.
 - a 가 0 에 가까울수록 과거 시점의 영향을 많이 받는다.
 
-![images](/assets/Images/TS_Simple exponential smoothing2.png)
+![images](./assets/images/Images/TS_Simple exponential smoothing2.png)
 
 - 위처럼 SSE 를 최소화 하게 a 를 구한다.
 - 이 때 회귀모델과는 다르게, 최적화 문제가 비선형이고 이는 최적화 Algotithm 을 따로 구해야함을 볼 수 있다.
@@ -61,14 +61,14 @@ autoplot(fc) +
 
 # 이중 지수평활(홀트의 선형 추세 기법)
 
-![images](./Images/TS_Holt linear.png)
+![images](./assets/images/Images/TS_Holt linear.png)
 
 - 시계열에 추세가 있는경우 적합
 - Forecast equation 을 보면 알 수 있듯이, h 시점 이후의 예측은 b_t 라는 기울기 추정 과 l_t 라는 t 시점의 시계열 추정값으로 구성된 선형 추정이다.
 - 즉 시계열은 에러가 있을지언정, 근본적으로 '선형' 이라는 가정을 한다.
 - 평활 매개변수인 alpha,beta,l_0,b_0 은 아래와 똑같이 한 단계 학습 오차에 대한 SSE 를 최소화 하여 추정
 
-![images](/assets/Images/TS_Simple exponential smoothing2.png)
+![images](./assets/images/Images/TS_Simple exponential smoothing2.png)
 ## Analysis
 
 
@@ -112,7 +112,7 @@ fc
 - 하지만 예측하는 시점이 멀수록, 그 효과가 떨어져야 정상일 것이다.
 - 그러므로 감쇠추세 기법은 아래와 같이 h 가 아니라 pi 의 거듭제곱의 합으로 modeling
 
-![images](/assets/Images/TS_Damped trend.png)
+![images](./assets/images/Images/TS_Damped trend.png)
 
 - a,b 외에도 pi 변수가 있음을 기억하자.
 - pi 변수도 위와 같이 추정되는 변수이다.
@@ -165,24 +165,24 @@ autoplot(air) +
 - 시간에 따른 계절적 진폭의 크기가 일정할 때 사용한다.
 - 예측값 = 추세 + 계절(일정) + 에러 로 예측
 
-![images](/assets/Images/TS_Holt-Winters seasonal additive method.png)
+![images](./assets/images/Images/TS_Holt-Winters seasonal additive method.png)
 
 # 계절지수 평활법(multiplicative)
 - 추세 계절성이 함께 있고, 졔절적 진폭의 크기가 시계열의 수준에 비례하게 변할 때 사용
 - 예측값 = 추세*계절 + 에러 
 
-![images](/assets/Images/TS_Holt-Winters seasonal multiplicative method.png)
+![images](./assets/images/Images/TS_Holt-Winters seasonal multiplicative method.png)
 
 # ETS 모델 (상태 공간 모델)
 - 오차, 추세, 계절성에 대해 각 상태 공간 모델을 구분하는 모델을 짤 수 있다.
 - t-1 시점의 오차를 다음 t 시점에 더해주는 모델 : 덧셈오차모델
 - t-1 시점의 오차를 상대적인 비율로 다음 t 시점에 더해주는모델 : 곱셈오차모겔 
 
-![images](/assets/Images/TS_ETS(A,N,N).png)
+![images](./assets/images/Images/TS_ETS(A,N,N).png)
 
-![images](/assets/Images/TS_ETS(M,N,N).png)
+![images](./assets/images/Images/TS_ETS(M,N,N).png)
 
-![images](/assets/Images/TS_ETS.png)
+![images](./assets/images/Images/TS_ETS.png)
 
 ## Analysis
 
