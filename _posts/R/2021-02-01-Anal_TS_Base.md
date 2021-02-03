@@ -1,5 +1,5 @@
 ---
-title:  "1. 시계열 기초"
+title:  "1.시계열 기초"
 excerpt: "시계열 분석의 기초"
 categories:
   - R_Analysis

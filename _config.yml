@@ -20,7 +20,7 @@ title                    : "수잉통"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "수잉통"
-description              : "아무것도 모르는 대학교 5학년"
+description              : "대학교 5학년!"
 url                      : "https://hana-dool.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
