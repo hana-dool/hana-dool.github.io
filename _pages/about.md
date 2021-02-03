@@ -16,6 +16,7 @@ layout: single
 - 사용가능한 프로그램 : R, Python, Tableau
     - github(R) : <https://github.com/hana-dool/R>
     - github(Python) 
+        - 수집 : <https://github.com/hana-dool/Data_Collection>
         - 전처리 : <https://github.com/hana-dool/Data_Processing>
         - 시각화 : <https://github.com/hana-dool/Data_Visualization>
         - 분석 : <https://github.com/hana-dool/Data_Analysis>
