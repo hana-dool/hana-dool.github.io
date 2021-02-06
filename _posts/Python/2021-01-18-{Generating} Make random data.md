@@ -1,5 +1,5 @@
 ﻿---
-title:  "파이썬의 내장.랜덤 데이터"
+title:  "0.various data sets"
 excerpt: "파이썬의 내장 및 랜덤 데이터에 대해 알아봅시다."
 categories:
   - Py_Analysis
