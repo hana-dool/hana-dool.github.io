@@ -71,7 +71,7 @@ layout: single
 #### Optimization(~ing)
 - ESC 학회 방학 스터디
 
-#### Baysian Statistics(~ing)
+#### Bayesian Statistics(~ing)
 - ESC 학회 2021년 1학기 주제
 - github(방학) : <https://github.com/YonseiESC/ESC-21WINTER>
 - github(학기) : (~ing)
