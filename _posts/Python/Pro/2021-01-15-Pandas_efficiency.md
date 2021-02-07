@@ -1,5 +1,5 @@
 ---
-title:  "Pandas 전처리 속도 향상"
+title:  "2.Pandas Efficiency"
 excerpt: "Pandas 의 올바른 코드짜기를 알아봅시다."
 categories:
   - Py_Preprocessing
