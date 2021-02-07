@@ -68,8 +68,13 @@ layout: single
 - github(방학) : <https://github.com/hana-dool/ESC-20SUMMER>
 - github(학기) : <https://github.com/YonseiESC/ESC-20FALL>
 
-#### Optimization
+#### Optimization(~ing)
 - ESC 학회 방학 스터디
+
+#### Baysian Statistics(~ing)
+- ESC 학회 2021년 1학기 주제
+- github(방학) : <https://github.com/YonseiESC/ESC-21WINTER>
+- github(학기) : (~ing)
 
 # 📚Class
 현재까지 들었던 수학,통계 과목
