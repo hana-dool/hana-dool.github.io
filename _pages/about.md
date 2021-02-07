@@ -65,7 +65,8 @@ layout: single
 
 #### Deep learning
 - ESC 학회 2020년 2학기 주제, 딥러닝
-- github : <https://github.com/hana-dool/ESC-20SUMMER>
+- github(방학) : <https://github.com/hana-dool/ESC-20SUMMER>
+- github(학기) : <https://github.com/YonseiESC/ESC-20FALL>
 
 #### Optimization
 - ESC 학회 방학 스터디
