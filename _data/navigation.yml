@@ -26,6 +26,10 @@ docs:
         url: /categories/Py_Visualization
       - title: "Py Analysis"
         url: /categories/Py_Analysis
+  - title: Tableau
+    children:
+      - title: "Tableau"
+        url: /categories/Tableau
   - title: Project
     children:
       - title: "Project"
