@@ -24,11 +24,11 @@ use_math: true
 
 - ipynb 의 셀 안에 %%HTML 를 입력 후 
 
-  ![png](/assets/images/Tableau/b1.png)
+  ![png](/assets/images/Tableau/b1.PNG)
 
 - 위의 사진처럼 공유를 누른 상태에서, 내장코드의 값을 집어넣자. 
 
-  ![png](/assets/images/Tableau/b2.png)
+  ![png](/assets/images/Tableau/b2.PNG)
 
 - 그럼 위와 같이 파이썬 ipynb 파일 위로 interactive 한 뷰가 생성된다.
 
@@ -40,7 +40,7 @@ use_math: true
 
 - md 파일은 어떻게 해야할까?
 
-  ![png](/assets/images/Tableau/b1.png)
+  ![png](/assets/images/Tableau/b1.PNG)
 
 - 이 때에는 위의 공유에서 아래쪽의 link 를 복사한다.
 
@@ -50,7 +50,7 @@ use_math: true
 
 - src 부분의 ? 전 링크에 다 붙여넣는다.
 
-  ![png](/assets/images/Tableau/b3.png)
+  ![png](/assets/images/Tableau/b3.PNG)
 
 - 위와 같이 링크를 붙여넣고 md 에 넣으면 자동으로 html 로 인식해준다!
 
