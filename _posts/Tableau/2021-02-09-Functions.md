@@ -40,23 +40,31 @@ use_math: true
 # 문자열
 
 - CONTAINS(string,substring) : 주어진 문자열에 지정한 부분 문자열이 포함되어 있으면 true를 반환.
+  
   - ex)CONTAINS(“Calculation”, “alcu”) = true
 - ENDSWITH(string, substring) : 주어진 문자열이 지정한 부분 문자열로 끝나면 true를 반환합니다. 후행 공백은 무시됩니다
-  - ex)ENDSWITH(“Tableau”, “leau”) = true
-
+  
+- ex)ENDSWITH(“Tableau”, “leau”) = true
+  
 - LEN(string) : 문자열의 길이를 반환합니다.
-  - LEN("Matador") = 7
-
+  
+- LEN("Matador") = 7
+  
 - RIGHT(string, number)  : string에서 가장 오른쪽에 있는 문자 수를 반환합니다.
-  - RIGHT("Calculation", 4) = "tion"
-
+  
+- RIGHT("Calculation", 4) = "tion"
+  
 - SPLIT(string, delimiter, token number)  : 구분 기호 문자를 사용하여 문자열을 토큰 시퀀스로 분할하는 방식으로 문자열에서 부분 문자열을 반환합니다.
   - SPLIT (‘a-b-c-d’, ‘-‘, 2) = ‘b’
-  - $SPLIT (‘a|b|c|d’, ‘|‘, -2) = ‘c’ $
-
+  
+- $$
+    SPLIT (‘a|b|c|d’, ‘|‘, -2) = ‘c’
+    $$
+  
 - DATEDIFF(date_part, date1, date2, [start_of_week])  date_part 단위로 표시된 date1과 date2의 차이를 반환합니다.
-  - 주의 첫 번째 일로 고려할 요일을 지정할 때 사용할 수 있는 start_of_week 매개 변수는 선택 사항입니다. 가능한 값은 'monday', 'tuesday' 등입니다. 생략되면 주 시작은 데이터 원본에 의해 결정됩니다. 데이터 원본의 날짜 속성을 참조하십시오.
-
+  
+- 주의 첫 번째 일로 고려할 요일을 지정할 때 사용할 수 있는 start_of_week 매개 변수는 선택 사항입니다. 가능한 값은 'monday', 'tuesday' 등입니다. 생략되면 주 시작은 데이터 원본에 의해 결정됩니다. 데이터 원본의 날짜 속성을 참조하십시오.
+  
 - DATENAME(date_part, date, [start_of_week]) date의 date_part를 문자열로 반환합니다.
   - DATENAME('year', #2004-04-15#) = "2004"
   - DATENAME('month', #2004-04-15#) = "April"
