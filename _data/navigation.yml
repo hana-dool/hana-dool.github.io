@@ -26,10 +26,12 @@ docs:
         url: /categories/Py_Visualization
       - title: "Py Analysis"
         url: /categories/Py_Analysis
-  - title: Tableau
+  - title: Others
     children:
       - title: "Tableau"
         url: /categories/Tableau
+      - title: "Git"
+        url: /categories/Git
   - title: Project
     children:
       - title: "Project"
