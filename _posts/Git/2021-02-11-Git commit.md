@@ -3,9 +3,9 @@ title:  "Git commit"
 excerpt: "Git의 파일 변경 및 추적에 대해서 알아보자."
 categories:
   - Git
-tags
+tags:
   - 3
-last_modified_at: 2021-02-07
+last_modified_at: 2021-02-11
 
 toc: true
 toc_label: "Table Of Contents"
