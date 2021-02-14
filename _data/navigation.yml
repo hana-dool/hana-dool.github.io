@@ -30,6 +30,8 @@ docs:
     children:
       - title: "Tableau"
         url: /categories/Tableau
+      - title: "Tableau_Vis"
+        url: /categories/Tableau_Vis
       - title: "Git"
         url: /categories/Git
   - title: Project

@@ -1,6 +1,6 @@
 ---
-title:  "Data(~ing)"
-excerpt: "태블로에서 데이터를 다루는법을 알아보자."
+title:  "Data Source(~ing)"
+excerpt: "태블로에서 원본 데이터를 다루는법을 알아보자."
 categories:
   - Tableau
 tags:
@@ -98,16 +98,15 @@ use_math : true
   
 
 - 여러 구분 기호가 포함된 값 
+  -  구분 기호 유형이 서로 다른 경우 필드를 자동으로 분할할 수 없습다. 예를 들어 필드가 다음과 같은 값을 포함한다고 가정 해 보자.
 
--  구분 기호 유형이 서로 다른 경우 필드를 자동으로 분할할 수 없습다. 예를 들어 필드가 다음과 같은 값을 포함한다고 가정 해 보자.
+    smith.accounting
 
-- ​	smith.accounting
+    dnguyen-humanresources
 
-- ​	dnguyen-humanresources
+    lscott_recruiting
 
-- ​	lscott_recruiting
-
-- ​	karnold_recruiting
+    karnold_recruiting
 
 - - 이 경우 정규식을 사용하여 새 필드를 만드는 것이 좋습니다.
 
@@ -125,9 +124,10 @@ use_math : true
 
   - Use the seperator : 띄어쓰기, _ ,쉼표 등으로 Split 을 할 기준을 정해준다.
     - 우리의 데이터에서는 $62.3 M 으로 우선 띄어쓰기를 기준으로 Split 하여 $62.3, M 으로 나누자.
-  - Split off : columns 을 얼마나 살릴지
+  - Split off : seperator 를 어떻게 적용할지
     - 예를 들어서 2007-12-09 를 seperator - 로 나눌시에 2007 12 09 로 3개의 split 이 생성되게 된다.
-    - 이때 1 로 잡는다면 처음 값의 2007 만 남게되고 2로 한다면 2007 , 12 두개의 데이터가 남게된다.
+    - 이때 first + 1columns 로 설정한다면 처음 값의 2007 만 남게되고 2로 한다면 2007 , 12 두개의 데이터가 남게된다.
+    - ALL 로 설정하게 된다면 seperator 로 나눈 모든 데이터를 출력해준다. 
     - 우리는 맨 앞의 $62.3 의 데이터만 필요하므로 1로 설정
 
   ![png](/assets/images/Tableau/6_13.PNG)
@@ -191,4 +191,67 @@ use_math : true
 
 # Delete word
 
-- 데이터를 
+- 데이터를 처리하다 보면 뒤나 앞에 쓸데없는 단어가 들어있는 경우가 있다.
+
+  - 응답률 (%)
+  - $ 가격
+
+- 위 같은 경우를 처리하기 위해도 Split 을 활용할 수 있다.
+
+  - 아래와 같이 '2019 다소 보수적 (%)' 처럼 (%) 를 지우고 싶은 경우라고 하자. 
+  - 그러면 Split 기준을 ( 로 잡는다면 '2019 다소 보수적' 과 '%)' 두개로 쪼개지게 된다.
+  - 그런데 Split off 를 First 1 columns 로 잡음으로서 처음의 '2019 다소 보수적' 만 남게된다.
+
+  ![png](/assets/images/Tableau/6_23.PNG) 
+
+- 그 결과 아래와 같이 (%) 를 지운 데이터를 얻을 수 있다.
+
+  ![png](/assets/images/Tableau/6_24.PNG)
+
+
+
+# Merge word
+
+- '2019 다소 보수적' 이라는 문장을 맨 앞의 '2019' 년도롸 뒤의 '다소 보수적' 이라는 성향으로 나누고 싶다고 하자.
+
+  - 위를 수행하려면 우선 위의 문장을 seperater 는 띄어쓰기, split off 는 ALL 을 주어서 띄어쓰기별로 모두 분해해 보자.
+
+  ![png](/assets/images/Tableau/6_25.PNG)
+
+- 이제 다소 + 보수적 처럼 2개의 단어를 합쳐서 새로운 Columns 를 만들어야 한다.
+
+- 1.먼저 Calculated Field 를 만든다.
+
+  ![png](/assets/images/Tableau/6_26.PNG)
+
+- 2.그리고 + 연산을 통해서 field 를 더해 새로운 col 을 추가한다.
+
+  - Str 끼리의 연산은 Python과 동일하다.
+  - 이때 가운데에 띄어쓰기 ' ' 를 추가로 써 넣었다.
+
+  ![png](/assets/images/Tableau/6_27.PNG)
+
+
+
+# Filter (In/Exclude)
+
+- 데이터중에 쓰고싶지 않은 데이터가 있는 경우도 있다.
+
+- 워크시트에서 직접 filter 로 걸러내기에는, 쓸데없는 filter가 생기게 되어서 혼란스러울 수 있으니, Data Source 탭에서 filter 를 써서 걸러내보자.
+
+- 1.먼저 아래의 경우에서 구분별(1) 의 '전체' 를 없애고자 한다.
+
+  - 그러면 노랗게 칠한 Filter Add 를 선택한다.
+
+  ![png](/assets/images/Tableau/6_28.PNG)
+
+- 2.그리고 나서 edit data source filter 창에서 Add..를 클릭한 뒤 Add filter 에서 우리가 지우고자 했던 '전체' 가 들어있는 구분별(1)  을 선택하자.
+
+  ![png](/assets/images/Tableau/6_29.PNG)
+
+- 3.그리고 Filter 에서 '전체' 를 클릭한 뒤 Exclude 를 체크하면 구분별(1) 의 '전체' 데이터가 없는 데이터가 된다.
+
+  ![png](/assets/images/Tableau/6_30.PNG)
+
+
+
