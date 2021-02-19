@@ -2,7 +2,7 @@
 title:  "k 번쨰 수"
 excerpt: "Algorithm"
 categories:
-  - Py_Basic
+  - Py_Algorithm
 tags:
   - 3
 last_modified_at: 2021-02-17

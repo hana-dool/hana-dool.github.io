@@ -1,6 +1,6 @@
 ---
 title:  "Could not install packages due to Environmental Error"
-excerpt: "패키지 설치시 나타나는 에러의 해결"
+excerpt: "패키지를 install 할때 나타나는 에러"
 categories:
   - Py_Basic
 tags:
@@ -15,15 +15,15 @@ toc_sticky: true
 use_math : true
 ---
 
-# 개요
+# 에러
 
 - packages 를 pip install 로 깔더라도 위와 같이 나타나는 경우가 있다.
 
-  ![png](/assets/images/{Error}/1.png)
+![png](/assets/images/{Error}/1.png)
 
 - 위 그림처럼 패키지가 그 위치에 없다고 해서 에러가 난다.
 
-# 대처1 Install
+# 대처1
 
 - pip install 이나 conda install 을 시도하여 해당 패키지를 업데이트 한다.
 
@@ -41,7 +41,7 @@ use_math : true
 
 - 혹시 버전이 달라서 그런가 싶어서 pip install == 20.1 버전으로 설치해도 똑같은 에러가 날 뿐이였다.
 
-# 대처2 복붙
+# 대처2
 
 - 결국 다른 env 에서 해당 파일을 직접 가져와서 해결했다.
 
@@ -51,6 +51,6 @@ use_math : true
 
 - 그래서 위 파일을 복사한 후, env -> 문제가 된 가상환경 -> Lib -> site-packages 에 업로드 하였다.
 
-  ![png](/assets/images/{Error}/4.png)
+  ![png](/assets/images/{Error}/5.png)
 
 - 그 이후에야 위처럼 원하는 패키지가 의존성 env 문제 없이 설치가 되었다.

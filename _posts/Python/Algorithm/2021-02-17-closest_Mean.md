@@ -2,7 +2,7 @@
 title:  "평균에 가장 가까운 사람"
 excerpt: "Algorithm"
 categories:
-  - Py_Basic
+  - Py_Algorithm
 tags:
   - 3
 last_modified_at: 2021-02-17

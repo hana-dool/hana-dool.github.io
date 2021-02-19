@@ -18,6 +18,8 @@ docs:
         url: /categories/R_Analysis
   - title: Python
     children:
+      - title: "Py Algorithm"
+        url: /categories/Py_Algorithm
       - title: "Py Basic"
         url: /categories/Py_Basic
       - title: "Py Preprocessing"
