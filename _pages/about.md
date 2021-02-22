@@ -44,9 +44,9 @@ layout: single
 - 데이콘 시계열 데이터 발전량 예측(<https://dacon.io/competitions/official/235680/overview/>)
 - github : <https://github.com/hana-dool/2101_Dacon_Time_reg>
 
-#### 2101 데이콘 운동 동작 분류(~ing)
+#### 2101 데이콘 운동 동작 분류
 - 데이콘 운동 동작 분류 (<https://dacon.io/competitions/official/235689/overview/>)
-- github : ~ing(private)
+- github : <https://github.com/hana-dool/2101_Dacon_Time_clas>
 
 #### 2102 전국 무료급식소 현황(~ing)
 - 무료급식소 데이터를 통한 정책제시(~ing)
