@@ -1,5 +1,5 @@
 ---
-title:  "응급식"
+title:  "응급실"
 excerpt: "Algorithm"
 categories:
   - Py_Algorithm
