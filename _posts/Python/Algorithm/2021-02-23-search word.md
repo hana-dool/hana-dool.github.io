@@ -1,5 +1,5 @@
 ---
-title:  "쇠막대기"
+title:  "단어찾기"
 excerpt: "Algorithm"
 categories:
   - Py_Algorithm
