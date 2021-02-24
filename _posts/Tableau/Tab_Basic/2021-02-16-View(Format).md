@@ -2,7 +2,7 @@
 title:  "View(Format)"
 excerpt: "대시보드를 좀 더 보기 좋게 만드는 방법"
 categories:
-  - Py_
+  - Tableau
 tags:
   - 3
 last_modified_at: 2021-02-15
