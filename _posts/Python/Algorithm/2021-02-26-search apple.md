@@ -1,5 +1,5 @@
 ---
-title:  "휴가"
+title:  "사과나무"
 excerpt: "Algorithm"
 categories:
   - Py_Algorithm
@@ -23,12 +23,13 @@ use_math : true
 
 **문제**  
 
-![png](/assets/images/{Algorithm}/27_1.JPG)
+![png](/assets/images/{Algorithm}/31_1.JPG)
 
 **입력설명**
 
-- 첫째 줄에 N이 주어진다.
-- 둘째 줄부터 1일부터 N일까지 순서대로 주어진다.
+- 첫째 줄에 자연수 N(홀수) 가 주어진다.
+- 둘째 줄부터 N 줄에 걸쳐 각 줄에 N개의 자연수가 주어진다.
+- 이 자연수는 각 격자안에 있는 사과나무에 열린 사과의 갯수이다.
 
 **출력 설명**
 
