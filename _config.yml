@@ -96,8 +96,8 @@ author:
   name             : "Han"
   avatar           :  "/assets/images/avatar.jpg"
   bio              : "5학년!"
-  location         : "South Korea"
-  email            : "dlsdnr95@naver.com"
+  location         : 
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

@@ -13,6 +13,8 @@ layout: single
 - 학력 : 연세대학교 수학과(본전공) / 응용통계학과(복수전공)
 - github : <https://github.com/hana-dool>
 - Dacon : <https://dacon.io/myprofile/409513/home/>
+- BOJ : <https://www.acmicpc.net/user/gorany3105>
+
 - 사용가능한 프로그램 : R, Python, Tableau
     - github(R) : <https://github.com/hana-dool/R>
     - github(Python) 
