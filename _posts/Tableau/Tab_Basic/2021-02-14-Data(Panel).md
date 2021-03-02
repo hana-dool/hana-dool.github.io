@@ -5,7 +5,7 @@ categories:
   - Tableau
 tags:
   - 3
-last_modified_at: 2021-02-14
+last_modified_at: 2021-03-02
 
 toc: true
 toc_label: "Table Of Contents"
@@ -212,9 +212,21 @@ use_math : true
 
   
 
+# 기본표기 변경
 
+- 기본적으로 데이터가 표시되어있는 방식이 올바르지 않을 수 있다.
 
+  - 주문일자가 string 으로 되어있다던지, 할인율의 기본 집계방식이 평균이 아니라 합이라던지...
 
+- 이런 경우 row/col 선반에서 표기방법을 바꿀 수 있지만 매번 바꾸기가 번거롭다. 
 
+- 이런 경우에 기본적으로 표기되는 방식을 올바르게 바꾸면, 새로운 워크시트를 형성하더라도 데이터 Panel 에서 올바르게 고쳐져있기 때문에 잘 나오게 된다.
 
+- 아래와 같이 데이터 페널에서 변수에 대해 변경하게 되면, 기본 설정이 변하게 된다.
+
+  - Data type , 지리적 역할 등을 올바르게 변경할 수 있다.
+  - 또한 Default Properties 에서 Aggregation(집계방식) 에서 내가 원하는 집계방식으로 변경할 수 있다. 
+  - 그리고 Number format 에서 표현되는 방식(소숫점 몇자리만 표시하게 한다던지, 단위를 붙인다던지) 을 변경할 수 있다.
+
+  ![png](/assets/images/Tableau/9_28.PNG)
 

@@ -67,7 +67,7 @@ Sheet 에서 조절하지 않고 Rows/Columns 에서 조절하면 가로 / 세�
 
 - 배경색에 대한 Format의 구분은 아래와 같다.
 
-  ![png](/assets/images/Tableau/15_3.png)
+  ![png](/assets/images/Tableau/15_3.PNG)
 
 - Default
 
