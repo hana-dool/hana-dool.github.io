@@ -70,9 +70,6 @@ layout: single
 - github(방학) : <https://github.com/hana-dool/ESC-20SUMMER>
 - github(학기) : <https://github.com/YonseiESC/ESC-20FALL>
 
-#### Optimization(~ing)
-- ESC 학회 방학 스터디
-
 #### Bayesian Statistics(~ing)
 - ESC 학회 2021년 1학기 주제
 - github(방학) : <https://github.com/YonseiESC/ESC-21WINTER>

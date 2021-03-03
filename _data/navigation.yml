@@ -30,6 +30,8 @@ docs:
         url: /categories/Py_Analysis
   - title: Others
     children:
+      - title: "Others"
+        url: /categories/Others
       - title: "Tableau"
         url: /categories/Tableau
       - title: "Tableau_Vis"
