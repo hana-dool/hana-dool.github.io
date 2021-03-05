@@ -22,11 +22,11 @@ use_math : true
 **언제사용?** 
 두 모집단의 평균 차이를 검정할 때에 사용한다. 즉 두 집단의 구매액수 차이, 머무른 시간 등에 대해서 궁금할 때에, 두 집단에 대해서 비교할때에 사용한다.
 
-**Assumption?**
+**Assumption?**<br>
 population 이 Normal 
 
 **Test statistics**
-$t = \frac{\bar{X_1} - \bar{X_2}}{\sqrt{\frac{s_1^2}{N_1}}+\sqrt{\frac{s_2^2}{N_2^2}}}$ $\sim$ $t(v)$  # v 는 approximation 해서 구한다. 자세한건 아래의 증명참조
+$t = \frac{\bar{X_1} - \bar{X_2}}{\sqrt{\frac{s_1^2}{N_1}+{\frac{s_2^2}{N_2^2}}}}$ $\sim$ $t(v)$  # v 는 approximation 해서 구한다. 자세한건 아래의 증명참조
 
 **Proof**<br>
 <https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1014&context=gradreports>
@@ -35,7 +35,10 @@ $t = \frac{\bar{X_1} - \bar{X_2}}{\sqrt{\frac{s_1^2}{N_1}}+\sqrt{\frac{s_2^2}{N_
 student - T test 는 두 분포의 분산이 같음을 가정한다. (이는 매우 인위적인 가정) 
 하지만 welch's Test 는 그러한 가정이 없이 진행된다.
 
+**note**<br>
+사실 매우 큰 대표본의 경우는 자유도가 커질수록 Normal 과 같아지기 때문에, 그냥 Normal 을 쓸 수 있을것이다. 
 
+<br>
 
 # Chi-square Test
 
@@ -62,3 +65,7 @@ student - T test 는 두 분포의 분산이 같음을 가정한다. (이는 매
 **proof**<br>
 <https://arxiv.org/pdf/1808.09171.pdf><br>
 시간있을때 증명 보는것으로... 
+
+
+
+#
