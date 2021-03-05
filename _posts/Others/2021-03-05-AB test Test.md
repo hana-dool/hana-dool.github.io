@@ -28,8 +28,8 @@ population 이 Normal
 **Test statistics**
 $t = \frac{\bar{X_1} - \bar{X_2}}{\sqrt{\frac{s_1^2}{N_1}}+\sqrt{\frac{s_2^2}{N_2^2}}}$ $\sim$ $t(v)$  # v 는 approximation 해서 구한다. 자세한건 아래의 증명참조
 
-**Proof**
-https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1014&context=gradreports
+**Proof**<br>
+<https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1014&context=gradreports>
 
 위의 46 Page 부터 그 증명방법이 소개되고 있다. 시간이 나게되면 나중에 증명해봐야겠다. 
 student - T test 는 두 분포의 분산이 같음을 가정한다. (이는 매우 인위적인 가정) 
@@ -59,6 +59,6 @@ student - T test 는 두 분포의 분산이 같음을 가정한다. (이는 매
 
 크게 특별한건 없다. 다만 그룹끼리 independent 와, 각 sample 이 같은 선택 확률을 가진다라는 가정이 현실세계에서는 약간 안맞을 수 있겠다. 왜냐하면 각 사람의 재력이 다를텐데, 구매와 비구매를 저렇게 할 수 있을까? 그리고 그룹끼리 independent 하게 나눠질 수 있을까..? 
 
-**proof**
-https://arxiv.org/pdf/1808.09171.pdf
+**proof**<br>
+<https://arxiv.org/pdf/1808.09171.pdf><br>
 시간있을때 증명 보는것으로... 
