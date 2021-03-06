@@ -1,6 +1,6 @@
 ---
 title:  "이념적 성향(집계된 데이터)"
-excerpt: "이미 어느정도 집계되어있는 데이터의 시각화"
+excerpt: "막대그래프 + 성향별 다른 색 + 시계열"
 categories:
   - Tableau_Vis
 tags:

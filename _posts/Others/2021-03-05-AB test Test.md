@@ -68,4 +68,31 @@ student - T test 는 두 분포의 분산이 같음을 가정한다. (이는 매
 
 
 
-#
+# Bayesian A/B
+
+베이지안 방법론에서는 metric 에 대한 사전분포를 정의한 후에 업데이트 하는 방식으로 진행이 된다.
+
+아래처럼 Rate 에 대해서 Prior 를 다음과 같이 설정하자. $P(\theta)$
+
+![png](/assets/images/{Others}/8_1.png)	
+
+그러면 $P(\theta\mid Data)$ 가 아래처럼 형성이 된다. 
+
+![png](/assets/images/{Others}/8_2.png)
+
+**note)** 아마도 Computational 적인 이슈때문에 그냥 prior 는 쓸 수 없을것이다. 일반적인 경우 결국 MCMC 를 적용해서 Posterior 를 normalizing 해야하는데, 각 과정에서 $\frac{P(\theta^*\mid D)}{P(\theta^t-1\mid D)}$ 를 계산해야되고, 이는 Data 가 크면 계산량이 너무 많다... 즉 아래처럼 conjugate model 을 써야할거 같다..  <https://en.wikipedia.org/wiki/Conjugate_prior>
+
+형성된 Posterior 를 통해서 HDI 95% 에 속한다거나, 분포에서 0 이상의 누적확률은 얼마인지에 따라서 Test 를 진행할 수 있다.
+
+**why Bayes?**
+
+- prior 의 정보를 추가적으로 넣을 수 있다. 
+- Frequentist 들의 이분법적 결정으로 인해 야기되는 문제($H_0$ 의 P-value 가 0.06이라면..?  그냥 기각하기에는 너무 아깝지 않나요?) 를 yes/no 대신 '분포' 로 해답을 제시함으로서 훨씬 많은 정보를 뽑아낸다.
+- 극단적인 경우 좋은 안전장치가 된다. 예를들어서 각 마을의 후두암 사망자를 추정하고싶다고 하자. A 마을은 150명밖에 안되는데 운이 나쁘게 후두암 환자가 1명 있었다고 하자. 그럼 Freuntist 는 1/150으로 추정하게 된다.(데이터로부터 최고의 추정은 1/150임) 드러나 Baysian 은 이미 몇십만 인구수에서 얻은 Prior 을 통해서 0.0001 정도로 Prior 를 주었다고 하자. 이 데이터는 sample 수가 너무 작아 posterior 에게 영향을 주는 정도가 매우 작다. 그래서 0.00011 정도로 Posteior 가 나오게 된다.
+
+**see also**
+
+<https://databreak.netlify.app/2019-04-13-BayesianAB>
+
+<https://assaeunji.github.io/bayesian/2020-03-02-abtest/>
+
