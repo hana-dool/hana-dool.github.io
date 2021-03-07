@@ -60,7 +60,7 @@ student - T test 는 두 분포의 분산이 같음을 가정한다. (이는 매
 6. The value of the **cell *expecteds* should be 5 or more** in at least 80% of the cells, and **no cell should have an expected of less than one** ([3](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900058/#b3-biochem-med-23-2-143-3)). This assumption is most likely to be met if the sample size equals at least the number of cells multiplied by 5. Essentially, this assumption specifies the number of cases (sample size) needed to use the χ2 for any number of cells in that χ2. This requirement will be fully explained in the example of the calculation of the statistic in the case study example.
 7. The sample data is a random sampling from a **fixed distribution or population** where every collection of members of the population of the given sample size **has an equal probability of selection**. 
 
-크게 특별한건 없다. 다만 그룹끼리 independent 와, 각 sample 이 같은 선택 확률을 가진다라는 가정이 현실세계에서는 약간 안맞을 수 있겠다. 왜냐하면 각 사람의 재력이 다를텐데, 구매와 비구매를 저렇게 할 수 있을까? 그리고 그룹끼리 independent 하게 나눠질 수 있을까..? 
+크게 특별한건 없다. 다만 그룹끼리 independent 와, 각 sample 이 같은 선택 확률을 가진다라는 가정이 현실세계에서는 약간 안맞을 수 있겠다. 왜냐하면 각 사람의 재력이 다를텐데, 구매와 비구매를 저렇게 할 수 있을까? 
 
 **proof**<br>
 <https://arxiv.org/pdf/1808.09171.pdf><br>
