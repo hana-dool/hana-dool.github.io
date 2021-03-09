@@ -38,6 +38,10 @@ docs:
         url: /categories/Tableau_Vis
       - title: "Git"
         url: /categories/Git
+  - title: Statistics
+    children:
+      - title: "Bayes"
+        url: /categories/Bayes
   - title: Project
     children:
       - title: "Project"
