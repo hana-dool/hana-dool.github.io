@@ -230,3 +230,25 @@ use_math : true
 
   ![png](/assets/images/Tableau/9_28.PNG)
 
+
+
+# 연속형을 측정값으로
+
+연속값을 구간차원으로 변환하는것이 유용할 때가 있다. 체일 유용한 점은 2개의 수치형에 대해서 하나를 구간차원으로 만듬으로서 히스토그램을 생성할 수 있다는 것이다.  
+
+다음과 같이 측정값에서 create -> bins 를 통해서 수치형값을 구간차원으로 만든다.
+
+![png](/assets/images/Tableau/9_29.png)
+
+그리고 그 차원에서 새 필드명을 적용하거나, 구간차원의 크기를 조절한다. 
+
+![png](/assets/images/Tableau/9_30.png)
+
+이제 새롭게 만든 차원이 차원 영역에 나타난것을 볼 수 있다.(히스토그램 모양)
+
+![png](/assets/images/Tableau/9_31.png)
+
+이렇게 생성한 bins 를 이용해 수치형값과 같이 선반에 놓게 되면 히스토그램을 얻을 수 있다. 
+
+![png](/assets/images/Tableau/9_32.png)
+
