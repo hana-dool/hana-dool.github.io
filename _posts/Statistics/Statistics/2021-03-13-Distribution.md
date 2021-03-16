@@ -63,7 +63,7 @@ $ =  \dfrac{n(n-1)(n-2)\cdots(n-x+1)}{n^x} \dfrac{\lambda^x}{x!} \left(1-\dfrac{
 
 $lemma1 \ \ : \dfrac{n(n-1)(n-2)\cdots(n-x+1)}{n^x} \approx 1$
 
-$lemma 2  : \begin{align} \left(1-\dfrac{\lambda}{n}\right)^{n-x}& = \left(1-\dfrac{\lambda}{n}\right)^n \left(1-\dfrac{\lambda}{n}\right)^{-x} \\ & \approx e^{-\lambda}\cdot 1 \end{align}$
+$lemma 2  :\left(1-\dfrac{\lambda}{n}\right)^{n-x} = \left(1-\dfrac{\lambda}{n}\right)^n \left(1-\dfrac{\lambda}{n}\right)^{-x}  \approx e^{-\lambda}$
 
 $\text{by lem1,2 }\ \ P(X=x) =\binom{n}{k}p^x (1-p)^{n-x} \approx   \dfrac{\lambda^x e^{-\lambda}}{x!}$
 
