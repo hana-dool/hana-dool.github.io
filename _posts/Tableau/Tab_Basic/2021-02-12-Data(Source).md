@@ -5,7 +5,7 @@ categories:
   - Tableau
 tags:
   - 3
-last_modified_at: 2021-02-12
+last_modified_at: 2021-03-27
 
 toc: true
 toc_label: "Table Of Contents"
@@ -48,6 +48,8 @@ use_math : true
   - Sheets 에서 우리가 원하는 시트를 더블클릭하게 되면 그 시트를 살펴볼 수 있게 된다.
 
   ![png](/assets/images/Tableau/6_7.PNG)
+
+(note!!!!) 이때 csv 파일은 다른 시트를 읽지 못한다. 꼭 xlsx 파일로 바꾸어라!
 
 ---
 
@@ -254,4 +256,14 @@ use_math : true
   ![png](/assets/images/Tableau/6_30.PNG)
 
 
+
+# Header
+
+헤더를 제대로 인식하지 못하는 경우가 있습니다. 아래를 보면 열 이름을 제대로 인식하지 못하고있네요. 그런 경우에는 아래와 같이 first row 를 column name 으로 인식하도록 설정해주면 됩니다.
+
+![png](/assets/images/Tableau_ex/5_6.PNG)
+
+그러면 우리가 의도한대로 첫번째 줄을 header 로 인식하는것을 볼 수 있습니다. 
+
+![png](/assets/images/Tableau_ex/5_7.PNG)
 

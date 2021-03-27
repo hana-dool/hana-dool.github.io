@@ -269,4 +269,19 @@ Category 가 너무 많아 한눈에 보기 힘들다면(이 그래프의 장점
 
 ![png](/assets/images/Tableau/18_59.PNG)
 
-그리고 
+그리고 color 의 border 를 조절하자. 아래와 같이 하얀색 margin 을 준다면 아래와 같이 잘 나오게 된다. 
+
+![png](/assets/images/Tableau/18_60.PNG)
+
+그런데 지금 일월화수목 의 순서인데 월화수목.. 의 형태로 만들고싶다. 그렇다면 아래처럼 date property 로 이동하여보자.(즉 시간의 property 를 고치겠다는 의미)
+
+![png](/assets/images/Tableau/18_61.PNG)
+
+이제 week start 를 monday 로 고치자.
+
+![png](/assets/images/Tableau/18_62.PNG)
+
+고치고나면 월 ~ 일 순서로 잘 바뀐것을 볼 수 있다.
+
+![png](/assets/images/Tableau/18_63.PNG)
+

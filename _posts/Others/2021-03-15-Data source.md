@@ -66,7 +66,13 @@ use_math : true
 
   - 하지만 읍/면/동 별로의 상권분석이 매우 자세하게 나와서 은근히 좋은 insight 를 얻기 좋다.
 
-    
+
+
+
+# index(world)
+
+- <http://hdr.undp.org/en/data>
+  - 세계의 주요 지표들에 대한 데이터를 얻을 수 있다. 상당히 다양함.
 
 # Tip
 
