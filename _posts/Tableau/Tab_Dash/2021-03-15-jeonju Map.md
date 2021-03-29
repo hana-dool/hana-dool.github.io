@@ -2,7 +2,7 @@
 title:  "특정 지역 시각화"
 excerpt: "특정 지역의 시각화"
 categories:
-  - Tableau_Vis
+  - Tab_Dash
 tags:
   - 3
 last_modified_at: 2021-03-16

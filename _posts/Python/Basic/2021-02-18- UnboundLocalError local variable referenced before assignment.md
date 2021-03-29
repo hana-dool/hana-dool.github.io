@@ -1,6 +1,6 @@
 ---
-title: "UnboundLocalError local variable referenced before assignment"
-excerpt: "local 변수와 global 변수에 대한 에러"
+title: "local/global 변수에러"
+excerpt: "UnboundLocalError local variable referenced before assignment"
 categories:
   - Py_Basic
 tags:

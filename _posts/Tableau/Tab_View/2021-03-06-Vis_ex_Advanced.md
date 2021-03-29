@@ -2,7 +2,7 @@
 title:  "Vis(Advanced Ex)"
 excerpt: "시각화 고급 예시들"
 categories:
-  - Tableau
+  - Tab_View
 tags:
   - 3
 last_modified_at: 2021-03-10

@@ -2,10 +2,10 @@
 title:  "전 세계 인구의 중앙값"
 excerpt: "인구 중앙값에 대한 시각화"
 categories:
-  - Tableau_Vis
+  - Tab_Dash
 tags:
   - 3
-last_modified_at: 2021-03-20
+last_modified_at: 2021-03-27
 
 toc: true
 toc_label: "Table Of Contents"
@@ -15,7 +15,7 @@ toc_sticky: true
 use_math : true
 ---
 
-#Intro
+# Intro
 
 이 시각화는 <http://hdr.undp.org/en/data> un 에서 제공하는 지표에 대한 데이터를 사용하였습니다. 시각화의 완성본은 <https://public.tableau.com/profile/haninwook#!/?newProfile=&activeTab=0> 에서 볼 수 있습니다. 
 
@@ -65,7 +65,7 @@ use_math : true
 
 
 
-#시각화(map)
+# 시각화(map)
 
 다음과 같이 맵 시각화를 진행해봅시다. 각 인구수 중위값을 지역별로 표기한것입니다. 
 

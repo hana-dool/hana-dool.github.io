@@ -2,7 +2,7 @@
 title:  "이념적 성향(집계된 데이터)"
 excerpt: "막대그래프 + 성향별 다른 색 + 시계열"
 categories:
-  - Tableau_Vis
+  - Tab_Dash
 tags:
   - 3
 last_modified_at: 2021-02-14

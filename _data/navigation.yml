@@ -30,10 +30,12 @@ docs:
         url: /categories/Py_Analysis
   - title: Tableau
     children:
-      - title: "Tableau"
+      - title: "Tab Basic"
         url: /categories/Tableau
-      - title: "Tableau_Vis"
-        url: /categories/Tableau_Vis
+      - title: "Tab View"
+        url: /categories/Tab_View
+      - title: "Tab Dashboard"
+        url: /categories/Tab_Dash
   - title: Others
     children:
       - title: "Others"
