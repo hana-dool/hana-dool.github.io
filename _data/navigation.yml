@@ -38,6 +38,8 @@ docs:
         url: /categories/Tab_Dash
   - title: Others
     children:
+      - title: "Data"
+        url: /categories/Data
       - title: "Others"
         url: /categories/Others
       - title: "Git"
