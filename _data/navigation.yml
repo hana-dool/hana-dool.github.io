@@ -34,6 +34,8 @@ docs:
         url: /categories/Tableau
       - title: "Tab View"
         url: /categories/Tab_View
+      - title: "Tab Map"
+        url: /categories/Tab_Map
       - title: "Tab Dashboard"
         url: /categories/Tab_Dash
   - title: Others
