@@ -5,7 +5,7 @@ categories:
   - Stat
 tags:
   - 1
-last_modified_at: 2021-04-03
+last_modified_at: 2021-04-01
 
 toc: true
 toc_label: "Table Of Contents"
@@ -16,9 +16,7 @@ use_math: true
 
 ---
 
-
-
-#Goodness of fit
+# Goodness of fit
 
 로지스틱 회귀분석의 경우, 생각보다 일반적인 regression 보다는 Assumption 체크를 빡세게 하지 않는다. 
 
