@@ -5,7 +5,7 @@ categories:
   - Tableau
 tags:
   - 3
-last_modified_at: 2021-03-27
+last_modified_at: 2021-04-11
 
 toc: true
 toc_label: "Table Of Contents"
@@ -52,6 +52,46 @@ use_math : true
 (note!!!!) 이때 csv 파일은 다른 시트를 읽지 못한다. 꼭 xlsx 파일로 바꾸어라!
 
 ---
+
+# Excel Data Merge(row)
+
+엑셀의 여러 데이터를 merge 하고 싶을 수 있다.  이 경우 아래에 붙이는 row merge 에 대해서 알아보자.  아래 그림과 같이 두개의 excel 문서를 merge 하고싶다고 하자. 각각의 columns 구성은 똑같아서 그냥 아래에 붙이면 되는 상황이다.
+
+note)
+
+-  csv 말고 xlsx 파일에서 merge 가 가능하다.
+- merge 하고자 하는 데이터는 엑셀파일에서 같은 파일 안의 다른 시트에 존재해야 한다. 즉 태블로에서 다양한 데이터를 한번에 이용하고 싶다면, 같은 엑셀파일에 다른 시트를 이용해  구성해야한다. 그래야 데이터를 올리고 merge 가 자유롭다.
+- merge 하고자 하는 데이터는 col 의 구성이 일치해야한다. 왜냐하면 첫
+
+![png](/assets/images/Tableau/6_31.PNG)
+
+먼저 빈 엑셀문서를 연다. 이 엑셀문서는 2018 / 2019년의 시트가 차례로 들어갈것이다. 그리고 2018년의 데이터를 연다. 
+
+![png](/assets/images/Tableau/6_32.PNG)
+
+그 이후에 시트에 오른쪽 클릭을 한 이후에 내가 새로 만든 시트에 이동/복사를 통해서 시트를 복사한다.
+
+![png](/assets/images/Tableau/6_33.PNG)
+
+2019년의 시트도 똑같이 이동시키면 그림과 같이 2개의 시트가 우리의 빈 엑셀파일에 생긴것을 볼 수 있다. 이 상태에서 태블로에 데이터를 올려보자. 
+
+![png](/assets/images/Tableau/6_34.PNG)
+
+![png](/assets/images/Tableau/6_35.PNG)
+
+두 데이터를 row 로 합치려면 아래 그림과 같이 New union 을 클릭해 들어가서 데이터를 연결해주어야 한다.
+
+![png](/assets/images/Tableau/6_36.PNG)
+
+연결할 떄에는 시트의 값을 마우스로 끌어와서 아래에 붙여주면 된다. 그러면 그림을 보듯이, 연결이 되는것을 볼 수 있다.
+
+![png](/assets/images/Tableau/6_37.png)
+
+그 이후 아래와 같이 테트리스 불록처럼 쌓인 표시와 함께 주문2018 시트가 생긴것을 볼 수 있다. 이 데이터는 2019, 2018 데이터가 merge 된 데이터이다.
+
+![png](/assets/images/Tableau/6_38.png)
+
+잘 merge 되었는지 확인하기 위해서 year 를 filter 에 올려보았더니 2019 데이터가 잘 merge 되어있는것을 볼 수 있다.
 
 # Data Split
 
