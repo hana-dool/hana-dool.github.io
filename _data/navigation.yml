@@ -32,6 +32,8 @@ docs:
     children:
       - title: "Tab Basic"
         url: /categories/Tableau
+      - title: "Tab Functions"
+        url: /categories/Tab_Function
       - title: "Tab View"
         url: /categories/Tab_View
       - title: "Tab Map"
@@ -46,15 +48,11 @@ docs:
         url: /categories/Others
       - title: "Git"
         url: /categories/Git
+      - title: "Reading Paper"
+        url: /categories/Reading_Paper
+      - title: "Project"
+        url: /categories/Project
   - title: Statistics
     children:
       - title: "Bayes"
         url: /categories/Bayes
-  - title: Paper
-    children:
-      - title: "Reading Paper"
-        url: /categories/Reading_Paper
-  - title: Project
-    children:
-      - title: "Project"
-        url: /categories/Project
