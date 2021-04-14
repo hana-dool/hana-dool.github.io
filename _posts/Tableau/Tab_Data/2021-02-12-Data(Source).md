@@ -2,7 +2,7 @@
 title:  "Data(Source)"
 excerpt: "태블로에서 원본 데이터를 다루는법을 알아보자."
 categories:
-  - Tableau
+  - Tab_Data
 tags:
   - 3
 last_modified_at: 2021-04-11

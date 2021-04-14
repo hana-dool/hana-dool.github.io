@@ -32,6 +32,8 @@ docs:
     children:
       - title: "Tab Basic"
         url: /categories/Tableau
+      - title: "Tab Data"
+        url: /categories/Tab_Data
       - title: "Tab Functions"
         url: /categories/Tab_Function
       - title: "Tab View"
