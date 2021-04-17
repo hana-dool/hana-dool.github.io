@@ -1,5 +1,5 @@
 ---
-title: "local/global 변수에러"
+title: "[에러] local/global 변수에러"
 excerpt: "UnboundLocalError local variable referenced before assignment"
 categories:
   - Py_Basic

@@ -1,5 +1,5 @@
 ---
-title:  "DFS"
+title:  "[알고리즘] DFS"
 excerpt: "Algorithm"
 categories:
   - Py_Basic

@@ -1,5 +1,5 @@
 ---
-title:  "패키지 인스톨 에러"
+title:  "[에러] 패키지 인스톨 에러"
 excerpt: "Could not install packages due to Environmental Error"
 categories:
   - Py_Basic
