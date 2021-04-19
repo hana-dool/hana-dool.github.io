@@ -1,5 +1,5 @@
 ---
-title:  "Order of operation"
+title:  "Order of operation 예시"
 excerpt: "작동의 순서"
 categories:
   - Tableau
