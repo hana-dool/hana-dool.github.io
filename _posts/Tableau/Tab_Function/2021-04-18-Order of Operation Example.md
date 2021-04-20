@@ -2,7 +2,7 @@
 title:  "Order of operation 예시"
 excerpt: "작동의 순서"
 categories:
-  - Tableau
+  - Tab_Function
 tags:
   - 3
 last_modified_at: 2021-04-18
