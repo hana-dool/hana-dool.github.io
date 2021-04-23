@@ -1,6 +1,6 @@
 ---
-title:  "Order of operation 예시"
-excerpt: "작동의 순서"
+title:  "Order of operation [2]"
+excerpt: "작동의 순서 예시들"
 categories:
   - Tab_Function
 tags:

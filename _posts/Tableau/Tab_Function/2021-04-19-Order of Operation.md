@@ -1,11 +1,11 @@
 ---
-title:  "Order of operation"
-excerpt: "작동의 순서"
+title:  "Order of operation [1]"
+excerpt: "작동의 순서에 대해 알아보자"
 categories:
   - Tab_Function
 tags:
   - 3
-last_modified_at: 2021-04-18
+last_modified_at: 2021-04-22
 
 toc: true
 toc_label: "Table Of Contents"
@@ -171,6 +171,48 @@ note) Exclude lod 가 잘 자동하려면, Exclude lod 에서 선언한 차원�
 
 1. Exclude lod 에 명시된 차원을 제외한 후에 집계가 이루어진다.
 2. VLOD 에 맞추어서 표현하기 위해 첫번째 단계의 결과를 복제한다. 
+
+
+
+# 8. Aggregate Calculation 
+
+집계함수입니다. AVG, SUM, COUNT, MAX, MEDIAN, VAR 등등의 함수가 포함됩니다. 
+
+아래와 같이, row 별로 존재하고 있는 값들을 Aggregate 해서 계산해준다. 아래 식을 보면 Revenue 는 Row level calculation 이였던것을 기억하자. 즉 row level 보다는 늦을수밖에 없다는것을 알 수 있다.
+
+![png](/assets/images/Tab_Fun/3_1.png)
+
+
+
+# 9. Aggregate Calculation Filter
+
+집계된 값에 대한 Filter 이다. 아래와 같이 매출(sum) 을 카테고리별로 나타낸 테이블을 생각해보자. 
+
+![png](/assets/images/Tab_Fun/3_2.png)
+
+이 때에 아래와 같이 측정값을 필터로 옮길 수 있다. (측정값 알약을 선택한 뒤에 오른쪽 클릭으로 filter 를 고를 수도 있다.)  그러면 우리가 집계할 수 있는 min, median 등등이 나오게 된다. 여기서 집계할 형식을 선택하자. 
+
+![png](/assets/images/Tab_Fun/3_3.png)
+
+그러면 그림과 같이 측정값에 대한 filter 를 만들 수 있다. 
+
+![png](/assets/images/Tab_Fun/3_4.png)
+
+다 만들고 나면 아래와 같이 집계된 값에 대해 필터가 걸리게 되어서, 값이 조금만 나타나게 된다. 
+
+![png](/assets/images/Tab_Fun/3_5.png)
+
+
+
+# 10. Densiflication
+
+사이사이 값을 채우는 calculation 입니다. 이는 집계된 값을 사용하거나, 해아하므로 당연히 집계 연산보다는 낮은 우선순위를 가지고 있으며, 여기 10번 부터는 data source 에서 이루어지는 연산이 아니라 Tableau 에서 일어나는 연산이 되겠습니다. 
+
+이 연산은 여기서 다루지는 않겠습니다. 나중에 좀 더 배우고 나서 하는게 더 좋을것같네요.
+
+
+
+
 
 
 
