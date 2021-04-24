@@ -1,5 +1,5 @@
 ---
-title:  "Order of operation [1]"
+title:  "Order of operation"
 excerpt: "작동의 순서에 대해 알아보자"
 categories:
   - Tab_Function
@@ -214,13 +214,70 @@ note) Exclude lod 가 잘 자동하려면, Exclude lod 에서 선언한 차원�
 
 
 
+# 11. Blended Aggregate Filter
 
+태블로에서 데이터를 블랜딩할떄 사용하는 필터 
 
+# 12. Data Blending
 
+Tableau 의 Data 항목에서 블랜딩을 확인해보세요! 서로 다른 데이터를 혼합할때에 나타나는 계산입니다. 
 
+# 13. Table Calculation
 
+테이블 Calculation 은 매우 낮은 수준에 있습니다. 이는 값들이 '집계된 이후' 에 일어나게 됩니다. 마치 이동평균같은 경우를 말합니다. 아래와 같이 집계된 값에 대하여, 뷰(테이블) 에서 Calculate 하는것이 Table Calculation 입니다. 
 
-https://www.tableau.com/about/blog/2019/9/understanding-how-tableau-calculation-types-work-together
+![png](/assets/images/Tab_Fun/3_8.png)
 
+다음과 같은 예시로 알아보겠습니다. 제품 분류별 매출 테이블을 만들어보았습니다. 그 기준은 sum(매출) 로 집계된 데이터입니다.
 
+![png](/assets/images/Tab_Fun/3_9.png)
+
+SUM(매출)에 대해서 Table calculation 을 더해줍니다. 이때의 테이블 계산은 집계된값에 대해서 이루어지기 때문에, 당연히 순위가 후순위입니다. 
+
+![png](/assets/images/Tab_Fun/3_10.png)
+
+이제 다음과 같이 Calculation 타입을 정해주고, Table 에서 어떻게 적용할것인지(이런점떄문에 Table Calculation 이라고 불립니다.) 을 선택하면, SUM(매출) 옆에 삼각형 나타나는것을 볼 수 있습니다. 이는 집계된 값이 테이블 Calculation 으로 변모했다는 이야기입니다. 
+
+![png](/assets/images/Tab_Fun/3_11.png)
+
+# 14. Table Calculation Filter
+
+테이블 계산 필터입니다. 즉 테이블 계산으로 이루어진 값을 Filter 로 적용하는것을 Table Calculation Filter 라고 합니다. 필터가 테이블에 나타난 값을 기준으로 일어나므로 당연히 순위는 Table Calcultion 보다 뒤입니다.
+
+![png](/assets/images/Tab_Fun/3_12.png)
+
+아래와 같이 Table Calulation(last) 을 필터로 올립니다. 
+
+![png](/assets/images/Tab_Fun/3_13.png)
+
+그 이후에 적용된것을 보면 필터링이 된것을 볼 수 있습니다.
+
+![png](/assets/images/Tab_Fun/3_14.png)
+
+# 15. Others...
+
+그 이후는 중요하지 않으므로 넘어가겠습니다. 위에서 중요하게 봐야할것을 다시 정리해보겠습니다.
+
+1. Row level 계산
+2. Context 필터
+3. Fixed 계산
+4. 차원 필터
+5. Include / Exclude 계산
+6. 집계 계산 
+7. 집계 필터
+8. 테이블 계산
+9. 테이블 계산 필터
+
+위와 같은 순서가 중요합니다. 이를 기억하고 각각 상황에 맞추어 수준을 바꾸시면 원하는 계산 결과를 얻을 수 있습니다.
+
+<br>
+
+<Br>
+
+**Referennce**
+
+- https://community.tableau.com/s/question/0D54T00000C62Iz/using-a-table-calculation-as-filter
+- https://www.tableau.com/about/blog/2019/9/understanding-how-tableau-calculation-types-work-together
+- https://help.tableau.com/current/pro/desktop/ko-kr/order_of_operations.htm
+- https://www.thedataschool.co.uk/harry-cooney/tableaus-order-of-operations
 

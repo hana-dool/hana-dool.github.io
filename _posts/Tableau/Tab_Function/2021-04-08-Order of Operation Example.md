@@ -1,5 +1,5 @@
 ---
-title:  "Order of operation [2]"
+title:  "Order of operation [Example]"
 excerpt: "작동의 순서 예시들"
 categories:
   - Tab_Function
