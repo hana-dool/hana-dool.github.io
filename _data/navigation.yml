@@ -42,6 +42,8 @@ docs:
         url: /categories/Tab_Map
       - title: "Tab Dashboard"
         url: /categories/Tab_Dash
+      - title: "Tab Article"
+        url: /categories/Tab_Article
   - title: SQL
     children:
       - title: "SQL Basic"
