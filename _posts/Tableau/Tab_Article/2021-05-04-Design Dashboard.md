@@ -19,7 +19,7 @@ use_math : true
 
 # Intro
 
-Tableau 의 Zen Mater 인 Chantilly jaggernauth 의 강연을 듣고 정리한 내용입니다. https://www.youtube.com/watch?v=bq0jeF9bv20> 에서 강연을 보실 수 있습니다. 대시보드의 기본이 얼마나 중요하고, 고려할게 많은지를 알 수 있게해주는 레전드 강연이라고 생각합니다.
+Tableau 의 Zen Mater 인 Chantilly jaggernauth 의 강연을 듣고 정리한 내용입니다. <https://www.youtube.com/watch?v=bq0jeF9bv20> 에서 강연을 보실 수 있습니다. 대시보드의 기본이 얼마나 중요하고, 고려할게 많은지를 알 수 있게해주는 레전드 강연이라고 생각합니다.
 
 #  목차
 
