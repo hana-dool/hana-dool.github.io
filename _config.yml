@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Han"
   avatar           :  "/assets/images/avatar.jpg"
-  bio              : "5학년!"
+  bio              : 
   location         : 
   email            : 
   links:
@@ -281,8 +281,7 @@ defaults:
       share: true
       related: true
       sidebar_main: true
-      sidebar:
-        nav: "docs"
+
 
   # _pages
   - scope:
@@ -295,5 +294,4 @@ defaults:
       comments: false #
       share: true
       related: false #
-      sidebar:
-        nav: "docs"
+      sidebar_main: true
