@@ -78,6 +78,8 @@ use_math : true
   - 다양한 수의 Color Combination 을 추천해준다.
 - https://www.canva.com/learn/100-color-combinations/
   - Same as Above
+- https://color.tableaumagic.com/
+  - 사진을 넣어주면, 그에 어울리는 팔레트를 형성해준다. 
 
 <br>
 

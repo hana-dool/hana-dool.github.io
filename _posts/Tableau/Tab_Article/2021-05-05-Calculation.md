@@ -63,7 +63,7 @@ Table Calculation 은 '테이블에 나타난 값을 기준으로 하는 연산'
 
 
 
-##Level of Detail(LOD) expression
+## Level of Detail(LOD) expression
 
 LOD 표현식은 agg 계산이 다른 수준에서 이루어지기를 원할때 사용합니다. Fixed , Exclude , Include 를 사용하게 됩니다. 각각이 어떤것을 의미하는지는 Tab_Function 에서 LOD 를 봅시다. 
 

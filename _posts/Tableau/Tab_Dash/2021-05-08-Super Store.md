@@ -1,6 +1,6 @@
 ---
-title:  "DashBoard"
-excerpt: "기본으로 제공하는 슈퍼스토어 대시보드"
+title:  "지역별 매출 DashBoard"
+excerpt: "기본으로 제공하는 슈퍼스토어 데이터에 대한 대시보드"
 categories:
   - Tab_Dash
 tags:
