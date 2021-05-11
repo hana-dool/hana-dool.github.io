@@ -33,10 +33,9 @@ toc_sticky: true
 - 변환
   - log, sqrt 등, 점점 진폭이 커지는 시계열의 경우 이러한 변환을 통해서 변화의 폭을 일정하게 해서 정상 시계열로 만들 수 있다.
   - box cox 를 이용할 수도 있다.
-  
 # AR 모델
 
-![images](./assets/images/Images/TS_AR.png)
+![images](/assets/images/Images/TS_AR.png)
 
 - AR 모델은 이전의 관측값이 이후 자신의 관측값에 영향을 준다는 아이디어
 - 자기 자신의 과거값에 기반한 변동을 추정한다.
@@ -44,16 +43,16 @@ toc_sticky: true
 
 # MA 모델
 
-![images](./assets/images/Images/TS_MA.png)
+![images](/assets/images/Images/TS_MA.png)
 
 - '과거값' 이 아니라 과거값이 설명하지 못한 '오차' 즉. 예측하지 못했던 변동값이 현재 항에 영향을 준다는 아이디어
 - '변화' 에 더 초점을 둔 아이디어이다.
 
 # ARIMA 모델
 
-![images](./assets/images/Images/TS_ARIMA.png)
+![images](/assets/images/Images/TS_ARIMA.png)
 
-![images](./assets/images/Images/TS_ARIMA2.png)
+![images](/assets/images/Images/TS_ARIMA2.png)
 
 - 우선 ARMA 모델은 위 두 부분을 합친 모델이다. 
 - 하지만 여전히 불규칙 시계열 데이터를 예측하지 못하는 단점이 있다.(기본적으로 정상 시계열을 잘 예측함)
@@ -93,11 +92,11 @@ fit
 ## AIC=341.61   AICc=342.08   BIC=361
 {% endhighlight %}
 
-![images](./assets/images/Images/TS_ARIMA_R.png)
+![images](/assets/images/Images/TS_ARIMA_R.png)
 
 - 이 때에 위의 auto.arima 가 궁금할 텐데, 
 
-![images](./assets/images/Images/TS_Auto arima.png)
+![images](/assets/images/Images/TS_Auto arima.png)
 
 - 위와 같이 자동화 되어서 p,d,q 를 각각 조절하면서 AIC 기준으로 최적의 모델을 찾으려고 노력한다.
 - 우리만의 모델을 쓰고 싶다면 Arima() 함수를 이용하면 된다.
@@ -190,7 +189,7 @@ autoplot(forecast(fit))
 
 # 계절 ARIMA (SARIMA)
 
-![images](./assets/images/Images/TS_SARIMA.png)
+![images](/assets/images/Images/TS_SARIMA.png)
 
 - 위 그림의 예시에서 y_t 앞 (1-B)(1-B^4) 의 차분은, y 를 정상 시계열로 만들기 위한 변환, 그리고 B^4 로 구성된 계절성 ARMA 와 B 로 구성된 ARMA 의 곱을 통해서 계절적회귀와 시간적 회귀 둘다 고려할 수 있게된다.
 - 에러(변동) 과 과거값 의 사항을 계절성과 이전시점의 ARMA 곱을 통해서 모두 고려 가능하게 된다.
