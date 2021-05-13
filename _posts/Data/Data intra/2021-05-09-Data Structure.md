@@ -1,8 +1,8 @@
 ---
-title: "Data Infra Structure"
+title: "1.Data Infra Structure"
 excerpt: "데이터의 인프라 Structure"
 categories:
-  - Data
+  - Data_Infra
 tags:
   - 3
 last_modified_at: 2021-05-09
@@ -37,7 +37,7 @@ https://www.youtube.com/watch?v=g_c742vW8dQ 의 데이터인프라 소개글을 
 - 각각의 데이터들은, 분석하고 싶다고 할때에, 각각의 플랫폼별로 분석도구가 다르다.
 - 그래서 통합된 보고서 작성을 위해서 다양한 소스로부터 데이터를 저장하는 Data Warehouse 가 필요하게 되었다.
 
-![png](/assets/images/Data/2_1.PNG)
+![png](/assets/images/Data/2_1.png)
 
 <BR>
 
@@ -45,7 +45,7 @@ https://www.youtube.com/watch?v=g_c742vW8dQ 의 데이터인프라 소개글을 
 
 - Production system 과 Data Warehouse 에는 차이가 있다.
 
-![png](/assets/images/Data/2_2.PNG)
+![png](/assets/images/Data/2_2.png)
 
 - Production system 
   - Normalized Schema 라고 하는 작은 테이블로 다 쪼샌다.
@@ -63,7 +63,7 @@ https://www.youtube.com/watch?v=g_c742vW8dQ 의 데이터인프라 소개글을 
 
 ## ETL / ELT
 
-![png](/assets/images/Data/2_3.PNG)
+![png](/assets/images/Data/2_3.png)
 
 - 데이터를 Production system 에서 뽑아낸다.(추출)
 - 그것을 작고 작게 쪼개진 normalized schema 를 dimensional schema 로 변환한다.
@@ -71,7 +71,7 @@ https://www.youtube.com/watch?v=g_c742vW8dQ 의 데이터인프라 소개글을 
 - 하지만 추출과 변환이 자동화되기가 너무 힘들고, 회사마다 다르다.
 - 그래서 수정할게 많다.
 
-![png](/assets/images/Data/2_4.PNG)
+![png](/assets/images/Data/2_4.png)
 
 - 추출해서 적재하는것은 우선 다 해놓는다. (자동화 가능 )
 - 그 이후에 ware house 에서 변환하는것이다. 이를 ELT 라 한다.
@@ -80,7 +80,7 @@ https://www.youtube.com/watch?v=g_c742vW8dQ 의 데이터인프라 소개글을 
 
 # Overall Structure
 
-![png](/assets/images/Data/2_5.PNG)
+![png](/assets/images/Data/2_5.png)
 
 - Source
   - 회사내의 모든 데이터가 만들어지는곳

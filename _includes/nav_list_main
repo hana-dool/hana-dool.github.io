@@ -147,6 +147,22 @@
                 {% endfor %}
             </ul>
 
+        <span class="nav__sub-title">Data</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Data_Infra" %}
+                        <li><a href="/categories/Data_Infra" class="">Data Infra ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Data_Collection" %}
+                        <li><a href="/categories/Data_Collection" class="">Data Collection ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
         <span class="nav__sub-title">Others</span>
             <ul>
                 {% for category in site.categories %}

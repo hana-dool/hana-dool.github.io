@@ -2,7 +2,7 @@
 title: "서울 열린데이터광장 API"
 excerpt: "서울 열린데이터광장의 API 에서 데이터를 추출하자."
 categories:
-  - Data
+  - Data_Collection
 tags:
   - 3
 last_modified_at: 2021-04-03
