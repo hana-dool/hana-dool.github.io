@@ -138,15 +138,6 @@
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">Figma</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Fig_Basic" %}
-                        <li><a href="/categories/Fig_Basic" class="">Fig Basic ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-
         <span class="nav__sub-title">Data</span>
             <ul>
                 {% for category in site.categories %}
@@ -168,6 +159,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Data" %}
                         <li><a href="/categories/Data" class="">Data ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Fig_Basic" %}
+                        <li><a href="/categories/Fig_Basic" class="">Figma ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
