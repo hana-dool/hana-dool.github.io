@@ -1,0 +1,126 @@
+---
+title:  "이분탐색"
+excerpt: "Binary Search"
+categories:
+  - Py_Algorithm
+tags:
+  - 1
+last_modified_at: 2021-05-19
+
+toc: true
+toc_label: "Table Of Contents"
+toc_icon: "cog"
+toc_sticky: true
+
+use_math: true
+---
+
+<br>
+
+# <center><font size="15"> 이진탐색 </font></center>
+
+![png](/assets/images/Py_Algorithm/1_1.gif)
+
+- 이진탐색은 '정렬된' 리스트의 중간부터 비교해나가는 방법이다.
+
+- 이진검색시에는 다음과 같은 경우의 수가 있다.
+
+  - Key가 리스트의 중간값보다 작으면, 중간 이전까지만 찾으면 된다.
+
+  - Key가 리스트의 중간값과 일치한다면, 검색이 끝난다. 
+  - Key 가 리스트의 중간값보다 크다면 중간 이후만 검색하면 된다.
+
+```python
+start = 0 
+end = len(lst) - 1 
+
+while start <= end :
+    mid = (start + end)//2
+    if lst[mid] == xx : # 같은게 딱! 나오면
+        print(mid) # 출력하고
+        break # 멈추기
+    elif lst[mid] < xx :
+        start = mid + 1 # -1 +1 이런거 없으면 start = mid , mid = end 같은 경우에 참사난다. 
+    elif lst[mid] > xx :
+        end = mid - 1 # +1 안넣으면 001 경우 대참사
+```
+
+- 위와 같이 구현될 수 있다. 
+
+<BR>
+
+<br>
+
+# <center><font size="15"> 값이 없는경우 탐색 </font></center>
+
+```python
+start = 0 
+end = len(lst) - 1 
+
+ch = 0
+while start <= end :
+    mid = (start + end)//2
+    if lst[mid] == xx : # 같은게 딱! 나오면
+        print(mid) 
+        ch = 1
+        break # 멈추기
+    elif lst[mid] < xx :
+        start = mid +1 
+    elif lst[mid] > xx :
+        end = mid - 1 
+    print(start, mid, end)
+if ch == 0 :
+    print('값이없오')
+```
+
+
+
+<br>
+
+<br>
+
+# <center><font size="15"> 처음 값 탐색 </font></center>
+
+- 값이 나타나는 값 중에서 제일 처음값을 출력한다.
+- lst = [1,3,3,3,5] 인 경우 3을 찾는다면 idx 1 을 출력한다.
+
+```python
+start = 0 
+end = len(lst) - 1
+
+while start <= end: # end 가 선 넘을떄 정지
+    mid = (start + end) // 2
+    if lst[mid] == xx:
+        end = mid - 1  # 같더라도 내려가는게 핵심
+    elif lst[mid] < xx:
+        start = mid + 1 # 같은것 찾아!
+    elif lst[mid] > xx :
+        end = mid - 1 # 같은것 찾아!
+print(start) # end 가 선 넘었다는건? start 가 맞다는거.
+```
+
+<br>
+
+<Br>
+
+# <center><font size="15">마지막 값 탐색 </font></center>
+
+- 값이 나타나는 값 중에서 제일 처음값을 출력한다.
+- lst = [1,3,3,3,5] 인 경우 3을 찾는다면 idx 3 을 출력한다.
+
+```python
+start = 0 
+end = len(lst) - 1 
+
+while start <= end: # start 가 선 넘을떄 정지 
+    mid = (start + end) // 2
+    if lst[mid] == xx: # 이 경우 같다 하더라도 올라가는게 핵심
+        start = mid + 1
+    elif lst[mid] < xx: 
+        start = mid + 1  # 같은것 찾아! 
+    elif lst[mid] > xx:
+        end = mid - 1 # 같은것 찾아!
+# end 가 멈춰서서, start 가 맞춰주는 느낌이네요.
+print(end)
+```
+
