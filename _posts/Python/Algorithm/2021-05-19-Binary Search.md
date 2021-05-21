@@ -120,7 +120,7 @@ while start <= end: # start 가 선 넘을떄 정지
         start = mid + 1  # 같은것 찾아! 
     elif lst[mid] > xx:
         end = mid - 1 # 같은것 찾아!
-# end 가 멈춰서서, start 가 맞춰주는 느낌이네요.
+# end 가 멈춰서서, start 가 맞춰주는 느낌이네요. 그러므로 end를 출력하는게 맞죠 (start 가 변하다가 end를 넘어버릴떄 중지하니까요)
 print(end)
 ```
 
