@@ -302,9 +302,14 @@ WHERE 이름 LIKE '김%'
 -- df 테이블에서, 이름이 김으로 시작하는 데이터 출력
 ```
 
-- %인% (이름 중간에 인 있으면 출력), %현(이름이 현으로 끝나면 출력) 등으로 확장할 수 있습니다. 
+```sql
+SELECT *
+FROM df 
+WHERE 이름 LIKE '_김_'
+-- df 테이블에서, 3글자 이름을 가지는데, 가운데 글자가 김인 사람
+```
 
-note) 우리가 검색할때에 김 씨로 시작하는 이름을 필터링한 경우가 있을것이다. 이것을 구현한것이 쿼리로 김% 를 쏴준것이다.
+- %인% (이름 중간에 인 있으면 출력), %현(이름이 현으로 끝나면 력) 등으로 확장할 수 있습니다. 
 
 <BR>
 
@@ -347,6 +352,30 @@ AND (job = '목수' OR job = '농부') ;
 -- 봉급이 3000 이상인 목수 또는 농부
 ```
 
+<br>
+
+**진리 연산표**
+
+| [[AND]]   | TRUE  | FASLE | NULL  |
+| --------- | ----- | ----- | ----- |
+| **TRUE**  | TRUE  | FALSE | NULL  |
+| **FALSE** | FALSE | FASLE | FALSE |
+| **NULL**  | NULL  | FASLE | NULL  |
+
+<br>
+
+| [[OR]]    | TRUE | FASLE | NULL |
+| --------- | ---- | ----- | ---- |
+| **TRUE**  | TRUE | TRUE  | TRUE |
+| **FALSE** | TRUE | FASLE | NULL |
+| **NULL**  | TRUE | NULL  | NULL |
+
+<br>
+
+| NOT      | TRUE  | TRUE | NULL |
+| -------- | ----- | ---- | ---- |
+| **TRUE** | FALSE | TRUE | NULL |
+
 
 
 ## NOT
@@ -365,6 +394,32 @@ FROM df
 WHERE salary IS NOT NULL
 -- 봉급이 NULL 값이 아닌 데이터 출력
 ```
+
+```sql
+SELECT *
+FROM df
+WHERE salary NOT BETWEEN 10 AND 100 ; 
+-- 봉급이 10~100 이 아닌 데이터출력
+```
+
+
+
+```sql
+SELECT *
+FROM df
+WHERE date BETWEEN '1981/01/01' AND '1999/09/09'
+```
+
+
+
+```sql
+SELECT *
+FROM df
+WHERE job not in ('목수','광부','데이터엔지니어')
+-- 위의 세 값이 아닌 직업을 뽑아낸다. 
+```
+
+
 
 <br>
 
