@@ -1,6 +1,6 @@
 ---
-title:  "데이터 운영규칙"
-excerpt: "데이터 무결성 및 운영 기본규칙"
+title:  "트렌섹션"
+excerpt: "트렌섹션"
 categories:
   - SQL_Basic
 tags:

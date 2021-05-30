@@ -23,3 +23,4 @@ use_math: true
 그래도 어느정도는 해야되기에, 테스트가 존재하긴 한다. 아래 링크를 참고하면 Hosmer-Lemeshow 가 고안한 테스트를 볼 수 있다. 나중에 보자! 
 
 <https://en.wikipedia.org/wiki/Hosmer%E2%80%93Lemeshow_test>
+

@@ -17,7 +17,7 @@ use_math: true
 
 <br>
 
-# 그룹함수
+# <center><font size="15">그룹 함수란</font></center>
 
 그룹함수는 함수가 적용되어 하나의 Aggregated 된 결과값을 내보냅니다. 
 
@@ -39,6 +39,16 @@ FROM 테이블 이름
 | MIN      | 회소값         | MIN(열 이름)      | NULL 제외 |
 | STDDEV   | 표준편차       | STDDEV(열 이름)   | NULL 제외 |
 | VARIANCE | 분산           | VARIANCE(열 이름) | NULL 제외 |
+
+- 이때 특징은 WHERE 절이 거짓이여도 결과를 항상 출력한다는 점입니다.
+
+```sql
+SELECT *
+FROM df 
+WHERE 1 = 2 
+```
+
+- 위의 결과는 NULL 으로 출력됩니다.
 
 <br>
 
