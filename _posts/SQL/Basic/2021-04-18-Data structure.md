@@ -5,7 +5,7 @@ categories:
   - SQL_Basic
 tags:
   - 1
-last_modified_at: 2021-04-18
+last_modified_at: 2021-05-31
 
 toc: true
 toc_label: "Table Of Contents"
@@ -120,11 +120,12 @@ use_math: true
 
 2000자까지 기록된다고 생각하면 된다. (나중에 이를 연장하는 옵션이 있음을 알 수 있다.)
 
-# 
 
-# 
+
+
 
 # Ref
 
 뉴렉쳐 유튜브 :https://www.youtube.com/channel/UC5-ixpj8DioZqmrasj6Ihpw
 
+https://stackoverflow.com/questions/63342651/is-there-a-way-to-extract-data-from-a-mapvarchar-varchar-column-in-sql
