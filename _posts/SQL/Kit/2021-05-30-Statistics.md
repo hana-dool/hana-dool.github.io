@@ -1,6 +1,6 @@
 ---
-title:  "Kit_1"
-excerpt: "여러 예제"
+title:  "비율함수"
+excerpt: "Cum,quantile,ratio.."
 categories:
   - SQL_Kit
 tags:
@@ -65,7 +65,7 @@ SELECT CUME_DIST() over (PARTITION BY job
 
 # <center><font size="6">비율 출력 :  RATIO_TO_REPORT</font></center>
 
-```
+```sql
 SELECT RATIO_TO_REPORT(col) OVER()
 ```
 
