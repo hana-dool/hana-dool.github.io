@@ -24,7 +24,7 @@ SQL 문법에서 SELECT 는 데이터 조회의 기본이 됩니다. SELECT 문�
 **데이터 모두 불러오기**
 
 ```sql
-SELECT * -- 
+SELECT * 
 FROM df ; 
 ```
 
