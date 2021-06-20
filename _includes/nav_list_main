@@ -132,15 +132,29 @@
         <span class="nav__sub-title">SQL</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "SQL_Basic" %}
-                        <li><a href="/categories/SQL_Basic" class="">SQL Basic ({{category[1].size}})</a></li>
+                    {% if category[0] == "SQL_Basic_Knowledge" %}
+                        <li><a href="/categories/SQL_Basic_Knowledge" class="">SQL Basic Knowledge ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "SQL_Kit" %}
-                        <li><a href="/categories/SQL_Kit" class="">SQL Kit ({{category[1].size}})</a></li>
+                    {% if category[0] == "SQL_Basic_Grammer" %}
+                        <li><a href="/categories/SQL_Basic_Grammer" class="">SQL Basic Grammer ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "SQL_Query_Book" %}
+                        <li><a href="/categories/SQL_Query_Book" class="">SQL Query Book ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "SQL_Others" %}
+                        <li><a href="/categories/SQL_Others" class="">SQL Others ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
