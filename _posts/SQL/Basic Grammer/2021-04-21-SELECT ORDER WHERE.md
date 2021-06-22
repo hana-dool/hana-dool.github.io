@@ -422,22 +422,3 @@ WHERE job not in ('목수','광부','데이터엔지니어')
 
 
 <br>
-
-# <center><font size="15">Order BY</font></center>
-
-- Order by 는 정렬을 하는 하게 해줍니다.
-
-```sql
-SELECT col1, col2 
-FROM df 
-ORDER BY col1 DESC ; --- ACS 는 오름차순
-```
-
-- 다중열에게 적용할수도 있습니다.
-
-```sql
-SELECT *
-FROM df 
-ORDER BY col1 DESC, col2 ACS 
-```
-

@@ -54,3 +54,10 @@ SELECT SAL , CASE WHEN sal >= 3000 THEN '부자'
 FROM emp ; 
 ```
 
+- count 와 쓰여서, 조건에 맞는 데이터만 세게 할 수 있습니다. 
+
+```sql
+SELECT sum(CASE WHEN deptno = 10 THEN 1 ELSE 0 end)
+FROM emp ;
+```
+
