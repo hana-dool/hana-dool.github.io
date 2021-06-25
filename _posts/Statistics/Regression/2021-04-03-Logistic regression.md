@@ -2,7 +2,7 @@
 title:  "Logistic regression"
 excerpt: "Logistic regression"
 categories:
-  - Stat
+  - Regression
 tags:
   - 1
 last_modified_at: 2021-04-01
