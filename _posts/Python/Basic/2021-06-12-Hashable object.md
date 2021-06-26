@@ -15,8 +15,6 @@ toc_sticky: true
 use_math : true
 ---
 
-
-
 # <center><font size="15"> Hashable OBject </font></center>
 
 - 파이썬에서 hashable object 란 hash 함수에 인자(input)로 들어갈 수 있는 객체를 의미한다.
