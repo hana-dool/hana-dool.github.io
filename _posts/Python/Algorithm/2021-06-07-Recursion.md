@@ -85,8 +85,6 @@ DFS(5)
 1011
 ```
 
-- 
-
 ```python
 def DFS(x):
     if x == 0 :
