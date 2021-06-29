@@ -124,3 +124,48 @@ while start <= end: # start 가 선 넘을떄 정지
 print(end)
 ```
 
+<br>
+
+<br>
+
+# <center><font size="15">함수와 결합</font></center>
+
+- 사실 그냥 이진탐색이 이용되는 경우는 드물다.
+  - 왜냐하면 이진탐색은 그저 '값에 맞는 인덱스' 를 찾아주는 역할을 하기 때문이다.
+- 실제 문제에서는 이와 같지 않다는것을 알아두자.
+- <https://www.acmicpc.net/problem/2805>
+
+```python
+import sys
+read = sys.stdin.readline
+
+N,M = map(int,read().split())
+lst = list(map(int,read().split()))
+
+
+def cal(x):
+    val = 0
+    for i in lst:
+        if i-x > 0:
+            val += (i-x)
+    return(val)
+
+# M 이 우리의 기준이 된다.
+
+start = 1
+end = max(lst)
+
+while start <= end : 
+    mid = (start + end)//2
+    val = cal(mid)
+    if M == val :
+        start = mid + 1 
+    elif M < val : 
+        start = mid + 1
+    elif M > val : 
+        end = mid - 1
+print(end)
+```
+
+- 위와 같이 '함수' 를 정의한뒤 이분탐색에 이용하였다. 
+
