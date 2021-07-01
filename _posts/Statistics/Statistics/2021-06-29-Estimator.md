@@ -39,7 +39,7 @@ use_math: true
 
 # <center><font size="10">2. Consistency</font></center>
 
-> $\lim_{n\to \infty} P(| t_n - \theta| < \epsilon ) = 1$
+> $\lim_{n\to \infty} P(\mid t_n - \theta \mid < \epsilon ) = 1$
 >
 > Sample 수가 늘어날수록 정확해지는것을 담보한다.
 
