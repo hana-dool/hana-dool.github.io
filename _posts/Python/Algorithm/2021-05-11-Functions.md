@@ -1,12 +1,11 @@
 ---
-title:  "[기초] Python Function"
-classes: wide
-excerpt: "파이썬의 내장함수, control flow"
+title:  "내장 Function"
+excerpt: "파이썬의 내장함수"
 categories:
   - Py_Basic
 tags:
   - 1
-last_modified_at: 2021-02-28
+last_modified_at: 2021-07-04
 
 toc: true
 toc_label: "Table Of Contents"
@@ -151,18 +150,6 @@ del(x[1]) ; x
 
 
 
-## dir
-
-- dir은 객체가 자체적으로 가지고 있는 변수나 함수를 보여 준다.
-- 잘 알지 못하는 객체를 만났을 때에, 그 객체가 어떤 method 를 가지고 있는지 등을 알게 된다.
-
-
-```python
-print(dir([1, 2, 3]))
-```
-
-    ['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
-
 
 ## Enumerate
 
@@ -187,7 +174,6 @@ for i, name in enumerate(['딸기','사과','포토']):
 
 - filter함수는 특정 조건으로 걸러서 걸러진 요소들로 iterator객체를 만들어서 리턴해준다.
 - map함수와 사용 방법은 동일하다. 하지만 함수의 결과가 참인지 거짓인지에 따라, 해당 요소를 포함할지를 결정한다.
-- 
 
 
 ```python
@@ -297,8 +283,6 @@ max([1,2,3])
 - 모든 element 들에 대해서 같은 적용을 하고 싶을때에 자주 사용한다.
     - ex) str.map(lambda x : x.zfill(3))
 
-
-
 ```python
 # 리스트의 모든 값을 정수로 변환하고 싶다고 하자.
 # MAP 함수를 모른다면 아래와 같이 for 문으로 일일히 int 함수를 적용시켜야 한다.
@@ -309,11 +293,7 @@ lis
 ```
 
 
-
-
     [1, 2, 3, 4]
-
-
 
 
 ```python
@@ -328,17 +308,6 @@ lis
     [1, 2, 3, 4]
 
 
-
-## open
-
-- 파일을 여는 함수
-- r 은 읽을때 사용
-- w 은 파일을 작성할 때 사용
-
-
-```python
-# ex = open('example.txt','r')
-```
 
 ## print
 
@@ -452,8 +421,6 @@ e = sorted(a, key = lambda x: (x[0],x[1]))
 sum([1,2,3])
 sum({1,2,3})
 ```
-
-
 
 
     6
@@ -581,6 +548,8 @@ print(lis)
 
 - 아예 프로그램을 종료해버는 역할을 한다.
 - 원하는 답이 나와서 print('답') 만 하고, 나머지는 다 무시해버리고 싶을때에 사용! (재귀문에서 사용됨)
+
+
 
 # Flow control
 
@@ -887,6 +856,7 @@ for x in range(5):
 
     0
     1
+
 
 
 # Method
