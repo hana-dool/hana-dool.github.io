@@ -15,7 +15,7 @@ toc_sticky: true
 use_math: true
 ---
 
-# <center><font size="10">1. Why not Linear regression?</font></center>
+# 1. Why not Linear regression?
 
 - 회귀문제일때에는 Linear regression 을 제대로 사용할 수 있었습니다.
 - 하지만 Classfication 문제에서는 Linear regression 이 제대로 작동하지 않습니다. 
@@ -46,7 +46,7 @@ use_math: true
 
 <br>
 
-# <center><font size="10">2. GLM</font></center>
+# 2. GLM
 
 - 자 이제 Logistic regression 이 어떻게 탄생했는지 알아봅시다. 
 - 우선 일반화 선형모형 (GLM) 에 대해서 알아보는것이 좋습니다. 
@@ -58,7 +58,7 @@ use_math: true
 
 - 위의 가정을 수식으로 표현하면 다음과 같습니다. 
 
-> $E[Y|X] = X\beta$
+> $E[Y \mid X] = X\beta$
 >
 > $\epsilon \sim N(0,\sigma^2)$ 
 
@@ -74,13 +74,22 @@ use_math: true
 
 - 수식으로 표현하면 아래와 같습니다. 
 
-> $g(E[Y|X]) = X\beta$
+> $g(E[Y \mid X]) = X\beta$
 
 - 위 GLM 모형에서 가정하는것은 아래와 같습니다. 
 
 ![png](/assets/images/Stat/11_5.png)
 
-- 주의 깊게 봐야할것은, 억지로 
+- 더 깊게 들어가면 좋을게 없으므로, 여기서 끊겠습니다.
+
+<br>
+
+# 3.Logistic Regression
+
+- 이제 Logistic Regression 은 위와 무슨 상관이 있을까요? 
+
+- Logistic Regression 은 link function $g(x) = ln(\frac{x}{1-x})$ 을 이용한, GLM 의 일종입니다. 
+- 위와 같이 
 
 
 
