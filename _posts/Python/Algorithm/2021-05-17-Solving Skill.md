@@ -1,5 +1,5 @@
 ---
-title:  "Solving Stratige"
+title:  "7.Solving Stratige"
 excerpt: "팁팁"
 categories:
   - Py_Algorithm

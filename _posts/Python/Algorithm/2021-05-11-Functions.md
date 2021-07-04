@@ -1,5 +1,5 @@
 ---
-title:  "내장 Function"
+title:  "2.내장 Function"
 excerpt: "파이썬의 내장함수"
 categories:
   - Py_Basic
@@ -192,6 +192,18 @@ print(list(result))
 ```
 
     [2, 4, 6, 8, 10]
+
+
+
+## Format
+
+- format 내장 함수를 이용하면 숫자를 다른 진수의 문자열로 바꿀 수 있습니다. 
+
+```python
+format(42,'b') # b는 binary 즉 2진수를 출력
+>>> '101010'
+```
+
 
 
 ## in / not in 
@@ -857,71 +869,3 @@ for x in range(5):
     0
     1
 
-
-
-# Method
-
-## Comprehension
-
-- Comprehension이란 iterable한 오브젝트를 생성하기 위한 방법중 하나로 파이썬에서 사용할 수 있는 유용한 기능중 하나이다.
-- set , list , dict 등등에 모두 쓰일 수 있다.
-- 맨 앞의 값은, 실제로 들어가는 값이고, 그 뒤의 for 문은 어떤값이 들어갈지의 조건이다.
-
-
-```python
-evens = [x * 2 for x in range(11)] ; print(evens)
-ex = [x for x in range(10) if x % 3 ==0] ; print(ex) 
-```
-
-    [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-    [0, 3, 6, 9]
-
-
-
-```python
-evens = {x * 2 for x in range(11)} ; print(evens)
-```
-
-    {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
-
-
-
-```python
-p = [(x,y) for x,y in enumerate(range(5))] ; p
-```
-
-
-
-
-    [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4)]
-
-
-
-## Packing/Unpacking
-
-- Unpacking : 컬렉션의 요소들을 여러개의 변수에 나누어 담는 방법
-- Packing : 여러개의 데이터를 컬렉션으로 묶어 변수에 대입하는것 
-
-
-```python
-num = 1,2,3,4,5 ; print(num) # packing
-a,b,c,d,e = num ; print(a) # unpacking
-```
-
-    (1, 2, 3, 4, 5)
-    1
-
-
-
-```python
-num = [1,2,3,4]
-a,b,c,d = num ; print(a)
-```
-
-    1
-
-
-
-```python
-
-```
