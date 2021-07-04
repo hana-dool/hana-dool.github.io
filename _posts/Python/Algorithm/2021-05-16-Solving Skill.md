@@ -36,6 +36,5 @@ def find_str(s):
 
 - 위처럼 Substring 을 순회하는 for 문을 작성하자.
 - 그 이후에 sorted 를 이용하여, ab=ba 처럼 같은 경우를 표현하였다. 
-
-
+- Hackerrank 의 Sherlock and Anagrams 참조
 
