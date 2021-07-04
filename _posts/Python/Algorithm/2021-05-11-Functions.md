@@ -2,7 +2,7 @@
 title:  "2.내장 Function"
 excerpt: "파이썬의 내장함수"
 categories:
-  - Py_Basic
+  - Py_Algorithm
 tags:
   - 1
 last_modified_at: 2021-07-04
