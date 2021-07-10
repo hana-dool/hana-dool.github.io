@@ -64,3 +64,41 @@ while need_visit:
 
 ```
 
+<br>
+
+# 수열 정렬
+
+- <https://www.acmicpc.net/problem/1015>
+
+```python
+n = int(input()) 
+lst = list(map(int, input().split())) 
+s_lst = sorted(t) 
+ans = [] 
+for i in range(n): 
+    idx = s_lst.index(lst[i]) 
+    ans.append(idx) 
+    s_lst[idx] = -1 
+print(ans)
+```
+
+<Br>
+
+# 좌표압축
+
+- <https://www.acmicpc.net/problem/18870>
+
+```python
+import sys
+input = sys.stdin.readline
+
+N = int(input())
+lst = list(map(int,input().split()))
+s_lst = sorted(list(set(lst)))
+dic = dict(zip(s_lst,list(range(len(s_lst)))))
+for i in lst:
+    print(dic[i],end=' ')
+```
+
+<br>
+

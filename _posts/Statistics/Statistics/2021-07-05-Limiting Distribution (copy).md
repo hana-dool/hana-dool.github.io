@@ -90,3 +90,4 @@ $\lambda$ 가 충분히 크다면 $pois(\lambda) \sim N(\lambda , \lambda)$  가
 ##Ref
 
 - https://modelassist.epixanalytics.com/display/EA/Normal+approximation+to+the+Gamma+distribution
+
