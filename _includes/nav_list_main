@@ -51,13 +51,6 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Py_Algorithm" %}
-                        <li><a href="/categories/Py_Algorithm" class="">Py Algorithm ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
                     {% if category[0] == "Py_Preprocessing" %}
                         <li><a href="/categories/Py_Preprocessing" class="">Py Preprocessing ({{category[1].size}})</a></li>
                     {% endif %}
@@ -158,6 +151,81 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+
+
+        <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Basic" %}
+                        <li><a href="/categories/AL_Basic" class="">AL Basic ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Greedy" %}
+                        <li><a href="/categories/AL_Greedy" class="">AL Greedy ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Hash" %}
+                        <li><a href="/categories/AL_Hash" class="">AL Hash ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Stack_Queue" %}
+                        <li><a href="/categories/AL_Stack_Queue" class="">AL Stack,Queue ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Sorting" %}
+                        <li><a href="/categories/AL_Sorting" class="">AL Sorting ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Search" %}
+                        <li><a href="/categories/AL_Search" class="">AL Search ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Graph_Tree" %}
+                        <li><a href="/categories/AL_Graph_Tree" class="">AL Graph,Tree ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_DFS_BFS" %}
+                        <li><a href="/categories/AL_DFS_BFS" class="">AL DFS,BFS ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Dynamic_Programming" %}
+                        <li><a href="/categories/AL_Dynamic_Programming" class="">AL Dynamic Programming ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "AL_Others" %}
+                        <li><a href="/categories/AL_Others" class="">AL Others ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
 
         <span class="nav__sub-title">Data</span>
             <ul>
