@@ -30,8 +30,6 @@ all([a[x]>a[x-1] for x in range(1,3)])
 ```
 
 
-
-
     True
 
 
@@ -130,8 +128,7 @@ operation(5,2)
 ## del
 
 - del 은 '객체를 지우는것' 이 아니라 변수와 객체의 연결을 끊어내는 것이다.
-- del 변수 로 사용할 수 있다. 
-- 위 작업을 하면, 변수는 다시 사용하려 할 때에 정의된 적 없다는 에러가 뜨게 된다.
+- del 은 시간이 많이 걸리는 작업이라 주의를 요망합니다.
 
 
 ```python
@@ -221,77 +218,68 @@ int('101010',2)
 
 ```python
 1 in [1, 2, 3] # 1 이 list 안에 있는가?
+# True
 ```
-
-
-
-
-    True
-
-
 
 ## len
 
+> len(s)
+
 - len(s)은 입력값 s의 길이(요소의 전체 개수)를 돌려주는 함수이다.
-- .size 등의 메소드가 있지만 이는 각 packages 에서나 통용되는것이기 때문에 위같은 내장함수를 알아두는것이 편리히다.
+- parameter 로 string, list, dict,set 등이 가능합니다. 
 
 
 ```python
-lis = ['a','b']
-len(lis)
+len([1,4]) # 2
+len({1,4}) # 2
+len({1:3,2:4}) # 2
 ```
 
+- 이때, len(비어있는 객체) 를 할 경우 0 이 나온다.
 
-
-
-    2
-
-
+```python
+len('') # 0
+```
 
 ## Lambda
 
 - Lamda 함수는 (lambda x,y: x + y)(10, 20) 처럼 함수 def 없이 바로 적용하게 해준다.
-- 아래와 같이 map 이나 filter 등에서 사용된다.
+  - lambda 변수 : return 값 처럼 사용된다.
+- map 이나 filter 등에서 사용된다.
 
 
 ```python
 list(map(lambda x: x ** 2, range(5)))
+# [0, 1, 4, 9, 16]
 ```
-
-
-
-
-    [0, 1, 4, 9, 16]
-
-
 
 
 ```python
 list(filter(lambda x: x % 2, range(10)))
+# [1, 3, 5, 7, 9]
 ```
-
-
-
-
-    [1, 3, 5, 7, 9]
-
-
 
 ## max/min
 
 - max 도 마찬가지로 sum 과 같이 작동가능하다.
 
+> max(iterable)
+
+- 아래와 같이 List, Set, String 에서 사용 가능합니다. 
+
 
 ```python
-max([1,2,3])
+max([1,2,9]) #9 
+max({4,3,9}) #9
+max('4329')  #9 
+max('abfc')  #f
 ```
 
+- 비어있는 값을 만나면 error 가 납니다.
 
-
-
-    3
-
-
+```python
+max([]) # error!
+```
 
 ## map
 
@@ -310,19 +298,12 @@ lis
 ```
 
 
-    [1, 2, 3, 4]
 
 
 ```python
 # 하지만 아래와 같이 적용 가능
 lis = list(map(int, lis))
-lis
 ```
-
-
-
-
-    [1, 2, 3, 4]
 
 
 
@@ -569,6 +550,26 @@ print(lis)
 
 
 # Flow control
+
+## if
+
+- if 문은 다양한 구문을 조건문으로 가질 수 있다.
+
+> IF list : 
+
+- 위처럼 'list 가 비어있지 않을떄에' 로 사용할 수 있다.
+
+> IF 10 <= a < 14 :
+
+- 위처럼 부등호를 양쪽에 적용할 수 있다.
+
+> IF 10<a and 3<k and ........ 
+
+- 다양한 구문들을 And 로 엮을 수 있다. 
+
+> IF not a == k : 
+
+- not , or 등과 활용할 수 있다.
 
 ## if any(..for) / if all(..for)
 

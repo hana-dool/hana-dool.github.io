@@ -34,7 +34,7 @@ use_math: true
 
 <br>
 
-# EX1
+# EX1 (2개 값의 합)
 
 - https://leetcode.com/problems/two-sum/
 

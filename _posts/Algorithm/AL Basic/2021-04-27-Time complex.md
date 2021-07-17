@@ -1,5 +1,5 @@
 ---
-title:  "Time Complexity"
+title:  "0.Time Complexity"
 excerpt: "Algorithm"
 categories:
   - Py_Basic
@@ -93,29 +93,7 @@ use_math : true
 
 # String
 
-| Operation                     | **Example**              | Time Complex            | **설명**                                                     |
-| ----------------------------- | ------------------------ | ----------------------- | ------------------------------------------------------------ |
-| **Index**                     | l[i]                     | O(1)                    |                                                              |
-| **Store (or Assignment)**     | l[i] = x                 | O(1)                    | l[a:b] = [...] 의 시간 복잡도 : O(b-a) * Slice의 시간 복잡도와 동일하다. |
-| **Length**                    | len(l)                   | O(1)                    |                                                              |
-| **Append**                    | l.append(x)              | O(1)                    |                                                              |
-| **Pop**                       | l.pop()                  | O(1)                    |                                                              |
-| **Clear**                     | l.clear()                | O(1)                    | l = [ ] 와 같다.                                             |
-| **Slice**                     | l[a:b]                   | O(b-a)                  |                                                              |
-| **Extend**                    | l1.extend(l2) (= l1+l2)  | O(len(l2))              |                                                              |
-| **Construction (or Casting)** | list(iterable object)    | O(len(iterable object)) |                                                              |
-| **Check**                     | l1 == l2                 | O(N)                    | 각 리스트의 모든 원소가 동일한 인덱스에 위치한지 linear하게 순회하며 확인함. |
-| **Insert**                    | l(i, x)                  | O(N)                    | 리스트의 i번째 인덱스에 x를 삽입하고, 기존 리스트의 [i:]를 모두 한 칸씩 뒤로 미뤄야 함. |
-| **Delete**                    | del l[i]                 | O(N)                    | 리스트의 i번째 인덱스에 위치한 원소를 삭제하고, 그 뒤의 원소를 모두 한 칸씩 앞으로 당겨야 함. |
-| **Containment**               | x in l x not in l        | O(N)                    | x가 리스트 안에 있는지 (혹은 없는지) 확인하기 위해 리스트를 linear하게 순회하며 확인함. |
-| **Copy**                      | l.copy()                 | O(N)                    | 리스트 l에 있는 모든 원소를 카피하기 위해 리스트를 linear하게 순회함. |
-| **Remove**                    | l.remove(x)              | O(N)                    | 리스트에 x가 존재하는지 0번째 인덱스부터 linear하게 순회하다가, 최초의 x가 발견되면 그것을 삭제하고 그 뒤의 요소들을 모두 한 칸씩 앞으로 당김. x가 없다고 하더라도 x를 찾기 위해 리스트의 끝까지 순회함. |
-| **Pop for specific element**  | l.pop([i])               | O(N)                    | Delete와 동일한 원리이며, 그저 Store 기능이 추가된 것일 뿐임. |
-| **Extreme Value**             | min(l)                   | O(N)                    | 리스트를 linear하게 순회하며 어떤 원소가 가장 작은지 (혹은 가장 큰지) 확인함. |
-| **Reverse**                   | l.reverse() ( = l[::-1]) | O(N)                    |                                                              |
-| **Itertation**                | for item in l: ...       | O(N)                    |                                                              |
-| **Sort**                      | l.sort() sorted(l)       | O(N logN)               | Tim Sort 원리에 따라 O(N logN).                              |
-| **Multiply**                  | k*l                      | O(k N)                  |                                                              |
+<br>
 
 
 

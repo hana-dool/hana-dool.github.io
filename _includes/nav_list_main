@@ -70,6 +70,14 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Py_Others" %}
+                        <li><a href="/categories/Py_Others" class="">Py Others ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
 
         <span class="nav__sub-title">Tableau</span>
             <ul>
