@@ -2,7 +2,7 @@
 title:  "Google Spread Sheet 연동"
 excerpt: "스프레드시트 연동하기"
 categories:
-  - Py_Algorithm
+  - Py_Others
 tags:
   - 1
 last_modified_at: 2021-07-15
