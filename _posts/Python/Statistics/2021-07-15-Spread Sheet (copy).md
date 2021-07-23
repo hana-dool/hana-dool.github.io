@@ -1,6 +1,6 @@
 ---
-title:  "Google Spread Sheet 연동"
-excerpt: "스프레드시트 연동하기"
+title:  "Find sample's Distribusion"
+excerpt: "샘플의 분포 찾기"
 categories:
   - Py_Others
 tags:

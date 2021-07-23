@@ -72,6 +72,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Py_Statistics" %}
+                        <li><a href="/categories/Py_Statistics" class="">Py Statstics ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Py_Others" %}
                         <li><a href="/categories/Py_Others" class="">Py Others ({{category[1].size}})</a></li>
                     {% endif %}
