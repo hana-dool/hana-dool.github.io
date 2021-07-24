@@ -2,7 +2,7 @@
 title:  "Find sample's Distribusion"
 excerpt: "샘플의 분포 찾기"
 categories:
-  - Py_Others
+  - Py_Statistics
 tags:
   - 1
 last_modified_at: 2021-07-15
