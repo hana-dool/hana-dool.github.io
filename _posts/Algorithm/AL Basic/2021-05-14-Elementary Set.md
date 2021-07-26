@@ -174,8 +174,6 @@ def solution(phoneBook):
 
 <br>
 
-- 
-
 ```python
 def whatFlavors(cost, money):
     dic = {}
@@ -185,4 +183,27 @@ def whatFlavors(cost, money):
         else :
             dic[val] = idx
 ```
+
+<br>
+
+# 숫자의 표현
+
+- <https://programmers.co.kr/learn/courses/30/lessons/12924>
+
+```python
+def expressions(num):
+    answer = 0
+    for i in range(1, num + 1):
+        s = 0
+        while s < num:
+            s += i
+            i += 1
+        if s == num:
+            answer += 1
+    return answer
+```
+
+- 사실 위를 양방향 큐 (지렁이 큐) 로도 해결할 수 있다.
+
+<br>
 

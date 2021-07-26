@@ -403,19 +403,7 @@ for i in range(10,10):
 
 
 ```python
-sorted({3: 'D', 2: 'B', 5: 'B', 4: 'E', 1: 'A'})
-```
-
-
-
-
-    [1, 2, 3, 4, 5]
-
-
-
-
-```python
-# a 의 element 가 list 여도 아래가 성립한다.
+# a 의 element 가 tuple 이여도 정렬할 수 있습니다. 
 a = [(1, 2), (0, 1), (5, 1), (5, 2), (3, 0)]
 ```
 
@@ -432,6 +420,24 @@ d = sorted(a, key = lambda x : x[1])
 e = sorted(a, key = lambda x: (x[0],x[1]))
 # e = [(0, 1), (1, 2), (3, 0), (5, 1), (5, 2)]
 ```
+
+- sorted 가 string 을 인자로 받으면, 그 출력은 항상 list 가 됩니다. 
+
+```python
+a = '1432'
+sorted(a) # ['1','2','3','4']
+```
+
+- key 를 여러 값을 수 있습니다.
+
+```python
+def solution(strings, n):
+    answer = sorted(strings, key = lambda x : x[n]+x[:n]+x[n+1:])
+    return answer
+# 위와 같이, n 번째 알파벳을 우선시하는 sorting 을 구현할 수 있습니다.
+```
+
+
 
 ## sum
 
@@ -600,6 +606,10 @@ print(lis)
 > IF not a == k : 
 
 - not , or 등과 활용할 수 있다.
+
+> IF x == (4 or 6) and x == 7
+
+- 위와 같이 or 과 같이 쓰게되면 괄호로 분명하게 명시해야 합니다.
 
 ## if any(..for) / if all(..for)
 

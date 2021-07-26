@@ -15,7 +15,7 @@ toc_sticky: true
 use_math: true
 ---
 
-# Overview
+# 1. Overview
 
 ![png](/assets/images/Stat/14_1.png)
 
@@ -54,7 +54,7 @@ use_math: true
 
 <br>
 
-# Non parameteric Bootstrap
+# 2. Non parameteric Bootstrap
 
 ![png](/assets/images/Stat/14_3.png)
 
@@ -63,7 +63,7 @@ use_math: true
 
 <br>
 
-# Parameteric Poostrap
+# 3. Parameteric Poostrap
 
 ![png](/assets/images/Stat/14_4.png)
 
@@ -74,7 +74,7 @@ use_math: true
 
 <br>
 
-# Remark!!
+# 4. Remark!!
 
 - Random Sample 이 아닌경우 부트스트랩이나, Jackknife 는 variance estimation 을 과소평가하게 됩니다. 
 - 과소추정을 하게되면, 마치 의미가 있는것처럼 생각할 수 있다. (Wrong Decision..) 
@@ -84,7 +84,7 @@ use_math: true
 
 <br>
 
-# 부트스트랩 신뢰구간
+# 5. 부트스트랩 신뢰구간
 
 - 부트스트랩은 확률 분포의 가정을 두지 않고 주어진 데이터를 원래의 모집단을 대표하는 독립 표본으로 가정하고 진행한다. 
 - 그리고 중복을 허용한 무작위 재추출로(복원추출로) 각각에서 얻어진 통계량을 계산한다.

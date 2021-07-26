@@ -94,3 +94,63 @@ def DFS(x):
         print(x%2, end = '')
 ```
 
+<br>
+
+# 쿼드 압축 후 갯수 세기
+
+- 재귀란게... 쉬운것같은데 막상 써보면 감이 1도 안오는거같다. 
+- <https://programmers.co.kr/learn/courses/30/lessons/68936>
+
+```python
+def solution(arr):
+    answer = [0, 0]
+    N = len(arr)
+    
+    def comp(x, y, n):
+        init = arr[x][y]  # 해당 네모값중 하나 # 모두 같아야 통과임
+        for i in range(x, x + n):
+            for j in range(y, y + n):
+                if arr[i][j] != init:  # 한번이라도 다르면 그 네모는 압축불가
+                    nn = n // 2
+                    comp(x, y, nn)
+                    comp(x, y + nn, nn)
+                    comp(x + nn, y, nn)
+                    comp(x + nn, y + nn, nn)
+                    return
+        # 무사히 다 통과했다면 압축가능
+        answer[init] += 1
+    comp(0, 0, N)
+    return answer
+```
+
+# 종이의 갯수
+
+- <https://www.acmicpc.net/problem/1780>
+
+```python
+import sys
+input = sys.stdin.readline
+N = int(input())
+mat = [list(map(int,input().split())) for _ in range(N)]
+
+# x,y, 는 왼쪽 시작점
+# l 은 돌아가는 순회지점.
+dic = {-1:0,0:0,1:0}
+def recursion(x,y,l):
+    val = mat[x][y]
+    for i in range(l) :
+        for j in range(l) :
+            if mat[x+i][y+j] != val : # 아니면.. 깊어지기
+                l = l//3
+                for k in range(3):
+                    for g in range(3):
+                        recursion(x+l*k,y+l*g,l)
+                return
+    dic[val] += 1
+recursion(0,0,len(mat))
+for i in dic.values():
+    print(i)
+```
+
+
+
