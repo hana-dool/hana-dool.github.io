@@ -125,5 +125,12 @@ use_math: true
 
 <br>
 
-# AB Test With Bayesian and Frequentist
+# 2 Sample Test With CLT and Bayesian
 
+
+
+# Refer
+
+- <https://bjlkeng.github.io/posts/normal-approximations-to-the-posterior-distribution/>
+
+  
