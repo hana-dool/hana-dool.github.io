@@ -24,13 +24,13 @@ use_math: true
 
 
 
-# <center><font size="10">기본모델</font></center>
+# 기본모델
 
 ![png](/assets/images/Stat/2_1.png)
 
 <br>
 
-# <center><font size="10">Unbiased</font></center>
+# Unbiased
 
 ![png](/assets/images/Stat/2_2.png)
 
@@ -38,7 +38,7 @@ use_math: true
 
 <br>
 
-# <center><font size="10">Consistency</font></center>
+# Consistency
 
 ![png](/assets/images/Stat/2_3.png)
 
@@ -47,7 +47,7 @@ use_math: true
 
 <br>
 
-# <center><font size="10">Blue</font></center>
+# Blue
 
 - Blue 란 Best Linear Unbiased Estimator 로서, linear 로 이루어진 Unbiased 추정량중에서 제일 Variance 가 낮다는 것입니다. 
 
@@ -57,7 +57,7 @@ use_math: true
 
 <br>
 
-# <center><font size="10">Normal</font></center>
+# Normal
 
 - 위와 같이 Blue 가 되기까지도 Normal 가정은 필요없었습니다. 
 - 그러면 왜 Normal 가정을 사용하는것일까요? 
@@ -65,10 +65,15 @@ use_math: true
   - 에러에 대해서 어떠한 분포가정을 해야 '통계정 추정' 이 가능해진다는 의미입니다. 
   - 이떄에 error 가 경험적으로 Normal 을 따르는 경우가 많았고 또한 Normality 가정을 하게된다면 OLS Estimator 와 MLE Estimator 가 같아지는 이점이 있습니다. 
   - mle 를 구하기도 쉬워지며 + mle 의 좋은 성질을 이용할 수 있게됩니다.
+- MLE 의 좋은 성질이란..? 
+  - 바로! Assymptotic Normal ! 그러므로 추정시 사용 가능합니다.
+  - 하지만 MLE 와 LSE 추정이 달라진다면..?
+    - LSE 추정의 분포를 다시 구해야하고, 이는.. 매우 어렵습니다. 
+    - 또한 LSE 추정이 과연 Consistency 와 같은 좋은 MLE 성질이 있을까요? 
 
 <Br>
 
-# <center><font size="10">Summary</font></center>
+# Summary
 
 ![png](/assets/images/Stat/2_5.png)
 
