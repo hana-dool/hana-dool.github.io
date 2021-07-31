@@ -1,6 +1,6 @@
 ---
-title:  "Logistic Regression"
-excerpt: "로지스틱 회귀"
+title:  "Logistic Regression 1 "
+excerpt: "Why Using Logistic?"
 categories:
   - Regression
 tags:
@@ -89,10 +89,7 @@ use_math: true
 - 이제 Logistic Regression 은 위와 무슨 상관이 있을까요? 
 - Logistic Regression 은 link function $g(x) = ln(\frac{x}{1-x})$ 을 이용한, GLM 의 일종입니다. 
 - 위와 같이 Link function 을 정의하게 되면 range 가 - 무한 ~ 무한이기 떄문에, 아무 제약 없이 linear regression 이 바로 가능합니다.
-
-
-
-
+- 
 
 # Goodness of fit
 

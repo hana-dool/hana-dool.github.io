@@ -19,7 +19,7 @@ use_math: true
 
 # 다익스트라 알고리즘
 
-- 다익스트라 최단경로 알고리즘은, 그래프에서 여러개의 노드가 있을때, 특정한 노드에서 춟ㄹ해 다른 노드로 가는 각각의 최단 경로를 구해주는 알고리즘이다. 
+- 다익스트라 최단경로 알고리즘은, 그래프에서 여러개의 노드가 있을때, 특정한 노드에서 출발해 다른 노드로 가는 각각의 최단 경로를 구해주는 알고리즘이다. 
 - 다익스트라 최단 경로 알고리즘은 '음의 간선' 이 없을떄에 정상적으로 작동한다.
   - 실제 세계의 길은, 음의 간선으로 표현되지 않으므로 실제 gps 소프트웨어 기본 알고리즘으로 선택된다. 
 - 다익스트라 최단 경로 알고리즘은 기본적으로 그리디 알고리즘이다. 
@@ -127,7 +127,7 @@ def dijkstra(start) :
     distance[start] = 0
     while q :
         d,e = heapq.heappop(q)
-        if distance[e] < d :
+        if distance[e] < d : # distance 가 이미 작다는건, (d,e) 너는 쓸모가 없다는것이야!
             continue
         else : # 오 가치가 있네?
             for i in graph[e] : # e에서 출발하는 모든 간선 조사
@@ -142,61 +142,3 @@ for i in distance[1:]:
 ```
 
 <br>
-
-# 플로이드 워셜 알고리즘
-
-- 다익스트라 알고리즘은 한 지점에서 다른 특정 지점까지의 최단 경로를 구해야 하는 경우에 사용되는 알고리즘이다.
-- 플로이드 워셜을 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야 하는 경우에 사용된다.
-
-> $D_{a,b}$  = $min(D_{ab}, D_{akb})$ 를 이용해 업데이트 하는 방식
-
-![png](/assets/images/Python/10_1.png)
-
-![png](/assets/images/Python/10_2.png)
-
-![png](/assets/images/Python/10_3.png)
-
-![png](/assets/images/Python/10_4.png)
-
-- 위와 같이, 각 노드마다 계속 업데이트를 한 뒤에 마지막 매트릭스를 출력하면 됩니다.
-- 시간복잡도는 $O(N^3)$ 입니다. 
-
-<br>
-
-```python
-import sys
-input = sys.stdin.readline
-
-inf = 10**9
-n = int(input())
-m = int(input())
-
-graph = [[inf]*(n+1) for _ in range(n+1)]
-
-for i in range(n+1):
-    for j in range(n+1):
-        if i == j :
-            graph[i][j] = 0
-for _ in range(m):
-    a,b,c = map(int,input().split())
-    graph[a][b] =  c
-
-for k in range(1,n+1):
-    for i in range(1,n+1):
-        for j in range(1,n+1):
-            graph[i][j] = min(graph[i][j], graph[i][k]+graph[k][j])
-for i in range(1,n+1):
-    for j in range(1,n+1):
-        if graph[i][j] == inf :
-            print('0',end = ' ')
-        else :
-            print(graph[i][j], end = ' ')
-    print()
-```
-
-<br>
-
-## 실전 사용
-
-- <https://www.acmicpc.net/problem/11404>
-
