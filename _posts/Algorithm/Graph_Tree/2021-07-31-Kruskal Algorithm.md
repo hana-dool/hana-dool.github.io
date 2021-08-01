@@ -92,7 +92,7 @@ print(result)
 
 - <https://www.acmicpc.net/problem/1922>
 
-```pypthon
+```python
 import sys
 input = sys.stdin.readline
 N = int(input())

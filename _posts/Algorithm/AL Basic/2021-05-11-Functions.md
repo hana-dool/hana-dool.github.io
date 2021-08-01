@@ -428,13 +428,21 @@ a = '1432'
 sorted(a) # ['1','2','3','4']
 ```
 
-- key 를 여러 값을 수 있습니다.
+- key 를 임의로 조절할 수 있습니다.
+  - key 로 받은 데이터에 대해 '오름차순 정렬' 한다는것을 명심합시다!
 
 ```python
 def solution(strings, n):
     answer = sorted(strings, key = lambda x : x[n]+x[:n]+x[n+1:])
     return answer
 # 위와 같이, n 번째 알파벳을 우선시하는 sorting 을 구현할 수 있습니다.
+```
+
+- 또한 key 에 음수 등을 곱함으로서 내림 / 오름차순을 동시에 적용할 수 있습니다.
+
+```python
+sorted(lst, key= lambda x : (-1*x[1],x[2],-1*x[3],x[0]))
+# 1,3 index 에는 내림차순, 2,0 index에는 오름차순을 적용합니다.
 ```
 
 

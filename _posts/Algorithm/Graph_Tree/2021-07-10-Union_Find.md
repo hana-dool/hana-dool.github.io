@@ -1,11 +1,11 @@
 ---
-title:  "Graph 및 서로소집합"
-excerpt: "그래프 이론 및 서로소 집합"
+title:  "Union_Find Algorithm"
+excerpt: "유니온 파인드 알고리즘"
 categories:
   - AL_Graph_Tree
 tags:
   - 1
-last_modified_at: 2021-07-10
+last_modified_at: 2021-08-01
 
 toc: true
 toc_label: "Table Of Contents"
@@ -14,39 +14,6 @@ toc_sticky: true
 
 use_math: true
 ---
-
-<br>
-
-# 그래프 알고리즘
-
-- 그래프란 노드와 노드사이에 연결된 간선의 정보를 가지고 있는 자료구조이다
-- 알고리즘문제를 접할때에, 여러개의 노드들이 연결되더있고, 간선의 정보가 주어져있다면 그래프 알고리즘을 생각하는게 좋다.
-- 그래프와 트리 알고리즘을 비교한다면 아래와 같다. 
-
-|                     | 그래프                | 트리             |
-| ------------------- | --------------------- | ---------------- |
-| 방향성              | 방향, 무방향 그래프   | 방향 그래프      |
-| 순환성              | 순환 및 비순환        | 비순환           |
-| 루트 노드 존재 여부 | 루트 노드가 없음      | 루트 노드가 존재 |
-| 노드간 관계성       | 부모와 자식 관계 없음 | 부모와 자식 관계 |
-| 모델의 종류         | 네트워크 모델         | 계층 모델        |
-
-- 그래프의 구현 방법은 2가지가 존재한다. 
-
-> 인접 행렬 : 2차원 배열을 이용하는 방식
->
-> 인접 리스트 : 리스트를 사용하는 방식
-
-- 2가지 방식 모두 그래프 알고리즘에서 많이 사용된다. 두 방식은 메모리, 속도 측면에서 특징을 가진다.
-- 노드의 개수가 V , 간선의 갯수가 E 개인 그래프를 생각해보자. 
-
-|        | 그래프   | 트리   |
-| ------ | -------- | ------ |
-| 메모리 | $O(V^2)$ | $O(E)$ |
-
-- 위와 같은 메모리를 잘 고려하면서 알고리즘을 짜야할 것이다.
-- 최단경로를 구해야할 떄에, 노드의 갯수가 적은 경우에는 플로이드 워셜이 가능하다.
-- 노드 , 간선의 갯수가 매우 많다면 다익스트라 알고리즘을 활용할 수 있다. 
 
 <br>
 
@@ -112,12 +79,49 @@ for i in range(1,v+1) :
     print(find_parent(parent,i),end=' ') 
     
 # 부모 테이블 내용 출력
-# 단순히 부모테이블 내용일 뿐. (연산을 수행하고 나서는, )
+# 단순히 부모테이블 내용일 뿐이지, 집합을 표현하는게 아니란것을 명심! 
+# 즉 parent 는 의미 없어요... 
 print(parent)
 ```
 
-
-
-
-
 <br>
+
+# 집합의 표현
+
+- <https://www.acmicpc.net/problem/1717>
+
+```python
+import sys
+sys.setrecursionlimit(10**9)
+input = sys.stdin.readline
+
+
+
+n,m = map(int,input().split())
+parent = list(range(n+1))
+
+def find_parent(parent,x):
+    if parent[x] != x :
+        parent[x] = find_parent(parent,parent[x])
+    return parent[x]
+
+def union_parent(parent,a,b) :
+    if find_parent(parent,a) != find_parent(parent,b) :
+        a_p = find_parent(parent,a)
+        b_p = find_parent(parent,b)
+        if a_p < b_p :
+            parent[b_p] = a_p
+        else :
+            parent[a_p] = b_p
+
+for _ in range(m):
+    oper,a,b = map(int,input().split())
+    if oper == 0 :
+        union_parent(parent,a,b)
+    elif oper == 1 :
+        if find_parent(parent,a) == find_parent(parent,b) : # 중요!
+            print('YES')
+        else :
+            print('NO')
+```
+
