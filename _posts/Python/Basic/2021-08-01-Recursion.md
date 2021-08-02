@@ -96,7 +96,7 @@ def recur(5): # 처음 매개변수는 5
 
 - return 을 만나게 되면, 함수가 끝나고, 스택에서 하나씩 없어지는것을 의미합니다. 
 
-![png](/assets/images/Python/22_1.png)
+![png](/assets/images/Python/21_2.png)
 
 - 이 경우에 맨 위의 최상층부터 사라지게 됩니다.
 

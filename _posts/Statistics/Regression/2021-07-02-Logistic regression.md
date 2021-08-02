@@ -1,5 +1,5 @@
 ---
-title:  "Logistic Regression 1 "
+title:  "Logistic Regression 1(~ing)"
 excerpt: "Why Using Logistic?"
 categories:
   - Regression
