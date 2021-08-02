@@ -1,5 +1,5 @@
 ---
-title:  "5.기초 필수문제"
+title:  "기초 필수문제"
 excerpt: "자주 쓰이는 문제"
 categories:
   - AL_Basic

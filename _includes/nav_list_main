@@ -318,6 +318,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Stat_Testing" %}
+                        <li><a href="/categories/Stat_Testing" class="">Testing ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Bayes" %}
                         <li><a href="/categories/Bayes" class="">Bayes ({{category[1].size}})</a></li>
                     {% endif %}
