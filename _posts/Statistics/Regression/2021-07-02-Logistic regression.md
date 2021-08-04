@@ -89,7 +89,13 @@ use_math: true
 - 이제 Logistic Regression 은 위와 무슨 상관이 있을까요? 
 - Logistic Regression 은 link function $g(x) = ln(\frac{x}{1-x})$ 을 이용한, GLM 의 일종입니다. 
 - 위와 같이 Link function 을 정의하게 되면 range 가 - 무한 ~ 무한이기 떄문에, 아무 제약 없이 linear regression 이 바로 가능합니다.
-- 
+
+- 로지스틱 Regression 은, 분포가정이 y 가 Bernoulli 분포라는 가정만 들어가게 되고, 계수 추정은 MLE 로 진행하게 되며, 그에 따른 분포는 MLE 의 Assymptotic 을 이용하여 추정하게 됩니다. 
+
+- See 
+  - https://stats.stackexchange.com/questions/60074/wald-test-for-logistic-regression 
+
+
 
 # Goodness of fit
 

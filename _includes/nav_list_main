@@ -11,6 +11,43 @@
             Total Posts : <u>{{sum}}</u> 개
       </li>
       <li>
+        <span class="nav__sub-title">Statistics</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Stat" %}
+                        <li><a href="/categories/Stat" class="">Statistics ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Regression" %}
+                        <li><a href="/categories/Regression" class="">Regression ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Stat_Testing" %}
+                        <li><a href="/categories/Stat_Testing" class="">Testing ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Stat_Paradox" %}
+                        <li><a href="/categories/Stat_Paradox" class="">Paradox ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Bayes" %}
+                        <li><a href="/categories/Bayes" class="">Bayes ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
         <span class="nav__sub-title">R</span>
             <ul>
                 {% for category in site.categories %}
@@ -298,35 +335,6 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Project" %}
                         <li><a href="/categories/Project" class="">Project ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        <span class="nav__sub-title">Statistics</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Stat" %}
-                        <li><a href="/categories/Stat" class="">Statistics ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Regression" %}
-                        <li><a href="/categories/Regression" class="">Regression ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Stat_Testing" %}
-                        <li><a href="/categories/Stat_Testing" class="">Testing ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Bayes" %}
-                        <li><a href="/categories/Bayes" class="">Bayes ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
