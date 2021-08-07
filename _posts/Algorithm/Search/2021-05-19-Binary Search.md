@@ -19,8 +19,6 @@ use_math: true
 
 # <center><font size="15"> 이진탐색 </font></center>
 
-![png](/assets/images/Py_Algorithm/1_1.gif)
-
 - 이진탐색은 '정렬된' 리스트의 중간부터 비교해나가는 방법이다.
 
 - 이진검색시에는 다음과 같은 경우의 수가 있다.
@@ -178,12 +176,74 @@ print(end) # 5
 
 - 없는 값을 찾게 될 때에, start 그 값보다 큰, 처음 만나게 되는 인덱스를 출력합니다. 
   - 위와 같은 이유는, 어짜피 == 일떄는 고려하지 않기 떄문
+- 즉 정리하자면 위의 로직은 다음과 같은 값을 뱉는다.
+
+> 1.값이 하나 존재하면 Exact  한 그 위치 
+>
+> 2.값이 여러개 존재하면 마지막 위치 
+>
+> 3.값이 없으면 그 값보다 작은 마지막 위치 
 
 <br>
 
+# Lower bound 이진탐색
+
+![png](/assets/images/Python/22_1.png)
+
+![png](/assets/images/Python/22_2.png)
+
+- 위와 같이 Lower bound 와 Upper bound 는 차이가 난다. 
+
+```python
+lst = [1,2,3,3,3,3,4,4,5,6,7]
+xx = 3
+start = 0
+end = len(lst)-1
+while start < end :
+    mid = (start + end) // 2
+    if lst[mid] >= xx :
+        end = mid # 같은경우에도 작아지는게 핵심 
+    elif lst[mid] < xx : 
+        start = mid + 1 # 작은경우는 커져야함
+print(start) 
+```
+
+```
+lst = [1,2,3,3,3,3,4,4,5,6,7] 에 대해서 
+xx = 3 : 2 
+xx = 3.5 : 6
+```
+
+- 우리가 원하는 output 임을 알 수 있습니다. 
+
+# Upper bound 이진탐색
+
+```python
+lst = [1,2,3,3,3,3,4,4,5,6,7]
+xx = 3
+start = 0
+end = len(lst)-1
+while start < end :
+    print(start,end,xx)
+    mid = (start + end) // 2
+    if lst[mid] <= xx :
+        start = mid+1   # 같더라도, 커지는게 핵심
+    elif lst[mid] > xx : 
+        end = mid 
+print(start) # 위의 경우 start 가 막 변하면서 맞춰지는거니까 end
+```
+
+```python
+lst = [1,2,3,3,3,3,4,4,5,6,7] 에 대해서 
+xx = 3 : 6
+xx = 3.5 : 6
+```
+
+- 우리가 원하는 결과를 얻을 수 있다.
+
 <br>
 
-# <center><font size="15">함수와 결합</font></center>
+# 함수와 결합
 
 - 사실 그냥 이진탐색이 이용되는 경우는 드물다.
   - 왜냐하면 이진탐색은 그저 '값에 맞는 인덱스' 를 찾아주는 역할을 하기 때문이다.
