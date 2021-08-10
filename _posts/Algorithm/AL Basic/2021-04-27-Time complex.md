@@ -2,7 +2,7 @@
 title:  "0.Time Complexity"
 excerpt: "Algorithm"
 categories:
-  - Py_Basic
+  - AL_Basic
 tags:
   - 4
 last_modified_at: 2021-06-28
