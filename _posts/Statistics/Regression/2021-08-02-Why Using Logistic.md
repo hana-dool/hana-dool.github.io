@@ -43,11 +43,14 @@ use_math: true
 ![png](/assets/images/Stat/27_4.png)
 
 - 우선 cloglog 모델은, 확률값에 대해 모양이 대칭적이지 않습니다. 
-- 즉, 0과 1 에 대해서 대칭적인 모양은
+  - 이런 대칭을 가지는 모델은, 일반적으로 적용하기 힘들다고 합니다.
+- 이에 반해 Logistic/probit 모델은 대칭이므로 훨씬 일반적이라고 합니다. 
 
 # Second : 훨씬 해석이 쉬움
 
-- 나중에..
+- Probit regerssion 이 감싸고 있는것이 cdf 임을 기억합시다.
+- 즉 Logistic regression 에서는 1 단위 증가하면 로짓이 1늘어난다 같은 해석이 가능했지만 probit 은 cdf 함수를 넣어 설명하기 떄문에 설명하기가 어렵습니다.
+- 즉 Logistic 이 훨씬 설명하기가 쉽다고 합니다.
 
 <br>
 
