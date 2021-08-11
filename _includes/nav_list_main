@@ -35,8 +35,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Stat_paradox" %}
-                        <li><a href="/categories/Stat_paradox" class="">Paradox ({{category[1].size}})</a></li>
+                    {% if category[0] == "Stat_Paradox" %}
+                        <li><a href="/categories/Stat_Paradox" class="">Paradox ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

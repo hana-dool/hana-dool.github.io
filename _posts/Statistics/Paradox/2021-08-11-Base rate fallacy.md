@@ -2,7 +2,7 @@
 title:  "base rate 의 역설"
 excerpt: "기본적인 비율을 무시함에서 오는 에러"
 categories:
-  - Stat_paradox
+  - Stat_Paradox
 tags:
   - 1
 last_modified_at: 2021-08-11

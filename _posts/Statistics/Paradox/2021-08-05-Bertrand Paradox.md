@@ -2,7 +2,7 @@
 title:  "베르트랑의 역설"
 excerpt: "고전적 확률 정의의 폐인"
 categories:
-  - Stat_paradox
+  - Stat_Paradox
 tags:
   - 1
 last_modified_at: 2021-08-05

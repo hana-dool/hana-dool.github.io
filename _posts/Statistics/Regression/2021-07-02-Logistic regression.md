@@ -91,11 +91,16 @@ use_math: true
 - 위와 같이 Link function 을 정의하게 되면 range 가 - 무한 ~ 무한이기 떄문에, 아무 제약 없이 linear regression 이 바로 가능합니다.
 
 - 로지스틱 Regression 은, 분포가정이 y 가 Bernoulli 분포라는 가정만 들어가게 되고, 계수 추정은 MLE 로 진행하게 되며, 그에 따른 분포는 MLE 의 Assymptotic 을 이용하여 추정하게 됩니다. 
-
-- See 
   - https://stats.stackexchange.com/questions/60074/wald-test-for-logistic-regression 
 
 
+- 그에 따라 구한 계수는 MLE 이므로 Normal 분포임을 가정할 수 있습니다. (Assymptotic Normal) 그러므로 Inference가 가능합니다.
+
+# 4. Interpret
+
+![png](/assets/images/Stat/11_6.png)
+
+- https://3months.tistory.com/category
 
 # Goodness of fit
 
