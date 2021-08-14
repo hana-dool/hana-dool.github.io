@@ -37,17 +37,15 @@ use_math: true
 - 예를 들어, 지방 섭취량이 많은 나라의 유방암 발생률이 높다고 해서 지방을 많이 섭취하면 유방암 발생률이 높아진다 라고 단정할 수 없음
 
 3) Stein's paradox - https://www.researchgate.net/profile/Carl-Morris-3/publication/247647698_Stein%27s_Paradox_in_Statistics/links/53da1fe60cf2631430c7f8ed/Steins-Paradox-in-Statistics.pdf
+
 - 그냥 평균을 구한 값보다 평균에 편향을 준 값이 더 좋은 추정값을 갖는 현상
 - James-stein 추정량 (james-stein estimator) 이라는 방법이 있음
 
 4) Lord's paradox - https://errorstatistics.com/2019/08/02/s-senn-red-herrings-and-the-art-of-cause-fishing-lords-paradox-revisited-guest-post/
 - 두 집단에 대해 사전사후 분석을 할 때 변화값에 대해 t-검정한 결과와 ANCOVA로 검정한 결과가 달라지는 현상
 
-5) Simpson's paradox - https://academic.oup.com/ije/article/40/3/780/746837
-- 전체 그룹의 통계량과 소그룹으로 나눠서 측정한 통계량 사이에 서로 반대되는 결론이 도출되는 현상
-- 버클리 대학 남녀 입학률 차이로 인한 여성 차별 문제
-
 7) Prosecutor's fallacy - https://academic.oup.com/aje/article/179/9/1125/103523
+
 - P(A|B) 와 P(B|A) 가 같다고 가정하는 오류
 - P(A) 와 P(B) 가 같을 경우에만 맞음
 

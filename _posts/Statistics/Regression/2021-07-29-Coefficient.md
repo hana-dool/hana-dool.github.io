@@ -83,6 +83,11 @@ use_math: true
 
 <br>
 
+# 5. 음수가 나오기도.?
+
+- 음수가 나올수도 있다.
+- 그 경우는 모조리 평균으로 예측한거보다 안좋은 예측일경우이다.
+
 # Refer
 
 - <https://journals.lww.com/anesthesia-analgesia/fulltext/2018/05000/correlation_coefficients__appropriate_use_and.50.aspx>
