@@ -15,7 +15,7 @@ toc_sticky: true
 use_math: true 
 ---
 
-# <center><font size="15">Select</font></center>
+# Select
 
 SQL 문법에서 SELECT 는 데이터 조회의 기본이 됩니다. SELECT 문을 이용하면 데이터베이스에 있는 데이터를 조회할 수 있습니다. 테이블에서 행을 선택하고, 열을 선택하는 등, 많은 행동을 할 수 있습니다. 
 
@@ -87,6 +87,15 @@ ORDER BY 달러월급
 ```
 
 - 위와 같이 SELECT 에서 정의한 명칭을 그대로 사용할 수 있기 떄문입니다. 
+  - 이런일이 가능한 이유는 Order by 가 Select 이후에 오기 떄문입니다. 
+  - 즉 다음과 같은 쿼리를 짜게되면 안된다는것을 명심합시다.
+
+```sql
+select salary / 1200 as 달러월급
+from df
+where 달러월급 >= 300 -- where 은 select 전에 시행되므로 별칠을 이떄 사용할 수 없습니다.
+order by 달러월급
+```
 
 <BR>
 

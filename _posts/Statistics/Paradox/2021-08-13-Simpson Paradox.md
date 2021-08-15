@@ -41,3 +41,9 @@ use_math: true
 
 <br>
 
+# Summary 
+
+![png](/assets/images/Stat/37_3.gif)
+
+- 정리하자면 위와 같습니다. 각 집단에서의 관계는 전체 집단에서의 관계를 말해주지 않습니다.
+

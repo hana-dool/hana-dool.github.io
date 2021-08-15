@@ -29,19 +29,12 @@ use_math: true
 - https://en.wikipedia.org/wiki/Category:Statistical_paradoxes
 
 1) Absence of evidence - https://www.bmj.com/content/311/7003/485.long
+
 - 증거의 부재를 부재의 증거로 판단하는 오류
 - p-value 가 높아서 통계적 유의성을 갖지 못한다고 해서 실제 아무런 효과가 없는 것이라고 판단해서는 안됨
 
-2) Ecological fallacy - https://web.stanford.edu/class/ed260/freedman549.pdf
-- 집단에서 관측된 현상이 개체에서도 적용된다고 판단하는 오류
-- 예를 들어, 지방 섭취량이 많은 나라의 유방암 발생률이 높다고 해서 지방을 많이 섭취하면 유방암 발생률이 높아진다 라고 단정할 수 없음
-
-3) Stein's paradox - https://www.researchgate.net/profile/Carl-Morris-3/publication/247647698_Stein%27s_Paradox_in_Statistics/links/53da1fe60cf2631430c7f8ed/Steins-Paradox-in-Statistics.pdf
-
-- 그냥 평균을 구한 값보다 평균에 편향을 준 값이 더 좋은 추정값을 갖는 현상
-- James-stein 추정량 (james-stein estimator) 이라는 방법이 있음
-
 4) Lord's paradox - https://errorstatistics.com/2019/08/02/s-senn-red-herrings-and-the-art-of-cause-fishing-lords-paradox-revisited-guest-post/
+
 - 두 집단에 대해 사전사후 분석을 할 때 변화값에 대해 t-검정한 결과와 ANCOVA로 검정한 결과가 달라지는 현상
 
 7) Prosecutor's fallacy - https://academic.oup.com/aje/article/179/9/1125/103523
