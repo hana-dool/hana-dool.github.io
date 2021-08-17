@@ -37,14 +37,6 @@ use_math: true
 
 - 두 집단에 대해 사전사후 분석을 할 때 변화값에 대해 t-검정한 결과와 ANCOVA로 검정한 결과가 달라지는 현상
 
-7) Prosecutor's fallacy - https://academic.oup.com/aje/article/179/9/1125/103523
-
-- P(A|B) 와 P(B|A) 가 같다고 가정하는 오류
-- P(A) 와 P(B) 가 같을 경우에만 맞음
-
 8) Gambler's fallacy - https://en.wikipedia.org/wiki/Gambler%27s_fallacy
 - 서로 독립적인 사건임에도 불구하고 과거에 발생 빈도가 낮다는 이유로 앞으로 발생 확률이 높아질 것이라고 믿는 것
 - 예를 들어 지난 주 로또 당첨 번호는 이번 주에 당첨될 확률이 낮다고 생각하는 것
-
-9) Lindley's fallacy - https://link.springer.com/article/10.1007/s11229-014-0525-z
-- 빈도주의 통계 검정 결과와 베이지안 통계 검정 결과가 완전히 다르게 나오는 현상

@@ -69,7 +69,10 @@ def union_parent(parent,a,b):
 
 # 노드의 갯수와 간선(union 연산) 의 갯수 입력
 v,e = map(int,input().split())
-parent = [0] * (v+1)
+
+# 부모 테이블 (자기 자신이 부모)
+parent = list(range(v+1))
+
 for i in range(e) : 
     a,b = map(int,input().split())
     union_parent(parent,a,b) 

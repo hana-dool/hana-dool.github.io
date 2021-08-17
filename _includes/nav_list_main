@@ -28,6 +28,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Stat_Non_Parametric" %}
+                        <li><a href="/categories/Stat_Non_Parametric" class="">Non Parametric ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Stat_Testing" %}
                         <li><a href="/categories/Stat_Testing" class="">Testing ({{category[1].size}})</a></li>
                     {% endif %}
