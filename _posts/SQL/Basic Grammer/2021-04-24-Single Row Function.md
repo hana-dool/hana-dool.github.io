@@ -1,6 +1,6 @@
 ---
-title:  "FUNCTIONS"
-excerpt: "FUNCTION 을 이용해 데이터를 쉽게 가공해보자"
+title:  "Single-Row Function"
+excerpt: "단일행 함수"
 categories:
   - SQL_Basic_Grammer
 tags:
@@ -387,10 +387,6 @@ WHERE job_id = 'IT_PROG' ;
 
 ![png](/assets/images/SQL_Basic/3_2.png)
 
-
-
-
-
 ## RANK, DENSE_RANK, ROW_NUMBER
 
 RANK, DENSE_RANK, ROW_NUMBER 는 데이터 값에 순위를 매기는 함수이다. 순위를 매기는것은 동일하지만 사용법이 조금씩 다르다. 
@@ -417,10 +413,6 @@ FROM employees ;
 ```
 
 ![png](/assets/images/SQL_Basic/3_4.png)
-
-
-
-
 
 ## EXTRACT()
 

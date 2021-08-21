@@ -25,8 +25,6 @@ SELECT price * num
 from df ;
 ```
 
-
-
 ```sql
 select *
 from df 
@@ -50,6 +48,7 @@ from df
 # > < = != 
 
 - 비교 연산자는 주로, Where 절 , CAse when 등 조건이 들어가는 곳에서 사용됩니다.
+- 그 이유는 '비교 연산자' 는 True / False 를 나타내가 떄문입니다.
 
 ```sql
 -- 비교 연산자는 > , >= , < , <= , = , != 이 있다.
@@ -157,12 +156,5 @@ FROM df
 WHERE job not in ('목수','광부','데이터엔지니어')
 -- 위의 세 값이 아닌 직업을 뽑아낸다. 
 ```
-
-<br>
-
-#stddev , variance, mean 
-
-- 통계함수
-- 
 
 <br>

@@ -1,5 +1,5 @@
 ---
-title:  "AGG FUNCTION"
+title:  "Grouping Function"
 excerpt: "그룹함수로 데이터 요약"
 categories:
   - SQL_Basic_Grammer
@@ -17,9 +17,9 @@ use_math: true
 
 <br>
 
-# <center><font size="15">그룹 함수란</font></center>
+# 그룹 함수란
 
-그룹함수는 함수가 적용되어 하나의 Aggregated 된 결과값을 내보냅니다. 
+- 그룹함수는 함수가 적용되어 하나의 Aggregated 된 결과값을 내보냅니다. 
 
 ```
 SELECT 그룹함수(열이름)
@@ -28,7 +28,7 @@ FROM 테이블 이름
 [ORDER BY 열이름]
 ```
 
-주요 그룹 함수는 다음과 같습니다. 
+- 주요 그룹 함수는 다음과 같습니다. 
 
 | 함수     | 설명           | 예                | NULL 처리 |
 | -------- | -------------- | ----------------- | --------- |
@@ -52,7 +52,7 @@ WHERE 1 = 2
 
 <br>
 
-## COUNT
+# COUNT
 
 ```
 COUNT(열 이름)
@@ -68,7 +68,7 @@ FROM employees ;
 
 <br>
 
-## SUM / AVG
+# SUM / AVG
 
 ```
 SUM(열이름) , AVG(열이름)
@@ -89,7 +89,7 @@ FROM employees ;
 
 <br>
 
-## MIN / MAX
+# MIN / MAX
 
 최대, 최소값을 출력하는 함수이다. 모든 데이터 타입에 대해서, MAX, MIN 을 사용할 수 있다. 
 
@@ -157,43 +157,4 @@ SELECT job_id,
         AVG(salary)
 FROM employees
 GROUP BY job_id, manager_id ;
-```
-
-
-
-# HAVING
-
-HAVING 절은 그룹화된 값에 조건식을 적용할 떄에 사용합니다. WHERE 절에서는 오로지 데이터를 읽어들일때에 Filtering  하는 효과를 가지므로, HAVING 절을 이용해서, AGG 된 값에 대해 조건식을 적용하는것입니다. 
-
-HAVING은 일반적으로 GROUPBY 절 뒤에 적습니다. 
-
-```
-SELECT 열 이름, 그룹함수(열 이름) #5
-FROM 테이블이름 #1
-[WHERE 조건식] #2
-GROUP BY 열이름 #3
-[HAVING 조건식] #4 
-[ORDER BY 열이름] #6
-```
-
-1. 테이블에 접근
-2. WHERE 조건식에 맞는 데이터 값만 골라내기
-3. 기술된 기준 열을 기준으로 같은 데이터 값끼리 그룹화
-4. 그룹화된 값에 대해 조건식 적용
-5. 결과 출력
-6. 결과에 대한 Ordering
-
-<br>
-
-```sql
--- employees 테이블에서, employee_id 가 10 이상인 직원에 대해서, job_id 별로 그룹화 하여 총 급여 계산
--- 이 떄에 총 급여가 30000 보다 큰 값만 출력하자. 
--- 결과는 내림차순
-SELECT  job_id 직업코드,
-        SUM(salary) 봉급합
-FROM employees
-WHERE employee_id >= 10
-GROUP BY job_id
-HAVING SUM(salary) >= 30000
-ORDER BY 봉급합 DESC; 
 ```
