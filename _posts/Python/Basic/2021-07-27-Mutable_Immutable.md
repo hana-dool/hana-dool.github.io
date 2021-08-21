@@ -30,6 +30,8 @@ use_math: true
 | tuple |   immutable 한 순서가 있는 객체 집합    | immutable |
 |  str  |                 문자열                  | immutable |
 
+- t 로 끝나면 , mutable 이라고 기억하면 쉽습니다. (int, floar , bool 은 당연히 immutable 이니까요)
+
 # 2. Mutable
 
 - 객체가 가진 값들을 변경할 수 있는 객체입니다. 

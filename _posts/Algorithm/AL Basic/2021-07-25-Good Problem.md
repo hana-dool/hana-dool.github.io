@@ -37,3 +37,20 @@ def solution(number, k):
     return ''.join(stack)
 ```
 
+<br>
+
+#  Best Time to Buy and Sell Stock
+
+```python
+class Solution(object):
+    def maxProfit(self, prices):
+        mn = 10**9 
+        profit = 0 
+
+        for now in prices : 
+            mn = min(now,mn)
+            profit = max(now-mn,profit)
+        return profit
+```
+
+- 겁나 대단.... min 만 갱신하면서 푸는것...
