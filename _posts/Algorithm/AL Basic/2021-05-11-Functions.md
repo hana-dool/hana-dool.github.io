@@ -150,12 +150,8 @@ del(x[1]) ; x
 
 ## Enumerate
 
-- zip(*iterable)은 동일한 개수로 이루어진 자료형을 묶어 주는 역할을 하는 함수이다.
-- 반복문 사용 시 몇 번째 반복문인지 확인이 필요할 수 있다.
-    - subplot 과 함께 사용해서, 각 위치에 i번째 plot을 그려주는 형식으로 쓸 수 있다.
-- 이때, 시작 index 가 0 부터임을 기억하자.
-
-
+- index 와 value 를 같이 취급할 수 있게 해주는 메서드입니다. 
+- 이 경우 idx, val in enumerate(iterable) 이라는 명령어를 통해서 index 와 value 를 출력할 수 있습니다.
 
 ```python
 for i, name in enumerate(['딸기','사과','포토']):
@@ -165,6 +161,14 @@ for i, name in enumerate(['딸기','사과','포토']):
     0 딸기
     1 사과
     2 포토
+
+- 그리고 , Enumerate 로 쌓인 객체는 iterable 이기 떄문에, 아래와 같이 list 로 만들어줄 수 도 있습니다.
+
+```python
+lst = ['a','b','c']
+list(enumerate(lst))[::-1] # [(2, 'c'), (1, 'b'), (0, 'a')] 
+```
+
 
 
 ## Filter
