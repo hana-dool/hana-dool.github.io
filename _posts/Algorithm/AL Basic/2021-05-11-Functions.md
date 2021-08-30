@@ -133,19 +133,8 @@ operation(5,2)
 
 ```python
 x = [1,2,3]
+del(x[1]) # [1,3]
 ```
-
-
-```python
-del(x[1]) ; x
-```
-
-
-
-
-    [1, 3]
-
-
 
 
 ## Enumerate
@@ -194,8 +183,6 @@ print(list(result))
 
     [2, 4, 6, 8, 10]
 
-
-
 ## Format
 
 - format 내장 함수를 이용하면 숫자를 다른 진수의 문자열로 바꿀 수 있습니다. 
@@ -212,8 +199,6 @@ int('101010',2)
 >>> 42
 ```
 
-
-
 ## F-string
 
 - F-string 을 Print 말고도 string 을 사용하는 다양한곳에 이용 가능합니다.
@@ -224,17 +209,11 @@ s = f'나는 {}번쨰'
 print(s) # 나는 0번째 
 ```
 
-
-
-
-
 ## in / not in 
 
 - x in 리스트	/ x not in 리스트
 - x in 튜플	/ x not in 튜플
 - x in 문자열 / x not in 문자열
-
-
 
 ```python
 1 in [1, 2, 3] # 1 이 list 안에 있는가?
@@ -335,6 +314,16 @@ lis = list(map(int, lis))
 
 - map 에 다양한 Custom 함수를 적용 가능합니다. 
 
+```python
+lst = [(1,4),(2,10),(3,11)]
+list(map(lambda x : x[0] , lst)) 
+# [1,2,3]
+```
+
+- 위와 같이 lambda 를 적용한다면, 매우 쉽게 모든 element 에 대해 연산을 수행할 수 있습니다.
+
+
+
 ## print
 
 - 문자열을 출력하는 함수
@@ -359,6 +348,7 @@ print(f'{a} 와 {b}') # f string 을 이용해 변수의 '값' 을 출력하고 
 ## reversed
 
 - mutable 한 객체를 reverse 하게 만들고 싶을때 쓴다.
+  - 근데 별로 안씀... 쓰면 [::-1] 을 더 많이씀
 - [1,2,3].reverse() 를 해버리면 원래 list 가 없어지고 inplace 하게 reversed 가 되어서 불편할 떄가 많은데, 그럴 때에 사용하는 함수가 reversed
 
 
@@ -393,6 +383,14 @@ for i in range(0):
 
 ```python
 for i in range(10,10):
+    print(i)
+```
+
+- 이때에 '역수' 에 대해서 적용하고 싶은 경우 아래와 같은 방법이 좀 더 직관적입니다.
+  - [::-1] dmf
+
+```python
+for i in range(N)[::-1] : 
     print(i)
 ```
 
@@ -449,7 +447,22 @@ sorted(lst, key= lambda x : (-1*x[1],x[2],-1*x[3],x[0]))
 # 1,3 index 에는 내림차순, 2,0 index에는 오름차순을 적용합니다.
 ```
 
+- 또는 key 에 직접 정의한 함수를 넣을 수도 있습니다.
 
+```python
+def custom(x) : 
+    ans = []
+    ans.append(len(x)) # 먼저 길이를 기준으로 Ordering 
+    for i in x :
+        if i.isdigit() :
+           cnt += int(i)
+    ans.append(cnt) # x 내에서 , 숫자의 합을 기준으로 Ordering
+    ans.append(x) # 그 이후에는 사전순 Ordering 
+    return ans
+sorted(lst, key = custom) # 길이 / 숫자합 / 사전순 순서로 Ordering
+```
+
+- 위와 같이 Custom 함수를 이용하여 Ordering 을 할 수 있습니다.
 
 ## sum
 
@@ -486,43 +499,6 @@ type("abc")
 
 
     str
-
-
-
-## range
-
-- range([start,] stop [,step] )는 for문과 함께 자주 사용하는 함수이다. 이 함수는 입력받은 숫자에 해당하는 범위 값을 반복 가능한 객체로 만들어 돌려준다.
-
-
-```python
-lis = []
-for i in range(1,5):
-    lis.append(i)
-lis
-```
-
-
-
-
-    [1, 2, 3, 4]
-
-
-
-
-```python
-# range 와 np.arange 는 거의 똑같다. 거의 같다고 보면 된다.
-lis = []
-for i in np.arange(1,5):
-    lis.append(i)
-lis
-```
-
-
-
-
-    [1, 2, 3, 4]
-
-
 
 ## zip
 
