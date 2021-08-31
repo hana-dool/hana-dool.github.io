@@ -21,7 +21,7 @@ use_math: true
   - 파이썬에 기본적으로 구현되어있지 않기 때문입니다.
 - 하지만 해커랭크 / leetcode 에 가끔 나오는 문제로 풀어보는것이 중요하다고 생각합니다.
 
-# Linked List Example
+# Linked List 에서 insert 구현하기
 
 - https://www.hackerrank.com/challenges/30-linked-list/problem?h_r=internal-search
 
@@ -67,9 +67,9 @@ mylist.display(head);
 
 ```python
 def printLinkedList(head):
-    if head is not None:
+    while head :
         print(head.data)
-        printLinkedList(head.next)
+        head = head.next
 
 if __name__ == '__main__':
     llist_count = int(input())
@@ -79,6 +79,7 @@ if __name__ == '__main__':
     for _ in range(llist_count):
         llist_item = int(input())
         llist.insert_node(llist_item)
+    printLinkedList(llist.head)
 ```
 
 <br>
