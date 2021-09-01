@@ -18,13 +18,13 @@ layout: single
 - 사용가능한 프로그램 : R, Python, Tableau
     - github(R) : <https://github.com/hana-dool/R>
     - github(Python) 
+        - 알고리즘 : <https://github.com/hana-dool/Algorithm>
         - 수집 : <https://github.com/hana-dool/Data_Collection>
         - 전처리 : <https://github.com/hana-dool/Data_Processing>
         - 시각화 : <https://github.com/hana-dool/Data_Visualization>
         - 분석 : <https://github.com/hana-dool/Data_Analysis>
-        
     - Tableau Public(Tableau) : <https://public.tableau.com/profile/haninwook#!/>
-- 연세대학교 응용통계학회 ESC 23기 (2020.03 ~ 현재) 
+- 연세대학교 응용통계학회 ESC 23기 (2020.03 ~ 2021.08) 
 
 # 📜Project
 
@@ -70,8 +70,9 @@ layout: single
 - github(학기) : <https://github.com/YonseiESC/ESC-21SPRING>
 
 #### Dimension Reduction 
-- ESC 학회 2021년 여름방학 주제, 차원축소
- 
+- ESC 학회 2021년 2학기 주제, 차원축소
+- github(방학) : <https://github.com/YonseiESC/ESC-21SUMMER>
+- github(학기) : <https://github.com/YonseiESC/ESC-21FALL>
 
 # 📚Class
 현재까지 들었던 수학,통계 과목
@@ -108,3 +109,6 @@ layout: single
 - 데이터 사이언스(1) : 데이터통합과 정보보호
 - 데이터 사이언스를 위한 확률과정
 - 데이터 사이언스 표본추출이론 
+
+**Other**
+- 인공지능의이해와활용

@@ -11,7 +11,8 @@ toc: true
 toc_label: "Table Of Contents"
 toc_icon: "cog"
 toc_sticky: true
-re
+
+use_math : true
 ---
 
 # 1. Intro
