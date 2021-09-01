@@ -33,7 +33,7 @@ use_math: true
 - 위와 같이 OLS 의 Solution 에는 $X'X$ 의 역함수가 있습니다.
 - 즉 , 다중공선성이 있으면, 이 해를 구하지 못하게 됩니다. 
 
-# 3. 불안정한 추정치
+# 3. 불안정한 해석
 
 ![png](/assets/images/Stat/49_4.png)
 
@@ -45,10 +45,20 @@ use_math: true
 - 즉, 다중공선성이 존재하면 계수에 대한 분산이 어마어마하게 커져서 '조금만 변해도' 해석이 천차만별로 변하게 됩니다. 
 - 이는 저희가 바라는 상황이 아닙니다..
 
+# 4. 불안한 예측값
+
+- Multicolinearity 가 있는 변수들을 모두 모델에 넣다보면 과적합이 일어납니다.
+- 이 변수가 계속 다중공선성을 가진다면 모르겠지만, 살짝 그 변수가 틀어진다면 '이미 계수가 엄청난 분산으로 추정되어있는 상태' 이므로 그 예측값이 매우 많이 변합니다.
+
+![png](/assets/images/Stat/52_7.png)
+
+- 위와 같이, 추정값에 대한 variance 를 계산할떄에 $X'X$ 의 inverse 가 들어있습니다. 이는 다중공선성이 있을떄 매우 불안정 하다는것을 알고 있죠? 
+- 즉 row 가 살짝 변한다면 큰 분산으로 변하게 됩니다. (불안정한 예측값)
+
 # Refer
 
 - 다중공선성에 대한 연구 = (A) study of multicollinearity in multiple regression analysis
   - http://www.riss.kr/search/detail/DetailView.do?p_mat_type=be54d9b8bc7cdb09&control_no=a4c0e81273f7f0d9
 
-
+- https://stats.stackexchange.com/questions/306786/calculation-of-variance-of-prediction
 

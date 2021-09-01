@@ -15,7 +15,7 @@ toc_sticky: true
 use_math: true
 ---
 
-# <center><font size="10">Intro</font></center>
+# Intro
 
 - OLS estimator 에 대해서, 어디까지 가정을 해야, 우리 OLS 모델의 Estimator 가 좋은 성질을 가질 수 있을까요?
 - 즉 만약 $V[\epsilon_i] \not= \sigma ^2$ 라면? (즉 등분산 침해)
