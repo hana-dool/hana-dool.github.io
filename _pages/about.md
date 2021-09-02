@@ -10,48 +10,39 @@ layout: single
 
 - Name : Han In Wook
 - e-meil : dlsdnr95@naver.com
-- 학력 : 연세대학교 수학과(본전공) / 응용통계학과(복수전공)
+- 학력 : 연세대학교 수학과(본전공) / 응용통계학과(복수전공) 
+- 연세대학교 응용통계학회 ESC 23기 (2020.03 ~ 2021.08) 
 - github : <https://github.com/hana-dool>
 - Dacon : <https://dacon.io/myprofile/409513/home/>
 - BOJ : <https://www.acmicpc.net/user/gorany3105>
 
-- 사용가능한 프로그램 : R, Python, Tableau
-    - github(R) : <https://github.com/hana-dool/R>
-    - github(Python) 
-        - 알고리즘 : <https://github.com/hana-dool/Algorithm>
-        - 수집 : <https://github.com/hana-dool/Data_Collection>
-        - 전처리 : <https://github.com/hana-dool/Data_Processing>
-        - 시각화 : <https://github.com/hana-dool/Data_Visualization>
-        - 분석 : <https://github.com/hana-dool/Data_Analysis>
-    - Tableau Public(Tableau) : <https://public.tableau.com/profile/haninwook#!/>
-- 연세대학교 응용통계학회 ESC 23기 (2020.03 ~ 2021.08) 
+<br>
 
-# 📜Project
+# 🔢Skills
 
-#### 2005 행복도 예측
-- 2014년 서울시 행복도 관련 설문지 문항을 이용해 행복도 예측 및 행복도 향상을 위한 방안 제시
-- github : <https://github.com/hana-dool/2005_ESC>
+- Python , R , SQL , Tableau , Git
 
-#### 2007 빅콘 퓨처스리그
-- 매출 향상을 위한 매출 예측 및 최적화 방안
-- github : <https://github.com/hana-dool/2007_Bigcon>
+| Skills  | link                                                         |      |      |
+| ------- | ------------------------------------------------------------ | ---- | ---- |
+| Python  | 알고리즘 : <https://github.com/hana-dool/Algorithm> <br>백준(BOJ) : <https://www.acmicpc.net/user/gorany3105><br>수집 : <https://github.com/hana-dool/Data_Collection> <br>전처리 : <https://github.com/hana-dool/Data_Processing> <br>시각화 : <https://github.com/hana-dool/Data_Visualization> <br>분석 : <https://github.com/hana-dool/Data_Analysis> |      |      |
+| R       | Github : <https://github.com/hana-dool/R>                    |      |      |
+| SQL     |                                                              |      |      |
+| Tableau | Tableau Public : <https://public.tableau.com/profile/haninwook#!/> |      |      |
+| Git     | Github :  <https://github.com/hana-dool>                     |      |      |
 
-#### 2009 치킨집 매출분석
-- 데이터사이언스 수업 분석 프로젝트
-- github(조별) : <https://github.com/hana-dool/2009_DataScience>
-- github(개인) : <https://github.com/hana-dool/2010_Data_Science>
+<br>
 
-#### 2101 데이콘 태양광 발전량 예측
-- 데이콘 시계열 데이터 발전량 예측(<https://dacon.io/competitions/official/235680/overview/>)
-- github : <https://github.com/hana-dool/2101_Dacon_Time_reg>
+# 📜Toy Project
 
-#### 2101 데이콘 운동 동작 분류
-- 데이콘 운동 동작 분류 (<https://dacon.io/competitions/official/235689/overview/>)
-- github : <https://github.com/hana-dool/2101_Dacon_Time_clas>
-
-#### 2102 전국 무료급식소 현황
-- 무료급식소 데이터를 통한 정책제시
-- github : <https://github.com/hana-dool/2102_JSproject>
+| Project                         | 개요                                                         | Github                                                       |
+| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 20/05 행복도 예측               | - 2014년 서울시 행복도 관련 설문지 데이터 이용<br>- 행복도 예측 및 행복도 향상을 위한 방안 제시 | <https://github.com/hana-dool/2005_ESC>                      |
+| 20/07 빅콘 퓨처스리그           | - 매출 향상을 위한 매출 예측 및 최적화 방안                  | <https://github.com/hana-dool/2007_Bigcon>                   |
+| 20/09 치킨집 매출분석           | - 데이터사이언스 수업 분석 프로젝트                          | - 조별 : <https://github.com/hana-dool/2009_DataScience > <br>- 개인 : <https://github.com/hana-dool/2010_Data_Science> |
+| 21/01 데이콘 태양광 발전량 예측 | - 데이콘 시계열 데이터 발전량 예측 <br>-<https://dacon.io/competitions/official/235680/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_reg>           |
+| 21/01 데이콘 운동 동작 분류     | - 데이콘 운동 동작 분류<br>-<https://dacon.io/competitions/official/235689/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_clas>          |
+| 21/02 전국 무료급식소 현황      | - 무료급식소 데이터현황 제시 <br>- <https://www.pajaritoprojects.com/soupkitchen/> | <https://github.com/hana-dool/2102_JSproject><br><https://www.pajaritoprojects.com/soupkitchen/> |
+|                                 |                                                              |                                                              |
 
 # 📒Study
 
