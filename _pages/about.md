@@ -24,11 +24,11 @@ layout: single
 
 | Skills  | link                                                         |      |      |
 | ------- | ------------------------------------------------------------ | ---- | ---- |
-| Python  | 알고리즘 : <https://github.com/hana-dool/Algorithm> <br>백준(BOJ) : <https://www.acmicpc.net/user/gorany3105><br>수집 : <https://github.com/hana-dool/Data_Collection> <br>전처리 : <https://github.com/hana-dool/Data_Processing> <br>시각화 : <https://github.com/hana-dool/Data_Visualization> <br>분석 : <https://github.com/hana-dool/Data_Analysis> |      |      |
+| Python  | 알고리즘 : <https://github.com/hana-dool/Algorithm><br>백준(BOJ) : <https://www.acmicpc.net/user/gorany3105><br>수집 : <https://github.com/hana-dool/Data_Collection><br>전처리 : <https://github.com/hana-dool/Data_Processing><br>시각화 : <https://github.com/hana-dool/Data_Visualization><br>분석 : <https://github.com/hana-dool/Data_Analysis> |      |      |
 | R       | Github : <https://github.com/hana-dool/R>                    |      |      |
 | SQL     |                                                              |      |      |
 | Tableau | Tableau Public : <https://public.tableau.com/profile/haninwook#!/> |      |      |
-| Git     | Github :  <https://github.com/hana-dool>                     |      |      |
+| Git     | Github : <https://github.com/hana-dool>                      |      |      |
 
 <br>
 
@@ -38,9 +38,9 @@ layout: single
 | ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 20/05 행복도 예측               | - 2014년 서울시 행복도 관련 설문지 데이터 이용<br>- 행복도 예측 및 행복도 향상을 위한 방안 제시 | <https://github.com/hana-dool/2005_ESC>                      |
 | 20/07 빅콘 퓨처스리그           | - 매출 향상을 위한 매출 예측 및 최적화 방안                  | <https://github.com/hana-dool/2007_Bigcon>                   |
-| 20/09 치킨집 매출분석           | - 데이터사이언스 수업 분석 프로젝트                          | - 조별 : <https://github.com/hana-dool/2009_DataScience > <br>- 개인 : <https://github.com/hana-dool/2010_Data_Science> |
-| 21/01 데이콘 태양광 발전량 예측 | - 데이콘 시계열 데이터 발전량 예측 <br>-<https://dacon.io/competitions/official/235680/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_reg>           |
-| 21/01 데이콘 운동 동작 분류     | - 데이콘 운동 동작 분류<br>-<https://dacon.io/competitions/official/235689/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_clas>          |
+| 20/09 치킨집 매출분석           | - 데이터사이언스 수업 분석 프로젝트                          | - 조별 : <https://github.com/hana-dool/2009_DataScience><br>- 개인 : <https://github.com/hana-dool/2010_Data_Science> |
+| 21/01 데이콘 태양광 발전량 예측 | - 데이콘 시계열 데이터 발전량 예측 <br>- <https://dacon.io/competitions/official/235680/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_reg>           |
+| 21/01 데이콘 운동 동작 분류     | - 데이콘 운동 동작 분류<br>- <https://dacon.io/competitions/official/235689/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_clas>          |
 | 21/02 전국 무료급식소 현황      | - 무료급식소 데이터현황 제시 <br>- <https://www.pajaritoprojects.com/soupkitchen/> | <https://github.com/hana-dool/2102_JSproject><br><https://www.pajaritoprojects.com/soupkitchen/> |
 |                                 |                                                              |                                                              |
 
