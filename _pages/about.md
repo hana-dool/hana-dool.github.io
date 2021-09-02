@@ -41,8 +41,10 @@ layout: single
 | 20/09 치킨집 매출분석           | - 데이터사이언스 수업 분석 프로젝트                          | - 조별 : <https://github.com/hana-dool/2009_DataScience><br>- 개인 : <https://github.com/hana-dool/2010_Data_Science> |
 | 21/01 데이콘 태양광 발전량 예측 | - 데이콘 시계열 데이터 발전량 예측 <br>- <https://dacon.io/competitions/official/235680/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_reg>           |
 | 21/01 데이콘 운동 동작 분류     | - 데이콘 운동 동작 분류<br>- <https://dacon.io/competitions/official/235689/overview/> | <https://github.com/hana-dool/2101_Dacon_Time_clas>          |
-| 21/02 전국 무료급식소 현황      | - 무료급식소 데이터현황 제시 <br>- <https://www.pajaritoprojects.com/soupkitchen/> | <https://github.com/hana-dool/2102_JSproject><br><https://www.pajaritoprojects.com/soupkitchen/> |
+| 21/02 전국 무료급식소 현황      | - 무료급식소 데이터현황 제시 <br>- <https://www.pajaritoprojects.com/soupkitchen/> | <https://github.com/hana-dool/2102_JSproject><br>- 구현 사이트 : <https://www.pajaritoprojects.com/soupkitchen/> |
 |                                 |                                                              |                                                              |
+
+<br>
 
 # 📒Study
 
@@ -78,10 +80,10 @@ layout: single
 | 이산수학                 | A+    | 수리통계학(2)                              | A+    |
 | 집합론                   | A+    | 회귀분석                                   | A+    |
 | 확률론                   | A+    | 시계열분석                                 | A+    |
-| 미분기하(1)              | C-    | 다변량 통계분석                            | A+    |
-| 해석학(1)                | A+    | 딥러닝                                     | A+    |
-| 해석학(2)                | A-    | 베이즈 통계                                | A+    |
-| 현대대수(1)              | A+    | 데이터 마이닝                              | A     |
-| 현대대수(2)              | A     | 데이터 사이언스(1) : 데이터통합과 정보보호 | A+    |
-|                          |       | 데이터 사이언스를 위한 확률과정            | A+    |
+| 위상수학                 | A     | 다변량 통계분석                            | A+    |
+| 미분기하(1)              | C-    | 딥러닝                                     | A+    |
+| 해석학(1)                | A+    | 베이즈 통계                                | A+    |
+| 해석학(2)                | A-    | 데이터 마이닝                              | A     |
+| 현대대수(1)              | A+    | 데이터 사이언스(1) : 데이터통합과 정보보호 | A+    |
+| 현대대수(2)              | A     | 데이터 사이언스를 위한 확률과정            | A+    |
 |                          |       | 데이터 사이언스 표본추출이론               | A+    |
