@@ -142,3 +142,44 @@ for i in distance[1:]:
 ```
 
 <br>
+
+## 응용
+
+- https://www.acmicpc.net/problem/4485
+- 꼭 그래프가 아니라, 아래처럼 matrix 이동시의 최소값 을 요구하기도 한다.
+
+```python
+import heapq
+import sys
+inf = 10**9
+dx = [0,0,1,-1]
+dy = [1,-1,0,0]
+nums = 0
+while True :
+    nums += 1
+    N = int(input())
+    if N == 0 :
+        break
+    distance = [[inf] * N for _ in range(N)]
+    mat = [list(map(int,input().split())) for _ in range(N)]
+    def dijkstra():
+        q = []
+        heapq.heappush(q, (mat[0][0], 0, 0))
+        distance[0][0] = mat[0][0]
+        while q:
+            cost, x, y = heapq.heappop(q)
+            if distance[x][y] < cost:
+                continue
+            else:
+                for i in range(4): # 깊어지는 과정이 graph 가 아니라 dx,dy 로 구현! 
+                    nx = x + dx[i]
+                    ny = y + dy[i]
+                    if 0 <= nx < N and 0 <= ny < N:
+                        now_dist = cost + mat[nx][ny]
+                        if distance[nx][ny] > now_dist:
+                            distance[nx][ny] = now_dist
+                            heapq.heappush(q, (now_dist, nx, ny))
+    dijkstra()
+    print(f'Problem {nums}: {distance[-1][-1]}')
+```
+

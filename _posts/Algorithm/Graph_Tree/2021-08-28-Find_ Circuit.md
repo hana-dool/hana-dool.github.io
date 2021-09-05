@@ -54,38 +54,62 @@ for _ in range(T) :
 
 <Br>
 
-# 유향 그래프 
+# 유향 그래프 - 각 점에 대해서 판별
 
 ```python
-# 방문한 정점을 기록하면서, 방문한 정점을 또 방문하면 사이클이 존재
+from collections import defaultdict
+N = 7
+edges = [(1, 2), (2, 3), (3, 4), (4, 2), (5, 6), (6, 7)]
+graph = defaultdict(list)
+for edge in edges:
+    v, w = edge
+    graph[v].append(w)
+visited = [0] * (N + 1)
 
-V, E = map(int,input().split())
-visited = [0] * (V+1) # 방문한 정점 정보를 담을 stack 생성
-graph = [[] for i in range(V+1)] # 빈 인접 리스트 그래프 생성
-
-# 그래프 생성
-for i in range(E):
-    a, b = map(int,input().split()) # 간선 정보 받아오기
-    graph[a].append(b)
-    graph[b].append(a)
-    
-# dfs 탐색 함수 생성
-def dfs(i):
-    visited[i] = 1 # 방문한 정점 정보 갱신
-    node = graph[i] # 방문할 정점 받아오기
-    if not node in visited: # 방문하지 않은 정점이면 dfs 진행
-        dfs(node)
-    elif node in visited: # 다음에 방문할 정점이 visitied에 존재하면 순환이 존재
-        return True
-    return False # 순환이 존재하지 않으면 False
-
-result = False
-for i in range(1, V+1): # 모든 정점 호출
-    if visited[i] == 0: # 방문하지 않은 정점이면, 탐색 진행
-        if dfs(i):
-            result = True
-
-print(result) # 순환이 존재하면 True 반환
+ans = []
+def dfs2(start,now) :
+    if start == now : # 현재 지점과, dfs 로 도착한 지점이 같다?
+        if visited[start] == 1: # 게다가 한번 방문했었음? 
+            ans.append(start) # 그러면, 이건 사이클이다! 
+            return # 끝내기
+    for path in graph[now] :
+        if visited[path] == 0 :
+            visited[path] = 1
+            dfs2(start,path)
+dfs2(1,1) # 1->1 로 가는 사이클이 존재할까?
+print(ans) 
 ```
 
-- 기본적으로 위와 같이 구현이 됩니다.
+- 위와 같이 , 구현하게 되면, 유향 그래프에서 사이클을 찾을 수 있습니다.
+- 하지만 이떄에 모든 점에 대해서 사이클을 찾으려면 그 복잡도는 O(V(V+E)) 가 됩니다. 
+  - V 는 정점의 수 
+  - E 는 간선의 수 
+- 각각의 정점에 대해서 사이클이 있는지 없는지를 검사한다는 의미는 있지만, 시간이 많이 걸리게 됩니다. 
+
+# 유향 그래프 - 그래프에 대해서 판별
+
+- 모든 정
+
+```python
+from collections import defaultdict
+N = 7
+edges = [(1, 2), (2, 3), (3, 4), (4, 2), (5, 6), (6, 7)]
+graph = defaultdict(list)
+for edge in edges:
+    v, w = edge
+    graph[v].append(w)
+visited = [0] * (N + 1)
+
+ans = []
+def dfs2(start,now) :
+    if start == now : # 현재 지점과, dfs 로 도착한 지점이 같다?
+        if visited[start] == 1: # 게다가 한번 방문했었음? 
+            ans.append(start) # 그러면, 이건 사이클이다! 
+            return # 끝내기
+    for path in graph[now] :
+        if visited[path] == 0 :
+            visited[path] = 1
+            dfs2(start,path)
+dfs2(1,1) # 1->1 로 가는 사이클이 존재할까?
+print(ans) 
+```

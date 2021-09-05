@@ -211,9 +211,10 @@ print(s) # 나는 0번째
 
 ## in / not in 
 
-- x in 리스트	/ x not in 리스트
-- x in 튜플	/ x not in 튜플
-- x in 문자열 / x not in 문자열
+- x in 리스트	/ x not in 리스트 ($O(n)$)
+- x in 튜플	/ x not in 튜플 ($O(n)$)
+- x in 문자열 / x not in 문자열 ($O(n)$)
+- x in 셋 / x not in 셋 ($O(1)$)
 
 ```python
 1 in [1, 2, 3] # 1 이 list 안에 있는가?
@@ -293,7 +294,7 @@ min([(2, 0), (1, 1), (3, 2), (2, 3)],key = lambda x :x[1])
 ## map
 
 - iterable객체를 받아서, 각 요소에 함수를 적용해주는 함수이다.
-- map은 원본 리스트를 변경하지 않고 새 리스트를 생성
+- map은 원본 리스트를 변경하지 않고 새 리스트를 생성합니다
 - 모든 element 들에 대해서 같은 적용을 하고 싶을때에 자주 사용한다.
     - ex) str.map(lambda x : x.zfill(3))
 
@@ -386,8 +387,7 @@ for i in range(10,10):
     print(i)
 ```
 
-- 이때에 '역수' 에 대해서 적용하고 싶은 경우 아래와 같은 방법이 좀 더 직관적입니다.
-  - [::-1] dmf
+- 이때에 역방향으로 적용하고 싶은 경우 아래와 같은 방법이 좀 더 직관적입니다.
 
 ```python
 for i in range(N)[::-1] : 
@@ -437,7 +437,7 @@ sorted(a) # ['1','2','3','4']
 def solution(strings, n):
     answer = sorted(strings, key = lambda x : x[n]+x[:n]+x[n+1:])
     return answer
-# 위와 같이, n 번째 알파벳을 우선시하는 sorting 을 구현할 수 있습니다.
+# 위와 같이, n 번째 알파벳을 우선시하는 사전순 정렬 sorting 을 구현할 수 있습니다.
 ```
 
 - 또한 key 에 음수 등을 곱함으로서 내림 / 오름차순을 동시에 적용할 수 있습니다.

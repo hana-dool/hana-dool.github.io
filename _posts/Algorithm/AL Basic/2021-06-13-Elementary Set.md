@@ -21,6 +21,8 @@ use_math: true
 
 <https://www.acmicpc.net/problem/2941>
 
+- 문자열의 Replace 를 효율적으로 이용하는법
+
 ```python
 Input=input()
 Dict=['c=','c-','dz=','d-','lj','nj','s=','z=']
@@ -33,35 +35,55 @@ print(len(Input))
 
 # BFS 
 
+- BFS 의 활용
+
 <https://www.acmicpc.net/problem/1697>
 
 ```python
 from collections import deque
-
-n,k = map(int,input().split())
-
-Max = 100001
-visited = [0]*Max
-
-need_visit = deque([n])
-while need_visit:
-    node = need_visit.popleft()
-    if node == k:
-        print(visited[node])
-    for next_node in (node-1, node+1, node*2):
-        if 0<=next_node < Max and not visited[next_node]:
-            visited[next_node] = visited[node]+1
-            need_visit.append(next_node)
+import sys
+input = sys.stdin.readline
+N,K = map(int,input().split())
+q = deque()
+q.append((N,0))
+visit = [0]*200001
+visit[N] = 1
+while q :
+    now,cnt = q.popleft()
+    if now == K :
+        break
+    for i in [now-1,now+1,now*2] :
+        if 0<= i <=200000 :
+            if visit[i] == 0 :
+                visit[i] = 1
+                q.append((i,cnt+1))
+print(cnt)
 ```
 
 
 
 # 회의실 배정
 
+- 구간들이 '겹치지 않게' 배열하는 최댓값을 물어보는 문제로서, 매우 중요한 문제이다.
+
 <https://www.acmicpc.net/problem/1931>
 
 ```
-
+import sys
+input = sys.stdin.readline
+N = int(input())
+times = []
+for _ in range(N) :
+    start , end = map(int,input().split())
+    times.append((start,end))
+times.sort(key = lambda x : (x[1],x[0]))
+begin = 0
+cnt = 0
+for start , end in times :
+    if begin <= start :
+        cnt += 1
+        begin = end
+print(cnt)
 ```
 
 <br>
@@ -203,7 +225,29 @@ def expressions(num):
     return answer
 ```
 
-- 사실 위를 양방향 큐 (지렁이 큐) 로도 해결할 수 있다.
+- 사실 위를 양방향 큐 (투포인터) 로도 해결할 수 있다.
+
+```python
+def solution(n):
+    start = 0 
+    end = 0 
+    tot = 0 
+    cnt = 0
+    while True : 
+        if end > n : 
+            break 
+        if tot > n : 
+            tot -= start 
+            start += 1 
+        elif tot < n : 
+            end += 1 
+            tot += end 
+        elif tot == n : 
+            cnt += 1 
+            end += 1 
+            tot += end 
+    return cnt 
+```
 
 <br>
 
