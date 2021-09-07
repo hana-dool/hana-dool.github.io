@@ -49,8 +49,42 @@ for _ in range(T) :
 # 무향 그래프
 
 - 기본적으로 Union Find 를 통해 가능합니다. 
+- https://www.acmicpc.net/problem/20040
 
+```python
+import sys
+input = sys.stdin.readline
+N , M = map(int,input().split())
+parent = list(range(N))
 
+def find_parent(parent,x) :
+    if parent[x] != x :
+        parent[x] = find_parent(parent,parent[x])
+    return parent[x]
+
+def union_parent(parent,a,b) :
+    a_p = find_parent(parent,a)
+    b_p = find_parent(parent,b)
+    if a_p != b_p :
+        if a_p < b_p :
+            parent[b_p] = a_p
+        else :
+            parent[a_p] = b_p
+        return False
+    else :
+        return True
+cnt = 0
+for _ in range(M) :
+    start, end = map(int,input().split())
+    cnt += 1
+    if union_parent(parent,start,end) :
+        print(cnt)
+        sys.exit(0)
+print(0)
+```
+
+- 위처럼 union_parent 부분에 return True 를 넣으면 됩니다.
+  - 왜냐하면, 이미 부모가 같은 상태에서 , 또 합쳐버리면 사이클이 되기 떄문
 
 <Br>
 
@@ -88,7 +122,10 @@ print(ans)
 
 # 유향 그래프 - 그래프에 대해서 판별
 
-- 모든 정
+- https://hongl.tistory.com/60?category=922907
+
+- 하지만 위의 경우, 복잡도가 너무 크기떄문에 (O(V+E)) 로 판별하는법이 필요합니다.
+- 아래의 경우는, 복잡도가 O(V+E) 만에 체크하는 방법입니다.
 
 ```python
 from collections import defaultdict
@@ -100,16 +137,17 @@ for edge in edges:
     graph[v].append(w)
 visited = [0] * (N + 1)
 
-ans = []
-def dfs2(start,now) :
-    if start == now : # 현재 지점과, dfs 로 도착한 지점이 같다?
-        if visited[start] == 1: # 게다가 한번 방문했었음? 
-            ans.append(start) # 그러면, 이건 사이클이다! 
-            return # 끝내기
-    for path in graph[now] :
-        if visited[path] == 0 :
-            visited[path] = 1
-            dfs2(start,path)
-dfs2(1,1) # 1->1 로 가는 사이클이 존재할까?
-print(ans) 
+def dfs(here) :
+    if visited[here] == -1 : # 어 이미 방문했어?
+        return True
+    if visited[here] == 1 :
+        return False
+    visited[here] = -1
+    for node in graph[here] :
+        if dfs(node) :
+            return True
+    visited[here] = 1
+    return False
+dfs(6)
 ```
+
