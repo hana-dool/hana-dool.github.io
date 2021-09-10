@@ -1,6 +1,6 @@
 ---
 title:  "Individual Conditional Expectation (ICE)"
-excerpt: "각 관측치의 "
+excerpt: "PDP 에서 하나하나 떼서 살펴보기"
 categories:
   - Interpretable_ML
 tags:
