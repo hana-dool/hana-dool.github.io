@@ -439,7 +439,7 @@
     color: inherit;
     font-size: $type-size-5;
     font-family: $sans-serif;
-    color: mix(#fff,$primary-color,80%);
+    color: mix(#fff,$primary-color,10%);
 
     &:hover {
       text-decoration: underline;
@@ -493,10 +493,10 @@
   display: block;
   margin: 0.5rem 0;
   padding: 0.25rem 0;
-  font-size: $type-size-6;
+  font-size: $type-size-5;
   font-family: $sans-serif;
   font-weight: bold;
-  color: mix(#fff,$primary-color,30%);
+  color: mix(#fff,$primary-color,1%);
   border-bottom: 1px solid $border-color;
 }
 

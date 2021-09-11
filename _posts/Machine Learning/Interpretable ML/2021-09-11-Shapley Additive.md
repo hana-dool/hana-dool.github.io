@@ -17,7 +17,7 @@ use_math: true
 
 <br>
 
-# Lime 리뷰
+# [Lime 리뷰](#link){: .btn .btn--primary} 
 
 ![jpg](/assets/images/ML/1_35.jpg)
 
@@ -25,7 +25,7 @@ use_math: true
 - 무시무시한 고차원을 바로 Linear 에 적합시킬 수는 없으므로, x' 로 변환하는 작업이 필요 (이미지의 경우)
 - g 함수가, f 의 예측값을 어느정도 잘 근사하게 (비슷하게) 학습시키고자 함.
 
-# Additive? 
+# [Additive?](#link){: .btn .btn--primary} 
 
 - 왜 Additive 라는 말이 붙었을까? Additive 는 Additive Feature Attribute Merhods 에서 나온 말입니다.
 
@@ -35,7 +35,7 @@ use_math: true
   - Feature 는 슈퍼 픽셀이 됩니다.
   - Attribute 는 $\phi$ 가 됩니다.
 
-# Why Shap is Better?
+# [Why Shap is Better?](#link){: .btn .btn--primary} 
 
 ![jpg](/assets/images/ML/2_6.png)
 
@@ -53,7 +53,7 @@ use_math: true
 - 이런 특성을 갖춘 기여도는 '유일하게 Shapley Value' 임
   - 이러한 Shapley value 를 사용하는 Additive Feature Arribute method 를 사용하면 특성들을 만족하는 공평한 방법이 된다!
 
-# 어떻게 계산될까? 
+# [어떻게 계산될까?](#link){: .btn .btn--primary} 
 
 ![jpg](/assets/images/ML/2_7.png)
 
@@ -68,7 +68,7 @@ use_math: true
 
 <BR>
 
-# Example
+# [Example](#link){: .btn .btn--primary} 
 
 ![jpg](/assets/images/ML/2_8.png)
 
@@ -101,15 +101,14 @@ use_math: true
 
   - 즉 예측들을 각 변수들이 사이좋게 나누어먹은것입니다.
 
-  
 
-# Advantage
+# [Advantage](#link){: .btn .btn--primary} 
 
 - 모델 전체를 완전히 설명할 수 있다. 
 - **대조 설명(contrastive explanations)이 가능하다.** 즉, 전체와 하나의 관측치를 비교하여 영향도를 구할 수 있고 전체 데이터의 일부분 또는 다른 하나의 인스턴스와 비교해서도 영향도를 구할 수 있다
 - **이론적인 배경이 탄탄하다.** Efficiency, symmetric, dummy 그리고 addictivity와 같은 공리들이 설명성에 합리적인 기반을 제공한다
 
-# Disadvantage
+# [Disadvantage](#link){: .btn .btn--primary} 
 
 - Shapley value는 연산량이 너무 많다. 현실의 문제들 중 99.9%에서는 추정방법만이 사용가능하다. 특성들의 가능한 조합(2^k)과 특성의 “결측(absence)”은 아무 관측치로 대체하는 것(이로인해 Shapley value 추청값의 분산이 증가한다.)까지 모두 고려하기 때문에 연산 비용이 너무 크다
   - 연합의 지수적 크기는 샘플링과 반복횟수 M을 제한해서 대처할 수 있다. M을 줄이는 것만으로도 연산 시간을 줄일 수 있지만 Shapley value의 분산을 키울 수 있다.
@@ -117,9 +116,7 @@ use_math: true
 - Shapley value는 잘못 해석될 수 있다. 앞서 말한 주의사항처럼 단순히 기여도를 알고싶은 특성을 모델에서 제외했을때 생기는 차이로 Shapley value라고 생각될 수 있다. 그러나 다시 말하자면 Shapley value는 로 다른 특성들의 조합으로 얻은 예측값에 대한 해당 특성(기여도를 알고싶은 특성)의 기여도를 평균하여 계산한 값이다.
 - Shapley value는 LIME과 다르게 설명가능한 모델이 아닌 단순히 특성별 기여도를 나타내는 값이다. 즉 입력값의 변화에 따른 예측값의 변화를 설명하기 힘들다. 예를 들면 “내가 1년에 300 유로를 더 번다면 내 신용점수는 5 포인트만큼 오를거야”와 같은 설명이 불가능하다.
 
-# Refer
-
-
+# [Refer](#link){: .btn .btn--primary} 
 
 - https://www.youtube.com/watch?v=NF6kk8QkiHE
 - https://www.youtube.com/watch?v=f2XqxOny3NA

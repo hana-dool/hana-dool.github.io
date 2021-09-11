@@ -44,7 +44,9 @@
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+  font-size: $type-size-5;
   font-family: $sans-serif-narrow;
   line-height: initial;
   overflow: hidden;
