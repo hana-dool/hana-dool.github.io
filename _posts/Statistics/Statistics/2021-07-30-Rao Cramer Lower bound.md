@@ -1,6 +1,6 @@
 ---
 title:  "Rao Cramer Lower bound"
-excerpt: "내 추정량의 최소 분산"
+excerpt: "제일 좋은 추정량"
 categories:
   - Stat
 tags:

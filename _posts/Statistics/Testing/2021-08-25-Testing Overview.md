@@ -1,6 +1,6 @@
 ---
 title:  "Testings"
-excerpt: "이세상엔 테스트가 너무많아~"
+excerpt: "상황에 따른 다양한 테스트들"
 categories:
   - Stat_Testing
 tags:

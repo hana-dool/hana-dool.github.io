@@ -1,6 +1,6 @@
 ---
 title:  "Sympson Paradox"
-excerpt: "부분에 매몰되지 말자"
+excerpt: "각 집단에서의 관계는 전체 집단에서의 관계를 말해주지 않는다"
 categories:
   - Stat_Paradox
 tags:

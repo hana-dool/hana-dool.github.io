@@ -1,6 +1,6 @@
 ---
 title:  "Pooled Variance Test"
-excerpt: "Pooled Variance 가 뭐람"
+excerpt: "더욱더 정확한 추정을 위한 분산 추정"
 categories:
   - Stat_Testing
 tags:

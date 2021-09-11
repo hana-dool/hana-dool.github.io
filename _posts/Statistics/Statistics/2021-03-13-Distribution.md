@@ -1,6 +1,6 @@
 ---
 title:  "Distribution(~ing)"
-excerpt: "각각의 분포들"
+excerpt: "다양한 분포들"
 categories:
   - Stat
 tags:

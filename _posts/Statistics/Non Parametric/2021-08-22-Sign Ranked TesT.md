@@ -1,6 +1,6 @@
 ---
 title:  "[Test] (Wilcoxon) Sign Ranked Test"
-excerpt: "Robust Test 2 : Paried Sample 테스트"
+excerpt: "Rank 를 이용해 Paried Sample 테스트"
 categories:
   - Stat_Non_Parametric
 tags:

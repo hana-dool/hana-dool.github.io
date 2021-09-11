@@ -1,6 +1,6 @@
 ---
 title:  "Sampling Distribution and Bootstrap"
-excerpt: "Statstical Analysis"
+excerpt: "부트스트랩의 응용과 기본규칙"
 categories:
   - Stat
 tags:

@@ -1,6 +1,6 @@
 ---
 title:  "Histogram"
-excerpt: "히스토그램"
+excerpt: "히스토그램의 최적의 bin 수는?"
 categories:
   - Stat_Non_Parametric
 tags:

@@ -1,6 +1,6 @@
 ---
 title:  "Partial Dependence Plot (PDP)"
-excerpt: "Model Agnotic interpret"
+excerpt: "변수를 움직이며 평균영향을 측정하기"
 categories:
   - Interpretable_ML
 tags:

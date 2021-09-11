@@ -1,6 +1,6 @@
 ---
 title:  "Two Sample Mean Test"
-excerpt: "T-statistics"
+excerpt: "평균을 테스트 하는법"
 categories:
   - Stat_Testing
 tags:

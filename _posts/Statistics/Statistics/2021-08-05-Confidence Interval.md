@@ -1,6 +1,6 @@
 ---
 title:  "Confidence Interval"
-excerpt: "신뢰구간"
+excerpt: "내 추정의 정확성을 알려주는 구간"
 categories:
   - Stat
 tags:

@@ -1,6 +1,6 @@
 ---
 title:  "Berkson's Paradox"
-excerpt: "기본적인 비율을 무시함에서 오는 에러"
+excerpt: "표면적으로 보이는 관계와 , 진정한 상관관계는 다를 수 있다"
 categories:
   - Stat_Paradox
 tags:

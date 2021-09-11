@@ -1,6 +1,6 @@
 ---
 title:  "Exponential family"
-excerpt: "Exp 가족들"
+excerpt: "지수 분포족"
 categories:
   - Stat
 tags:

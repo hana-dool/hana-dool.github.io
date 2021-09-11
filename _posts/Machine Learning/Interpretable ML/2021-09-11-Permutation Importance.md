@@ -17,7 +17,7 @@ use_math: true
 
 <br>
 
-# Permutation Importance
+# [Permutation Importance](#link){: .btn .btn--primary} 
 
 ![jpg](/assets/images/ML/1_19.jpg)
 
@@ -36,7 +36,7 @@ use_math: true
 
 <br>
 
-# 장단점 
+# [장단점](#link){: .btn .btn--primary} 
 
 ![jpg](/assets/images/ML/1_21.jpg)
 
@@ -46,8 +46,9 @@ use_math: true
   - 키 : 120cm , 몸무게 300kg 같은 변수
 - 무작위로 섞는것이여서 '큰 수' 로 시험하지 않는 경우 순서가 바뀔 여지가 있다. (Shap 에서 해결되었다고 합니다.)
 
-# Refer
+# [Reference](#link){: .btn .btn--primary} 
 
 - http://dmqa.korea.ac.kr/activity/seminar/297
 - https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2019/04/13/Partial-Depedence-Plot.html
 - https://eair.tistory.com/
+

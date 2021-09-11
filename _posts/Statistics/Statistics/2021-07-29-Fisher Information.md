@@ -1,6 +1,6 @@
 ---
 title:  "Fisher Information"
-excerpt: "Large Sample 과 CLT"
+excerpt: "피셔 정보량이 의미하는것이 뭘까?"
 categories:
   - Stat
 tags:

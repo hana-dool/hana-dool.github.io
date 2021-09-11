@@ -1,6 +1,6 @@
 ---
 title:  "왜 Logistic 을 더 선호하는가?(~ing..)"
-excerpt: "Logistic,Probit,cloglog"
+excerpt: "Logistic,Probit,cloglog 모델의 비교"
 categories:
   - Regression
 tags:

@@ -1,6 +1,6 @@
 ---
 title:  "Probit regression"
-excerpt: "프로빗 모델"
+excerpt: "로지스틱의 친척 프로빗 모델"
 categories:
   - Regression
 tags:

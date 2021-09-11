@@ -1,6 +1,6 @@
 ---
 title:  "KL divergence"
-excerpt: "쿨백 라이블러 발산"
+excerpt: "분포의 차이"
 categories:
   - Stat
 tags:

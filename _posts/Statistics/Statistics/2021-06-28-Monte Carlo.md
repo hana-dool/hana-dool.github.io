@@ -1,6 +1,6 @@
 ---
 title:  "Monte Carlo Approximation"
-excerpt: "몬테카를로 근사"
+excerpt: "샘플 수로 찍어누르기"
 categories:
   - Stat
 tags:

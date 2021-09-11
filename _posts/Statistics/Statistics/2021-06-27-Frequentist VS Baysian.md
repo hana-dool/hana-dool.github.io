@@ -1,6 +1,6 @@
 ---
 title:  "Frequentist VS Baysian"
-excerpt: "빈도통계와 베이즈"
+excerpt: "빈도통계와 베이즈의 차이"
 categories:
   - Stat
 tags:

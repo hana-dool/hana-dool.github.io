@@ -1,6 +1,6 @@
 ---
-title:  "통계 잡지식"
-excerpt: "미분류 통계 주저리"
+title:  "단편적인 통계모음"
+excerpt: "그냥 내 느낌을 정리해놓은 포스트"
 categories:
   - Stat
 tags:
