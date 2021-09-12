@@ -3,7 +3,7 @@ title:  "Pythonic Coding"
 excerpt: "파이썬답게 코딩하기(~ing)"
 categories:
   - Py_Effective
-date : 2021-09-12 02:00:00 +0900
+date : 2021-09-12 11:00:00 +0900
 last_modified_at: 2021-09-12
 
 toc: true
