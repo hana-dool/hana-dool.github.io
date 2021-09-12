@@ -104,6 +104,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Py_Effective" %}
+                        <li><a href="/categories/Py_Effective" class="">Py Effective Coding ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Py_Preprocessing" %}
                         <li><a href="/categories/Py_Preprocessing" class="">Py Preprocessing ({{category[1].size}})</a></li>
                     {% endif %}

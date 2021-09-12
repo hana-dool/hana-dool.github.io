@@ -15,8 +15,6 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
-
 # [Intro](#link){: .btn .btn--primary} 
 
 - 현대 확률론에서는 확률의 정의를 '엄밀' 하게 함으로서 확률의 각종 모순(베르트랑 의 역설 등) 을 해결하고 기초를 탄탄히 했습니다.
