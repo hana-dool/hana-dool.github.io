@@ -33,6 +33,8 @@ use_math: true
 - http://dmqa.korea.ac.kr/activity/seminar/297
   - 고대 세미나. 
   - 알고봤더니, 내가 구독하고있던 교수님이 찍으셨던 영상이더라.. 
+- https://tootouch.github.io/IML/logistic_regression/
+  - interpretable Machine LEarning 해석본
 
 # Feature Importance
 
