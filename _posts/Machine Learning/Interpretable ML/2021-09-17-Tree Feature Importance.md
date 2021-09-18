@@ -1,6 +1,6 @@
 ---
 title:  "Tree model Feature Importance"
-excerpt: "불순도 기준으로 계산되는 Feature Importance"
+excerpt: "불순도 기준으로 계산되는 Tree의 Feature Importance"
 categories:
   - Interpretable_ML
 date : 2021-09-17 01:00:00 +0900
