@@ -1,6 +1,6 @@
 ---
 title:  "Two Pointer"
-excerpt: "투 포인터"
+excerpt: "시작점과 끝점만 변화시키면서 탐색하기"
 categories:
   - AL_Others
 tags:

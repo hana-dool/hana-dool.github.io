@@ -1,6 +1,6 @@
 ---
-title:  "2.내장 Function"
-excerpt: "파이썬의 내장함수"
+title:  "2.Built in Function"
+excerpt: "기본적인 파이썬의 내장함수"
 categories:
   - AL_Basic
 tags:

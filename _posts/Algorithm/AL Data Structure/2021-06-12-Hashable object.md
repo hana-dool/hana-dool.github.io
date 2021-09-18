@@ -2,7 +2,7 @@
 title:  "Hashable Object"
 excerpt: "해시"
 categories:
-  - Py_Basic
+  - AL_Data_Structure
 tags:
   - 4
 last_modified_at: 2021-06-12
@@ -15,7 +15,7 @@ toc_sticky: true
 use_math : true
 ---
 
-# <center><font size="15"> Hashable OBject </font></center>
+# Hashable OBject
 
 - 파이썬에서 hashable object 란 hash 함수에 인자(input)로 들어갈 수 있는 객체를 의미한다.
 - 그러면 Hash 는 어떤것일까? 
@@ -35,9 +35,7 @@ use_math : true
 
 <br>
 
-<br>
-
-# <center><font size="15"> Hashable OBject </font></center>
+# Hashable OBject
 
 - 어떤 오브젝트가 Hashable 할까? 
   - 리스트, 셋, DIctionary 와 같이 , 데이터 변경이 가능한 컨테이너는 Hashable 하지 않다.

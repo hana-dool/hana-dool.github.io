@@ -1,6 +1,6 @@
 ---
 title:  "Sliding Window"
-excerpt: "슬라이딩 윈도우"
+excerpt: "길이를 고정한 상태에서 Search 기준만 바꾸기"
 categories:
   - AL_Others
 tags:

@@ -1,8 +1,8 @@
 ---
-title:  "자료구조"
-excerpt: "기본적인 자료구조"
+title:  "자료구조 정리"
+excerpt: "기본적인 자료구조를 정리해보자."
 categories:
-  - Py_Basic
+  - AL_Data_Structure
 tags:
   - 4
 last_modified_at: 2021-09-07

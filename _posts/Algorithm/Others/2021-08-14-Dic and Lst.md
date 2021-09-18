@@ -1,8 +1,8 @@
 ---
-title:  "Dictionary 와 List"
+title:  "Dictionary 와 List를 이용한 Hash 문제"
 excerpt: "해시로 사용할 수 있는 자료형"
 categories:
-  - AL_Hash
+  - AL_Others
 tags:
   - 1
 last_modified_at: 2021-06-07

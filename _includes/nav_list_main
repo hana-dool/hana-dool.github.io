@@ -245,15 +245,8 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "AL_Greedy" %}
-                        <li><a href="/categories/AL_Greedy" class="">AL Greedy ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "AL_Hash" %}
-                        <li><a href="/categories/AL_Hash" class="">AL Hash ({{category[1].size}})</a></li>
+                    {% if category[0] == "AL_Data_Structure" %}
+                        <li><a href="/categories/AL_Data_Structure" class="">AL Data Structure ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

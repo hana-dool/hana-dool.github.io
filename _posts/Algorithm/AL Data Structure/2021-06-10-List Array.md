@@ -2,7 +2,7 @@
 title:  "Array and List"
 excerpt: "Algorithm"
 categories:
-  - Py_Basic
+  - AL_Data_Structure
 tags:
   - 4
 last_modified_at: 2021-06-10
@@ -21,10 +21,10 @@ use_math : true
 
 ## 특징
 
-> - **같은 타입**의 데이터를 나열한 **선형 자료구조 (sequence container)**
-> - **연속된 메모리 공간**에 순차적으로 저장
+> - 같은 타입의 데이터를 나열한 선형 자료구조 (sequence container)
+> - 연속된 메모리 공간에 순차적으로 저장
 >   - 즉 배열의 아이템을 메모리상에 이어서 배치한다.
-> - 배열의 **크기는 고정**. 선언할 때에 배열의 크기를 정하고, 변경할 수 없다.
+> - 배열의 크기는 고정. 선언할 때에 배열의 크기를 정하고, 변경할 수 없다.
 > - 또한 배열의 모든 아이템들은 똑같은 사이즈를 가진다. 
 
 ![png](/assets/images/Py_Basic/1_1.png)

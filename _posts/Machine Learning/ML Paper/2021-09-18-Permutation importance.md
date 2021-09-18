@@ -16,7 +16,9 @@ use_math: true
   많은 분야에서, 모델의 해석력은 매우 중요합니다. 그래서 선형 모델이 상대적으로 성능이 안좋음에도 불구하고, 사용되는 이유중에 하나일 것입니다. 하지만 지난 몇년동안 Random Forest 와 같은 매우 복잡한, 비모수 모델에 대해서 모델에 대한 해석력을 볼 수 있는 방법론이 개발되었습니다.(MDI 기반 중요도.) 하지만 최근 RF 모델은 High Cardinality 를 가지는 변수를 선호하는 방식으로 편향되었다고 합니다. <br> 이 논문에서는 이러한 편향을 수정할 수 있는 방법론을 제시합니다. Pimp - p value Permutation 방법론이 매우 도움이 된다는것을 증명하고, 다른 방법론보다 우수함을 보일것입니다.  
 {: .notice--warning}
 
-# [Methods](#link){: .btn .btn--primary} 
+![jpg](/assets/images/ML/11_11.png)
+
+# [Methods](#link){: .btn .btn--primary}{: .align-center}
 
 > ##  Random Forest model (RF)
 
@@ -96,7 +98,7 @@ However, if the tests show little resemblence to any of the three proposed distr
 2. 각 변수들에 대해서 PIMP Score 를 계산합니다. 
 3. Pimp 에서 , p-value 가 0.05 보다 낮은 값을 가지는 변수만을 사용하여 RF 로 새 변수를 적합합니다. 
 
-# [Simulations](#link){: .btn .btn--primary} 
+# [Simulations](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Simulation A
 
@@ -131,7 +133,7 @@ However, if the tests show little resemblence to any of the three proposed distr
   - k = 5를 선택한다면 , target 과 관련이 있는 5개의 변수 A1,A2,A3,A4,A5 를 만들어냅니다. A1 은 매우 연관성이 깊고 나머지 4개는 연관성이 같습니다.
 - 이상적으로, model 은 그룹의 크기(k) 와 무관하게 첫번쨰 변수에 대해서 높은 중요도를 매기고 , 나머지 k-1 개의 변수에 대해서는 같은 중요도 값을 가지기를 기대합니다.
 
-# [Results of Simulations](#link){: .btn .btn--primary} 
+# [Results of Simulations](#link){: .btn .btn--primary}{: .align-center} 
 
 > ## Simulation A
 
@@ -179,7 +181,7 @@ However, if the tests show little resemblence to any of the three proposed distr
 - 하지만 PIMP pvalue 의 경우는 그렇지 않습니다. 항상 어느정도 일정함을 유지하고 있음을 볼 수 있습니다.
   - k=50 인 경우에도 유의성을 유지하고 있음을 확인하세요~
 
-# [Model Improvements](#link){: .btn .btn--primary}
+# [Model Improvements](#link){: .btn .btn--primary}{: .align-center}
 
 ![jpg](/assets/images/ML/11_9.png)
 
@@ -188,7 +190,7 @@ However, if the tests show little resemblence to any of the three proposed distr
 - PImp 는 기본적으로 5% 의 유의수준으로 설정하였습니다.
 - 위의 결과표를 볼떄에 , Pimp -RF 가 좋다는것을 볼 수 있습니다.
 
-# [Coclusion](#link){: .btn .btn--primary}
+# [Coclusion](#link){: .btn .btn--primary}{: .align-center}
 
 > ## High Cardinality 편향문제 해결
 

@@ -2,7 +2,7 @@
 title:  "Hash Table"
 excerpt: "해시 테이블"
 categories:
-  - Py_Basic
+  - AL_Data_Structure
 tags:
   - 4
 last_modified_at: 2021-06-10
@@ -17,7 +17,7 @@ use_math : true
 
 
 
-# <center><font size="15"> 해시 테이블 </font></center>
+# 해시 테이블
 
 해시 테이블은 (Key, Value)로 데이터를 저장하는 자료구조 중 하나로 빠르게 데이터를 검색할 수 있는 자료구조이다. 해시 테이블이 빠른 검색속도를 제공하는 이유는 내부적으로 배열(버킷)을 사용하여 데이터를 저장하기 때문이다. 해시 테이블은 각각의 Key값에 해시함수를 적용해 배열의 고유한 index를 생성하고, 이 index를 활용해 값을 저장하거나 검색하게 된다. 여기서 실제 값이 저장되는 장소를 버킷 또는 슬롯이라고 한다.
 

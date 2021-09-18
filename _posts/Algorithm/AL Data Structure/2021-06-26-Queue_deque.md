@@ -2,7 +2,7 @@
 title:  "Queue, deque"
 excerpt: "큐와 덱"
 categories:
-  - Py_Basic
+  - AL_Data_Structure
 tags:
   - 4
 last_modified_at: 2021-07-07

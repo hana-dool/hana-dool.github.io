@@ -1,10 +1,8 @@
 ---
 title:  "Linked List"
-excerpt: "stdin output / stdin input"
+excerpt: "링크드 리스트 자료구조"
 categories:
-  - Py_Basic
-tags:
-  - 1
+  - AL_Data_Structure
 last_modified_at: 2021-08-08
 
 toc: true

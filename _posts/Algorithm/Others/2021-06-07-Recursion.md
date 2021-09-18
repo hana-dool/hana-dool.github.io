@@ -1,6 +1,6 @@
 ---
 title:  "Recursion"
-excerpt: "재귀함수"
+excerpt: "재귀함수를 이용한 문제 풀이"
 categories:
   - AL_Others
 tags:
@@ -17,7 +17,7 @@ use_math: true
 
 <br>
 
-# <center><font size="15"> Theory </font></center>
+# Theory
 
 - 아래의 경우 출력하게 되면 어떻게 될까요? 
 
