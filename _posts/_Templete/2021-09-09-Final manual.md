@@ -3,9 +3,7 @@ title:  "I"
 excerpt: "F"
 categories:
   - Other
-tags:
-  - 1
-last_modified_at: 2021-03-09
+last_modified_at: 2021-09-09
 
 toc: true
 toc_label: "Table Of Contents"
@@ -18,7 +16,7 @@ use_math: true
 현대 확률론에서는 확률의 정의를 '엄밀' 하게 함으로서 확률의 각종 모순(베르트랑 의 역설 등) 을 해결하고 기초를 탄탄히 했습니다. 이러한 Axiom 이 어떻게 정의되었는지 알아보기 위해 우선 아래의 사항을 살펴봅시다.
 {: .notice--warning}
 
-# [Content](#link){: .btn .btn--primary} 
+# [Content](#link){: .btn .btn--primary}{: .align-center}
 
 - 먼저 확률을 엄밀하게 정의하기 위해서 알아야 할 것들에 대해서 알아봅시다.
 
@@ -28,13 +26,15 @@ use_math: true
 
 > ## Sigma Algebra
 
-# [Content](#link){: .btn .btn--primary} 
+# [Content](#link){: .btn .btn--primary}{: .align-center}
 
 - 위와 같이 , 두리뭉술하게 '모든 경우에 대해서 확률을 측정하자~' 가 아니라, si
 
-# Reference
+---
+
+**Reference**
 
 - <https://bayestour.github.io/blog/docs/previous/mpsl/0103>
 
-위와 같이 엄밀한 확률의 정의를 통하여, 확률 공간이 무한할떄의 역설을 해결하였고, 학문으로서의 기초를 다졌습니다. 하지만 사실 위의 정의들도 찍먹한것에 불과하고 집합의 크기를 정의해하는 측도론에 대해서 더 깊은 정의들이 존재합니다. (르벡 적분 ...) 하지만 이것은 범위를 넘어서므로 다음에 다루도록 하겠습니다.
+위와 같이 엄밀한 확률의 정의를 통하여, 확률 공간이 무한할떄의 역설을 해결하였고, 학문으로서의 기초를 다졌습니다.
 {: .notice--success}
