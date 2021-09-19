@@ -1,5 +1,5 @@
 ---
-title:  "재귀와 스택"
+title:  "Recursion in python"
 excerpt: "파이썬의 재귀는 어떻게 이루어질까"
 categories:
   - Py_Basic
@@ -14,8 +14,6 @@ toc_sticky: true
 
 use_math: true
 ---
-
-<br>
 
 # 1.재귀가 깊어지는 과정
 

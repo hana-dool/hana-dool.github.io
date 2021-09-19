@@ -1,5 +1,5 @@
 ---
-title: "Permutation importance - a corrected feature importance measure"
+title: "Permutation importance &#58; a corrected feature importance measure"
 excerpt: "y target 을 permutation 한 뒤 importance 의 분포에서 p-value로 중요도 계산"
 categories:
   - ML_Paper

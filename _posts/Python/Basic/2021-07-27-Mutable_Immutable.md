@@ -1,5 +1,5 @@
 ---
-title:  "Immutable,Mutable"
+title:  "Immutable / Mutable"
 excerpt: "Mutable 과 Immutable"
 categories:
   - Py_Basic

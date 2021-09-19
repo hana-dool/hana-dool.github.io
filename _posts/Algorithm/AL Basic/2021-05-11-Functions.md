@@ -482,7 +482,24 @@ sum({1,2,3}) #6
 sum([]) # 0
 ```
 
+## setattr
 
+- object에 존재하는 속성의 값을 바꾸거나, 새로운 속성을 생성하여 값을 부여한다.
+
+```python
+class Sample :
+    def __init__(self,x):
+        self.x = x 
+
+Temp = Sample(1)
+print(Temp.x)  # 1
+
+Temp.x = 4
+print(Temp.x)  # 4 
+
+Temp.y = 100
+print(Temp.y)  # 100
+```
 
 ## type
 

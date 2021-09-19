@@ -1,5 +1,5 @@
 ---
-title:  "Local Minima"
+title: "Local Minima"
 categories:
   - Stat_Machine_Learning
 tags:

@@ -1,11 +1,9 @@
 ---
-title:  "[기초] Python"
-excerpt: "파이썬의 특징 및 기초 자료형 "
+title:  "Python Basic"
+excerpt: "파이썬의 기초 정의및 내용 살펴보기"
 categories:
   - Py_Basic
-tags:
-  - 1
-last_modified_at: 2021-04-17
+last_modified_at: 2021-09-19
 
 toc: true
 toc_label: "Table Of Contents"
@@ -15,20 +13,12 @@ toc_sticky: false
 use_math : true
 ---
 
+ㅍ파이썬의 철학은 '배우기 쉽고 사용하기 쉬운 언어' 라는 철학에서 시작되었다고 합니다. 현재 업계 / 교육에서 많이 쓰이고 있습니다. 풍부한 자료와 커뮤니티에서 사용되고 있어 배우기 편합니다. 여기에서는 파이썬을 배우실떄에 마주칠만한 다양한 개념 / 용어들을 짧게 짧게 소개하려 합니다
+{: .notice--warning}
 
-# Intro
+# [Python Terminoloy](#link){: .btn .btn--primary}{: .align-center}
 
-- 파이썬의 철학은 '배우기 쉽고 사용하기 쉬운 언어' 라는 철학에서 시작되었다.
-- 업계 / 교육에서 많이 쓰이고 있다.
-- 풍부한 자료와 커뮤니티에서 사용되고 있음.
-
-
-
-# 파이썬은 뭐지?
-
-## 파이썬이란
-
-**프로그래밍 언어란?**
+> ## 컴퓨터의 기초
 
 - CPU
     - CPU 는 Central Processing Unit 의 약자로 중앙 처리 장치라고 불린다.
@@ -48,14 +38,9 @@ use_math : true
     - 프로그래밍 언어는 CPU 에 어떤 작업을 하라고 컴퓨터가 이해할 수 있게 명령을 내리는 언어이다.
 - 변수
     - 변수는 데이터를 메모리에 저장할 때 사용하는 물리적인 메모리 주소 대신에 사용하는, 기억하기 쉬운 단어로 구성된 꼬리표
-    - 예를 들어 x=20 은 x 에 20을 저장한것이 아니라, x 에 20이라는 값의 메모리 주소를 할당한것이다.
+    - 예를 들어 x=20 은 x 에 20을 저장한것이 아니라, x 에 20이라는 값의 메모리 주소를 할당한것이
 
-**파이썬**
-
-- 동적 바인딩에 강한 타입 언어
-    - 데이터의 타입을 정의하지 않고도, 자동적으로 타입을 추론/정의해줌
-
-## 키워드
+> ## Keyword(키워드)
 
 - 키워드 (Keyword)는 파이썬 언어에서 이미 예약되어 있는 문자열이어서 변수나 함수의 이름 등으로 사용할 수 없습니다.
 - 키워드의 종류는 다음과 같습니다.
@@ -64,10 +49,7 @@ del, elif, else, except, finally, for, from, global, if, import,
 in, is, lambda, nonlocal, not, or, pass, raise, return, try,
 while, with, yield
 
-
-
-
-## 식별자
+> ## Identifier (식별자)
 
 - 식별자 (Identifier)는 변수, 함수, 클래스와 같은 대상을 식별하기 위해 사용됩니다.
 - 식별자를 선택할 때 아래와 같은 몇가지 규칙이 있습니다.
@@ -76,23 +58,7 @@ while, with, yield
     - 식별자에 키워드를 사용할 수 없습니다.
     - 식별자에 !, @, #, $, %와 같은 특수문자는 사용할 수 없습니다.
 
-
-
-## 들여쓰기
-
-- 파이썬에서는 들여쓰기를 사용합니다.
-- 탭 (tab) 키 또는 두 칸 또는 네 칸의 공백을 이용해서 if 문, for 문, 함수의 내부 영역을 구분합니다.
-
-
-
-## 주석
-
-- 주석 (Comment)은 실행되지 않는 코드 부분을 말합니다.
-- 주로 코드의 의미를 설명하고, 이해하기 쉽게 하기 위해서 # 을 사용합니다.
-
-
-
-## mutable, immutable
+> ## mutable, immutable
 
 - mutable/imutable
     - immutable 
@@ -105,93 +71,8 @@ while, with, yield
         - list, dict, set
         - EX) lis.append('a') 를 해서 lis 를 update 했다고 하자. 그러면 list 의 주소는 그대로인 상태로 그 리스트가 바뀌게 된다. 즉 '주소가 그대로' 인데 그 값이 변경될 수 있다.
         - inplace 연산이 있다.
-- 왜 mutable/immutable 이 있을까?
-    - 이는 바로 성능적인 이점떄문
-    - mutable 인 경우 많은 메소드 적용 가능(append)
-    - immutable 은 많은 메소드를 적용하지 못하나, 메모리상의 이점이 있음
-        - mutable 에 계속 for문 돌리면서 변경하면 메모리 부족하게 된다.
-        - 또는 mutable 의 객체를 계속 형성하고 삭제하지 않으면 메모리를 잡아먹는다.
-        - 그래서 dict 의 연산시 메모리를 절약하기 위해서 tuple 로 바꾼다음에 연산을 한 다음 dict 로 다시 바꾸는 경우도 있다.
 
-**변경**
-
-- mutable 에서는 변경한 경우에도 그 id(주소) 는 그대로 유지된다.
-
-
-```python
-a = [1,2,3]
-print(id(a))
-a[0] = 9
-print(id(a))
-```
-
-    1907297816840
-    1907297816840
-
-
-- immutable 에서는 아래와 같이 변경을 시도하게 되면 에러가 뜬다.
-
-
-```python
-a = 'string'
-print(id(a))
-a[0] = 't'
-```
-
-    1907193470448
-
-
-
-    ---------------------------------------------------------------------------
-    
-    TypeError                                 Traceback (most recent call last)
-    
-    <ipython-input-45-b0c9d405b2d0> in <module>
-          1 a = 'string'
-          2 print(id(a))
-    ----> 3 a[0] = 't'
-
-
-    TypeError: 'str' object does not support item assignment
-
-
-**할당**
-
-- mutable
-- b=a 를 하게 되면, 변수명은 다를지어도, 같은 메모리 주소를 바라보게 된다. 
-- 즉 mutable 의 경우 b를 변경하게 되면 a 도 바뀐다.
-
-
-```python
-a = [1,2,3]
-b = a 
-b = [3,4,3]
-a
-```
-
-
-
-
-    [1, 2, 3]
-
-
-
-- immutable 의 경우는 좀 다르다. 
-- 애초에 객체가 변경 불가능하기 때문에, 바뀐다는것은, 메모리 주소도 새로이 할당된다는 것이다.
-- 그러므로 아래와 같이, id 가 바뀌게된다.
-
-
-```python
-a = 'abc'
-b = a 
-b.upper() # 모두 대문자로 바꾸어본다.
-print(a) # a는 바뀌지 않았다.
-```
-
-    abc
-
-
-## 객체
+> ## 객체
 
 - 객체란?
     - 객체는 어떤 속성값과 행동을 가지고 있는 데이타이다.
@@ -208,36 +89,14 @@ print(a) # a는 바뀌지 않았다.
     - 메모리에 올라간 객체들이 사용되지 않으면, 메모리 용량을 차지하지 않도록 지워야 컴퓨터 속도가 떨어지지 않는다.
     - 이 때에 GC(galbage collector) 라 불리는 파이썬 내부에 사용되지 않는 파이썬 객체들을 자동으로 중간중간 제거해준다.
 
-
-
-## 변수
-
-**변수 이름 정하기**
-
-1. 의미를 알 수 있게 하자.
-2. 소문자 ‘l’/대문자 ‘O’/대문자 ‘I’는 피하자.
-3. 변수와 함수의 이름은 소문자로만 구성한다.
-4. 문자열의 연결은 언더스코어 (_) 사용
-5. 클래스의 이름은 CapWords 스타일로.(즉 첫자만 대문자)
-6. 상수는 모두 대문자로 표시한다.
-
-
-## iterable
+> ## iterable
 
 - iterable
     - 반복 가능한 개체로써, member 을 하나씩 차례로 반환 가능한 object 를 말한다. 
     - list, dict, set, str, tuple, range 의 객체들이 대표적이다. 
     - zip, map 이 iterable 만 받는다는점에서 매우 유용하다.
 
-
-
-# 파이썬 중급
-
-## 잡다상식
-
-- 빈 Sequence(String / Tuple / List)는 False 값을 가진다.
-
-## Name space
+> ## Name space
 
 - 변수에 객체를 할당하면, 변수와 변수에 연결된 객체는 딕셔너리형태(key, value)로 연결되어 네임스페이스 안에 저장됩니다.
 
@@ -345,11 +204,7 @@ Image('./image/name_space1.png')
 
 
 
-​    
 <img src="/assets/images/1.Python/output_52_0.png">
-​    
-
-
 
 **왜 분리하였을까?**
 
@@ -358,44 +213,46 @@ Image('./image/name_space1.png')
     - 또 여러 모듈의 함수를 합칠때에 변수의 이름이 겹치지 않게 주의해야한다.
 - 위 같은 충돌이 생기지 않게 하기 위해서, 분리하여 관리하게 된다.
 
-## import
+> ## Import 
 
 - 파이썬에서 module 은 파이썬 코드를 담고 있는 파일이다. 해당 파일에는 파이썬 클래스, 함수 또는 단순하게 names 의 리스트가 들어있을 수 있다.
 - 모듈은 자신만의 유일한 namespace 를 갖는다.(모듈의 namespace 이름은 보통 모듈의 파일이름과 같다.) 그래서 동일한 모듈내에서 동일한 이름을 가지는 클래스나 함수를 정의할 수 없다. 또한 모듈은 각각 완벽하게 독립적(isolated)이기 때문에(namespace 가 다르기 때문에), 두 모듈은 동일한 이름을 갖는 클래스나 함수를 정의할 수 있다.
 
 - import 명령을 가지고 namespace 에 대해서 조금 더 알아보도록 하자. module 을 import 하는 방법은 여러가지가 있다. 방법에 따라 namespace 가 달라 질 수가 있다.
 
-**1. import (module_name)**
+> **1. import (module_name)**
 
 모듈을 import 하는 가장 간단한 방법이고, 일반적으로 추천되는 방법이다. 이렇게 import 를 하게 되면 module 의 name 을 prefix 로 사용함으로써 모듈의 namespace 에 접근할 수 있다.
 
-
-**2. from (module_name) import (name)**
+> **2. from (module_name) import (name)**
 
 모듈의 namespace 에서 import 에서 지정된 name 들을 직접 가져오도록 한다. 이렇게 하게 되면 import 이후에 지정한 name 들은 module 의 name을 prefix 로 지정하지 않고도 접근이 가능하다. 하지만, 이 경우에 module 에서 import 된 이름과 main script 에서 지정된 이름이 동일한 경우, 나중에 정의되는 이름으로 대체되어서 이전 것에 접근이 불가능하게 된다.
 
-**3. from (module_name) import ***
+> **3. from (module_name) import ***
 
 2 와 동일하지만, module 에 있는 모든 name 을 직접 현재 namespace 로 가져오게 된다. 이렇게 되면 namespace 가 섞이게 되어서 일반적으로 사용을 권장하지 않는다. 차라리 첫번째 타입(1번)의 import 를 사용하는 것이 좋다.
 
-## Overflow
+> ## Overflow
 
 - 파이썬 2에서는 정수형 데이터 타입이 int와 long 두 가지가 있었는데, int는 C에서의 그것과 같은 4바이트 데이터형이고, long은 arbitrary precision을 따르는 데이터형이다. 그래서 int 타입 변수의 값이 표현 범위를 넘어서게 되면 자동으로 long으로 타입 변경이 되는 형식이었다.
 - 파이썬 3에서는 long 타입이 없어지고 int 타입만 남았는데, 이 int가 arbitrary precision을 지원하여 오버플로우가 발생하지 않게 되었다.
     - arbitrary precision 이란 사용할 수 있는 메모리양이 정해져 있는 기존의 fixed-precision과 달리, 현재 남아있는 만큼의 가용 메모리를 모두 수 표현에 끌어다 쓸 수 있는 형태
 - 하지만 파이썬3에서도 pydata stack을 사용하는 numpy/pandas 같은 패키지를 사용할 때는 C 스타일이 유지되기 때문에 오버플로우 발생을 고려해야 한다.
 
-## why python is slow?
+# [Python Knowledge](#link){: .btn .btn--primary}{: .align-center}
 
-**1. 파이썬은 동적 타입 언어이기 때문이다.**
+> ## why python is slow?
+
+> **1. 파이썬은 동적 타입 언어이기 때문이다.**
 
 - 동적 타입 언어란 변수를 정의 할 때 그 자료형을 굳이 명시하지않아도 되는 언어다. 
 - C나 Java처럼 반드시 표기해줘야하는 정적 타입언어와는 성격이 다르다.
-
 - 아래 표를 보자
-|c언어|파이썬|
-|---|---|
-|int a = 1; <br> int b = 2; <br> int c = a + b; |a = 1 <br>b = 2 <br>c = a+b |
+
+| c언어                                | 파이썬                |
+| ------------------------------------ | --------------------- |
+| int a = 1; int b = 2; int c = a + b; | a = 1 ;b = 2 ;c = a+b |
+
 - C 언어
     - 컴파일(이미 각 개체 자료형 판단 완료) -> a에 1을 할당 -> b에 2를 할당 -> 덧셈 루틴 호출 -> 결과를 c에 할당 // 끝
     - 글로 써도 연산과정이 한 줄밖에 안 나올 정도로 간단하다
@@ -403,7 +260,8 @@ Image('./image/name_space1.png')
     - 개체 a에 1을 할당 -> a의 타입을 판단(정수) -> a의 값 = 1 설정 -> 개체 b에 2를 할당 -> b의 타입을 판단(정수) -> b의 값 = 2 설정 -> 덧셈 루틴 호출 -> a의 자료형 검색 -> a는 정수 -> b도 자료형 검색 -> b도 정수 -> 덧셈 루틴에 입력 ->정수형 결과값 도출 -> 개체 c 생성 -> c의 자료형을 정수로 설정 -> c에 덧셈한 결과값을 설정 // 끝
     - 자료형을 판단해야하는 번거로움이 존재하여 매우 느리다.
 
-**2. 파이썬은 인터프리터 언어이기 떄문이다.**
+> **2. 파이썬은 인터프리터 언어이기 떄문이다.**
+
 - 컴파일러 / 인터프리터 둘다 C/자바같은 고레벨 언어를 기계어로 변환하는것은 같다. 하지만 아래와 같은 차이가 있다.
 - 컴파일러
     - 컴파일러는 전체 소스코드를 보고 변환한다. 
@@ -414,15 +272,15 @@ Image('./image/name_space1.png')
     - 고레벨 언어를 바로 기계어로 변환하는것이 아니라, 중간형태로 변환한 다음 실행한다.
     - 즉 각 행마다 실행하는 특성을 가지고 있다. 각 행마다 실행하는 도중 에러가 보고되면, 이후 작성된 코드를 살펴보지 않는다. 
 
-**3. 파이썬 개체 모델은 비효율적 메모리 엑세스가 발생한다.**
+> **3. 파이썬 개체 모델은 비효율적 메모리 엑세스가 발생한다.**
+
 - 타입 판단' 및 '이미 판단한 타입을 검색'하는 등의 추가적인 과정이 메모리 사용량을 더 필요로 한다. 
 - 즉 컴파일 언어라면 굳이 쓰지 않아도 될 메모리가 사용되고 있기 때문에 비효율적 메모리 액세스가 발생
 
-
-
-## 시간복잡도
+> ## 시간복잡도
 
 **시간복잡도란?**
+
 - 알고리즘은 유한한 자원을 가진 환경에서 문제를 푸는 동작들의 모임이다.
 - 적은 시간과 적은 자원을 이용해 문제를 해결하는 알고리즘이 좋은 알고리즘이다.
 - 알고리즘 평가에 있어서, 2가지 척도가 있다.
@@ -436,9 +294,8 @@ Image('./image/name_space1.png')
     - 최악의 경우
 - 평균적인 경우가 가장 이상적으로 보이지만 '평균' 은 많은 sample 들을 요구하기때문에 적절하지 않다. 즉 최악의 경우로 알고리즘의 성능을 파악한다.
 
+> **어떻게 측정?**
 
-
-**어떻게 측정?**
 - Program 의 실행과정에서 Elementary Operation이란 프로그램의 진행정도를 나타내는 기본 단위이다.
     - 대입연산
     - 사칙연산
@@ -446,26 +303,23 @@ Image('./image/name_space1.png')
     - 함수호출
 - 알고리즘의 실행 순서를 따라가면서 Elementray Operation 이 일어나는 수를 측정한다.
 
-**Big O**
+> **Big O**
+
 - Big O notation 을 통해서 Asymptotic Comlexity 에 대해서 알 수 있다.
 - 알고리즘의 성능평가는 시간복잡도 / 공간 복잡도를 big O natatation 으로 나타낸다. 
     - $n^2 + 2n + 9 > O(n^2) $ 
 - 다항식이 커질수록 급격하게 알고리즘의 수행 시간이 많아진다. 
 
-# 파이썬 고급
-
-## 메모리 초과
+> ## 메모리 초과
 
 - python 에서는 list에 slice 연산을 하면 매번 새로운 list가 만들어집니다. 그러므로 slice 연산을 너무 많이하면 메모리초과가 일어난다.
 - list 보다는 Tuple 이 더 메모리가 적다. 즉 데이터를 바꿀 필요가 없다면, tuple 을 웬만하면 사용하자.
 
-## indexing은 왜 0부터고, \[a,b\) 꼴이야 ?
+> ## indexing은 왜 0부터고, \[a,b\) 꼴이야 ?
 
 Zero-based Half-open 컨벤션에 관해서 다익스트라가 1982년에 자신의 생각을 담은 노트가 있다. '0부터 시작하고 마지막 수는 포함하지 않는 인덱스 넘버링'이 프로그래밍에 왜 가장 좋은 표현법인지에 대해 설명하고 있다.
 
-
-
-**인덱스의 구간을 표현할 때에 [a,b) 표현법이 제일 좋다**
+> **인덱스의 구간을 표현할 때에 [a,b) 표현법이 제일 좋다**
 
 - 인덱스의 구간을 표현할 때에 (a,b) \[a,b\] \(a,b\] \[a,b\) 네가지가 있다.
 - 이 경우에는 반 받힌 구간 \(a,b\] , \[b,a\) 의 경우가 좋은데 그 이유는 다음과 같은 이유가 있다.
@@ -477,303 +331,17 @@ Zero-based Half-open 컨벤션에 관해서 다익스트라가 1982년에 자신
 - 그리고 아래와 같은 예제에서 실증이 된 부분도 있다.
     - Xerox PARC에서 Mesa라는 프로그래밍 언어를 만들어서 사용하였다. 이 언어에는 (a,b] [a,b) [a,b] (a,b) 이 네 가지 컨벤션을 지원하는 특별한 문법이 있었다. 근데 사람들이 이 언어 써 보다가 [a,b) 빼고 나머지가 지속적으로 오류를 유발하는 원인이라는 것을 알게됨. 이를 계기로 Mesa 프로그래머들이 나머지 3개 문법을 쓰지 말자고 하고 사장시킴. 즉 [a,b)가 제일 좋다는 게 실험으로 증명된 거임.
 
-
-
-**\[a,b\) 표현법을 사용하게 될 경우에, 0부터 시작하는것이 자연스럽다.**
+> **\[a,b\) 표현법을 사용하게 될 경우에, 0부터 시작하는것이 자연스럽다.**
 
 - 인덱싱이 0부터 시작되어야 마지막 수가 N이 될 때에, 집합의 크기와 딱 맞아서 자연스럽다. 
 
-**C는 언어의 설계 단계에서 0부터 시작하는 넘버링을 사용**
+> **C는 언어의 설계 단계에서 0부터 시작하는 넘버링을 사용**
 
 - C에서는 배열의 순차적인 접근시에 포인터(Base)를 기준으로 오프셋을 나타내는 인덱스를 더해서 메모리의 상대적인 주소를 계산합니다. 이 때문에 C는 언어의 설계 단계에서 0부터 시작하는 넘버링이 뿌리를 내렸습니다. (좀 더 자세히는 C의 전신인 B언어와 BCPL로부터 물려받은 것)
 - 거의 모든 프로그램이 C 의 영향을 받았다고 해도 과언이 아니다. 그래서 0 부터 인덱싱이 시작하는듯..!
 
-# Class
+---
 
-- 프로그래머들이 가장 많이 사용한다는 C 에는 클래스가 없다. 즉 클래스가 없어도 프로그래밍하는데에는 큰 상관이 없다는것이다.
-- 하지만 Class 를 잘 사용하면 얻을 수 있는 이익이 상당하다.
+파이썬은 배우면 배울수록 할게 많은것 같습니다.. 처음 배울때 화아악 완벽하게 했어야하는데.. 응용통계학과 R/Python 프로그래밍으로 시작해서 그런가, 좀 딥하게 배운게 아니라 데이터분석 목표로 실용적인거만 배우다 보니 빵꾸가 많이 났네요. ㅠㅠ.. 지금이라도 늦었지만 체계적으로 잘 배워두려 합니다..
+{. :notice-success}
 
-- 아래의 경우는 계산기의 더하기 기능을 구현한 파이썬 코드이다. 
-
-
-```python
-result = 0
-
-def add(num):
-    global result # 이전의 값을 저장하기위해서 전역변수 사용
-    result += num
-    return result
-print(add(3))
-print(add(4))
-```
-
-    3
-    7
-
-
-- 하지만 이때에 2개의 계산기가 필요하게 되면 어떻게 될까? 각각의 계산기는 각각의 결과값을 유지해야한다. 즉 위 add 하나의 함수로는 변수들을 분리해서 저장할 수 없기때문에 함수를 하나 더 만들어야한다.
-
-
-```python
-result1 = 0
-result2 = 0
-
-def add1(num):
-    global result1
-    result1 += num
-    return result1
-
-def add2(num):
-    global result2
-    result2 += num
-    return result2
-
-print(add1(3))
-print(add1(4))
-print(add2(3))
-print(add2(7))
-```
-
-    3
-    7
-    3
-    10
-
-
-- 하지만 위와같이 번거롭게 하지 않고 클래스로 구현하는 방법이 있다.
-
-
-```python
-class Calculator:
-    def __init__(self):
-        self.result = 0
-    def add(self, num):
-        self.result += num
-        return self.result
-
-cal1 = Calculator()
-cal2 = Calculator()
-
-print(cal1.add(3))
-print(cal1.add(4))
-print(cal2.add(3))
-print(cal2.add(7))
-```
-
-    3
-    7
-    3
-    10
-
-
-- calculator 클래스로 만든 별개의 계산기 cal1, cal2 (이것은 객체라고 불림) 은 각각의 역할을 수행하게 된다.
-
-## 객체
-
-- 과자 틀은 클래스이고, 과자 틀에 의해서 만들어진 과자는 객체이다. 
-- class 는 무엇인가를 계속 만들어낼 수 있는 설계 도면이라 할 수 있다. 
-- 객체는 클래스로 만든 피조물이다. 
-
-## 인스턴스
-
-- 클래스로 만든 객체를 인스턴스라고도 한다. 
-- 두개는 같은것을 의미한다. 문맥상 서로 다르게 불리지만 어쩃든 둘은 같음.
-
-## self
-
-
-```python
-def setdata(self, first, second):   # ① 메서드의 매개변수
-    self.first = first              # ② 메서드의 수행문
-    self.second = second            # ② 메서드의 수행문
-```
-
-
-```python
-class FourCal:
-    def setdata(self, first, second):
-        self.first = first
-        self.second = second
-```
-
-
-```python
-a = FourCal()
-a.setdata(4, 2)
-```
-
-- FourCal 을 정의할때에는 3개의 변수 (self , first, second) 가 쓰였는데 여기에서는 왜 4,2 2개만 쓸까? 
-- self 는 객체가 전달되는 값이다. 
-- 파이썬에서 첫 매개변수 이름은 관례적으로 self 를 사용한다.
-
-
-```python
-Image('./image/class1.PNG')
-```
-
-
-
-
-​    
-<img src="/assets/images/1.Python/output_146_0.png">
-​    
-
-
-
-
-```python
-print(a.first)
-print(a.second)
-```
-
-    4
-    2
-
-
-
-```python
-b = FourCal()
-b.setdata(5,6)
-print(b.first)
-```
-
-    5
-
-
-- 위와 같이 다른 객체를 통해 생성되었으므로, 그 안에서 first 변수 (a.first / b.first) 는 다른값을 가진다.
-
-
-```python
-print(id(a.first))
-print(id(b.first))
-```
-
-    140708683424240
-    140708683424272
-
-
-- 위에서 보듯이 다른 객체에서 생성되어서 다른 주소를 가진다. 즞 객체들끼리는 서로 영향받지 않고 독립적으로 그 값을 유지할 수 있다.
-
-## 메서드
-
-- 클래스 안에 구현된 함수를 메서드라고 부른다. 
-- 내부의 함수는 항상 메서드라고 불린다. 
-
-
-```python
-class FourCal:
-    def setdata(self, first, second):
-        self.first = first
-        self.second = second
-    def add(self):
-        result = self.first + self.second
-        return result
-```
-
-
-```python
-a = FourCal()
-a.setdata(4,2) # self.first / self.second 의 변수에 4,2 를 전달한다.
-```
-
-
-```python
-a.add() # add 라는 메서드를 수행한다. 
-```
-
-
-
-
-    6
-
-
-
-## 생성자 (Constructor)
-
-- 생성자는 객체가 생성될떄 자동으로 수행되는 메서드를 의미한다.
-- 파이썬 메서드 이름으로 \_\_init\_\_ 를 사용하면 이 메서드는 생성자가 된다.
-
-
-```python
-a = FourCal()
-a.add()
-```
-
-
-    ---------------------------------------------------------------------------
-    
-    AttributeError                            Traceback (most recent call last)
-    
-    <ipython-input-41-93d8790fe05f> in <module>
-          1 a = FourCal()
-    ----> 2 a.add()
-
-
-    <ipython-input-37-e3014b14d498> in add(self)
-          4         self.second = second
-          5     def add(self):
-    ----> 6         result = self.first + self.second
-          7         return result
-
-
-    AttributeError: 'FourCal' object has no attribute 'first'
-
-
-- 위의 경우 seltdata 메서드를 수행하지 않고 add 를 하게되어서 에러가 뜨는 모습이다.
-
-
-```python
-class FourCal:
-    def __init__(self, first, second):
-        self.first = first
-        self.second = second
-    def setdata(self, first, second):
-        self.first = first
-        self.second = second
-    def add(self):
-        result = self.first + self.second
-        return result
-```
-
-- init 메서드를 보게되면 setdata 메서드와 이름만 다르고 모든게 동일하다.
-
-
-```python
-a = FourCal()
-```
-
-
-    ---------------------------------------------------------------------------
-    
-    TypeError                                 Traceback (most recent call last)
-    
-    <ipython-input-43-5cfa1e393ba9> in <module>
-    ----> 1 a = FourCal()
-
-
-    TypeError: __init__() missing 2 required positional arguments: 'first' and 'second'
-
-
-- 아니? 이전에는 잘 작동하더니 왜 안될까? 이는 a = FourCal()을 수행할 때 생성자 \_\_init\_\_이 호출되어 위와 같은 오류가 발생했다. 오류가 발생한 이유는 생성자의 매개변수 first와 second에 해당하는 값이 전달되지 않았기 때문이다.
-
-- 위 오류를 해결하려면 다음처럼 first와 second에 해당되는 값을 전달하여 객체를 생성해야 한다.
-
-
-
-
-```python
-a = FourCal(4, 2)
-print(a.first)
-print(a.second)
-```
-
-    4
-    2
-
-
-- 처음에 바로 \_\_init\_\_ 이 실행되명서 각 변수에 값을 할당하게 된다.
-
-
-```python
-
-```
