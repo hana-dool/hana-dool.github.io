@@ -2,8 +2,6 @@
 title: "Local Minima"
 categories:
   - Stat_Machine_Learning
-tags:
-  - 1
 last_modified_at: 2021-08-21
 
 toc: true

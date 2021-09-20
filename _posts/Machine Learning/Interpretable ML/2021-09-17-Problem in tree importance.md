@@ -17,7 +17,7 @@ use_math: true
   트리 모델에서 우리는 다양한 기준들을 적용하여 Feature 들의 Importance 들을 알아보았습니다. 이러한 Importance 들은 무조건 맞을까요? 이러한 Tree importance 에 대한 각종 논란들을 살펴보고 어떻게 사용해야되는지에 대해서 알아봅시다.
 {: .notice--warning}
 
-# [Random Number is Important?](#link){: .btn .btn--primary} 
+# [Random Number is Important?](#link){: .btn .btn--primary}{: .align-center} 
 
 - Impurity 기반으로 적용된 Feature Importance는 다소 편향되어있다고 합니다.
 - 특히 랜덤 포레스트 모델일 경우 연속형 변수이거나 또는 카테고리의 갯수가 많은 변수 즉 High Cardinality 를 가지는 변수의 중요도를 과대평가 하게 됩니다.
@@ -94,7 +94,7 @@ use_math: true
  과적합이 되었을떄에는 , MDI 기반 Importance 는 High Cardinailty 에 휘둘리기때문에 좋은 방법이 아닙니다. 과적합을 하지 않은 경우에도 파라미터가 변할때마다 살짝씩 순위가 변하기때문에 절대적으로 좋은 기준은 아닙니다. Test set 에 대하여 가장 좋은 성능을 보이는 model 기준으로 MDI 기반 Importance 를 어느정도 '참고' 할 수 있을것으로 예상됩니다.
 {: .notice}
 
-# [Permutation importance in Tree model](#link){: .btn .btn--primary} 
+# [Permutation importance in Tree model](#link){: .btn .btn--primary}{: .align-center}
 
 ![jpg](/assets/images/ML/10_7.png)
 

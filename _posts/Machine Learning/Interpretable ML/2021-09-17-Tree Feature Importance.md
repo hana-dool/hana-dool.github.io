@@ -17,7 +17,7 @@ use_math: true
   Tree 모델의 경우 우리는 Feature importance 를 계산할 수 있습니다. 이러한 변수 중요도는 어떻게 계산되고, 어느정도 믿을 수 있는 값일까요? 이에 대해서 짧게 살펴보고 어떻게 이용할 수 있을지에 대해서 살펴봅시다.
 {: .notice--warning}
 
-# [Feature Importance in Tree](#link){: .btn .btn--primary} 
+# [Feature Importance in Tree](#link){: .btn .btn--primary}{: .align-center}
 
 - Scikit-learn에서는 **지니 중요도(Gini Importance)**를 이용해서 각 feature의 중요도를 측정합니다. 
 
@@ -78,7 +78,7 @@ $$I(f_i)^{norm}=\frac{I(f_i)}{\sum_{ i \in \space all\space feature\space f_i} I
 
 - 위와 같이 다양한 기준을 Gini Impurity 대신 쓸 수 있습니다.
 
-# [Feature Importance Methods](#link){: .btn .btn--primary} 
+# [Feature Importance Methods](#link){: .btn .btn--primary}{: .align-center}
 
 - 위와 같이 Tree 는 Importance 를 기본적으로 제공하기때문에 좋습니다만. 다른 방법으로도 이러한 Importance 를 계산할 수 있습니다.
 
