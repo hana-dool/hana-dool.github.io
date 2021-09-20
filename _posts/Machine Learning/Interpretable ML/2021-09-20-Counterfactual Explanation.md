@@ -1,11 +1,9 @@
 ---
 title:  "CounterFactual Explanations"
-excerpt: "반 사실적 설명을 이용한 설명
-"
+excerpt: "예측치에 도달하는 Sample 들을 자세히 살펴보는 방법"
 categories:
   - Interpretable_ML
-date : 2021-09-17 01:00:00 +0900
-last_modified_at: 2021-09-17
+last_modified_at: 2021-09-20
 
 toc: true
 toc_label: "Table Of Contents"
@@ -15,7 +13,7 @@ toc_sticky: true
 use_math: true
 ---
 
-  Tree 모델의 경우 우리는 Feature importance 를 계산할 수 있습니다. 이러한 변수 중요도는 어떻게 계산되고, 어느정도 믿을 수 있는 값일까요? 이에 대해서 짧게 살펴보고 어떻게 이용할 수 있을지에 대해서 살펴봅시다.
+  반 사실적인 방법론이란 사실, 우리가 원하는 예측치에 도달하는 Sample 들을 자세히 살펴보는 방법론입니다. 이를 어떻게 구현할 수 있고 장단점이 무엇인지 살펴봅시다.
 {: .notice--warning}
 
 # [CounterFactual Explanations](#link){: .btn .btn--primary}{: .align-center}
@@ -41,6 +39,7 @@ use_math: true
 {: .notice}
 
 애나는 아파트를 임대하고싶지만 얼마가 필요할 지 모르기떄문에 임대료를 예측하는 ML 모델을 Training 시켰습니다. 그녀가 Training 에 넣은 특성값은 집의 크기, 애완동물 허가여부, 전자렌지 유무 등입니다. 모델의 예측 결과가 나왔는데 , 겨우 월당 10만원의 가치밖에 없었습니다. 그녀는 지금 바꿀 수 없는 변수 (집의 크기, 위치 등) 를 고정한 채로 내가 조절할 수 있는 변수 (전자렌지 유무 , 애완동물의 허가) 를 변화시키며 20만원 이상의 임대료를 가지는 조합을 찾아내었습니다.
+{: .notice}
 
 > ## Generating Counterfactual Explanations
 
@@ -145,33 +144,49 @@ $\lambda\cdot(\hat{f}(x^\prime)-y^\prime)^5$ : desired outco
 - 반사실성에 따라 인스턴스(instance)의 피쳐 값이 변경되면 예측이 미리 정의된 예측으로 변경됩니다. 
   - 이는 어떠한 가정도 들어가지 않습니다. (마치 Lime 처럼 국소적인 영역에서는 선형을 따른다 처럼요)
 
-- 반사실적 방법은 새 인스턴스를 만들지만 변경된 형상 값을 보고하여 반사실적 요약을 요약할 수도 있습니다. 
-  - 이를 통해 *** 결과를 보고할 수 있는 두 가지 옵션이 제공됩니다. 반사실적 인스턴스를 보고하거나, 관심 인스턴스와 반사실적 인스턴스 간에 변경된 기능을 강조 표시할 수 있습니다.
+- 반사실적 방법은 새 인스턴스를 마구 만듭니다. 
+  - 이를 통해 결과를 보고할 수 있는 두 가지 옵션이 제공됩니다. 반사실적 인스턴스를 보고하거나, 관심 인스턴스와 반사실적 인스턴스 간의 차이를 보고할 수 있습니다.
 
-**반사실적 방법은 데이터 또는 모델에 대한 액세스가 필요하지 않습니다**. 예를 들어 웹 API를 통해 작동하는 모델의 예측 기능에만 액세스하면 됩니다. 이는 타사에서 감사를 받거나 모델이나 데이터를 공개하지 않고 사용자에게 설명을 제공하는 기업에게 매력적입니다. 기업은 영업 기밀 또는 데이터 보호 이유로 모델과 데이터를 보호하는 데 관심이 있습니다. 반사실적 설명은 모델 예측을 설명하는 것과 모델 소유자의 이익을 보호하는 것 사이의 균형을 제공합니다.
+> 반사실적 방법은 데이터 또는 모델에 대한 액세스가 필요하지 않습니다.
 
-** 메서드는 기계 학습**을 사용하지 않는 시스템에서도 작동합니다. 입력을 수신하고 출력을 반환하는 모든 시스템에 대해 반사실 관계를 생성할 수 있습니다. 아파트 임대료를 예측하는 시스템도 손으로 쓴 규칙으로 구성될 수 있고, 반사실적 설명도 여전히 효과가 있을 것입니다.
+- 데이터가 매우 민감(개인정보 등) 한 경우, 이러한 방법은 매우 보안이 훌륭합니다.
 
-**반사실적 설명 방법은 표준 최적화 도구 라이브러리로 최적화할 수 있는 손실 기능이기 때문에 비교적 쉽게 구현할 수 있습니다**. 피쳐 값을 유의한 범위로 제한(예: 양수 아파트 크기만)하는 등 일부 추가 세부 정보를 고려해야 합니다.
+> 메서드는 기계 학습을 사용하지 않는 시스템에서도 작동합니다.
 
-# 단점[Permalink](https://tootouch.github.io/IML/counterfactual_explanations/#단점)
+- 입력과 출력이 있는 모든 모델에 적용이 가능합니다. 
+- 단순히 Sample 을 만들어내는 방법론이기 떄문입니다.
 
-**각 인스턴스에 대해 일반적으로 여러 개의 반사실적 설명(Rashomon effect)**을 찾을 수 있습니다. 이것은 불편합니다. 대부분의 사람들은 현실 세계의 복잡성보다 간단한 설명을 선호합니다. 그것은 또한 현실적인 도전입니다. 한 가지 사례에 대해 23가지 반사실적 설명을 생성했다고 가정하겠습니다. 다 보고하는 건가요? 최고만요? 만약 그들이 모두 비교적 “좋지만” 매우 다르다면 어떨까요? 이 질문들은 각 프로젝트에 대해 새롭게 답해야 합니다. 여러 가지 반사실적 설명을 하는 것도 유리할 수 있습니다. 그러면 인간은 이전의 지식에 상응하는 것을 선택할 수 있기 때문입니다.
+> 쉽게 구현이 가능합니다.
 
-지정된 공차 $\epsilon$에 대해 반사실적 인스턴스가 발견된다는 보장은 없습니다**. 그것은 반드시 방법의 잘못이 아니라 데이터에 따라 다릅니다.
+- 왜냐하면 단순히 정의된 Loss 에 따라서 Sample 을 만들기만 하면 되기 때문입니다.
+- 피쳐 값을 유의한 범위로 제한(예: 양수 아파트 크기만)하는 등 일부 추가 세부 정보를 고려할 수도 있습니다.
 
-제안된 방법 ***는 다양한 수준의 범주형 피쳐**를 잘 처리하지 않습니다. 메소드의 작성자는 범주형 피쳐 값의 각 조합에 대해 이 방법을 별도로 실행할 것을 제안했지만, 많은 값을 가진 여러 범주형 피쳐가 있는 경우 조합형 폭발을 일으킵니다. 예를 들어, 10개의 고유 레벨을 가진 6개의 범주형 피쳐는 100만 번의 실행을 의미합니다. 범주형 기능만을 위한 해결책은 Martens et al. (2014)[2](https://tootouch.github.io/IML/counterfactual_explanations/#fn:2)에 의해 제안되었습니다. 범주형 변수에 대한 동요를 생성하기 위한 원칙적인 방법으로 수치 및 범주형 변수를 모두 처리하는 솔루션은 Python 패키지 [Alibi](https://docs.seldon.io/projects/alibi/en/stable/methods/CFProto.html))에서 구현됩니다.
+> ## Disadvantages
 
+> 각 인스턴스에 대해 일반적으로 여러 개의 반사실적 설명(Rashomon effect) 이 존재합니다.
 
+- 이것은 불편합니다. 대부분의 사람들은 현실 세계의 복잡성보다 간단한 설명을 선호합니다. 
+- 한가지의 instance 에 대해서 반사실적 Instance 가 30개 생성되었다고 합시다.
+  - 몇개만 보고해야할까요 10개? 
+  - 다 좋은 값을 지니지만 매우 상이한 데이터를 가지는 경우에는 어떡할까요?
 
-Reference
+> 정해진 $\epsilon$에 대해 반사실적 인스턴스가 발견된다는 보장은 없습니다.
 
-- <https://soohee410.github.io/iml_tree_importance>
-- [https://towardsdatascience.com](https://towardsdatascience.com/the-mathematics-of-decision-trees-random-forest-and-feature-importance-in-scikit-learn-and-spark-f2861df67e3)
-- [https://velog.io](https://velog.io/@vvakki_/%EB%9E%9C%EB%8D%A4-%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8%EC%97%90%EC%84%9C%EC%9D%98-%EB%B3%80%EC%88%98-%EC%A4%91%EC%9A%94%EB%8F%84Variable-Importance-3%EA%B0%80%EC%A7%80)
-- [https://explained.ai/rf-importance/](https://explained.ai/rf-importance/)
-- [https://towardsdatascience.com/explaining-feature-importance](https://towardsdatascience.com/explaining-feature-importance-by-example-of-a-random-forest-d9166011959e)
+- $\epsilon$ 에 대해서, 반사실적인 인스턴트를 찾을지 말지는 사전에 찾을 수 없습니다.
 
- 위와 같이 기본적으로 Tree Model 에서 어떻게 Feature Importance 를 계산하고 그것을 해석할 수 있는지를 알아보았습니다. 트리 모델은 흔치 않게 머신러닝 모델이면서도 해석력이 어느정도 내장되어있는 방법론이기도 합니다. 하지만 여전히 importance 를 안다고 해서 이 변수가 양의 영향력을 가지는지 , 아닌지는 알 수 없으므로 부가적인 해석이 필요할 수도 있을것입니다.
+> 제안된 방법는 다양한 수준의 범주형 피쳐를 잘 처리하지 않습니다. 
+
+- 이는 사실 처음 제안된 방법론에 한하는 단점입니다.
+-  범주형 기능만을 위한 해결책은 Martens et al. (2014)[2]에 의해 제안되었습니다. 
+- 범주형 변수에 대한 동요를 생성하기 위한 원칙적인 방법으로 수치 및 범주형 변수를 모두 처리하는 솔루션은 Python 패키지 [Alibi](https://docs.seldon.io/projects/alibi/en/stable/methods/CFProto.html))에서 구현됩니다.
+
+---
+
+**Reference**
+
+- <https://christophm.github.io/interpretable-ml-book/counterfactual.html>
+- <https://tootouch.github.io/IML/counterfactual_explanations/>
+
+ 반사실적인 Feature 들을 생성하여, 우리가 원하는 목표치를 넘는 Sample 들을 생성하는 방법입니다. 여기서 더 나아가 importance 가 어떻고, 어떤 feature 가 중요도가 얼마고... 같이 자질구레하게 설명하는게 아니라 그저 , Sample 만 제시함으로서 사용자에게 그 해석을 전가한다는 생각도 들지만, 어쩃든 유용한 방법론임은 확실한듯 합니다.. 근데 그냥 Sample 만 만들어주고 이를 해석하는건 사람한테 맞긴다는점에서 좀 무책임한듯?
 {: .notice--success}
 
