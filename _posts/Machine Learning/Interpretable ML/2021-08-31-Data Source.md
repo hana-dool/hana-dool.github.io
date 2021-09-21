@@ -25,6 +25,10 @@ use_math: true
 
 - https://christophm.github.io/interpretable-ml-book/
   - 정리 필수.. 엄청나게 좋음
+- <https://compstat-lmu.github.io/iml_methods_limitations/>
+  - 두번쨰 책 
+
+
 
 # Overall
 
