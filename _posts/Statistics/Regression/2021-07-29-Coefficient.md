@@ -3,9 +3,7 @@ title:  "Coefficient of Determination"
 excerpt: "결정 계수와 상관계수"
 categories:
   - Regression
-tags:
-  - 1
-last_modified_at: 2021-07-29
+last_modified_at: 2021-09-22
 
 toc: true
 toc_label: "Table Of Contents"
@@ -15,7 +13,7 @@ toc_sticky: true
 use_math: true
 ---
 
-# 1. Coefficient of Determination
+# [Coefficient of Determination](#link){: .btn .btn--primary}{: .align-center}
 
 ![png](/assets/images/Stat/20_2.png)
 
@@ -39,7 +37,7 @@ use_math: true
 
 <br>
 
-# 2. 상관계수(r) 과의 관계
+> ## 상관계수(r) 과의 관계
 
 - R^2 를 계산할때에 회귀 모델을 사용하였고, 그리고 모델의 변수는 2개 (x,y) 라고 합시다.
 - 위와 같은 경우 $r^2 = R^2$ 이 성립합니다. 이를 증명하면 아래와 같습니다.
@@ -50,7 +48,7 @@ use_math: true
 
 <br>
 
-# 3. 상관계수 대신 R^2
+> ## 상관계수 대신 R^2
 
 - 우리는 흔히 상관계수의 값을 이용해 변수들간의 관계를 요약합니다.
   - X1 과 X2 의 상관계수는 0.8 이니까 선형성이 강력할거야~ 
@@ -69,7 +67,7 @@ use_math: true
 
 <br>
 
-# 4. 변수의 수와 결정계수
+> ## 변수의 수와 결정계수
 
 - 다음과 같은 regression model 을 생각하여보자. 
 
@@ -83,15 +81,20 @@ use_math: true
 
 <br>
 
-# 5. 음수가 나오기도.?
+> ## 음수가 나오기도.?
 
-- 음수가 나올수도 있다.
-- 그 경우는 모조리 평균으로 예측한거보다 안좋은 예측일경우이다.
+- 음수가 나올수도 있습니다.
+- 그 경우는 모조리 평균으로 예측한거보다 안좋은 예측일경우입니다. 
 
-# Refer
+![png](/assets/images/Stat/20_6.png)
+
+- 위를 보시면 파란 선이 우리의 모델이라 합시다.
+- 초록색 선(평균) 보다 안좋은 예측이라 , R^2 가 음수가 나오는것을 확인할 수 있습니다.
+
+---
+
+**reference**
 
 - <https://journals.lww.com/anesthesia-analgesia/fulltext/2018/05000/correlation_coefficients__appropriate_use_and.50.aspx>
+- <https://www.graphpad.com/support/faqid/711/>
 
-  - 꼭 읽으세요..!
-
-  

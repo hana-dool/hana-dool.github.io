@@ -106,53 +106,117 @@ $$\hat{\boldsymbol{\beta}}=\arg\!\min_{\beta_0,\ldots,\beta_p}\sum_{i=1}^n\left(
 > ## Feaure Importance
 
 - Linear regression 의 Feature importance 를 재는 측도는 여러개가 있을 수 있습니다.
+  - 하지만, 어떠한 변수가 어떤 측면에서 중요할지는 매우 민감한 주제입니다.
+  - 일반적으로 p-value , 계수값 등은 이용되어선 안될 것입니다.
+- 이 책의 저자는 Linear regression 의 특성값의 중요도는 t-통계량의 절댓값으로 추정하고자 하였습니다. 
 
-- 데이터 $X \in R^{n*d}$ 를 고려합시다.
-- 모든 데이터를 살펴볼 수 없기 때문에, 특징이 다르고 중요한 데이터만을 뽑아서 생각한다.
-- 살펴볼 데이터 budget B를 정한다. 이는 데이터를 총 몇 개 뽑아서, 내 데이터를 대표할 샘플로 만들지의 값이다
-  - 이 값을 100개를 정한다면, 총 100개의 Sample 을 뽑게 됩니다.
-- original representataion 으로부터, 해석가능한 표현   $X' \in R^{n*d'}$    를 만든다. 
-- 데이터의 local 한 importance를 나타낼 matrix W 를 아래와 같이 정의합시다.
-  - linear model을 explanation 으로 사용했다면 데이터 $x_i$ 에 대하여 explanation $g_i = \xi(x_i)$  를 얻을 수 있고, $W_{ij} = \mid w_{g_{ij}} \mid$  로 정의할 수 있습니다.
-  - 이떄에, $g_{i}$ 는 데이터 $x_i$ 에 대한 Explainable model 입니다. (linear)
-  - 그리고 $g_{ij}$ 는  linear model 의 j번째 feature 에 대한 계수입니다. 
-- 추가적으로  $I_j$ (j column 의 global importance를 정의) $I_j = \sqrt{(\sum_i W_{ij})}$ 을 정의합니다.
-  - 모든 instance i 에 대하서 , 설명 가능한 모델 $g_i$를 Construct 한 뒤에 , j 번째 feature 의 계수의 절댓값 모두 더한것입니다.
-  - 당연히 '중요한 feature' 라면, 많은 샘플에 대해서, 왜 이런 예측을 하였는니? 에 대한 Local 적인 해석을 하더라도 계속 포함될 것입니다.
-  - 예시로 월급을 예측한다고 할떄에 Feature 에 나이가 있다면,각 instance (철수, 영희,.....) 에 대한 월급 설명을 할때에 대부분 나이 변수가 크게 영향을 끼칠것이기 떄문입니다.
-- 최대한 특징이 다르며 많은 정보를 포함하고 있는 데이터를 추출하기 위해서 $c(V,W,I) = \sum_{j=1}^{d'}1_{\exist i \in V : W_{ij}>0}I_j $라고 converge function 을 정의합니다.
+$$t_{\hat{\beta}_j}=\frac{\hat{\beta}_j}{SE(\hat{\beta}_j)}$$
 
-![jpg](/assets/images/ML/14_3.png)
+- 위에서 볼 수 있듯이, t 통계량은 표준 오차로 크기가 조정된 추정 가중치값이 됩니다. 
+- 계수가 아무리 크더라도, 추정된 분산값도 같이 크다면(불확실성이 크다면) 작은 importance를 지니게 됩니다.
 
-- 우선 위와 같이 예시를 들어보겠습니다. 
-- 각 instance x_i 에 대하여, 설명모델은 가로줄과 같습니다. 
-  - x1 은 $1\cdot f_1 + 1 \cdot f_2  = x_1$ 로 설명되고 있다고 보시면 됩니다. 
-- $V=\{1,3\}$ 인 경우에 $c(V,W,I)$ = (1+4) + (4+2) 가 됩니다.
-  - 그 이유는 $x_1$ 의 경우 $f_1, f_2$ 에 의해 설명이 되고, 각각의$I_1, I_2$ 는 1,4 이기 때문입니다.
-  - $x_3$ 의 경우 $f_2,f_3$ 에 의해 설명이 되고, 각각의 $I_2, I_3$ 은 4,2 이기 떄문입니다.
-- 이렇게 Coverage function 을 최대화 하는 집합 V 를 찾으면 중요한 데이터들을 쏙쏙 뽑아낼 수 있을것입니다.
-  - 모두, 다양한 local 모델들에 대해서 중요하다고 생각되었던 Feature 들이기떄문에 중요한 데이터일것입니다.
+> ## Example 
 
-$$Pick(\mathcal{W},I)=\underset{\mathcal{V},|\mathcal{V}|\leq B}{\operatorname{argmax}}c(\mathcal{V},\mathcal{W},I)$$
+|                           | **Weight** | **SE** | **$\mid t \mid$** |
+| ------------------------- | ---------- | ------ | ----------------- |
+| (Intercept)               | 2399.4     | 238.3  | 10.1              |
+| seasonSUMMER              | 899.3      | 122.3  | 7.4               |
+| seasonFALL                | 138.2      | 161.7  | 0.9               |
+| seasonWINTER              | 425.6      | 110.8  | 3.8               |
+| holidayHOLIDAY            | -686.1     | 203.3  | 3.4               |
+| workingdayWORKING DAY     | 124.9      | 73.3   | 1.7               |
+| weathersitMISTY           | -379.4     | 87.6   | 4.3               |
+| weathersitRAIN/SNOW/STORM | -1901.5    | 223.6  | 8.5               |
+| temp                      | 110.7      | 7.0    | 15.7              |
+| hum                       | -17.4      | 3.2    | 5.5               |
+| windspeed                 | -42.5      | 6.9    | 6.2               |
+| days_since_2011           | 4.9        | 0.2    | 28.5              |
 
-- 이러한 집합 V 를 찾아내는것은 위와 같이 정의됩니다. 
+- 위의 예제에서는 날씨와 시간적 정보를 이용하여 대여되는 자전거의 수를 예측하기 위한 모델입니다. 
+- 특성값은 수치값 / 카테고리값이 섞여 있습니다. 
+- 위의 결과를 다음과 같이 해석할 수 있을것입니다.
+  - 온도가 1 상승하면 , 다른 변수가 고정되어 있을떄에 자전거 대여 수가 110.7 증가 
+  - 비/눈/폭풍우 를 동반한 날씨일떄에 자건거 대여수는 맑을떄보다 1901개 감소 
+    - 맑을때의 category 를 drop 한것으로 간주합니다.
+- 위와 같이 쉽게 해석될 수 있는 이유는 , 각 모든 특성값들이 따로따로 + 로 연결되어있기 때문입니다. ( Linear model)
+  - 이렇게 따로 떼어져 있기 떄문에 , '단독' 으로 위와 같이 해석할 수 있는것입니다.
+  - 만일 모델이 $x_1 x_2 + x_3 + x_4^2 ..$ 와 같이 다양한 연산으로 이어져있다면, $x_1$ 의 1 단위 증가는 $x_2$ 의 수준에 따라 그 결과가 달라집니다. 즉 해석이 어려워지는 것입니다. 
+- 위와 같은 단순한 Linear model 의 장점은 해석이 쉽다는 것이지만, 단점은 특성값들간의 상호작용을 무시한다는것에 있습니다.
+  - 하나만 고정하고 늘릴 수 있다는것은 철저한 X 변수들간의 독립성을 가정한 것이기 떄문입니다. 
 
-> ## SP Lime
+> ## Weight Comparison
 
-- 하지만 , 위와 같이 , '최대화 하는 집합' 을 찾는것은 Global 한 optimization 문제로 매우 어렵습니다. 
-- 그러므로 차선책으로 Greedy 하게 골라내려고 합니다. 
+![jpg](/assets/images/ML/15_1.png)
 
-![jpg](/assets/images/ML/14_4.png)
+- 위 그림처럼 Weight 와 그에 대응되는 신뢰수준을 그림으로서 좀 더 확실한 해석을 할 수 있습니다.
+  - 비,눈,폭풍 변수는 그 값이 매우 크고, 신뢰수준도 넓지만 무의미한 수준 (0을 포함하지 않으므로) 은 아닙니다. 즉 꽤 의미있는 변수라고 볼 수 있습니다.
+- 하지만 위와 같이 단순 비교 할 경우 Weight 는 특성값의 스케일의 영향을 받게됩니다.
+  - 온도가 섭씨가 아니라 화씨인 경우에는 다른 Weight 를 가지게 될 것입니다.
+  - 즉 더 정확한 비교를 위해서 Scaling 한 이후에 Weight 를 비교할수도 있을것입니다.
 
-- 그 방법론은 위와 같습니다.   
+> ## Effect Plot
+
+- 선형회귀 모델에서, 가중치는 특성값(Feature) 의 척도에 따라 다르기떄문에 문제가 될 수 있었습니다.
+  - 키를 미터 , cm 단위로 정함에 따라 단위가 달라지기 때문입니다.
+- 또한 Feature 의 분포를 아는것 또한 중요합니다.
+  - 어떠한 특성의 분산이 매우매우 낮다면, 그 변수는 계수가 유의할 지언정 효과가 미미할 것이기 떄문입니다. 
+- 그러므로 위에 대한 고민 (단위에 따른 Weight 가 통일되지 않음 + Feature 의 분포도 알아야함) 을 해결하기 위해 아래와 같이 effect 를 정의할 수 있습니다.
+
+$$\text{effect}_{j}^{(i)}=w_{j}x_{j}^{(i)}$$
+
+- 즉 각 특성값의 가중치에 인스턴트 특성값을 곱한것을 effect 라 정의합니다.
+  - 위 식은 $j$ 번쨰 특성에 대해, $i$ 번째 샘플의 effect 를 나타낸 것입니다. 
+
+![jpg](/assets/images/ML/15_2.png)
+
+- 위에 대한 effect 를 상자 그림으로 요약할 수 있습니다.
+  - effect 를 각 특성별로 sample 의 수만큼 흩뿌려 상자그림을 그려보았습니다.
+- 예상 대여 자전거 수에 가장 큰 영향을 주는것은 온도 특성값 , 일별 특성값임을 알 수 있습니다.
+- 그 효과들이 비교적 Weight 의 단위와는 상관없이 같은 선상에서 비교되기 떄문에 훨씬 더 객관적인 비교 지표가 될 수 있을것입니다.
+
+> ## Local Interpret
+
+- 하나의 instance 에 대해서는 어떻게 해석되어야 할까요? 
+
+| **Feature**     | **Value**   |
+| --------------- | ----------- |
+| season          | SPRING      |
+| yr              | 2011        |
+| mnth            | JAN         |
+| holiday         | NO HOLIDAY  |
+| weekday         | THU         |
+| workingday      | WORKING DAY |
+| weathersit      | GOOD        |
+| temp            | 1.604356    |
+| hum             | 51.8261     |
+| windspeed       | 6.000868    |
+| cnt             | 1606        |
+| days_since_2011 | 5           |
+
+- 위와 같은 인스턴트에 대해서 효과 분포를 나타내는 그림을 그려보겠습니다
+
+![jpg](/assets/images/ML/15_3.png)
+
+- 위와 같은 그림을 통하여, 현재 데이터가 어떤 변수에 의해 어떤 영향을 받고 있으며, 다른 sample 들과 비교할떄 어떤 데이터인지 알 수 있게해줍니다.
+  - Train 데이터의 학습을 통한 예측의 평균은 4504 입니다.
+  - 그에 반해서 instance 에 대한 예측은 1571로 매우 작습니다.
+  - Effect plot 은 그 이유를 알려줍니다.
+    - 이 instance 는 온도가 매우 낮았고 (온도의 계수가 양수임을 기억합시다.)
+    - 2011년 초의 데이터 (days_since_2011 의 계수가 양수임을 기억합시다.) 이기 떄문입니다.
+
+> ## Others 
+
+- 그 밖에 Lasso , Ridge 와 같은 다양한 방법론이 존재하며 , 또는 Mltilevel regression 과 같은 방법도 가능합니다. 
+- 그리고 Stepwise selection / Backward selection 과 같은 방법도 있습니다.
+- 하지만 여기에서 다룰것은 'Linear regression' 이 어떤 방식으로 해석이 가능한지에 대해서 알아보는 'interpretability' 가 중심이므로 여기까지만 다루고 , 더 많은 이야기는 다른곳에서 알아보도록 하겠습니다.
 
 ---
 
 **Reference**
 
-- <https://christophm.github.io/interpretable-ml-book/counterfactual.html>
-- <https://tootouch.github.io/IML/counterfactual_explanations/>
+- <https://christophm.github.io/interpretable-ml-book/limo.html>
+- <https://tootouch.github.io>
 
- Global 한 해석을 가지기 위하여, Local 적인 해석에 맞춰져 있는 Lime 을 이용해 어떻게 하면, 모델을 해석할 수 있을지 탐구해본게 SP lime 입니다. 
+ Linear regression 에 대한 이야기를 하자면 사실 , regression 만을 위한 책이 (1), (2) 까지 구성될 정도로 광할하고 어려운 분야이다. 그래서 여기에서는 그냥 OLS 만 다루었고, 그에대한 해석도 되게 짧게만 소개했다. 다음에 기회가 된다면, 좀 더 다양한 Model 을 소개하는것으로 하고 여기까지만 하는것으로!
 {: .notice--success}
 
