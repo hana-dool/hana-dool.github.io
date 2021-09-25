@@ -1,9 +1,9 @@
 ---
-title:  "I"
-excerpt: "F"
+title:  "Introduction"
+excerpt: "베이지안 통계"
 categories:
   - Other
-last_modified_at: 2021-09-09
+last_modified_at: 2021-09-24
 
 toc: true
 toc_label: "Table Of Contents"
@@ -13,7 +13,7 @@ toc_sticky: true
 use_math: true
 ---
 
-현대 확률론에서는 확률의 정의를 '엄밀' 하게 함으로서 확률의 각종 모순(베르트랑 의 역설 등) 을 해결하고 기초를 탄탄히 했습니다. 이러한 Axiom 이 어떻게 정의되었는지 알아보기 위해 우선 아래의 사항을 살펴봅시다.
+ 통계를 하게되면 확률에 대한 두가지 관점인 베이지안과 Frequentist 두가지 관점에 대해서 배우게 됩니다. 두개의 차이에 대해서 짧게 알아보도록 합니다. 
 {: .notice--warning}
 
 # [Content](#link){: .btn .btn--primary}{: .align-center}
