@@ -43,21 +43,21 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Stat_Paradox" %}
-                        <li><a href="/categories/Stat_Paradox" class="">Paradox ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Stat_Paradox" class="">Statistical Paradox ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Bayes" %}
-                        <li><a href="/categories/Bayes" class="">Bayes ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Bayes" class="">Bayesian ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AB_Testing" %}
-                        <li><a href="/categories/AB_Testing" class="">AB Testing Paper ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AB_Testing" class="">AB Testing ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

@@ -1,5 +1,5 @@
 ---
-title:  "[Test] (Wilcoxon) Sign Ranked Test"
+title:  "(Wilcoxon) Sign Ranked Test"
 excerpt: "Rank 를 이용해 Paried Sample 테스트"
 categories:
   - Stat_Non_Parametric

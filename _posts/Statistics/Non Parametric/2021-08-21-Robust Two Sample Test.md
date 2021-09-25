@@ -1,5 +1,5 @@
 ---
-title:  "[Test] Robust Two Sample Test"
+title:  "Robust Two Sample Test"
 excerpt: "Robust 한 비모수 Test"
 categories:
   - Stat_Non_Parametric

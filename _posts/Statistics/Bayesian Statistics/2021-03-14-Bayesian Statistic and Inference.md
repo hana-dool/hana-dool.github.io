@@ -3,7 +3,7 @@ title:  "Bayesian Statistic and Conjugate"
 excerpt: "베이지안 통계 개요와 Conjugate"
 categories:
   - Bayes
-last_modified_at: 2021-09-25
+last_modified_at: 2021-03-14
 
 toc: true
 toc_label: "Table Of Contents"
