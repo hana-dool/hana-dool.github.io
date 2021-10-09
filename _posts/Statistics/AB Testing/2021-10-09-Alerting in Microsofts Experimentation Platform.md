@@ -13,7 +13,7 @@ toc_sticky: true
 use_math: true
 ---
 
- AB Test 시에 Metric 에 대해서 이 녀석이 얼마나 좋은 Metric 인지 궁금하지 않나요? 이에 대해서 Microsoft Teams 에서 어떻게 Metric 을 평가하고 , 안좋은 녀석에 대해서는 어떻게 조치하였는지에 대해서 알아봅시다! 
+ Treatment 에 빨간색 글씨를 적용하는 실험을 기획하였는데, 사실 많은 사람이 적녹색맹이면 어떡할까요? 분명 A/B 테스팅이 끝나면 빨간색 글씨가 안좋다는것을 알긴 하겠죠. 하지만 테스트 도중 많은 유저들은 끔찍한 경험을 하게 될 것이고, 이러한 고객은 저희 서비스를 떠날것입니다. 하지만 실험 도중에 '우리 실험이 잘못되고 있다.' 라는것을 미리 알 수 있으면 어떨까요? 이 포스팅에서는 이러한 경고 시스템에 대해서 알아보겠습니다.
 {: .notice--warning}
 
 # [Alerting System in Microsoft](#link){: .btn .btn--primary}{: .align-center}
@@ -144,8 +144,8 @@ $$p_{R U}={Pr}\left(\frac{\left(m_{T}-m_{C}\right)-b_{R U} \mu_{C}}{s} \gt z_{1-
 9. P-value $\left(p_{A L}, p_{A U}, p_{R L}, p_{R U}\right)$
 
 - It is the probability of obtaining results as extreme as the observed results of a statistical hypothesis test, assuming that the null hypothesis is true.
-  - Absolute: $p_{A L}=P\left(X \lt t_{A L}\right), {p}_{A U}=P\left(X \gt t_{A U}\right)$
-  - Relative: $p_{R L}=P\left(X \lt t_{R L}\right), {p}_{R U}=P\left(X \gt t_{R U}\right)$
+  - Absolute : $p_{A L}=P\left(X \lt t_{A L}\right), {p}_{A U}=P\left(X \gt t_{A U}\right)$
+  - Relative : $p_{R L}=P\left(X \lt t_{R L}\right), {p}_{R U}=P\left(X \gt t_{R U}\right)$
 
 **Reference**
 
