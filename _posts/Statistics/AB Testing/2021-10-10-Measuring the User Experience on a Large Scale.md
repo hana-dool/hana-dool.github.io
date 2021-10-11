@@ -5,7 +5,7 @@ excerpt: "metric 설계하는 방식중 하나인 HEART framework 를 제시한 
 categories:
   - AB_Testing
 last_modified_at: 2021-10-10
-date : 2021-10-10 01:00:00 +0900
+date : 2021-10-10 10:00:00 +0900
 
 toc: true
 toc_label: "Table Of Contents"

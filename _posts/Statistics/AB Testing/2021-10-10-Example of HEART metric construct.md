@@ -4,7 +4,7 @@ excerpt: "UX(User Experience) 를 제대로 측정하기 위한 HEART의 Metric 
 categories:
   - AB_Testing
 last_modified_at: 2021-10-10
-date : 2021-10-10 02:00:00 +0900
+date : 2021-10-10 11:00:00 +0900
 
 toc: true
 toc_label: "Table Of Contents"
