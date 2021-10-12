@@ -2,7 +2,6 @@
 title: "Measuring metric"
 excerpt: "Bing 의 Metric 평가 시스템과 평가 방법에 대한 논문"
 categories:
-
   - AB_Testing
 last_modified_at: 2021-10-11
 
@@ -18,6 +17,7 @@ use_math: true
 {: .notice--warning}
 
 - user value : 유저가 좋은 경험을 했는지에 대한 매져, 크면 좋은경험 
+- 쿼리 : 사용자가 검색창에 검색하는것을 이렇게 표현 
 
 # [Introduction](#link){: .btn .btn--primary}{: .align-center}
 
