@@ -22,10 +22,10 @@ use_math: true
 
 ```sql
 create table 새로만들테이블명 As(
-	select * 
+    select * 
     from 원본테이블
     [where]
-	)
+     )
 ```
 
 - 위와 같이 create table 을 통하여 새로운 테이블을 만들 수 있습니다. 
@@ -35,10 +35,10 @@ create table 새로만들테이블명 As(
 
 ```sql
 create table 새로만들테이블명 as(
-	select * 
-	from 원본테이블
+    select * 
+    from 원본테이블
     where 1 = 2
-	)
+    )
 ```
 
 - 위와 같이 where 에 참이 아닌 조건을 넣게되면, 데이터가 하나도 들어있지 않은 구조만 복사되게 됩니다.
@@ -59,13 +59,4 @@ from 원본테이블)
 ALTER TABLE 이전테이블이름
 RENAME TO 바꾸고싶은 테이블 이름; 
 ```
-
-**Reference**
-
-- <https://bayestour.github.io/blog/docs/previous/mpsl/0103>
-
-위와 같이 엄밀한 확률의 정의를 통하여, 확률 공간이 무한할떄의 역설을 해결하였고, 학문으로서의 기초를 다졌습니다.
-{: .notice--success}
-
-
 
