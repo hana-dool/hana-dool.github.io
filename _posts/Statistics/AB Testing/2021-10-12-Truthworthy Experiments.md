@@ -157,24 +157,15 @@ use_math: true
 - Microsoft 의 Featrue Team 은 custom comtrol 을 만들어야할 때가 있습니다. (custom control 은 이전 날씨를 검색한 유저로 control 을 한정했던것과 같이, 유저를 Treatment 의 영향을 받는 범위로 좁히는 등의 'Custom' 처리를 한 control 집단)
 
   - 하지만 Treatment 의 효과를 평가하기 위하여 custom control 에만 의존하는것은 untruthworthy 한 결과를 불러들일 수 있습니다. 
-
 - Microsoft News 는 페이지의 UI 에 사소한 변화를 주는 실험을 구성하였습니다 
-
   - 에러가 발생하여 (Custom)Control 과 Treatment 에 대해서 검색 상자가 없어졌습니다. 
-
   - 이로 인하여 사용자의 경험에 큰 영향을 미쳤습니다. 
-
 - 하지만 이 경우에 Treatment 와 Conrtrol 모두에게 영향을 끼쳤기 떄문에, Treatment 와 Control 을 비교할때에 감지해낼만한 변화가 없었습니다. 
-
   - 이러한 변화는 production user (standard control) 과 비교될떄에만 감지되었던 차이였습니다. 
   - 이러한 Standard control 의 유저는 Experiemtn 의 어떠한 코드에도 영향을 받지 않았기 떄문입니다.
-
 - 이제 우리가 추가한 코드에 영향을 받는 custom control 과 standard control 을 비교하여 metric 이 큰 이동을 일으키는지 아닌지를 테스트할 수 있습니다.
-
   - 이를 이용하면 custom control 에 큰 문제가 있음을 알 수 있고 더이상 피해를 주지 않고 신속히 실험을 종료할 수 있습니다. 
-
 - 모든 규모의 실험에서 , 이러한 standard control 을 구현하는것은 쉬운일이 아닙니다. 
-
   - 상당한 양의 트래픽을 격리된 상태로 (code 의 영향을 받지 않게) 유지해야 하며, 각 실험의 트레픽 설정을 고려하여 사이즈를 고려해야 합니다.
 
 > ## Review Engineering Design Choices to Avoid Bias
