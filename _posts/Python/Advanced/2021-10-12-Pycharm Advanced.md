@@ -13,6 +13,8 @@ use_math : true
  파이참을 제대로 다뤄보는 법에 대해서 알아봅시다.
 {: .notice--warning}
 
+# [파이참](#link){: .btn .btn--primary}{: .align-center}
+
 > ## IDE
 
 - IDE 란 통합 개발 환경 (Integrated Development Environment) 로서 코딩 / 디버그 / 컴파일 / 배포 등 프로그램 개발에 관련된 모든 작업을 하나의 프로그램 안에서 해결하게 해 줍니다.
@@ -114,6 +116,8 @@ pip install 패키지
 |                      |                           |                                      |
 |                      |                           |                                      |
 
+(⌥, ⌘, ⇧)
+
 > ## Customizing
 
 - 전체적인 테마 변경
@@ -121,7 +125,7 @@ pip install 패키지
 
 # [코딩](#link){: .btn .btn--primary}{: .align-center}
 
-> ## Alt + Enter
+> ## Alt + Enter (⌥ + Enter) : function 작성 도우미
 
 ![png](/assets/images/Python/36_10.png)
 
@@ -148,7 +152,181 @@ def custom2(x,y) -> object:
     return x+y
 ```
 
-- 위처럼, custom 함수에 대해서 어떤 값이 나오는데 
+- 위처럼, custom 함수에 대해서 어떤 값이 나오는지에 대해서 추가할 수 있습니다. 
+
+> Add Type Hint for function ''
+
+```python
+def custom(x: int)  -> object:
+    k = x**2
+    return k
+```
+
+- 위와 같이, 함수에 대해서 바로 어떠한 형식이 가능한지 알 수 있습니다.
+
+> ## Crtl + Tab (^ + Tab) : 손쉬운 화면전환
+
+![png](/assets/images/Python/36_11.png)
+
+- 위와 같이 Ctrl + Tab 을 사용하면, 매우 쉽게 화면전환을 할 수있습니다.
+
+> ## 실행 
+
+> Ctrl + Shift + F10 (^+⇧+R) 
+
+- 현재 보여지고 있는 파일을 실행할때 
+
+> Shift + F10 (^+R) 
+
+- 이전에 실행되고 있었던 파일을 실행
+
+> Alt + Shift + F10 (^+⌥+R)
+
+- 실행할 파일을 골라서 실행 
+
+> ## Alt + 좌우키
+
+![png](/assets/images/Python/36_24.png)
+
+- 위와 같이 화면 전환을 바로 할 수 있게 해줍니다.
+
+> ## Ctrl + F4
+
+![png](/assets/images/Python/36_25.png)
+
+- 위와 같이 열려있는 py 를 닫을 수 있게 해줍니다.
+
+
+
+# [코드 편집](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Ctrl + Space 
+
+![png](/assets/images/Python/36_12.png)
+
+- 위와 같이, p 로 시작하는 함수를 나타내 줍니다.
+- 두번 누르게 도디면 전체 함수를 찾습니다. 
+
+> ## Ctrl + Q 
+
+![png](/assets/images/Python/36_13.png)
+
+- 위처럼 어떠한 함수인지 바로 알 수 있게 해줍니다.
+
+> ## Ctrl + Alt + T
+
+![png](/assets/images/Python/36_14.png)
+
+- 구문을 쌀 수 있게 해줍니다.
+
+> ## Ctrl + /
+
+![png](/assets/images/Python/36_15.png)
+
+- 한번에 주석 지정 혹은 한번에 풀기
+
+> ## Ctrl + Shift + I 
+
+![png](/assets/images/Python/36_16.png)
+
+- 내가 쓴 함수에 대해서 어떻게정의하였는지를 창을 통해서 알 수 있습니다.
+
+> ## Shift + Enter 
+
+- 코드 중간에서 엔터를 쳐도 , 그 다음줄에 indent 를 맞추어서 줄바꿈이 됩니다.
+
+> ## Crtl + D 
+
+- 코드 복제 
+
+![png](/assets/images/Python/36_17.png)
+
+- 위와 같이 코드 중간에서 Ctrl + D 를 누르면 복제하게 됩니다.
+
+> ## Ctrl + Y
+
+- 코드 삭제 
+  - 위와는 다르게 , 코드를 아예 삭제해버립니다.
+
+> ## Alt + J 
+
+![png](/assets/images/Python/36_18.png)
+
+- 하나씩 늘려가면서 디테일하게 같은 키워드 한번에 수정 
+
+> ## Shift + Crtl + Alt + J 
+
+![png](/assets/images/Python/36_19.png)
+
+- 위와 같이 한번에 같은 키워드들을 수정할 떄에 사용합니다. 
+
+> ## Ctrl + Alt + L 
+
+![png](/assets/images/Python/36_20.png)
+
+- Auto reformat cord 기능 
+- 모든것을 수정하고 나서 들여쓰기 등을 수정하는 키입니다. 
+- 위의 경우 Ctrl + Alt + L 을 적용하면 아래처럼 적용이 됩니다. 
+
+![png](/assets/images/Python/36_21.png)
+
+> ## Ctrl + Alt + O
+
+![png](/assets/images/Python/36_22.png)
+
+- 위처럼 사용하지 않는 패키지가 있는 경우
+
+![png](/assets/images/Python/36_23.png)
+
+- 위처럼 Ctrl + Alt + O 를 이용하면 자동 정리를 해줍니다. 
+
+> ## F12 
+
+![png](/assets/images/Python/36_26.png)
+
+- 프로젝트 란으로 바로 이동할 수 있게 해줍니다. 
+
+> ##Ctrl + E (Ctrl + Shift + E)
+
+![png](/assets/images/Python/36_27.png)
+
+- 최근에 수정한 파일들을 볼 수 있습니다. 
+- 또는 Ctrl + Shift + E 를 누른 경우에는 파일 히스토리를 볼 수 있습니다.
+
+![png](/assets/images/Python/36_28.png)
+
+> ## Ctrl + C / Ctrl + Shift + V 
+
+![png](/assets/images/Python/36_29.png)
+
+- 위처럼 복사한 내용을 클립보드에서 가지고 있을 수 있습니다.
+
+> ## Ctrl + -  / Ctrl + + 
+
+![png](/assets/images/Python/36_30.png)
+
+- 위와 같이, 함수가 너무 길어질때 이를 블록으로 줄이고 싶을떄에는 Ctrl + - 를 누릅니다.
+
+![png](/assets/images/Python/36_31.png)
+
+- 위와 같이 블록으로저장되는것을 볼 수 있습니다. 위를 풀어줄떄에는 Ctrl + + 를 누르시면 됩니다. 
+
+> ## Ctrl + Shift + - / Ctrl + Shift + + 
+
+- 위의 경우는 이전의 블록으로 감추는 연산을 모든 함수에 대해서 적용해주는 함수입니다. 
+
+![png](/assets/images/Python/36_32.png)
+
+> ## Ctrl + Backspace 
+
+- 단어 단위로 삭제를 가능하게 합니다 .
+
+```python
+def encoding(lst,nub) : 
+    for i in lst .... 
+```
+
+- 삭제할떄에, 하나하나 삭제하기 귀찮을떄에 적용할 수 있습니다.
 
 # [디버깅](#link){: .btn .btn--primary}{: .align-center}
 
@@ -171,6 +349,10 @@ if __name__ == '__main__' :
 ![png](/assets/images/Python/36_6.png)
 
 - 위처럼 '빨간 점' 을 찍어놓으면 그 점에서 프로그램의 흐름이 딱 멈추게 됩니다. 그리고 , 여기에서 Step by Step 으로 체크하면서 프로그램이 맞는지 아닌지를 확인할 수 있습니다.
+
+# [검색](#link){: .btn .btn--primary}{: .align-center}
+
+- 내가 필요한 내용을 찾을때에 매우 중요합니다.
 
 **reference**
 
