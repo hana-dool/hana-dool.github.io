@@ -18,14 +18,15 @@ use_math: true
 
 # [AB Testing 정리](#link){: .btn .btn--primary}{: .align-center}
 
-> ## Overall Review
+> ## Testing Guidelines 
 
-- 
+- Esty 에서의 A/B Testing 관련 조언
+  - <https://hana-dool.github.io/ab_testing/Guidelines-for-AB-Testing/>
 
 > ## Metric Construct
 
 - AB 테스트 메트릭
-  - <https://hana-dool.github.io/ab_testing/Metric/>
+  - <https://hana-dool.github.io/ab_testing/Data-Driven-Metric-Development/>
 - 메트릭 설계 원칙을 설명하는 논문
   - <https://hana-dool.github.io/ab_testing/Principles-for-the-Design-of-Online-AB-Metrics/>
 - HEART Frame work 로 metric 설계하는 방법 (논문)
@@ -43,7 +44,6 @@ use_math: true
   - <https://hana-dool.github.io/ab_testing/Metric-Sensitivity-Analysis-in-AB-Tests/>
 - microsoft bing 에서의 메트릭 평가 프레임워크
   - <https://hana-dool.github.io/ab_testing/Measuring-metric/>
-- 
 
 > ## A/A Testing 
 
@@ -64,11 +64,29 @@ use_math: true
 - 실험 도중 실험의 신뢰성을 높히는 방법
   - <https://hana-dool.github.io/ab_testing/Patterns-of-Trustworthy-Experimentation/>
 
+> ## Bayesian A/B Testing
+
+- VWO 의 Loss 기반 Bayes A/B Testing 방법론 
+  - <https://hana-dool.github.io/ab_testing/Trustworthy-Principles-and-Platform-Features/>
+
 # [AB Testing Material](#link){: .btn .btn--primary}{: .align-center}
 
 - 전체적인 정리
   - <https://ai.stanford.edu/~ronnyk/2009controlledExperimentsOnTheWebSurvey.pdf>
-- 
+
+- Udacity AB Test 강의 (기초)
+  - https://www.udacity.com/course/ab-testing--ud257
+- Books (Recommendation)
+  - https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264
+- Dynamicyield AB TEst
+  - https://www.dynamicyield.com/learn/
+  
+- Microsoft의 AB Testing
+  - https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/
+
+- EXP platform (Microsoft)
+  - https://exp-platform.com/
 
 {: .notice--success}
+이거 말고도 다양한 소스에서 많은 글들을 읽기를 바래요~
 
