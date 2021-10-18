@@ -48,7 +48,7 @@ use_math: true
 > ## A/A Testing 
 
 - 마이크로 소프트에서 시행했던 A' A B 테스트
-  - <https://hana-dool.github.io/ab_testing/AAB-Testing/
+  - <https://hana-dool.github.io/ab_testing/AAB-Testing/>
 
 > ## Alerting System
 
@@ -73,19 +73,20 @@ use_math: true
 
 - 전체적인 정리
   - <https://ai.stanford.edu/~ronnyk/2009controlledExperimentsOnTheWebSurvey.pdf>
-
 - Udacity AB Test 강의 (기초)
   - https://www.udacity.com/course/ab-testing--ud257
 - Books (Recommendation)
-  - https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264
+  - <https://www.amazon.com/Trustworthy-Online-Controlled-Experiments-Practical/dp/1108724264>
 - Dynamicyield AB TEst
-  - https://www.dynamicyield.com/learn/
-  
+  - <https://www.dynamicyield.com/learn/>
 - Microsoft의 AB Testing
-  - https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/
-
+  - <https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/>
 - EXP platform (Microsoft)
-  - https://exp-platform.com/
+  - <https://exp-platform.com/>
+- Hyperconnect Bayeisan AB Test
+  - <https://hyperconnect.github.io/2021/02/26/auto-stats-test.html>
+- VWO bayesian AB Test
+  - <https://cdn2.hubspot.net/hubfs/310840/VWO_SmartStats_technical_whitepaper.pdf>
 
 {: .notice--success}
 이거 말고도 다양한 소스에서 많은 글들을 읽기를 바래요~

@@ -248,7 +248,7 @@ def custom(x: int)  -> object:
 - 코드 삭제 
   - 위와는 다르게 , 코드를 아예 삭제해버립니다.
 
-> ## Alt + J 
+> ## Alt + J (^+G)  : 같은 키워드 한번에 수정
 
 ![png](/assets/images/Python/36_18.png)
 
@@ -330,6 +330,8 @@ def encoding(lst,nub) :
 
 # [디버깅](#link){: .btn .btn--primary}{: .align-center}
 
+> ## Alt + Shift + F9 : 디버그 실행
+
 ```python
 def check(number) :
     if number % 15 == 0 :
@@ -350,9 +352,23 @@ if __name__ == '__main__' :
 
 - 위처럼 '빨간 점' 을 찍어놓으면 그 점에서 프로그램의 흐름이 딱 멈추게 됩니다. 그리고 , 여기에서 Step by Step 으로 체크하면서 프로그램이 맞는지 아닌지를 확인할 수 있습니다.
 
+> ## F9 다중 디버그
+
+![png](/assets/images/Python/36_33.png)
+
+- 위와 같이 여러 줄에 대해서 마킹을 한 뒤에 디버그를 실행한뒤, F9 를 계속 누르면 디버깅 마킹된곳까지 계속 실행이 됩니다.
+
+> ## F7 하나하나 실행
+
 # [검색](#link){: .btn .btn--primary}{: .align-center}
 
 - 내가 필요한 내용을 찾을때에 매우 중요합니다.
+
+> ## Ctrl + B (Command + B) : 함수가 정의된곳으로 바로 이동 
+
+> ## F2 (F2) : 다음 빨간밑줄로 이동 
+
+
 
 **reference**
 
