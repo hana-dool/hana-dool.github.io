@@ -23,7 +23,7 @@ use_math: true
 - Visual 웹사이트 Optimizer에 가입하기 전에 AOL Patch에서 A/B 테스트를 실행하고 통계 컨설턴트로 활동했습니다. (Chris Stucchio)
 - A/B 시험이 끝날 때마다 사람들은 나에게 다가와 결과에 대해 질문을 했습니다. 그 중에서 가장 흔한 질문 중 하나는 "버전 B가 버전 A보다 나을 확률은 얼마인가?" 였습니다. 
 - 하지만 저는 Frequentist 방법론을 사용하기 때문에 많은 방법론에 대해서 제대로 답할 수 없었습니다.
-  - 또한 저는 질문을 받은 대부분의 질문에 대답할 수 없었고, 대신 그 질문을 제대로 다루지 않는 비논리적인 대체 통계를 제시해야 했습니다. 
+  - 또한 저는 질문을 받은 대부분의 질문에 대답할 수 없었고, 대신 논리적이지 않은 대체 통계를 제시해야 했습니다. 
 - Visual Website Optimizer 에서는 이러한 문제들을 Bayesian Framework 를 사용함으로서 해결하였습니다.
   - 새로운 방법은 A/B 테스트를 수행하는 많은 사람들이 만드는 몇 가지 오류들을 수정하도록 도와주었고 , 사용자를 과학적인 방법으로 이끌어주게 하였습니다.
 
@@ -42,8 +42,8 @@ $$P(\lambda _B > \lambda _A)$$
 $$p = P(t\ge t_e \mid H_0)$$
 
 - p-value 는 '같은 Sample size 를 이용하여 A/A Test 를 진행하였을떄에 우리 데이터보다 더 극단적인 데이터를 가질 확률' 을 의미하게 됩니다. 
-- 이러한 p-value 는 Decision 의 기준이 된다는 점에서 매우 중요하나, 제가 아는 한 어떠한 마케팅 전문가 / 웹 디자이너가 이러한것을 물어본 적이 없습니다. 
-  - 더군다나 이러한 p-value 는 종종 $P(\mu_B > \mu_A)$ 로 잘못 해석되곤 합니다.
+- 이러한 p-value 는 Decision 의 기준이 된다는 점에서 매우 중요하나, 제가 아는 한 어떠한 마케팅 전문가 / 웹 디자이너가 이러한것을 물어본 적이 없습니다. (매우 헷갈리고 다소 어려운 개념이나 아무조 신경쑤지 않음)
+  - 더군다나 이러한 p-value 는 종종 $P(\mu_B > \mu_A)$ 로 잘못 해석되곤 합니다. 
 
 > ## 용어
 
@@ -55,39 +55,44 @@ $$p = P(t\ge t_e \mid H_0)$$
 
 - Freq 통계에서 제일 중요한 요소는 MLE 입니다.
   - MLE 는 데이터를 고려할때에 '가장 가능성 있는' 모수인 하나의 숫자라고 할 수 있습니다.
-  - 하지만 이러한 숫자를 제시하는것은 늘 오해를 불러일으키게 됩니다. 
+  - 하지만 이러한 숫자(MLE)를 제시하는것은 늘 오해를 불러일으키게 됩니다.
+    - ex : 평균이 6(mle) 이라구요? 아 6일 확률이 100%라는거군요! 
 - 통계는 늘 '정확한' 것은 없습니다. 항상 에러(불확실성)가 존재하게 됩니다.
   - 통계학자가 할 수 있는일은 이러한 불확실성을 계량화 하는것입니다. 
 - VWO 에서는 credible interval(실제 값을 포함할 확률을 가지는 영역. Confidence interval 하고는 다름) 을 제공하여 이러한 '불확실성' 을 계량화 하게 됩니다.
 
 # [Bayesian AB Testing](#link){: .btn .btn--primary}{: .align-center}
 
-- 베이즈 통계의 기본은 다 건너띄고 깔끔하게 핵심만 요약하겠습니다.
+- 베이즈 통계의 기본은 다 건너띄고 깔끔하게 핵심만 요약하겠습니다. (자세한 유도 과정을 살펴보고 싶다면 논문을 참조해주세요. 그냥 기본적인 Conversion 에서의 Conjugate 를 유도하는 과정입니다.)
   - Conversion 의 경우 , Bernoulli 의 데이터 Distribution 을 이용하기 때문에 이에 대한 Conjugate 인 Beta Distribution 을 이용할 수 있습니다.
-  - Conjugate 는 Beta 을 이용해 업데이트할 수 있습니다. 
-- 즉 Conversion $\lambda_A , \lambda_B$ 에 대해서 실험 데이더를 prior Beta(1,1) 을 이용하여 업데이트한다면 Conversion 에 대한 Postrorior 분포를 얻을 수 있을것입니다.
+  - Conjugate 인 Beta 는 데이터를 이용해 업데이트할 수 있습니다. 
+- 즉 Conversion $\lambda_A , \lambda_B$ 에 대해서 실험 데이터를 prior Beta(1,1) 을 이용하여 업데이트한다면 Conversion 에 대한 Postrorior 분포를 얻을 수 있을것입니다.
+  - 그리고 이러한 '업데이트된 분포' 를 이용하여 A/B Testing 을 진행할 수 있습니다.
 
 > ## The Joint Posterior for variants 
 
-- 우리는 A,B 들에 대해서 Posterior 를 계산하게 됩니다.
-- 이떄에 우리는 각각의 posterior $P(\lambda_A) , P(\lambda_B)$ 를 계산할 수 있게 됩니다. 
-  - 하지만 $\lambda_A,\lambda_B$ 에 대하여 Inference 를 진행해야 하므로 결국에는 'Joint posterior $P(\lambda_A,\lambda_B)$' 를 계산해야 합니다. 
+- 실험 이후에 우리는 각각의 posterior $P(\lambda_A) , P(\lambda_B)$ 를 계산할 수 있게 됩니다. 
+  - 하지만 $\lambda_A,\lambda_B$ 두 값을 동시에 이용하여 Inference 를 진행해야 하므로 결국에는 'Joint posterior $P(\lambda_A,\lambda_B)$' 를 계산해야 합니다.
 - 이떄에 우리는 Joint posterior of A,B 를 독립을 가정하여 다음과 같이 계산합니다. 
 
 $$P(\lambda_A,\lambda_B) = P_A(\lambda_A)P_B(\lambda_B)$$
 
-- 우리는 위에서 계산된 A,B 의 전환율에 대한 Distribution 을 이용하여, test 대신 Variant 를 선택하였을때 계산되는 loss  등을 계산할 것입니다. 
+- 이제 위에서처럼 두 전환율에 대한 분포를 알았으므로 '어떤 기준' 을 통하여 승자를 결정해야 할까요? 
+  - 우리는 위에서 계산된 A,B 의 전환율에 대한 Distribution 을 이용하여, Control 대신 Variant 를 선택하였을때 계산되는 loss 를 계산하고 이 값을 기준으로 승자를 결정하려고 합니다.
 
 > ## Joint Posterior in Expereiments
 
 ![png](/assets/images/Stat/84_1.png)
 
-- 위 경우는, 실험 시작하자 마자의 joint posterior 를 나타낸 것입니다. 
+- 위 경우는, 실험 시작하고 얼마 지나지 않은 뒤의 joint posterior 를 나타낸 것입니다. 
   - 파란색 Line 은 $\lambda_A = \lambda_B$ 인 선을 나타낸다고 생각하시면 됩니다.
+  - 아직 데이터가 얼마 없기 떄문에 그 영역 (하얀색) 이 넓은 것을 볼 수 있습니다. 
+  - 이러한 '넓은' 영역은 아직 Posterior 가 결정을 내리기에는 '불확실하다' 라는것을 의미합니다.
 
 ![png](/assets/images/Stat/84_2.png)
 
 - 위 경우는 실험 후의 Posterior 를 타타낸 것입니다. 
+  - 데이터가 많이 쌓이면서 Posterior 의 추정이 정확해지고 있는 모습입니다.
   - 파란색 Line 에 비추어 생각해 보았을떄에, Control 이 Variation 보다 더 좋다고 생각할 수 있습니다.
 
 > ## Chance to beat Control 
@@ -97,7 +102,7 @@ $$P(\lambda_A,\lambda_B) = P_A(\lambda_A)P_B(\lambda_B)$$
 > definition of Error probability 
 
 - Error probability A 는 A 를 선택하였는데 '잘못된 선택일 확률' 로 정의합니다.
-  - 이 값은 $P(\lambda_B >\lambda_A)$ 로서, 아래는 그 계산식입니다.
+  - 즉 위에서의 정의는 $P(\lambda_B >\lambda_A)$ 로서, 아래는 그 계산식입니다.
 
 $$E[\mathcal{I}](A)=\int_{0}^{1} \int_{0}^{\lambda_{\mathcal{A}}} P\left(\lambda_{A}, \lambda_{B}\right) d \lambda_{B} d \lambda_{A}$$
 
@@ -106,7 +111,7 @@ $$E[\mathcal{I}](A)=\int_{0}^{1} \int_{0}^{\lambda_{\mathcal{A}}} P\left(\lambda
 $$E[\mathcal{I}](B)=\int_{0}^{1} \int_{\lambda_\mathcal{A}}^{1} P\left(\lambda_{A}, \lambda_{B}\right) d \lambda_{B} d \lambda_{A}$$
 
 - 이러한 기준(metric)을 이용한다면 우리가 A/B Test 의 결과를 이용해 판단을 내릴떄에 기준이 될 수 있을것입니다.
-  - 하지만 이 기준(metric) 은 매우 결점이 많은 정의입니다. 왜냐하면 모든 errors 를 equaly Bads 하다고 취급하기 떄문입니다. 
+  - 하지만 이 기준(metric) 은 결점이 많은 정의입니다. 왜냐하면 모든 errors 를 equaly Bads 하다고 취급하기 떄문입니다. 
 
 ![png](/assets/images/Stat/84_3.png)
 
@@ -114,17 +119,17 @@ $$E[\mathcal{I}](B)=\int_{0}^{1} \int_{\lambda_\mathcal{A}}^{1} P\left(\lambda_{
 
 - 단적으로 P(A<B) 가 같은 100% 이지만 위와 같은 경우, 그 증거(Evidence) 가 매우 차이나는 경우가 있습니다. (아래의 그림이 훨씬더 강력한 증거임)
   - 이렇게 차이가 나는 이유는 '$\lambda_A , \lambda_B$' 의 값을 비교할때에 순전히 그 '크기차이만' 비교하게 되기 떄문입니다. 즉 $\lambda_A < \lambda_B$ 라는 사실만 알게되면 각각이 0.1 < 0.9 였는지, 0.89<0.9 였는지는 정보에 포함되지 않기 떄문입니다. 
-- 그러므로 이러한 Chance to Beat 으로만 의사결정을 하게 되는것은 안좋다고 말하고 있습니다. 
+- 그러므로 이러한 Chance to Beat 으로만 의사결정을 하게 되는것은 안좋다고 할 수 있을것입니다.
 
 > ## The Loss Function 
 
-- Loss function 은 이러한 문제를 해결해줍니다. 
+- Loss function 은 이러한 '둘의 차이' 까지 같이 고려함으로써 문제를 해결해줍니다. 
   - Small 에러는 작게, Large 에러는 크게 취급하게 됩니다. 
 
 > Definition of loss function
 
-- Loss function 은 특정한 variant 를 선택함으로 기대되는 expected loss 입니다. 
-- 주어진 특정한값 $\lambda_A , \lambda_B$ 에 대해서 Loss 는 다음과 같이 정해집니다. 
+- Loss function 은 특정한 variant 를 선택함으로 기대되는 expected loss 입니다.
+- 주어진 특정한값 $\lambda_A , \lambda_B$ 에 대해서 Loss 는 다음과 같이 정해집니다.
 
 $$\mathcal{L}(\lambda_A, \lambda_B ,A) = max(\lambda_B - \lambda_A , 0)$$
 
@@ -135,8 +140,8 @@ $$\mathcal{L}(\lambda_A, \lambda_B ,B) = max(\lambda_A - \lambda_B , 0)$$
 > Definition of Expected loss function
 
 - 그런데 우리는 '각 $\lambda$ 가 정해져 있는 상황' 이 아니므로 결국 확률적으로 접근해야 합니다.
-  - 왜냐하면 베이즈 Frame work 의 중심 아이디어가 '모수는 R.V.' 라는 것이니까요.. 
-- 그러므로 우리는 'Variant ' 의 선택으로 야기되는 '기대되는 손해' 를 계산할수밖에 없습니다. 그 계산은 아래와 같습니다.
+  - 왜냐하면 베이즈 Frame work 의 중심 아이디어가 '모수는 정해져 있지 않은 분포' 라는 것이니까요.
+- 그러므로 우리는 'Variant ' 의 선택으로 야기되는 '기대되는 손해' 를 계산할수밖에 없습니다. (모수가 고정된 값이 아니니까 정확한 Loss 가 얼마다! 가 아니라 '기대되는 loss 가 얼마다!' 라고 밖에 말할 수 없습니다. 마치 주사위의 눈을 정확히 말할수는 없지만 기대값은 3.5 라고 할 수 있는것 처럼요) 그 계산은 아래와 같습니다.
 
 $$E[\mathcal{L}](?)=\int_{0}^{1} \int_{0}^{1} \mathcal{L}\left(\lambda_{A}, \lambda_{B}, ?\right) P\left(\lambda_{A}, \lambda_{B}\right) d \lambda_{B} d \lambda_{A}$$
 
@@ -145,7 +150,8 @@ $$E[\mathcal{L}](?)=\int_{0}^{1} \int_{0}^{1} \mathcal{L}\left(\lambda_{A}, \lam
 > ## Compute the Loss , error function 
 
 - 이러한 Loss 나 error function 을 계산하기 위해서 , 우리는 '근사' 하여 계산해야 합니다. 
-- 아래 방식은 적분을 격자 근사를 이용하여 계산한 방식입니다.
+  - 왜냐하면 Exactly 하게 적분을 구하는것은 수학적으로 엄청나게 힘든 일이기 떄문입니다. 
+- 아래 방식은 적분을 격자 근사(리만 적분 근사)를 이용하여 계산한 방식입니다.
 
 > Computing joint posterior 
 
@@ -191,13 +197,15 @@ for i in range(100):
 
 - 사실 위의 계산을 Exact 하게 수행할수도 있습니다.
   - <https://www.chrisstucchio.com/blog/2014/bayesian_ab_decision_rule.html>
-- 하지만 Exact Form 은 오로지 Two Variants 일떄에 작동하는지라 여기서 다루지는 않았습니다. 
+- 하지만 Exact Form 은 오로지 Two Variants 일떄에 작동하는지라 여기서 다루지는 않겠습니다.
 
 # [Running Bayesian AB Testing](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Running A/B Testing 
 
-- 우선 3+ 개의 Variancts 에 대해서 실험하기 전에 어떻게 A/B Test 가 working 하는지에 대해서 성명하고자 합니다.
+- 이전에 2개의 Variants 에 대해서는 A/B Testing 을 어떻게 수행하는지에 대해서 살펴보았습니다.
+  - 그러면 3+ 개의 Variancts 에 대해서는 어떻게 해야될까요? 
+  - 이때에는 어떻게 A/B Test 가 working 하는지에 대해서 설명해보도록 하겠습니다.
 - $\epsilon$ 은 desired loss tolerance 로 정의됩니다. 
   - 즉 우리가 받아드릴 loss의 상한선이라고 생각하시면 됩니다. 
   - 예를 들어서 Variant B 의 loss가 0.000001 이면 이 loss 는 받아들일만큼 작으므로 이를 선택하는 식입니다. 
@@ -207,20 +215,16 @@ for i in range(100):
 > Algorithm 
 
 1. A,B 에 대해서 실험을 실행합니다. 
-
 2. 주기적으로 $n_A , c_A , n_B , c_B$ 를 계산합니다.  
-
 3. $$E[\mathcal{L}](A),E[\mathcal{L}](B)$$를 계산합니다. 그리고 set $$\mathfrak{A}=\{x: E[\mathcal{L}](x)<\varepsilon\}$$ 을 정의합니다.  
-
    - 위에서 정의한 $\mathfrak{A}$ 는 우리가 정의한것보다 낮은 Loss 를 가지고 있는 '승자 set' 입니다. 
-
-   - A 가 매우 좋았다면 $$\mathfrak{A} = \{A\}$$ 일 것입니다.
-
+   - A 가 매우 좋은 Variants 라면 적은 샘플만으로도 $$\mathfrak{A} = \{A\}$$ 가 될 것입니다.
 4. 만약 $\mathfrak{A}$ 가 empty 면 다시 step 1 로 가서 계속 실험을 진행합니다. 비어있지 않으면 $\mathfrak{A}$ 에 있는 element 를 승자로 선언하고 종료합니다. 
 
 > ## Running more than two variants 
 
-- 만약 variants 3개라면 loss function 은 다음과 같이 정의가 됩니다. 
+- 위에서 실험이 대충 어떻게 흘러가는지 알았으므로, 여기에서는 Loss 를 어떻게 정의해야되는지에 대해서 살펴보겠습니다.
+  - 만약 variants 3개라면 loss function 은 다음과 같이 정의가 됩니다. 
 
 $$\mathcal{L}(\lambda_A , \lambda_B , \lambda_C , A) = max(\lambda_B - \lambda_A , \lambda_C - \lambda_A , 0)$$
 
@@ -228,8 +232,7 @@ $$\mathcal{L}(\lambda_A , \lambda_B , \lambda_C , B) = max(\lambda_A - \lambda_B
 
 $$\mathcal{L}(\lambda_A , \lambda_B , \lambda_C , C) = max(\lambda_A - \lambda_C , \lambda_B - \lambda_C , 0)$$
 
-- 위와 같이 3개 이상의 variants 에 대해서도 정의해볼 수 있을것입니다. 
-  - 위를 이용해 A/B Testing 의 알고리즘을 정의해볼 수 있습니다. 
+- 위와 같은식으로 3개 이상의 variants 에 대해서도 정의할 수 있습니다. 
 
 > Alorithm 
 
@@ -238,8 +241,8 @@ $$\mathcal{L}(\lambda_A , \lambda_B , \lambda_C , C) = max(\lambda_A - \lambda_C
 3. $$E[\mathcal{L}](A)$$,$$E[\mathcal{L}](B)....$$ 를 계산합니다. 그리고 set $$\mathfrak{A}=\{x: E[\mathcal{L}](x)<\varepsilon\}$$ 을 정의합니다. 
 4. 만약 $\mathfrak{A}$ 가 empty 면 다시 step 1 로 가서 계속 실험을 진행합니다. 비어있지 않으면 $\mathfrak{A}$ 에 있는 element 를 승자로 선언하고 종료합니다. 
 
-- 하지만 이 경우에 이전에 사용했던 Computing algorithm 을 계산하기는 어렵습니다.
-  - 이를 계산하기 위해서 우리는 새로 loss 를 정의해야 합니다. 
+- 하지만 이 경우에 이전에 2개의 Variants 에 대해서 사용했던 Computing algorithm 을 계산하기는 어렵습니다.
+  - 그러므로 이를 계산하기 위해서 우리는 새로 loss 를 계산하는 Algorithm 을 만들어내야합니다.
 
 > Computing alorithm
 
@@ -258,21 +261,22 @@ lossFunction = 0.0
 				lossFunction += joint_posterior[i,j,k] * loss(i,j,k,’A’)
 ```
 
-- 위와 같이 계산하는것은 총 100^3 의 총 100만번의 연산을 요구합니다. 
-  - 이렇게 계산량이 늘어난 이유는, 우리가 격자 근사를 통하여 적분을 계산하였기 떄문입니다.
+- 위의 경우는 2개의 variants 에서 실행했던 '적분의 근사를 리만적분합 으로 근사' 하는 방법을 쓴 것입니다. 
+- 하지만 위와 같이 계산하는것은 총 100^3 의 총 100만번의 연산을 요구합니다. 
+  - 이렇게 계산량이 늘어난 이유는, 우리가 격자 근사(리만합)를 통하여 적분을 계산하였기 떄문입니다.
     - 그러므로 Variants 가 5개까지 늘어나게 된다면 100억번이 넘을것이고 이는 Bayes Framework의 속도를 느리게 할 것입니다 .
 - 그러므로 우리는 Monte Carlo method 를 이용하여 이러한 Integral 을 쉽게 하려 합니다.
-  - Monte carlo metrho 는 제 블로그 Statistic 카테고리에 올려놨으니까 읽어보세요~ ㅎㅎ.
+  - Monte carlo method 란 확률 분포를 이용해 근사하는 방법으로 제 블로그 Statistic 카테고리에 올려두었으므로 참고해주세요
 
 # [Other Calculation](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Chance to beat Control , Chance to beat All
 
-- Posterior 를 본격적으로 고려하기 전에 ㅇ리는 두가지 유용한 Quantities 들에 대해서 알아봅시다. 
+- Posterior 를 본격적으로 고려하기 전에 우리는 두가지 유용한 Quantities 들에 대해서 알아봅시다. 
 
 > Chance to beat control 
 
-- given variation (say B) 이 control 보다 더 높은 conversion rate 를 가질 확률입니다. 
+- given variation (say B) 이 control 보다 더 높은 conversion rate 를 가질 확률입니다.
 
 $$\mathcal{C T B C}(B)=\int \ldots \int_{\lambda_{B}>\lambda_{A}} P\left(\lambda_{A}, \lambda_{B}, \ldots, \lambda_{k}\right) d \lambda_{A} d \lambda_{B} \ldots d \lambda_{k}$$
 
@@ -289,8 +293,8 @@ $$\mathcal{C T B} \mathcal{A}(B)=\int \ldots \int_{\left(\lambda_{B}>\lambda_{A}
 
 $$\frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(\lambda_A^i , \lambda_B^i ,\lambda_C^i,A) \approx E[\mathcal{L}](A)$$
 
-- $(\lambda_A^i , \lambda_B^i,\lambda_C^i ....)$ 는 posterior 에서 Sampling 된 i 번째 sample 입니다. 
-- 이제 중요한 질문이 남았는데요, '위와 같이 계산하ㄷ게 되는 Montecarlo Approx' 는 얼마나 정확할까요? 
+- $(\lambda_A^i , \lambda_B^i,\lambda_C^i ....)$ 는 각 posterior 에서 Sampling 된 i 번째 sample 입니다. 
+- 이제 중요한 질문이 남았는데요, '위와 같이 계산하게 되는 Montecarlo Approx' 는 얼마나 정확할까요? 
 
 > ## Monte Carlo - how accurate? 
 
@@ -301,7 +305,7 @@ $$\frac{1}{N} \sum_{i=1}^{N} \mathcal{L}(\lambda_A^i , \lambda_B^i ,\lambda_C^i,
 $$P\left(\left|\frac{1}{N} \sum_{i=1}^{N} \mathcal{L}\left(\lambda_{A}{ }^{i}, \lambda_{B}^{i}, \ldots, A\right)-E[\mathcal{L}](A)\right|>\epsilon\right)<\delta$$
 
 - 그러면 위를 만족하기 위해서는 N 은 최소한 $-ln(\delta)/(2\epsilon^2)$ 만큼의 Sample 이 필요하게 됩니다. 
-- 증명은 Hoeffding's inequality 를 이용하게 됩니다. 여기에서는 생략 
+- 증명은 Hoeffding's inequality 를 이용하게 됩니다. 여기에서는 생략하겠습니다.
 
 > Note
 
@@ -309,10 +313,9 @@ $$P\left(\left|\frac{1}{N} \sum_{i=1}^{N} \mathcal{L}\left(\lambda_{A}{ }^{i}, \
   - $\epsilon$ 를 설정한다는것은 이것보다 큰 차이의 Approximation 은 허용하기 싫다는 의미입니다. 
 - $\delta$ 가 작아질수록 필요한  N 은 Logarithm scale 로 증가하게 됩니다.
   - $\delta$ 가 작다는것은 $\epsilon$ 이상의 차이를 보이는 Approximation 이 나타날 확률이 작게 Bounded 된다는 것입니다. 
-  - 즉 error 를 bounded 시키는 값이라 할 수 있겠습니다.
-- 즉 $\epsilon$ 은 작게 , $\delta$ 도 작게 유지하는 N 의값을 설정해야 좋은 Approximation 을 보장할  수 있습니다. 
+  - 즉 $\epsilon$ 이상의 error 가 나오는 확률을 bounded 시키는 값이라 할 수 있겠습니다.
+- 즉 $\epsilon$ 은 작게 , $\delta$ 도 작게 유지하는 N 의 값을 설정해야 좋은 Approximation 을 보장할  수 있습니다. 
   - WVO 에서는 $\delta = 10^{-10}$ 을 사용한다고 합니다. 
-  - $\epsilon$ 은 실험마다 다르게 선택합니다. 
 
 > ## Monte Carlo - how accurate 2 
 
@@ -328,7 +331,8 @@ $$S^{2} \leq V A R\left[\lambda_{B}-\lambda_{A}\right]+V A R\left[\lambda_{C}-\l
 
 > Note
 
-- 위의 경우를 이용하면, 우리는 Monte Carlo Approximation 의 에러가 $\epsilon $ 보다 작아질 확률이 $\tau$ 가 되게 조절하려면, Normal Approximation 을 이용해 계산한다면 N 의 값은 아래와 같이 계산됩니다. 
+- 위의 Thm을 이용하여, 우리는 Monte Carlo Approximation 의 에러가 $\epsilon $ 보다 작아질 확률이 $\tau$ 가 되게 조절하기 위한 샘플 수 N 을 계산할 수 있습니다.
+  - Normal Approximation 을 이용해 계산한다면 N 의 값은 아래와 같이 계산됩니다. 
 
 $$N = [(S/\epsilon)cdf^{-1}(\tau/2)]^2$$
 
@@ -359,7 +363,7 @@ $$N = O([(M/n^2\epsilon)cdf^{-1}(\tau/2)]^2)$$
 
 - 그러므로 $\epsilon$ 가 작아질수록 $1/\epsilon^2$ 만큼 필요한 Sample 의 수가 증가합니다. 
 - VWO 에서는 다음과 같은 설정을 따른다고 합니다. 
-  - $\tau = 10^{-5}$ , $\epsilon = 0.0001$ 으로 설정합니다. 그러면 N 은 1~50 million 사이에 위치하게 됩니다. 
+  - $\tau = 10^{-5}$ , $\epsilon = 0.0001$ 으로 설정합니다. 그러면 N 은 대게 1~50 million 사이에 위치하게 됩니다. 
 
 # [Approximate worst case for Bernoulli](#link){: .btn .btn--primary}{: .align-center}
 
@@ -370,7 +374,7 @@ $$N = O([(M/n^2\epsilon)cdf^{-1}(\tau/2)]^2)$$
 - 이러한 test 가 끝나기 위해서는 아래와 같은 조건을 만족해야합니다.
   - 특정한 Variants(say A) 가 $$E[\mathcal{L}](A)\le \epsilon$$ 를 만족할때 즉 
     - $$E[\mathcal{L}](A) = \int\int max(\lambda_A - \lambda_B , 0 ) P(\lambda_A , \lambda_B)d\lambda_A , d\lambda_B\le\epsilon$$
-- worst case 는 both variants 가 identically same 인 경우입니다. 
+- 이떄 worst case 는 both variants 가 identically same 인 경우입니다. 
   - 이러한 bounded 를 계산하기 위하여 우선 아래와 같은 식을 참고합시다.
 
 $$\int\int max(\lambda_A - \lambda_B , 0 ) P(\lambda_A , \lambda_B)d\lambda_A , d\lambda_B\le\int\int\mid\lambda_A - \lambda_B \mid P(\lambda_A , \lambda_B)d\lambda_A d\lambda_B$$
@@ -397,7 +401,7 @@ $$N \ge 4 \frac{\zeta(1-\zeta)}{\pi \epsilon ^2}$$
 
 > Remark
 
-- 위의 계산은, 'A,B' 가 같다고 할 때에 Expected loss 가 $\epsilon$ 보다 작아지는 Sample 수 N 을 찾아서 그 N 을 제시하는 방법입니다. (대충 보면 이거인것 같음.. 수식 뜯어보는건 시간 생기면 그떄 더 리뷰하겠습니다.)
+- 위의 계산은, 'A,B' 가 같다고 할 때에 Expected loss 가 $\epsilon$ 보다 작아지는 Sample 수 N 을 찾아서 그 N 을 제시하는 방법입니다. (대충 보면 이거인것 같습니다. 수식 더 뜯어보는건 시간 생기면 그떄 더 리뷰하겠습니다.)
 - '최악' 의 시나리오에서 , 어느정도의 Sample 수가 필요한지를 간략하게 제시한것이라 보면 됩니다.
   - 왜 '같을떄' 가 최악의 시나리오냐면 A,B 둘중 하나가 좋으면 Expected loss 가 빠르게 낮아지기 떄문입니다. 
   - 하지만 둘다 엇비슷하면, Expected loss 가 느리게 낮아집니다. 
@@ -437,7 +441,7 @@ $$\alpha_i \cdot r _i \to v_i$$
 - $c_A$ 는 Variant A 에 대한 number of sales 를 나타냅니다. 
 - $s_A$ 는 sales 에 대한 revenue 를 나타냅니다. 
 - $s_A^k$ 는 k-th customer 의 sale in variation A 입니다 즉 $$s_A = \frac{1}{c_A}\sum_{k=1} ^{C_A} s_A^k$$ 가 됩니다. 
-- 만일 single variable 을 논의할떄에는 (ex : posterior 계산) subscript 를 떼고 보게 됩니다. 
+- 만일 single variable 을 논의할떄에는 (ex : posterior 계산) subscript 를 떼고 본다고 합시다. 
 
 > ## Computing posterior on sale size 
 
@@ -454,15 +458,15 @@ $$P(\theta \mid s )\sim \Gamma(k+c, \frac{\Theta}{1+\Theta c s})$$
 
   - $f(\lambda ; a,b)$ 를 $\lambda$ 에 대한 prior 라 합시다.
 
-  - $r(\theta;\Theta,k)$ 를 $\theta$ 에 대한 prior 라 합시다. 
+  - $r(k,\Theta,\theta)$ 를 $\theta$ 에 대한 prior 라 합시다. 
 
 - 이 distribution 에 대해 다음과 같은 공식이 성립합니다. 
 
-$$P(\lambda,\theta \mid n,c,s) = f(\lambda ;  a+c , b +n-c)r(\theta ;k+c , \frac{\Theta}{1+\Theta c s})$$
+$$P(\lambda,\theta \mid n,c,s) = f(\lambda ;  a+c , b +n-c)r(k+c , \frac{\Theta}{1+\Theta c s} ,\theta)$$
 
 > ## Chance to Beat all Revenue
 
-- $\lambda_A , \theta_A,\lambda_B,\theta_B$ 4개에 대해서 각 posterior 를 계산하고 이를 곱하면 4개 hyperparameter 에 대한 posterior 가 계산됩니다. 
+- $\lambda_A , \theta_A,\lambda_B,\theta_B$ 4개에 대해서 각 posterior 를 계산하고 이를 곱하면 4개 hyperparameter 에 대한 posterior 가 계산됩니다. (independent 하다고 가정함)
   - 그러므로 이를 이용하여 아래의 공식을 계산할 수 있습니다. 
 
 $$\begin{aligned}
@@ -480,7 +484,7 @@ $$\begin{aligned}
 
 > ## making decision based on Revenue 
 
-- 이 경우에도 우리는 loss function 을 계산해야 ㅏㅂ니다 
+- 이 경우에도 우리는 loss function 을 계산해야 합니다 
   - 이러한 계산은 다음과 같이 이루어집니다. 
 
 $$\mathcal{L}(\lambda_A,\lambda_B,\theta_A,\theta_B,A) = max(\lambda_B / \theta_B - \lambda_A / \theta_A , 0)$$
@@ -577,6 +581,6 @@ $$\{X \in \{A,B,...\} : E[\mathcal{L}(X)]\le \epsilon\}$$
 
 - <http://ls00012.mah.se/bitstream/handle/2043/28349/Olle%20Caspersson.pdf?sequence=1&isAllowed=y>
 
- 베이즈 AB Test 에 대한 VWO 의 논문입니다. 마지막 Experiment 부분이 약간 부실한게 마음에 안들긴 하는데 (Revenue 가 만일 좀 더 Skewed 가 심한 모양이라던가..) 전체적으로는 적당한 난이도로 잘 서술되어있어서 좋게 읽었습니다. 하지만 실험한 Metric 이 모두 Conversion 기반 (revenue 도 결국 conversion 과 결합된 형태) 이여서 약간 아쉽네요. 클릭수와 같은 완벽한 Continuous data 형태일 경우에는 어떻게 적용되는지에 대한 Paper 도 있으면 좋겠네요... (LATEX 때문에 죽는줄..)
+ 베이즈 AB Test 에 대한 VWO 의 논문입니다. 마지막 Experiment 부분이 약간 부실한게 마음에 안들긴 하는데 (Revenue 가 만일 좀 더 Skewed 가 심한 모양이라던가..) 전체적으로는 적당한 난이도로 잘 서술되어있어서 좋게 읽었습니다. 하지만 실험한 Metric 이 모두 Conversion 기반 (revenue 도 결국 conversion 과 결합된 형태) 이여서 약간 아쉽네요. 클릭수와 같은 완벽한 Continuous data 형태일 경우에는 어떻게 적용되는지에 대한 Paper 도 있으면 좋겠네요.!.
 {: .notice--success}
 

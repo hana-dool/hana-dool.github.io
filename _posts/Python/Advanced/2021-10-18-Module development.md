@@ -15,7 +15,22 @@ use_math : true
  module 을 수정하면서 작업하는 방법에 대해서 알아봅시다.
 {: .notice--warning}
 
-# [Custom Module](#link){: .btn .btn--primary}{: .align-center}
+# [Custom Module making](#link){: .btn .btn--primary}{: .align-center}
+
+> ## reimport module
+
+- 아예 모듈을 불러오면서 작업할떄에는 다음과 같이 실항하면 됩니다. 
+
+```python
+import custom_module 
+```
+
+- 위와 같은 custom_module 을 불러오면서 작업중이였다면, 다음과 같이 수정합니다. 
+
+```python
+import importlib
+importlib.reload(custom_module)
+```
 
 > ## reimport module function 
 
@@ -45,6 +60,12 @@ del sys.module[processing.__module__]
 ```
 
 - 위와 같이 system 에서 processing 함수의 모듈을 삭제한 뒤 재실행 하면 됩니다.
+
+# [Cautions!](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Do not use import * 
+
+
 
 
 
