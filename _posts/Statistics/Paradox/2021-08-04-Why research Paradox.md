@@ -15,15 +15,15 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [Statistical Paradox](#link){: .btn .btn--primary}{: .align-center}
 
-# Why?
+> ## Why?
 
 - 통계 분석을 할 때에는 모델링 / 분석도 중요하지만 해석시 함정에 빠지지 않는것도 중요합니다. 
 - 오류와 역설은 대부분 가설(모형) 설계 과정에서 잘못된 판단을 했을 때 생길 수 있는 문제들입니다. 
 - 즉 이러한 Paradox 를 공부한다면 내가 함정에 빠지지 않을 수 있으므로 의미가 있습니다.
 
-# Reference 
+> ## Reference 
 
 - https://careerly.co.kr/comments/18785
 - https://en.wikipedia.org/wiki/Category:Statistical_paradoxes

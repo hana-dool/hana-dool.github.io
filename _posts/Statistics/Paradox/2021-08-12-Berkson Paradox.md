@@ -15,9 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [Berkson's Padadox](#link){: .btn .btn--primary}{: .align-center}
 
-# 1. Berkson Paradox란?
+> ## 1. Berkson Paradox란?
 
 - 벅슨의 역설은 "표면적으로 보이는 관계와 , 진정한 상관관계는 다를 수 있다." 라는 것입니다.
 
@@ -30,9 +30,7 @@ use_math: true
   - 즉 이는 현실세계의 결과를 왜곡할 수 있습니다. 이를 Collider Bias 라고 합니다.
 - 즉 실험을 할 떄에는 Collider 를 통제하지 않은 상태에서 실험을 제거해야 합니다. 
 
-<br>
-
-# EX : 멋진 남자는 재수없어?
+> ## EX : 멋진 남자는 재수없어?
 
 - 흔히 여성들이 '내가 만나봤는데 멋진 남자는 대부분 재수가 없더라!' 라고 하는 말을 들어봤을 것입니다. 
 
@@ -49,9 +47,7 @@ use_math: true
 - 이렇게 하여 남은 데이트를 할만한 남자만 분석대상으로 구분하면 hot과 nice의 상관은 (파란색 라인)위와 같습니다.  
 - 즉, 'hot과 nice는 부의 상관이 있다(= 미남은 싫은 사람인 경향이 있다)'고 나와, 전제와는 다른 결론이 도출됩니다. 이것이 벅슨의 역설의 일례입니다.
 
-<br>
-
-# EX : 흡연을 많이 하면 코로나가 약해진다?
+> ## EX : 흡연을 많이 하면 코로나가 약해진다?
 
 - COVID-19 심각도와 흡연 사이에 부적(음의 상관) 상관이 발표된 사례([Wenzel 2020](https://ec.europa.eu/jrc/en/publication/smoking-and-covid-19-review-studies-suggesting-protective-effect-smoking-against-covid-19))가 있다. 그런데 최근 Nature에 게재된 [Griffith 2020](https://www.nature.com/articles/s41467-020-19478-2)에서는 이 결과가 [Berkson’s Paradox](https://en.wikipedia.org/wiki/Berkson's_paradox)(벅슨의 역설)라고도 불리는 Collider Bias라고 지적하였습니다.
 
@@ -69,9 +65,7 @@ use_math: true
   - 처음부터 샘플을 '입원한 사람' 으로 못박아버리면 위에서 잘생긴 남자의 예시처럼 코로나 심각도가 낮고 담배를 안피는 사람은 대부분 제외됩니다.
   - 즉 왼쪽 아래 데이터가 거의 없어지므로 음의 상관관계가 있는듯이 관찰되는 것입니다.
 
-<br>
-
-# Reference
+**Reference**
 
 - https://perfectmoment.tistory.com/2125
 - http://hleecaster.com/statistical-paradoxes-in-data-science/

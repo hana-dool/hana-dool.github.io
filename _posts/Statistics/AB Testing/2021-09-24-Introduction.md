@@ -68,6 +68,9 @@ use_math: true
 
 - VWO 의 Loss 기반 Bayes A/B Testing 방법론 
   - <https://hana-dool.github.io/ab_testing/Trustworthy-Principles-and-Platform-Features/>
+- Peeking A/B and Bayesian
+  - https://blog.acolyer.org/2017/09/28/peeking-at-ab-tests-continuous-monitoring-without-pain/
+- 
 
 # [AB Testing Material](#link){: .btn .btn--primary}{: .align-center}
 
@@ -87,6 +90,12 @@ use_math: true
   - <https://hyperconnect.github.io/2021/02/26/auto-stats-test.html>
 - VWO bayesian AB Test
   - <https://cdn2.hubspot.net/hubfs/310840/VWO_SmartStats_technical_whitepaper.pdf>
+
+# [AB Testing With Code](#link){: .btn .btn--primary}{: .align-center}
+
+- VWO 의 AB Testing 을 그대로 구현한것
+  - <https://docs.pymc.io/en/stable/pymc-examples/examples/case_studies/bayesian_ab_testing.html>
+- 
 
 {: .notice--success}
 이거 말고도 다양한 소스에서 많은 글들을 읽기를 바래요~

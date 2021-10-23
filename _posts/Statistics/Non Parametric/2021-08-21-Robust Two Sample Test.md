@@ -19,7 +19,9 @@ use_math: true
 
 - http://faculty.washington.edu/yenchic/18W_425/Lec1_TwoSample.pdf
 
-# Introduction
+# [Robust two sample test](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Introduction
 
 - 실제 많은 상황에서 우리는 Two Sample Test 를 주로 하게됩니다.
 - 예를 들어서 다음과 같은 상황을 가정하고 , 서술을 이어가봅시다.

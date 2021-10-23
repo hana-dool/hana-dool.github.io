@@ -3,8 +3,6 @@ title:  "Individual Conditional Expectation (ICE)"
 excerpt: "PDP 에서 하나하나 떼서 살펴보기"
 categories:
   - Interpretable_ML
-tags:
-  - 1
 last_modified_at: 2021-09-01
 
 toc: true
@@ -15,9 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [Individual Conditional Expectation](#link){: .btn .btn--primary}{: .align-center}
 
-# ICE
+> ## ICE
 
 ![jpg](/assets/images/ML/1_17.jpg)
 
@@ -37,17 +35,13 @@ use_math: true
   - 즉 이를 Mean (PDP) 해서 보게 된다면 극단값에 의해 의미가 왜곡될 수 있습니다. 
   - 그러므로 PDP 에서 볼 수 없는 상세한 관계를 볼 수 있게됩니다.
 
-<br>
-
-# 주의점
+> ## 주의점
 
 - 앞에서 살펴보았던 PDP 와 같이 실제 데이터의 분포를 유의해야합니다. (Corr 되어있는경우가 문제될 수 있습니다.)
   - ex) 나이와 몸무게는 연관되어있습니다. 10살의 경우 100kg 일 수는 없을것입니다. 하지만 ICE 에서는 이런 관계를 무시하고 독립이라 하고 진행합니다.
 - 데이터의 갯수가 많으면 선이 너무 많아집니다. '
 
-<br>
-
-# Centered ICE Plot
+> ## Centered ICE Plot
 
 - ICE 는 선들이 너무 난잡하여 $X_s$ 에 대한 효과의 트랜드를 정확히 파악하기가 어렵습니다. 
 
@@ -62,9 +56,7 @@ use_math: true
 - 위의 경우, 나이가 10살즈음이 되면, 나이에 따른 그 영향이 매우 다이나믹 (긍/부정이 섞여있음) 함을 알 수 있습니다. 
 - 또한 45살 즈음엔 매우 확실하게 나이가 많을수록 암 발병률이 높다고 생각할 수 있을것입니다.
 
-
-
-# Refer
+**Reference**
 
 - http://dmqa.korea.ac.kr/activity/seminar/297
 - https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2019/04/13/Partial-Depedence-Plot.html

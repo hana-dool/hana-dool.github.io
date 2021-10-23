@@ -17,7 +17,7 @@ use_math: true
 
 <br>
 
-# Histogram
+# [Histogram](#link){: .btn .btn--primary}{: .align-center}
 
 ![png](/assets/images/Stat/40_3.png)
 
@@ -26,9 +26,7 @@ use_math: true
   - bin 이 너무 많으면 너무 Sensitive하게 추정하게 됩니다.
   - bin 이 너무 적으면 너무 Robust 하게 추정하게 됩니다. 
 
-<br>
-
-# Theory 
+> ## Theory 
 
 ![png](/assets/images/Stat/40_1.png)
 
@@ -38,27 +36,21 @@ use_math: true
 - 일반적으로 위와 같게 Bin 의 갯수가 정해지게 됩니다. 
 - 아래에서 이 내용을 좀 정리해봅시다. 
 
-<br>
-
-# Bias
+> ## Bias
 
 ![png](/assets/images/Stat/40_4.png)
 
 - M 은 bin 의 갯수 , $\mid p'(x) \mid \le L$  를 기억합시다. 
 - 즉 Bias 는 Bin 의 갯수가 많을수록 줄어듬을 알 수 있습니다. 
 
-<br>
-
-# Variance
+> ## Variance
 
 ![png](/assets/images/Stat/40_5.png)
 
 - 위는, Histogtam 의 Variance 를 나타냅니다.
-- 즉 bin 의 갯수가 많을수록 Variance 가 커지는것을 알 수 있습니다. 
+- 즉 bin 의 갯수가 많을수록 Variance 가 커지는것을 알 수 있습니다.
 
-<br>
-
-# MSE 
+> ## MSE 
 
 - Variance - Bias Trade off 에 의하여 Bin 의 갯수를 최소화 하게 됩니다.
 
@@ -68,17 +60,13 @@ use_math: true
 - 물론 위에서 M 을 계산할 방법이 없어서 실질적으로 이를 위한 추정은 다양하게 이루어집니다. 
 - 하지만 대부분 Bias 와 Variance 의 균형을 위해서 추정됨을 기억합니다.
 
-<br>
-
-# Estimation 
+> ## Estimation 
 
 ![png](/assets/images/Stat/40_7.png)
 
 - 위와 같이 다양한 추정이 존재합니다. 
 
-<br>
-
-# Reference 
+**Reference**
 
 - 식 계산 
   - http://faculty.washington.edu/yenchic/18W_stat425.html

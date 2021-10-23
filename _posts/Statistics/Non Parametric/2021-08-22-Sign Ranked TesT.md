@@ -15,9 +15,11 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
 
-# (Wilcoxon) Sign - Rank Test
+
+# [Sign - Rank Test](#link){: .btn .btn--primary}{: .align-center}
+
+> ## (Wilcoxon) Sign - Rank Test
 
 - 먼저 본격적으로 테스트 이야기를 하기 전에 , Setting 이 어떻게 되는지 살펴봅시다.
 
@@ -43,9 +45,7 @@ use_math: true
 
 - 이떄에 위처럼 Symmetric 을 가정하면 Median 와 Mean 이 같아짐을 기억합시다. 
 
-<br>
-
-# Proof
+> ## Proof
 
 ![png](/assets/images/Stat/46_6.png)
 
@@ -54,17 +54,13 @@ use_math: true
 - Symmetric 이므로 Sign 은 Bernouli(1/2) 를 따른다고 할 수 있습니다.
 - 또한 CLT 에 의해 Normal 을 따른다고 볼 수 있으므로 검정을 할 수 있을것입니다.
 
-<br>
-
-# Example
+> ## Example
 
 ![png](/assets/images/Stat/46_9.png)
 
 - 위와 같이 위의 예제에서 두 Pairwise Difference 의 Median 은 0 이라고 볼 수 있습니다.
 
-<br>
-
-# Refer
+**Referernce**
 
 - http://faculty.washington.edu/yenchic/18W_425/Lec1_TwoSample.pdf
 - https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test

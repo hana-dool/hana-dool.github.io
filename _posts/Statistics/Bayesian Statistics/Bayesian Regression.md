@@ -17,7 +17,7 @@ use_math: true
 
 - 연세대 통계학회 ESC 2021-Spring 의 내용을 정리한 것입니다.
 
-# 다중선형 회귀분석
+# [다중선형 회귀분석](#link){: .btn .btn--primary}{: .align-center}
 
 ![png](/assets/images/Stat/45_1.jpg)
 

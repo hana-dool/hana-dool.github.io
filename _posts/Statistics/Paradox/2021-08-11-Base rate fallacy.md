@@ -15,16 +15,14 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [base rate paradox](#link){: .btn .btn--primary}{: .align-center}
 
-# base rate란?
+> ## base rate란?
 
 - Base Rate 란, 어떤 요소가 통계적으로 전체에서 차지하는 기본 비율을 가르킵니다. 
 - 어떠한 사건이 일어났을때, 그 사건의 기본 비율을 생각하지 못함에서 오는 에러를 Base Rate의 역설 이라고 합니다.
 
-<br>
-
-# Base Rate 의 역설
+> ## Base Rate 의 역설
 
 - 99% 의 정확도를 가지는 암 검사 장비가 있다고 합시다. 
 

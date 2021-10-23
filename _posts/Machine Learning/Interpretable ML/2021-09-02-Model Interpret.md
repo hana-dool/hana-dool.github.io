@@ -3,8 +3,6 @@ title:  "What is Interpretability?"
 excerpt: "해석력은 어떤것을 의미하는가?"
 categories:
   - Interpretable_ML
-tags:
-  - 1
 last_modified_at: 2021-09-01
 
 toc: true

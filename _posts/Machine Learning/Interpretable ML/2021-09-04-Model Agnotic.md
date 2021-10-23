@@ -3,8 +3,6 @@ title:  "Model Agnotic Method?"
 excerpt: "왜 모델과 상관없는 해석이 더 좋을까?"
 categories:
   - Interpretable_ML
-tags:
-  - 1
 last_modified_at: 2021-09-01
 
 toc: true
@@ -15,7 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-# Model Based Interpret
+# [Model Based Interpret](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Model Based Interpret
 
 ![jpg](/assets/images/ML/1_8.jpg)
 
@@ -29,7 +29,7 @@ use_math: true
 - 위와 같이 해석을 '모델' 입장에서 바라보았습니다. 
   - NN , 앙상블 트리 같은 모델의 경우 해석이 매우 어렵습니다.
 
-# Model 중심 해석의 단점
+> ## Model 중심 해석의 단점
 
 ![jpg](/assets/images/ML/1_10.jpg)
 
@@ -39,7 +39,7 @@ use_math: true
 - 그러므로 모델에 구애받지 않는 (Model - Agnotic) 방법론이 있다면 모델의 비교가 가능할 것이다. 
 - 물론 Model - Agnotic 이라는 방법론을 위 그림에서는 노란 동그라미 위치로 매우  좋다고 말하고있지만 , 사실 Trade Off 는 존재합니다.
 
-# Model Agnotic Methods
+> ## Model Agnotic Methods
 
 ![jpg](/assets/images/ML/1_11.jpg)
 
@@ -71,13 +71,7 @@ use_math: true
 - 설명 시스템은, 모델과 다른 특성값 표현도 사용할 수  있어야 합니다.
 - 즉, 이미지 분류기의 해석의 경우 pixel 만 사용한것보다는, 다양하게 나눈 지역을 통해서 해석을 할 수도 있습니다.
 
-
-
-
-
-<br>
-
-# Refer
+**Reference**
 
 - http://dmqa.korea.ac.kr/activity/seminar/297
 - https://brunch.co.kr/@natrsci/86
