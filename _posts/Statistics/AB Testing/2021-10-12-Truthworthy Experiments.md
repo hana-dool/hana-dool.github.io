@@ -1,5 +1,5 @@
 ---
-title: "Patterns of Trustworthy Experimentation  &#58; Pre-Experiment Stage"
+title: "Patterns of Trustworthy Experimentation &#58; Pre-Experiment Stage"
 excerpt: "Truthworthy Experiment 를 위한 실험 전 세팅"
 categories:
   - AB_Testing

@@ -1,5 +1,5 @@
 ---
-title:  "Module development"
+title: "Module development"
 excerpt: "Module 을 이용하여 develope 할떄의 팁"
 categories:
   - Py_Advanced

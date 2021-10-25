@@ -1,5 +1,5 @@
 ---
-title:  "Generate requirements.txt"
+title:  "Module &#58; pipreqs"
 excerpt: "자동으로 requirments 를 생성해주는 pipreqs 패키지"
 categories:
   - Py_Advanced

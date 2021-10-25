@@ -1,5 +1,5 @@
 ---
-title:  "Pycharm Settings"
+title:  "Settings &#58; Pycharm"
 excerpt: "파이참을 잘 다루어봅시다."
 categories:
   - Py_Advanced

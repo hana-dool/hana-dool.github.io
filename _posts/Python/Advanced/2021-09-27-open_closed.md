@@ -1,5 +1,5 @@
 ---
-title:  "open, closed functions"
+title:  "Functions &#58; open,closed"
 excerpt: "파일을 읽어내고, 저장하는 함수 알아보기"
 categories:
   - Py_Advanced

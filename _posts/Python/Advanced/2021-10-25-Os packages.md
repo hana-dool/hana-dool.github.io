@@ -1,5 +1,5 @@
 ---
-title:  "Os packages"
+title:  "Module &#58; os"
 excerpt: "파이썬 os 패키지 기초"
 categories:
   - Py_Advanced

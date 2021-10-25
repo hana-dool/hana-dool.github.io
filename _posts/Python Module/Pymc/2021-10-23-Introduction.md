@@ -2,8 +2,8 @@
 title:  "Introduction"
 excerpt: "베이지안 통계를 다루는 프레임워크"
 categories:
-  - Module_Pymc
-last_modified_at: 2021-10-24
+  - Py_Pymc
+last_modified_at: 2021-10-23
 toc: true
 toc_label: "Table Of Contents"
 toc_icon: "cog"

@@ -1,5 +1,5 @@
 ---
-title:  "Time packages"
+title:  "Module &#58; Time"
 excerpt: "시간을 다루는 파이썬 기본 모듈"
 categories:
   - Py_Advanced

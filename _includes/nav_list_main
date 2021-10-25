@@ -160,13 +160,6 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Py_Pytorch" %}
-                        <li><a href="/categories/Py_Pytorch" class="">Py Pytorch ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
                     {% if category[0] == "Py_Statistics" %}
                         <li><a href="/categories/Py_Statistics" class="">Py Statstics ({{category[1].size}})</a></li>
                     {% endif %}
@@ -180,6 +173,21 @@
                 {% endfor %}
             </ul>
 
+        <span class="nav__sub-title">Python Packages</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Py_Pytorch" %}
+                        <li><a href="/categories/Py_Pytorch" class="">Pytorch ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Py_Pymc" %}
+                        <li><a href="/categories/Py_Pymc" class="">Pymc3 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
 
         <span class="nav__sub-title">Tableau</span>
             <ul>
