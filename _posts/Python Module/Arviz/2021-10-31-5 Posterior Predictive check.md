@@ -14,7 +14,7 @@ toc_sticky: true
 use_math: true
 ---
 
- MCMC 가 어떻게 잘 Sampling 되는지를 살펴보는 Plot
+ 우리가 만든 모델이 과연 좋은지? 에 대한 검정
 {: .notice--warning}
 
 # [Posterior Predictive check](#link){: .btn .btn--primary}{: .align-center}
@@ -22,6 +22,9 @@ use_math: true
 > ## Posterior Predictive check
 
 - Posterior Predictive check 는 '적합된 모델' 에서 데이터를 시뮬레이션 한 다음 이를 관찰된 데이터와 비교하는 방법입니다. 
+  - Fit the model to the data to get the posterior distribution of the parameters $p(\theta \mid D)$
+  - Simulate data from the fitted model : $p(\tilde{D} | \theta, D)$
+  - Compare the simulated data (or a statistic thereof) to the observed data and a statistic thereof. The comparison between data simulated from the model can be formal or visual.
 - 즉 Posterior 를 이용하여 '실제 데이터' 와 '시뮬레이션 된 데이터' 간의 불일치를 찾는 방법입니다. 
 - 베이즈 분석은 다양한 파라미터나, 고려중인 모형에 대한 '상대적인' 신뢰도 만을 나타내게 됩니다.
   - 즉 사후 분포는 어느 파라미터들이 데이터를 고려할떄에 상대적으로 다른 값보다 좋은지(확률이 높을지) 안좋을지 (확률이 낮은지) 에 대해서만 알려줄 뿐이라는 것이죠. 
@@ -56,7 +59,7 @@ az.plot_ppc(data, data_pairs={"y":"y"})
 - 위의 그림을 본다면 'Posterior Predictive' 를 다수 그려보고 (Analytic 하게는 안되겠죠.... 너무 어려운 Form 이니까요), 그러한 Posterior Predictive 에 대해서 평균을 형성해본것이 주황색 점선입니다.
 - 위 모형을 볼때 어느정도 합리적인 예측이라고 생각되어 지네요.
 
-> ##num_pp_samples : 몇개의 Posterior 를 그릴지
+> ## num_pp_samples : 몇개의 Posterior 를 그릴지
 
 ```python
 az.plot_ppc(data, num_pp_samples=30, random_seed=7)
@@ -70,6 +73,7 @@ az.plot_ppc(data, num_pp_samples=30, random_seed=7)
 
 - <http://doingbayesiandataanalysis.blogspot.com/2012/09/posterior-predictive-check-can-and.html>
 - <https://arviz-devs.github.io/arviz/api/generated/arviz.plot_ppc.html>
+- <https://jrnold.github.io/bayesian_notes/model-checking.html>
 
 
 

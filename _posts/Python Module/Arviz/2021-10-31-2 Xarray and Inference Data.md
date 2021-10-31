@@ -272,8 +272,6 @@ Dimensions: (draws: 2000 school: 8)
 stacked.mu.values
 ```
 
-
-
 ```
 array([-3.47698606, -2.45587061, -2.82625433, ...,  4.59705819,
         5.89850592,  0.16138927])
@@ -324,6 +322,22 @@ burnin = idata.sel(draw=slice(100, None))
 
 - 위와 같은 경우, 우리는 burnin 객체를 통하여 posterior ,posterior_predictive , prior , sample_states 가 이전의 500개의 데이터에서 400개의 데이터가 된 것을 볼 수 있을것입니다. 
 - 이떄에 observe_data 그룹은 영향을 지 않습니다. (당연히 그냥 데이터이므로 burn in 에 속할 이유가 없음)
+
+> ## to_dataframe : 데이터 프레임으로 바꿔보기
+
+- 위에서 Inference data 를 형성하기도 했지만 다양한 xarray.Dataset / Inference data 등을 다른 형식으로 변환할 수 있습니다.
+
+```python
+import arviz as az
+data = az.load_arviz_data("non_centered_eight")
+az.rhat(data) # xaray.Dataset 의 형태
+```
+
+```
+az.rhat(data).to_dataframe() # 이렇게 출력하면 dataframe 을 얻을 수 있습니다.
+```
+
+
 
 ---
 
