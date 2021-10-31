@@ -1,5 +1,5 @@
 ---
-title:  "One-parameter models and Conjugacy"
+ㅋtitle:  "One-parameter models and Conjugacy"
 excerpt: "1변수 모델과 Conjugacy"
 categories:
   - Bayes

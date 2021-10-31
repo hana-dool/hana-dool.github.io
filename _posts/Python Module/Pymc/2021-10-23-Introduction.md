@@ -71,6 +71,26 @@ use_math: true
   - 즉 초보와 전문가 사이의 격차를 메꿀 문서가 부족하다는 것입니다.
 - 그러므로 이러한 pymc 를 잘 다루기 위하여 기초부터 차근차근, 설명하고자 합니다.
 
+> ## 자료
+
+- 공식 Pymc3 사이트
+  - <https://docs.pymc.io/en/stable/nb_tutorials/index.html>
+- 예전 Pymc 사이트 (훨씬더 체계화된 설명)
+  - <https://pymcmc.readthedocs.io/en/latest/tutorial.html>
+- 컨퍼런스
+
+  - <https://github.com/junpenglao/advance-bayesian-modelling-with-PyMC3>
+- 정리된 py-notebook
+
+  - <https://notebook.community/fonnesbeck/PyMC3_Oslo/notebooks/5.%20Model%20Building%20with%20PyMC3>
+- 정리된 pymc3 
+  - <https://people.duke.edu/~ccc14/sta-663-2020/notebooks/S16A_PyMC3.html>
+
+
+
+---
+
 **Reference**
 
 - 프로그래머를 위한 Bayesian with python
+

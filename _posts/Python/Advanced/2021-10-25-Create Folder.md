@@ -19,6 +19,8 @@ use_math : true
 
 > ## 폴더 생성하기
 
+- 아래는, 지정된 directory 에 폴더를 생성하는 custom 함수입니다.
+
 ```python
 import os
  
@@ -30,9 +32,6 @@ def createFolder(directory):
         print ('Error: Creating directory. ' +  directory)
 createFolder('./Test/rest')
 ```
-
-- os.path.exists
-  - path rk rlwhs rudfhrk dlTekaus 
 
 **reference**
 

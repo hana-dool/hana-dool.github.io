@@ -1,8 +1,8 @@
 ---
-title:  "Introduction"
-excerpt: "베이지안 통계"
+title:  "MCMC with Discrete Time Markoc Chain"
+excerpt: "MCMC 에 대해서 자세히 알아보기"
 categories:
-  - Other
+  - Others
 last_modified_at: 2021-09-24
 
 toc: true
