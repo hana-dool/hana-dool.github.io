@@ -53,7 +53,7 @@ data = az.load_arviz_data('radon')
 az.plot_ppc(data, data_pairs={"y":"y"})
 ```
 
-![png](/assets/images/Python/48_4.png)
+![png](/assets/images/Python/47_4.png)
 
 - 위와 같이 파란색은 각각의 Poseterior 에 대해서 Posterior Predictive 를 형성합니다.
 - 위의 그림을 본다면 'Posterior Predictive' 를 다수 그려보고 (Analytic 하게는 안되겠죠.... 너무 어려운 Form 이니까요), 그러한 Posterior Predictive 에 대해서 평균을 형성해본것이 주황색 점선입니다.
