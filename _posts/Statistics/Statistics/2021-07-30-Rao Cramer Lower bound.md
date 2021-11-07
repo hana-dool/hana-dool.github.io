@@ -15,9 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [RCLR](#link){: .btn .btn--primary}{: .align-center}
 
-# Rao Cramer Lower Bound
+> ## Rao Cramer Lower Bound
 
 - 우선 아래와 같이 Regularity 를 먼저 정의해야 합니다.
 

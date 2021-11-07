@@ -3,8 +3,6 @@ title:  "Bayesian Inference"
 excerpt: "Large Sample 과 CLT"
 categories:
   - Stat
-tags:
-  - 1
 last_modified_at: 2021-07-28
 
 toc: true
@@ -15,7 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-#  1. 베이즈와 Freq 의 차이
+# [Bayesian Inference](#link){: .btn .btn--primary}{: .align-center}
+
+> ## 베이즈와 Freq 의 차이
 
 - Frequantist 와 베이즈는 기본적으로 확률을 대하는 태도부터 차이가 납니다. 
 - Frequentist
@@ -26,13 +26,11 @@ use_math: true
   - 하지만 베이즈 입장에서 확률이란 그저 '주관적인 믿음의 정도' 입니다. 
   - 이러한 Framework 에서는, 모수는 '정답' 이 없으므로 주관적인 분포로 나타납니다.
 
-<br>
-
-# 2. Goal Of Bayesian Inference
+> Goal Of Bayesian Inference
 
 - Bayesian Inference 의 목표는 '내 믿음을 잘 표현하는' Prior 를 만든뒤, 데이터를 활용하여 Poseterior 로 업데이트 하는것입니다. 
 
-# 3. Bayesian , Freq CI
+> ## Bayesian , Freq CI
 
 - 베이즈 Frame Work 에서 우리가 데이터를 업데이트 하여 Posterior 를 형성하고 나면 Credible Set 을 만들 수 있습니다. 
 
@@ -48,9 +46,7 @@ use_math: true
 - 여기서 잘 봐야하는것은 Randomness 가 L 과 U (즉 데이터) 에 주어져있는것을 볼 수 있습니다.
 - CI 는 '데이터의 함수' 로서 , '고정된 모수를 포함할' 확률이 95% 일때 95% CI 라고 하는것입니다. 
 
-<br>
-
-# 4. Frequentist View
+> ## Frequentist View
 
 - 빈도론자는 추정량에 대해서 "Consistency" 와 Rate of Convergence 를 중요시 합니다.
   - The rate of convergence **quantifies how fast the estimation error decreases when increasing the sample size n** .
@@ -62,9 +58,7 @@ use_math: true
 
 - 위와 같이, 베이지안의 경우에도 Consistency 와 rate of Convergency 를 정할 수 있습니다. 
 
-<br>
-
-# Bernstein-von mises Thm
+> ## Bernstein-von mises Thm
 
 ![png](/assets/images/Stat/18_5.png)
 
@@ -104,9 +98,7 @@ use_math: true
 
 - <https://www.ejwagenmakers.com/2008/BayesFreqBook.pdf>
 
-<Br>
-
-# Mean Inference And CLT
+> ## Mean Inference And CLT
 
 - 위의 정리가 이용되는 부분은 아래와 같습니다.
 
@@ -123,13 +115,7 @@ use_math: true
   - Bayes : 모수의 분포를 이용해서, 모수의 대립가설쪽의 확률을 이용해야지! 
 - 즉 위 결론은 2 - Sampe 일때에도 이어질 것입니다.
 
-<br>
-
-# 2 Sample Test With CLT and Bayesian
-
-
-
-# Refer
+**Refer**
 
 - <https://bjlkeng.github.io/posts/normal-approximations-to-the-posterior-distribution/>
 

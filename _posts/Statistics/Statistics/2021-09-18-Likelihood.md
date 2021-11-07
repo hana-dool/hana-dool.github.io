@@ -16,7 +16,7 @@ use_math: true
  개인적으로 , 제가 면접관이라면 물어볼거라고 생각되는것중에 하나입니다. Likelihood 와 Probability.. 솔직히 생긴것은 똑같거든요. 대체 왜 두개를 구분하는것이고, 어떤 차이가 있는지 알아봅시다!
 {: .notice--warning}
 
-# [Probability And Likelihood](#link){: .btn .btn--primary} 
+# [Probability And Likelihood](#link){: .btn .btn--primary}{: .align-center}
 
 - 우선 확률은 당연히 빈도론자 (또는 현대 통계학의 일반적인 정의) 하에서 생각합시다. 
   - 베이지안 입장에서 생각하면 확률은 그냥 '주관적인 확률~' 이라고 퉁쳐버리고 끝나는거라서요 
@@ -41,7 +41,7 @@ $$L(\theta\mid x)$$
     - Data? 지금 데이터는 고정하고 있습니다! 
 - 이는 어디까지나 고정된 $\theta$ 에 대한 추론에 불과하므로 가능성의 합은 1이 아닙니다.
 
-# [Ronald Fisher 의 해석](#link){: .btn .btn--primary} 
+# [Ronald Fisher 의 해석](#link){: .btn .btn--primary}
 
 - 통계학의 레전드, 피셔는 다음과 같이 말했습니다.
 

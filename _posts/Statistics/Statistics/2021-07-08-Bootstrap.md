@@ -3,8 +3,6 @@ title:  "Sampling Distribution and Bootstrap"
 excerpt: "부트스트랩의 응용과 기본규칙"
 categories:
   - Stat
-tags:
-  - 1
 last_modified_at: 2021-07-08
 
 toc: true
@@ -15,7 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-# 1. Overview
+# [Sampling Distribution and Bootstrap](#link){: .btn .btn--primary}{: .align-center}
+
+> ## 1. Overview
 
 ![png](/assets/images/Stat/14_1.png)
 
@@ -50,20 +50,14 @@ use_math: true
 - 바로 업데이트가 되어버림. (Test 등이 가능.) 
 - 컴퓨터의 발전이 매우 되고나서 적분 등이 쉬워지고 나서 유행한 방법 (요즘 유행이라네요..?)
 
-
-
-<br>
-
-# 2. Non parameteric Bootstrap
+> ## 2.Non parameteric Bootstrap
 
 ![png](/assets/images/Stat/14_3.png)
 
 - 매우 일반적인 방법입니다. 
 - 원래 데이터로부터 Resampling 을 통해서 $T_n$ 들을 생성해내고, 이 $T_n$ 들을 Variance 를 추정하게 됩니다. 
 
-<br>
-
-# 3. Parameteric Poostrap
+> ## 3.Parameteric Poostrap
 
 ![png](/assets/images/Stat/14_4.png)
 
@@ -72,9 +66,7 @@ use_math: true
 - 먼저 데이터를 이용해 먼저 '$\theta$' 를 추정합니다. 
 - 그 이후, 추정된 분포 $F(\hat \theta)$ 에서 Bootstrap Sample 을 구성하고, 여기에서 $T_n^*$ 를 만들어냅니다. 
 
-<br>
-
-# 4. Remark!!
+> ## 4. Remark!!
 
 - Random Sample 이 아닌경우 부트스트랩이나, Jackknife 는 variance estimation 을 과소평가하게 됩니다. 
 - 과소추정을 하게되면, 마치 의미가 있는것처럼 생각할 수 있다. (Wrong Decision..) 
@@ -82,9 +74,7 @@ use_math: true
   - Random Sample 이 아닌상태에서의 Bootstrap 방법론이 엄청 많다.. 
   - 데이터 구조에 따라서 Bootstrap 의 종류도 엄청 많다.. 
 
-<br>
-
-# 5. 부트스트랩 신뢰구간
+> ## 5. 부트스트랩 신뢰구간
 
 - 부트스트랩은 확률 분포의 가정을 두지 않고 주어진 데이터를 원래의 모집단을 대표하는 독립 표본으로 가정하고 진행한다. 
 - 그리고 중복을 허용한 무작위 재추출로(복원추출로) 각각에서 얻어진 통계량을 계산한다.

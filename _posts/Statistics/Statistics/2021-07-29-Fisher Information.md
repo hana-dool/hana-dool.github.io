@@ -15,7 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-#  Fisher Information
+# [Fisher Information](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Fisher Information
 
 - 피셔 정보량은 Random Variable X 가 $\theta$ 파라미터에 대해서 얼마나 정보량을 가지고 있는지에 대해서 나타냅니다.
 
@@ -29,9 +31,7 @@ use_math: true
 - Information Value는 이러한 Score function 의 variation 으로 정의됩니다. 
   - 즉, $\theta$ 에 대한 log likelihood 의 변화량의 분산을 Information Value 라고 합니다.
 
-<br>
-
-# What it Means?
+> ## What it Means?
 
 - 피셔 정보량을 조금만 더 직관적으로 이해해 봅시다. 
 - 피셔 정보량은 Random Variable X 가 $\theta$ 파라미터에 대해서 얼마나 정보량을 가지고 있는지에 대해서 나타낸다고 했었죠? 그런데 어떻게 대체 정보량을 가지고 있다는걸까요?
@@ -44,26 +44,20 @@ use_math: true
 - 즉 ! 모수 근처에서 뾰족하다는건 데이터가 모수에 대해서 확실한 추정을 하고 있다는것이므로 Fisher information 이 큰것입니다. 
 - 피셔 정보량은 Random Variable X 가 $\theta$ 파라미터에 대해서 얼마나 정보량을 가지고 있는지에 대해서 나타낸다는것이 이해가 가겠죠?
 
-<br>
-
-# With Sample Size
+> ## With Sample Size
 
 - Sample Size 가 N 개라고 합시다. 그러면, 이 N 개에 대해서 Likelihood 함수는 N 제곱배가 됩니다.
 - 이를 로그 취하면 N 배가 되겠죠 ? 그리고 그에 따라서 이계도함수를 구해보면 N 배가 됩니다.
 - 즉 Fisher Information 은 Sample size 가 N 이라면 1개인것에 비해 N 배가 됩니다. 
 - 이는 , Sample 수가 더 클수록 Likelihood 가 뾰족해지고 (N제곱배가 되므로 낮은값은 더더욱 낮아지고 큰 값은 덜 낮아짐) 이는, 모수에 대해서 더 많은 정보량을 얻을 수 있다는 직관과 일치합니다. 
 
-<br>
-
-# MLE?
+> ## MLE?
 
 - 위에서처럼, 피셔 정보량이 크다는것은 결국 로그 가능도 함수가 뾰족하다는것을 의미합니다. 
 - 즉 이는 MLE 의 성질과 이어진다고 예측할 수 있는데.. 아니나 다를까 역시나 연관됩니다.
 - MLE 부분을 봅시당..
 
-<Br>
-
-# Bayeisan?
+> ## Bayeisan?
 
 - 베이즈 정리에서와도 연관되는데, 샘플 사이즈가 크면 Assymptotic 하게 Fisher information 과 관련된 Normal 분포로 근사한다는 정리ㅇ가 있습니다.
 - 즉 Prior 과는 상관없이 늘 Normal 을 따른다고 볼 수 있죠.

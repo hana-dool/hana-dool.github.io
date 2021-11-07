@@ -134,6 +134,8 @@ P\left(D \mid M_{2}\right) &=\int_{0}^{1} P\left(D \mid \theta, M_{2}\right) d \
 
 - <https://en.wikipedia.org/wiki/Bayes_factor>
 - <http://posterior.egloos.com/9637425>
+- <https://vasishth.github.io/IntroductionBayes/slides/05_modelcomparison.pdf>
+- <https://www.cse.wustl.edu/~garnett/cse515t/fall_2019/files/lecture_notes/7.pdf>
 
 위와  
 {: .notice--success}

@@ -15,7 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-# 1. Chi-Square Test
+# [Goodness of Fit Test](#link){: .btn .btn--primary}{: .align-center}
+
+> ## 1. Chi-Square Test
 
 > The chi-square test ([Snedecor and Cochran, 1989](https://www.itl.nist.gov/div898/handbook/eda/section4/eda43.htm#Snedecor)) is used to test if a sample of data came from a population with a specific distribution.
 
@@ -34,9 +36,7 @@ use_math: true
 - 이경우 . 각 binning 에 대해서 기대되는 빈도 수는 5 이상이여야 합니다.
   - 이는 확률적으로 너무 낮은 구간을 없애기 위함입니다. 
 
-<br>
-
-# 2. Kolmogorov–Smirnov test
+> ## 2.Kolmogorov–Smirnov test
 
 - KS Test 란, Continuous Distribution 에 대해서 두 분포가 동일한지 검사합니다.
 - 이 경우 통계량은 , 두 분포의 CDF(데이터의 경우 ECDF) 거리의 최대값이 됩니다. 

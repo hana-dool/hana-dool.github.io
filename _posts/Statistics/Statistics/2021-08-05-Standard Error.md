@@ -1,10 +1,8 @@
 ---
 title:  "Standard error"
-excerpt: "표준 오차 와 표준 편차의 차이는?"
+excerpt: "표준 오차 와 표준 편차의 차이"
 categories:
   - Stat
-tags:
-  - 1
 last_modified_at: 2021-08-05
 
 toc: true
@@ -15,9 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [Standard Error](#link){: .btn .btn--primary}{: .align-center}
 
-# 표준 오차
+> ## 표준 오차
 
 - 표준 오차는 통계량(Statistics) 의 표준편차(Stard Deviation) 입니다. 
   - 우리는 모평균의 표준오차 라는 말은 사용하지 않습니다. 이는 '모평균' 은 고정된 값이기 때문입니다.
@@ -27,9 +25,7 @@ use_math: true
 
 - 위와 같이, 통계량에 대한 표준편차를 Standard Error 라고 부릅니다.
 
-<br>
-
-# 표준 편차와 표준 오차?
+> ## 표준 편차와 표준 오차?
 
 - 표준 편차는 그저 "데이터가 얼마나 퍼져 있는지" 를 나타냅니다. 
 - 표준 오차는 통계량이 얼마나 퍼져있는지를 나타냅니다. 여기서 중요한것은 "기준" 입니다.
@@ -38,9 +34,7 @@ use_math: true
 
 - 정리하자면 둘다 '얼마나 퍼져있는지' 를 보지만, 그 목적에 따라 다르게 되는것입니다.
 
-<br>
-
-# Margin of error(허용 오차, 오차 범위)
+> ## Margin of error(허용 오차, 오차 범위)
 
 - 허용 오차/ 오차범위 / Margin of error 라고도 불립니다. 
 - 이것은 우리가 뉴스를 볼떄에 자주 나오는 용어인데, A 후보의 지지도가 95% 의 신뢰구간에 3%의 오차범위라는 말을 들어봤을것입니다.
@@ -57,7 +51,7 @@ use_math: true
 - 위 의미는, 조사한 결과 표본평균이 50% 였으며, 신뢰수준을 95% 로 정하였을때, $z_{0.975} * \sigma/\sqrt{n}$ 의 값이 3% 였다는 것입니다. 
 - 즉, 47% ~ 53% 신뢰구간의 신뢰수준이 95% 라는말도 됩니다.
 
-## Sample SIze 와 Margin of error
+> ## Sample SIze 와 Margin of error
 
 ![png](/assets/images/Stat/29_7.png)
 
