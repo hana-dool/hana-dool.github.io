@@ -47,12 +47,12 @@ use_math: true
 
 - 하지만 우리는 이러한 샘플을 '오로지 하나' 만 가지고 있다는것입니다.
   - 우리는 지금 그냥 크기 n 짜리 샘플을 하나 얻었을 뿐입니다. 
-- Bootstarp 방법은 original sample $x' = (x_1....x_n)$ 에 대해서 다시 리샘플링 하여서 $x^{*'}= (x_1^*, x_2^*... x_n^*)$  와 같이 새로운 샘플을 만들어 냅니다. 
+- Bootstarp 방법은 original sample $x' = (x_1....x_n)$ 에 대해서 다시 리샘플링 하여서 $$x^{*'}= (x_1^*, x_2^*... x_n^*)$$ 와 같이 새로운 샘플을 만들어 냅니다. 
   - 이때 Resampling 할때에 $x_i ... x_n$ 이 뽑힐 확률은 모두 동일합니다. 
   - 그리고 복원추출로서, 한번 뽑힌것은 계속 뽑힐 수 있습니다.
 - 위와 같은 Sampling 을 B 회 반복했을때에 우리는 다음과 같은 샘플들을 얻을 것입니다 .
 
-$x_i^{*''}= (x_{i1}^*, x_{i2}^*... x_{in}^*) , \ \ i = 1\sim B$
+$$x_i^{*''}= (x_{i1}^*, x_{i2}^*... x_{in}^*) , \ \ i = 1\sim B$$
 
 - 이때 위와 같은 행동을 $B \to \infty$ 번 반복한다면 원래 $\hat{\theta}$ 의 분포에 대해서 근사적으로 수렴하게 됩니다.
 
@@ -63,7 +63,7 @@ $x_i^{*''}= (x_{i1}^*, x_{i2}^*... x_{in}^*) , \ \ i = 1\sim B$
 3. Let $x_j^{*'}$ 를 original sample $x' = (x_1 .. x_n)$ 로부터 j 번째 랜덤 샘플링한 샘플이라고 합시다. 
 4. $\hat\theta_j^* = \hat{\theta}(x_j^*)$ 처럼 j 번째 Bootstrap sample 을 이용하여 통계량을 추정합니다.
 5. j 를 j+1 로 올려줍니다. 
-6. $\hat{\theta^*_{(1)}} \le \hat{\theta^*_{(2)}} \le .... \hat{\theta^*_{(B)}}$ 가 되게 Reordering 합니다. 그리고 $m = [(\alpha /2 )B]$ 라 합시다.  이떄에 $(\hat{\theta^*_{(m)}} , \hat{\theta^*_{(B+1-m)}})$ 은 바로 $100(1-\alpha)\%$ 의 Approximate Condidence Interval for $\theta$ 가 됩니다. 
+6. $$\hat{\theta^*_{(1)}} \le \hat{\theta^*_{(2)}} \le .... \hat{\theta^*_{(B)}}$$ 가 되게 Reordering 합니다. 그리고 $$m = [(\alpha /2 )B]$$ 라 합시다.  이떄에 $$(\hat{\theta^*_{(m)}} , \hat{\theta^*_{(B+1-m)}})$$ 은 바로 $$100(1-\alpha)\%$$ 의 Approximate Condidence Interval for $$\theta$$ 가 됩니다. 
 
 - 위와 같은 방법을 우리는 Percentile Bootstrap Confidence interval for $\theta$ 라고 합니다.
 
@@ -106,14 +106,14 @@ $$\hat{p} = P_{H_0} [V \ge \bar{y} - \bar{x}]$$
 2. j = 1 로 정의합니다. 
 3. while $j \le B $ , (3) - (6) 을 반복합니다.
 4. Combine Sample $z'$ 로 부터 사이즈 $n_1$ 인 분포를 뽑아냅니다. 
-   - 이때 $x^{*'} = (x_1^* ... x_{n1}^*)$ 는 다음과 같이 뽑습니다. 
+   - 이때 $$x^{*'} = (x_1^* ... x_{n1}^*) $$ 는 다음과 같이 뽑습니다. 
      - $x_i^*$ 는 $z'$ 의 $n_1+n_2$ 개의 샘플에서 Uniform 하게 뽑아낸 샘플입니다.
      - x = (6,1,3) , y = (4,7) 이면 z = (6,1,3,4,7) 이 되고 , $x^*$ = (4,3,3) 이 될 수 있습니다.
-   - 그리고 $\bar{x_j^*} = \frac{1}{n_1} \sum x_i^* $를 계산합니다.
+   - 그리고 $$\bar{x_j^*} = \frac{1}{n_1} \sum x_i^* $$를 계산합니다.
 5. 크기가 $n_2$ 개인 샘플을 $z'$ 로부터 뽑아냅니다. 
    - 이때 위와 똑같이 만들어내면 됩니다. 
      - x = (6,1,3) , y = (4,7) 이면 z = (6,1,3,4,7) 이 되고 , $y^*$ = (1,1) 이 될 수 있습니다.
-   - 그리고 $\bar{y_j^*} = \frac{1}{n_1} \sum y_i^*$ 를 계산합니다.
+   - 그리고 $$\bar{y_j^*} = \frac{1}{n_1} \sum y_i^*$$ 를 계산합니다.
 6. $v_j^*$ = $\bar{y_j^*} -\bar{x_j^*} $ 를 계산합니다. 
 7. Bootstrap Estimated P-value 는 다음과 같이 계산됩니다.
    - $\hat{p^*} = \frac{1}{B} \sum _ {j=1} ^ B I[v_j^* \ge \bar{y}-\bar{x}]$ 로 p-value 를 추정합니다.
@@ -139,11 +139,11 @@ $$\hat{p} = P_{H_0} [\bar{X} \ge \bar{x}]$$
 
 1. 새로운 observation $z' = (z_1 , z_2 .. z_n)$ where $z_i = x_i - \bar{x} + \mu_0$ 으로 정의합니다. 
 2. Set j = 1 
-3. While $j \le B$ , (3) ~ (5) 를 반복합니다. 
-4. $z$ 로 부터 size n 개인 random sample 을 계속 뽑아냅니다. 이러한 샘플을 $z_j ^*$ 라고 하고, 여기에서 부터 mean $\bar{z_j^*}$ 를 계산합니다.
+3. While $j \le B$$ , (3) ~ (5) 를 반복합니다. 
+4. $$z$$ 로 부터 size n 개인 random sample 을 계속 뽑아냅니다. 이러한 샘플을 $$z_j ^*$$ 라고 하고, 여기에서 부터 mean $$\bar{z_j^*}$$ 를 계산합니다.
 5. j 를 j + 1 로 바꿉니다. 
 6. Bootstrap estimated p-value 를 다음과 같이 추정합니다.
-   - $\hat{p^*} = \frac{1}{B} \sum_j ^ B [\bar{z_j^*} \ge \bar{x} ]$ 으로 추정될 수 있습니다.
+   - $$\hat{p^*} = \frac{1}{B} \sum_j ^ B [\bar{z_j^*} \ge \bar{x}]$$ 으로 추정될 수 있습니다.
 
 > ## Note
 

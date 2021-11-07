@@ -128,7 +128,7 @@ P\left(D \mid M_{2}\right) &=\int_{0}^{1} P\left(D \mid \theta, M_{2}\right) d \
 &=10 \times \frac{1}{110}=\frac{1}{11}
 \end{aligned}$$
 
-이 경우 Bayes Facor ()는 0.107 이며 , 
+이 경우 Bayes Facor ()는 0.107 이며 , 이는 우리의 $M_2$ 를 강하게 지지한다는 사실을 알 수 있습니다.
 
 **reference**
 
@@ -137,6 +137,6 @@ P\left(D \mid M_{2}\right) &=\int_{0}^{1} P\left(D \mid \theta, M_{2}\right) d \
 - <https://vasishth.github.io/IntroductionBayes/slides/05_modelcomparison.pdf>
 - <https://www.cse.wustl.edu/~garnett/cse515t/fall_2019/files/lecture_notes/7.pdf>
 
-위와  
+위와 같이 베이즈에도 Testing 이 있다! 라는걸 알 수 있어요..
 {: .notice--success}
 
