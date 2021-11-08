@@ -16,8 +16,6 @@ use_math: true
  A/B/n 테스트에 대해서 알아보겠습니다. 통계학을 하신 분이라면 딱 보아도 False Positive Inflation 이 걱정될거같은데요.. 이것을 어떻게 Control 할 수 있을지에 대해서 알아보려고합니다.
 {: .notice--warning}
 
-- <https://hyperconnect.github.io/2021/02/26/auto-stats-test.html>
-
 # [Tests with More than one variant](#link){: .btn .btn--primary}{: .align-center}
 
 - 우리는 실험을 할때에 다수의 Treatment 에 대해서 동시에 진행할 수 있습니다.
@@ -67,15 +65,35 @@ $$FWER(\alpha , m) = 1 - (1-\alpha)^m$$
   - 테스트 갯수가 4개라 0.0125 로 Significant level 을 잡은경우 정확한 FWER 값은 $1-(1-0.0125)^4 = 0.049$
 - 물론 Variant 가 적은 경우 위와 같은 차이는 어느정도 감수할만 하며, 이러한 차이도 사전에 잘 알아두어야 할 것입니다.
 
-> ## p-value and CI correlation for testing multiple variants
+> Holm-Bonferroni step down 
 
-- 위와 같은 Simple 한 Bonferroni 방법론에 기반한 correlation 은 사실 너무 significant level 을 낮춘탓에 Power 가 작습니다. 
-- 이를 보완하여 Basic 한 Bonferroni 방법론보다 ㅈ더 좋은 방법론이 여럿 있습니다. 이에 대해서 소개해보고자 합니다.
+- 이 방법도 역시나 FWER 를 Control 하는 방법입니다. (자세한건 Testing 부분에서 다루었습니다. 참조)
+- Bonferroni 보다 조금 더 Power 가 높은것으로 알려져 있습니다.
+
+> ## Control FDR
+
+- 이러한 FDR 을 Control 하는 방법은 대표적으로 Benjamin Hochberg Correction 이 있습니다.
+  - 이 방법은 p-value 를 조절하는 방법론입니다.
+- 이 방법도 자세한것은 다루지 않겠습니다. (Testing 부분 참조)
+
+> ## Adjusted Confidence interval
+
+- 우리는 위와 같이 '조절된 p-value' 를 얻게 되었을때 검정을 할 수 있게 됩니다.
+  - 하지만 '우리가 A/B Testing 에서 중요하게 여기는 부분은 바로 CI 입니다' 
+- p value 에서 어떻게 하면 Confidence interval 을 얻을 수 있을까요? 
+- 만약 unadjusted p-value 가 0.01 이고, adjusted 된 p-value 가 0.03 이라고 합니다. 
+  - 그러면 adjusted ratio 는 0.01/0,03 = 1/3 입니다.
+  - 즉 95% interval 을 생성할때에 우리는 Confidence level 에서 1/3 을 곱합니다. 
+- 즉 1 - (0.05 * 1/3) = 0.983% 의 Confidence interval 을 생성해야 Actual Confidence interval 을 얻을 수 있습니다. 
+
+> ## Sample size Calculations 
+
+- Type 1 error 의 inflation 영향으로 우리는 개별 실험에 대해서 p-value 를 낮추거나 $\alpha$ 를 낮추는 등의 작업을 하였습니다. 
+  - 하지만 이러한 작업은 결국 Trade off 가 존재하는데, 여기에서는 각 실험의 1종 오류율을 낮추었으므로 결과적으로 Power 가 감소하게 될 것입니다. 
+- 그러므로 일반적으로 같은 Power 을 유지하고자 하면 '각각의 A/B Testing' 을 진행할때에 보다 더 많은 샘플이 필요하게 될 것입니다. 
+- 사실 Multiple Testing 에서 통용될만한 Sample size Calcultion 은 아직 없는듯 합니다.. (이 부분은 나중에 추가 예정) 
 
 **reference**
 
-- <https://hyperconnect.github.io/2021/02/26/auto-stats-test.html>
-
- MCMC 를 이용한 좀 더 정확한 A/B Testing 입니다. 이것을 적용하기 위해서는 역시나 '모든 분포를 잘 근사할 수 있는 다양한 분포에 대해 Bayesian model 을 얼마나 만들 수 있을까?' , '정확하게 posterior 를 구하기 위해 MCMC 는 얼마나 해야하나?' 와 같은점을 해결해야 할 것 같네요.
-{: .notice--success}
+- Statistical Methods in Online A/B Testing (Books)
 
