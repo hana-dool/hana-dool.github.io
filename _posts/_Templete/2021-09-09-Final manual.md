@@ -30,6 +30,12 @@ use_math: true
 
 > `&#58;` 를 이용해서 제목에 콜론을 달자.
 
+![png](/assets/images/Stat/67_2.png)
+
+
+
+
+
 
 
 ---

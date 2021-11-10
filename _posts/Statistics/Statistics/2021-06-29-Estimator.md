@@ -15,7 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-# <center><font size="10">Estimator</font></center>
+# [Estimator](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Estimator
 
 - Estimator 란 무엇일까? 
 - 우선, 우리가 알고싶은 값들(평균, 분산,모수...)이 있을것이다. 
@@ -24,9 +26,7 @@ use_math: true
 - 즉, 추정량은 True 값을 알 수 없으니, 데이터로부터 이를 추정한것이 바로 추정량이다.
 - 이제 좋은 추정량이란, 어떠한 성질을 가져야 하는지 알아보도록 하자.
 
-<BR>
-
-# <center><font size="10">1. Unbiased</font></center>
+> ## 1. Unbiased
 
 > $E[t_n] = \theta$
 >
@@ -37,7 +37,7 @@ use_math: true
 
 <br>
 
-# <center><font size="10">2. Consistency</font></center>
+> ## 2. Consistency
 
 > $\lim_{n\to \infty} P(\mid t_n - \theta \mid < \epsilon ) = 1$
 >

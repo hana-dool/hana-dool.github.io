@@ -15,15 +15,15 @@ toc_sticky: true
 use_math: true
 ---
 
-# Binomial -> Normal
+# [Limiting Distribution](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Binomial -> Normal
 
 아래와 같이 CLT 로 인해서 Binomial 과 Normal 의 관계가 성립하게 된다. (n 이 충분히 크기만 하면 된다!)
 
 ![png](/assets/images/Stat/15_1.png)
 
-<br>
-
-# Binomial -> Poisson
+> ## Binomial -> Poisson
 
 $B(n,p) \to Pois(np)$ when $ n \to \inf , p \to 0 $ (가이드는 없지만 $ 100 \le n , p \le 0.01$ 이라고 한다..)
 
@@ -35,35 +35,25 @@ $B(n,p) \to Pois(np)$ when $ n \to \inf , p \to 0 $ (가이드는 없지만 $ 10
 
 ![png](/assets/images/Stat/15_3.png)
 
-<br>
-
-# Poisson -> Normal
+> ## Poisson -> Normal
 
 $\lambda$ 가 충분히 크다면 $pois(\lambda) \sim N(\lambda , \lambda)$  가 성립한다. 이 이유는 아래와 같다.
 
 ![png](/assets/images/Stat/15_4.png)
 
-<br>
-
-# hypergeometric -> Normal
+> ## hypergeometric -> Normal
 
 ![png](/assets/images/Stat/15_5.png)
 
-<br>
-
-# beta -> Normal
+> ## beta -> Normal
 
 ![png](/assets/images/Stat/15_6.png)
 
-<br>
-
-# ChiSquared -> Normal
+> ## ChiSquared -> Normal
 
 ![png](/assets/images/Stat/15_7.png)
 
-<br>
-
-# Gamma -> Normal
+> ## Gamma -> Normal
 
 - $X_1 \sim \Gamma(a_1,b)$ , $X_2 \sim \Gamma(a_2,b)$  에 대해서,  두 r.v. 가 서로 독립이면 $X_1 + X_2 \sim \Gamma(a_1 + a_2 , b)$ 입니다. 
 - 즉 CLT 에 의해서 a 가 크면 ( Shape ) Normal 에 가까워진다고 할 수 있습니다. 
@@ -81,9 +71,7 @@ $\lambda$ 가 충분히 크다면 $pois(\lambda) \sim N(\lambda , \lambda)$  가
 - 위와 같은 그래프가 Normal 이 되려면 Sample 수가 적어도 10000개는 필요할 것입니다. 
   - 즉 쪼개놓은 각각의 그래프는 Normal 근사가 쉽지 않아서 CLT 가 성립하지 않는것입니다.
 
- <br>
-
-# T distribution -> Normal
+> ## T distribution -> Normal
 
 ![png](/assets/images/Stat/15_9.png)
 
