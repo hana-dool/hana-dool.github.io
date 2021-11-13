@@ -345,3 +345,53 @@ def kk(k : int ) -> int :
 kk(3)
 ```
 
+# [다양한 Format 으로 input넣기](#link){: .btn .btn--primary}{: .align-center}
+
+```python
+def custom(first , second) :
+    print(first + second)
+```
+
+- 위와 같은 Format 으로 함수를 작성했다고 합시다. 
+  - 위 함수는 다음과 같이 작동될 수 있습니다.
+
+> ## 일반적인 방법
+
+```python
+custom(1,second = 4)
+# 5 
+```
+
+- 위와 같이 실행할 경우, 5 (1+4) 의 값을 출력합니다.  
+
+```python
+custom(1,second = 4)
+# 5
+# 위처럼 position argument 에 대해서 할당을 해주어도 됩니다. 
+```
+
+> ## Unpacking
+
+```python
+t = (3,4)
+custom(*t)
+# 7
+```
+
+- 위와 같이 값을 unpacking 하여서 두개의 argument에 값을 할당할 수 있습니다. 
+
+```python
+dic = {'first' : 4 , 'second' : 5}
+custom(**dic)
+#9
+```
+
+- 또는 위처럼 Position Argument 에다가 값을 할당할수도 있습니다!
+
+---
+
+**reference**
+
+- <https://shecancode.io/blog/unpacking-function-arguments-in-python>
+- <https://mingrammer.com/understanding-the-asterisk-of-python/#3-%EA%B0%80%EB%B3%80%EC%9D%B8%EC%9E%90-variadic-parameters%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B3%A0%EC%9E%90-%ED%95%A0-%EB%95%8C>
+
