@@ -2,7 +2,7 @@
 title:  "Expectation and Variance and Independent"
 excerpt: "기댓값과 분산 그리고 독립"
 categories:
-  - Stat_Math_Testing
+  - Mathematical_Testing
 last_modified_at: 2021-11-10
 
 toc: true

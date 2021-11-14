@@ -62,6 +62,31 @@
                 {% endfor %}
             </ul>
 
+        <span class="nav__sub-title">Math</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Elementary_Math" %}
+                        <li><a href="/categories/Elementary_Math" class="">Elementary Math ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Mathematical_Statistics" %}
+                        <li><a href="/categories/Mathematical_Statistics" class="">Mathematical Statistics ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Mathematical_Testing" %}
+                        <li><a href="/categories/Mathematical_Testing" class=""> Mathematical Testing ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
+
         <span class="nav__sub-title">Machine Learning</span>
             <ul>
                 {% for category in site.categories %}
