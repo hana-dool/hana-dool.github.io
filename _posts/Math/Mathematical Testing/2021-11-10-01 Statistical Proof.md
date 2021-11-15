@@ -20,20 +20,26 @@ use_math: true
 
 > ## Definition 1 : Expectation Value
 
-> if $X$ is a random variable with pdf f(x) or pmf p(x), and a function g(X) is measurable, then the expected value of g(X) is deined as 
->
-> $$E(g(X))= \begin{cases}\int_{-\infty}^{\infty} g(x) f(x) d x, & \text { if } X \text { is continuous } \\ \sum_{-\infty}^{\infty} g(x) p(x) d x, & \text { if } X \text { is discrete }\end{cases}$$
->
-> if $$E(\mid g(X) \mid ) < \infty$$ , otherwise $$E(g(X))$$ does not exist
+> Definition
+
+if $X$ is a random variable with pdf f(x) or pmf p(x), and a function g(X) is measurable, then the expected value of g(X) is deined as 
+
+$$E(g(X))= \begin{cases}\int_{-\infty}^{\infty} g(x) f(x) d x, & \text { if } X \text { is continuous } \\ \sum_{-\infty}^{\infty} g(x) p(x) d x, & \text { if } X \text { is discrete }\end{cases}$$
+
+if $$E(\mid g(X) \mid ) < \infty$$ , otherwise $$E(g(X))$$ does not exist
+
+> Note
 
 - 위의 식의 경우 단순한 Definition 이기 떄문에 할 말은 없습니다만. 주의해야 할 점 하나는  $$E(\mid g(X) \mid ) < \infty  $$ 의 조건입니다.
 - 즉 값이 '유한' 할 때에만 Expectation 이 존재한다고 합니다.
 
-> ## Theorem 1
+> ## Theorem 1 : Linear Combination of Expectation
 
-> If a and b are nite real numbers, and X is a random variable with expected value E(X), then E(aX + b) = aE(X) + b.
+> Theorem
 
-**proof : Existence**
+If a and b are nite real numbers, and X is a random variable with expected value E(X), then E(aX + b) = aE(X) + b.
+
+> **proof : Existence**
 
 - $\int_X f(x)dx = 1$ and $\sum_ p(x)=1 $ 임을 기억합시다! 즉 두 값이 존재한다고 할 수 있습니다. 
 
@@ -51,7 +57,7 @@ E(|a X+b|) &=\int_{X}(|a x+b|) f(x) d x \\
 - 위에서 보다시피 그 존재성 $$<\infty$$ 도 증명할 수 있으므로 우리는 Existence 까지 보일 수 있습니다. 
 - 그러므로 $$E(aX+b)$$ 는 존재합니다.
 
-**proof : Calculation**
+> **proof : Calculation**
 
 - 이제 각 값의 계산이 어떻게 되는지도 증명해야 합니다. 
   - Discrete 이나 Continuous 나 같은 맥락으로 증명이 진행되므로 , Discrete Case 만 우선 증명하겠습니다.
@@ -64,13 +70,15 @@ E(a X+b) &=\sum_{X}(a x+b) p(x) \\
 &=a E(X)+b
 \end{aligned}$$
 
-> ## Theorem 2 
+> ## Theorem 2  : additive of R.V.
 
-> If X and Y are jointly distributed random variables with expected values E(X) and E(Y ), then 
->
-> $$E(X + Y ) = E(X) + E(Y ).$$
+> Theorem 
 
-**proof : Existence**
+If X and Y are jointly distributed random variables with expected values E(X) and E(Y ), then 
+
+$$E(X + Y ) = E(X) + E(Y ).$$
+
+> **proof : Existence**
 
 - $$f(x,y)$$ 를 joint pdf 라고 합시다. 그리고 $$f_X(x)$$ , $$f_Y(y)$$ 는 marginal pdf 라 합시다.  
 - 우선 저는 Existence 에 대해서 증명해 보겠습니다.
@@ -88,7 +96,7 @@ E(|X+Y|) &=\iint(|x+y|) f(x, y) d x d y \\
 $$
 - 위 처럼 $$\infty$$ 로 bounded 된다는것을 알았으므로 존재성을 보장할 수 있게됩니다.
 
-**proof : Calculation**
+> **proof : Calculation**
 
 - 이제 존재성을 알았으므로 각 계산이 잘 이루어지는지에 대해서 알아봐야 합니다. 
 
@@ -107,11 +115,13 @@ $$
 
 - 위처럼 Expectation 은 분해되어 계산되어질 수 있습니다! 
 
-> ## Corollary 2 
+> ## Corollary 2
 
-> When X and Y are jointly distributed, E(X) and E(Y ) exist, and a, b, and c are nite real numbers, by Theorems 1 and 2, 
->
-> $$E(a+bX+cY) = a+ bE(X) + cE(Y)$$
+> Corollary
+
+When X and Y are jointly distributed, E(X) and E(Y ) exist, and a, b, and c are nite real numbers, by Theorems 1 and 2, 
+
+$$E(a+bX+cY) = a+ bE(X) + cE(Y)$$
 
 - 위의 증명은 이전과 완전 똑같이 하면 되므로 생략하겠습니다!
 
@@ -119,17 +129,21 @@ $$
 
 > ## Definition 2 : Independent
 
-> Random Variables X, Y are independent if anf only if
->
-> $$f_{X,Y}(x,y) = f_X(x) f_Y(y)$$
+> Definition
 
-> ## Theorem 3 
+Random Variables X, Y are independent if anf only if
 
-> If X and Y are independent, and E [g(X)] and E [h(Y )] both exist, then
->
-> $$E[g(X) \cdot h(Y)]=E[g(X)] \cdot E[h(Y)]$$
+$$f_{X,Y}(x,y) = f_X(x) f_Y(y)$$
 
-**proof**
+> ## Theorem 3
+
+> Definition
+
+If X and Y are independent, and E [g(X)] and E [h(Y )] both exist, then
+
+$$E[g(X) \cdot h(Y)]=E[g(X)] \cdot E[h(Y)]$$
+
+> **proof**
 
 $$\begin{aligned}
 E[g(X) \cdot h(Y)] &=\iint g(x) \cdot h(y) f(x, y) d x d y \\
@@ -143,17 +157,21 @@ E[g(X) \cdot h(Y)] &=\iint g(x) \cdot h(y) f(x, y) d x d y \\
 
 > ## Definition 3 : Variance
 
-> The variance of X is 
->
-> $$Var(X) = E[(X-E(X))^2]$$ 
->
-> if variace value exist 
+> Definition
+
+The variance of X is 
+
+$$Var(X) = E[(X-E(X))^2]$$ 
+
+if variace value exist 
 
 > ## Theorem 4
 
-> $$Var(X) = E(X^2) - (E(X))^2$$
+> Theorem
 
-**proof**
+$$Var(X) = E(X^2) - (E(X))^2$$
+
+> **proof**
 
 $$\begin{aligned}
 \operatorname{Var}(X) &=E\left[(X-E(X))^{2}\right] \\
@@ -165,13 +183,15 @@ $$\begin{aligned}
 
 - 이때 var(X) 가 존재하기 위해서는 $E(X)$ 와 $E(X^2)$ 둘다 Exist 해야 함을 잘 알아둡시다! 
 
-> ## Theorem 5 
+> ## Theorem 5 : Linear Combination of R.V.
 
-> If a and b are nite real numbers, and X is a random variable with finite E(X) and Var(X), then 
->
-> $$Var(aX + b) = a^2V ar(X).$$
+> Theorem
 
-**proof : Existence**
+If a and b are nite real numbers, and X is a random variable with finite E(X) and Var(X), then 
+
+$$Var(aX + b) = a^2V ar(X).$$
+
+> **proof : Existence**
 
 - Var(aX+b) 의 Existence 를 보이기 위해서는 , $E((aX+b)^2)$ 의 존재성만 보이면 됩니다. 
   - 왜냐하면 Thm 1 에서 이미 $E(aX+b)$ 의 존재성은 보여지기 때문입니다.
@@ -186,7 +206,7 @@ E\left(\left|(a X+b)^{2}\right|\right) &=E\left((a X+b)^{2}\right) \\
 
 - a,b 는 finite constants 이고, $E(X^2)$ 과 $E(X)$ 둘다 exist 하다고 가정했으므로, $Var(aX +b)$ 는 존재합니다. 
 
-**proof : Calculation**
+> **proof : Calculation**
 
 - Thm 1 에 의하여 다음이 성립합니다.
 
@@ -198,13 +218,15 @@ $$\begin{aligned}
 &=a^{2} \operatorname{Var}(X)
 \end{aligned}$$
 
-> ## Theorem 6 
+> ## Theorem 6 : Additive of Variance
 
-> If X and Y are independent random variables with nite E(X) and V ar(X) and E(Y ) and V ar(Y ), then 
->
-> $$Var(X + Y ) = Var(X) + Var(Y ).$$
+> Theorem
 
-**proof : Existnce**
+If X and Y are independent random variables with nite E(X) and V ar(X) and E(Y ) and V ar(Y ), then 
+
+$$Var(X + Y ) = Var(X) + Var(Y ).$$
+
+> **proof : Existnce**
 
 - 존재성을 보이기 위해서 우리는 단지 $$E((X+Y)^2)$$ 가 존재ㅏ는지만 알면 됩니다. 
   - 왜냐하면 이미 가정에서 Finite $E(X) ,  E(Y)$ 를 가정하기 떄문에, $E(X+Y)$ 도 Finite 하기 때문입니다.
@@ -219,7 +241,7 @@ E\left(\left|(X+Y)^{2}\right|\right) &=E\left((X+Y)^{2}\right) \\
 &<\infty
 \end{aligned}
 $$
-**proof : Calculation**
+> **proof : Calculation**
 
 $$\begin{aligned}
 \operatorname{Var}(X+Y) &=E\left((X+Y)^{2}\right)-[E(X+Y)]^{2} \\
@@ -231,9 +253,11 @@ $$\begin{aligned}
 
 > ## Corollary 2 
 
-> When X and Y are independent random variables, Var(X) and Var(Y) exist, and a, b, and c are finite real numbers, by Theorems 5 and  6
->
-> $$\operatorname{Var}(a+b X+c Y)=b^{2} \operatorname{Var}(X)+c^{2} \operatorname{Var}(Y)$$
+> Corollary
+
+When X and Y are independent random variables, Var(X) and Var(Y) exist, and a, b, and c are finite real numbers, by Theorems 5 and  6
+
+$$\operatorname{Var}(a+b X+c Y)=b^{2} \operatorname{Var}(X)+c^{2} \operatorname{Var}(Y)$$
 
 ---
 

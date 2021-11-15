@@ -128,4 +128,7 @@ $$\begin{aligned}
 
 - 호그의 Introduction to Mathematical Statistics 7ed
 - <https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician>
+- <https://www.quora.com/What-is-an-intuitive-explanation-of-the-Law-of-the-unconscious-statistician>
+
+
 

@@ -138,8 +138,6 @@ $$\begin{aligned}
 &=2 k
 \end{aligned}$$
 
->
-
 ---
 
 **Reference**

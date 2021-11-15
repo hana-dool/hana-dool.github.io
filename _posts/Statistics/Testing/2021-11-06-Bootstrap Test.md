@@ -148,19 +148,7 @@ $$\hat{p} = P_{H_0} [\bar{X} \ge \bar{x}]$$
 6. Bootstrap estimated p-value 를 다음과 같이 추정합니다.
    - $$\hat{p^*} = \frac{1}{B} \sum_j ^ B [\bar{z_j^*} \ge \bar{x}]$$ 으로 추정될 수 있습니다.
 
-> ## empirical Booststrap Confidence interval
-
-- Sample data 가 다음과 같을때에 $\mu$ 에 대한 80% Bootstrap Confidence interval 을 만들어내세요
-
-$$Sample data = 30, 37, 36, 43, 42, 43, 43, 46, 41, 42$$
-
-- 위에서 Sample mean 은 $\bar{x} = 40.3$ 입니다. 
-- 평균에 대한 Confidence interval 을 추정하기 위해서는 , $\bar{x}$ 가 $\mu$ 근처에서 얼마나 변하는지를 알아내야 합니다.
-- 그러므로 우리는 $\delta = \bar{x} - \mu$ 의 분포를 알아내야 합니다. 
-
-$$$$
-
-# [Otthers](#link){: .btn .btn--primary}{: .align-center}
+# [Others](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Cautions
 
@@ -175,23 +163,12 @@ $$$$
 - 아무래도 샘플을 통해서 데이터의 분포를 알아내려고 하는 만큼, 1000번 이상의 Sampling 이 필요할 것입니다. (Davison and D.V. Hinkley (1997) *Bootstrap Methods and their Application*. Cambridge: Cambridge University Press) 
 - 또는 다른데에서는 (Introduction to Mathemtical Statistics 7ed) Practically 3000번 이상을 사용항다고 합니다.
 
-
-
 - 왜 위와 같은 추정이 가능할까요? 이는 바로 '검정 통계량의 분포' 를 Bootstrap 을 이용하여 근사하였기 떄문에 가능했던 것입니다.
 - 요즘은 그래서 '복잡한 수식' 으로 푸는것도 중요하지만, 손으로 풀 수 없는 문제도 컴퓨터로 풀어버릴 수 있는 시대가 되었다는게 중요합니다!
 
-> ## Others
+---
+
+**reference**
 
 - <https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf>
-  
-  -  위 소스를 꼭 읽어주세요! (아직 모르는 부분이 여기 있어서)
-  
-  **Reference**
-  
-- <https://online.stat.psu.edu/stat200/lesson/6/6.4>
-
-- <https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/readings/MIT18_05S14_Reading24.pdf>
-
- 사실 Practical significant 는 Statistical Significant 와는 달리 매우 주관적이고, 현실적인 문제입니다. 그래서 통계'학' 에서 다루기에는 약간 학문과 거리가 먼 주제지만 알아두면 좋은 주제라 선정하게 되었습니다. 
-{: .notice--success}
-
+- 위 소스를 꼭 읽어주세요! (아직 모르는 부분이 여기 있어서)
