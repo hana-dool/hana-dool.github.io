@@ -1,8 +1,8 @@
 ---
-title:  "Module &#58; watermark"
+title:  "watermark"
 excerpt: "주피터 노트북에서 환경정보 뽑아내기"
 categories:
-  - Py_Advanced
+  - Module_Others
 last_modified_at: 2021-10-24
 
 toc: true

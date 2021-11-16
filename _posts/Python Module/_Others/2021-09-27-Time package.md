@@ -1,8 +1,8 @@
 ---
-title:  "Module &#58; Time"
+title:  "Time"
 excerpt: "시간을 다루는 파이썬 기본 모듈"
 categories:
-  - Py_Advanced
+  - Module_Others
 last_modified_at: 2021-09-27
 
 toc: true

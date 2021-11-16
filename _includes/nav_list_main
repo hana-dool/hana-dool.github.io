@@ -201,6 +201,13 @@
         <span class="nav__sub-title">Python Packages</span>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Module_Others" %}
+                        <li><a href="/categories/Module_Others" class="">Others ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Py_Arviz" %}
                         <li><a href="/categories/Py_Arviz" class="">Arviz ({{category[1].size}})</a></li>
                     {% endif %}
