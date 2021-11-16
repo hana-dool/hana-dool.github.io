@@ -222,6 +222,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Py_Hyperopt" %}
+                        <li><a href="/categories/Py_Hyperopt" class="">Hyperopt ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Py_Pytorch" %}
                         <li><a href="/categories/Py_Pytorch" class="">Pytorch ({{category[1].size}})</a></li>
                     {% endif %}

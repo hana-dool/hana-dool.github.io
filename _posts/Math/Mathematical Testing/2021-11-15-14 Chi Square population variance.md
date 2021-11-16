@@ -1,6 +1,6 @@
 ---
 title:  "Chi-square test for population variance"
-excerpt: "카이제곱 등분산 테스트"
+excerpt: "카이제곱 분산 테스트"
 categories:
   - Mathematical_Testing
 last_modified_at: 2021-11-15
