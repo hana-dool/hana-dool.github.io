@@ -2,7 +2,7 @@
 title:  "VScode and Extension for python"
 excerpt: "Extension 추천!"
 categories:
-  - Others
+  - VScode
 last_modified_at: 2021-11-17
 
 toc: true

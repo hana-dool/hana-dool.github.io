@@ -32,18 +32,10 @@ use_math: true
 
 ![png](/assets/images/Stat/67_2.png)
 
-
-
-
-
-
+![png](/assets/images/Program/2_1.png)
 
 ---
 
 **Reference**
 
 - <https://bayestour.github.io/blog/docs/previous/mpsl/0103>
-
-위와 같이 엄밀한 확률의 정의를 통하여, 확률 공간이 무한할떄의 역설을 해결하였고, 학문으로서의 기초를 다졌습니다.
-{: .notice--success}
-

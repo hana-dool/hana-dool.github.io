@@ -1,9 +1,9 @@
 ---
 title:  "Window to Mac"
-excerpt: "윈도우는 이제 안녕...."
+excerpt: "윈도우는 이제 안녕"
 categories:
   - Others
-last_modified_at: 2021-11-14
+last_modified_at: 2021-11-18
 
 toc: true
 toc_label: "Table Of Contents"
@@ -11,10 +11,8 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math : true
----
 
- 이제는 윈도우와는 안녕....
-{: .notice--warning}
+---
 
 # [Convert to Mac](#link){: .btn .btn--primary}{: .align-center}
 

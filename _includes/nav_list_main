@@ -110,90 +110,54 @@
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">R</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "R_Basic" %}
-                        <li><a href="/categories/R_Basic" class="">R Basic ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "R_Preprocessing" %}
-                        <li><a href="/categories/R_Preprocessing" class="">R Preprocessing ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "R_Visualization" %}
-                        <li><a href="/categories/R_Visualization" class="">R Visualization ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "R_Analysis" %}
-                        <li><a href="/categories/R_Analysis" class="">R Analysis ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
 
         <span class="nav__sub-title">Python </span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Basic" %}
-                        <li><a href="/categories/Py_Basic" class="">Py Basic ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Basic" class="">Basic ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Advanced" %}
-                        <li><a href="/categories/Py_Advanced" class="">Py Advanced ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Advanced" class="">Advanced ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Effective" %}
-                        <li><a href="/categories/Py_Effective" class="">Py Effective Coding ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Effective" class="">Effective Coding ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Preprocessing" %}
-                        <li><a href="/categories/Py_Preprocessing" class="">Py Preprocessing ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Preprocessing" class="">Preprocessing ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Visualization" %}
-                        <li><a href="/categories/Py_Visualization" class="">Py Visualization ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Visualization" class="">Visualization ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Analysis" %}
-                        <li><a href="/categories/Py_Analysis" class="">Py Analysis ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Py_Statistics" %}
-                        <li><a href="/categories/Py_Statistics" class="">Py Statstics ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Analysis" class="">Analysis ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Py_Others" %}
-                        <li><a href="/categories/Py_Others" class="">Py Others ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Py_Others" class="">Others ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -239,49 +203,58 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tableau" %}
-                        <li><a href="/categories/Tableau" class="">Tab Basic ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tableau" class="">Basic ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tab_Data" %}
-                        <li><a href="/categories/Tab_Data" class="">Tab Data ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tab_Data" class="">Data ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tab_Function" %}
-                        <li><a href="/categories/Tab_Function" class="">Tab Function ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tab_Function" class="">Function ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tab_View" %}
-                        <li><a href="/categories/Tab_View" class="">Tab View ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tab_View" class="">View ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tab_Map" %}
-                        <li><a href="/categories/Tab_Map" class="">Tab Map ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tab_Map" class="">Map ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tab_Dash" %}
-                        <li><a href="/categories/Tab_Dash" class="">Tab Dashboard ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tab_Dash" class="">Dashboard ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Tab_Article" %}
-                        <li><a href="/categories/Tab_Article" class="">Tab Article ({{category[1].size}})</a></li>
+                        <li><a href="/categories/Tab_Article" class="">Article ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        <span class="nav__sub-title">Spark</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Spark_Definite_Guide" %}
+                        <li><a href="/categories/Spark_Definite_Guide" class="">Definite Guide ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -290,28 +263,28 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "SQL_Basic_Knowledge" %}
-                        <li><a href="/categories/SQL_Basic_Knowledge" class="">SQL Basic Knowledge ({{category[1].size}})</a></li>
+                        <li><a href="/categories/SQL_Basic_Knowledge" class="">Basic Knowledge ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "SQL_Basic_Grammer" %}
-                        <li><a href="/categories/SQL_Basic_Grammer" class="">SQL Basic Grammer ({{category[1].size}})</a></li>
+                        <li><a href="/categories/SQL_Basic_Grammer" class="">Basic Grammer ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "SQL_Query_Book" %}
-                        <li><a href="/categories/SQL_Query_Book" class="">SQL Query Book ({{category[1].size}})</a></li>
+                        <li><a href="/categories/SQL_Query_Book" class="">Query Book ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "SQL_Others" %}
-                        <li><a href="/categories/SQL_Others" class="">SQL Others ({{category[1].size}})</a></li>
+                        <li><a href="/categories/SQL_Others" class="">Others ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -321,70 +294,144 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Basic" %}
-                        <li><a href="/categories/AL_Basic" class="">AL Basic ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Basic" class="">Basic ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Data_Structure" %}
-                        <li><a href="/categories/AL_Data_Structure" class="">AL Data Structure ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Data_Structure" class="">Data Structure ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Stack_Queue" %}
-                        <li><a href="/categories/AL_Stack_Queue" class="">AL Stack,Queue ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Stack_Queue" class="">Stack,Queue ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Sorting" %}
-                        <li><a href="/categories/AL_Sorting" class="">AL Sorting ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Sorting" class="">Sorting ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Search" %}
-                        <li><a href="/categories/AL_Search" class="">AL Search ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Search" class="">Search ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Graph_Tree" %}
-                        <li><a href="/categories/AL_Graph_Tree" class="">AL Graph,Tree ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Graph_Tree" class="">Graph,Tree ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_DFS_BFS" %}
-                        <li><a href="/categories/AL_DFS_BFS" class="">AL DFS,BFS ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_DFS_BFS" class="">DFS,BFS ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Dynamic_Programming" %}
-                        <li><a href="/categories/AL_Dynamic_Programming" class="">AL Dynamic Programming ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Dynamic_Programming" class="">Dynamic Programming ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "AL_Others" %}
-                        <li><a href="/categories/AL_Others" class="">AL Others ({{category[1].size}})</a></li>
+                        <li><a href="/categories/AL_Others" class="">Others ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
 
 
+        <span class="nav__sub-title">R</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "R_Basic" %}
+                        <li><a href="/categories/R_Basic" class="">Basic ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "R_Preprocessing" %}
+                        <li><a href="/categories/R_Preprocessing" class="">Preprocessing ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "R_Visualization" %}
+                        <li><a href="/categories/R_Visualization" class="">Visualization ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "R_Analysis" %}
+                        <li><a href="/categories/R_Analysis" class="">Analysis ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
 
-        <span class="nav__sub-title">Data</span>
+        <span class="nav__sub-title">Tools</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Git" %}
+                        <li><a href="/categories/Git" class="">Git ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Anaconda" %}
+                        <li><a href="/categories/Anaconda" class="">Anaconda ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Fig_Basic" %}
+                        <li><a href="/categories/Fig_Basic" class="">Figma ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "VScode" %}
+                        <li><a href="/categories/VScode" class="">VScode ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "OtherTools" %}
+                        <li><a href="/categories/OtherTools" class="">Other Tools ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
+        <span class="nav__sub-title">Others</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Others" %}
+                        <li><a href="/categories/Others" class="">Others ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Data_Infra" %}
@@ -400,49 +447,6 @@
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">Others</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Data" %}
-                        <li><a href="/categories/Data" class="">Data ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Fig_Basic" %}
-                        <li><a href="/categories/Fig_Basic" class="">Figma ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Others" %}
-                        <li><a href="/categories/Others" class="">Others ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Git" %}
-                        <li><a href="/categories/Git" class="">Git ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Reading_Paper" %}
-                        <li><a href="/categories/Reading_Paper" class="">Reading Paper ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Project" %}
-                        <li><a href="/categories/Project" class="">Project ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
       </li>
   </ul>
 </nav>

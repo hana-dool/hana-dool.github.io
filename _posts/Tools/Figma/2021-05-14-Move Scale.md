@@ -3,8 +3,6 @@ title:  "복제와 확대,축소"
 excerpt: "오브젝트의 복제 및 확대축소"
 categories:
   - Fig_Basic
-tags:
-  - 5
 last_modified_at: 2021-05-14
 
 toc: true

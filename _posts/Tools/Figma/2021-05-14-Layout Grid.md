@@ -3,8 +3,6 @@ title:  "레이아웃 그리드"
 excerpt: "일정한 배치를 위한 그리드 그리기"
 categories:
   - Fig_Basic
-tags:
-  - 5
 last_modified_at: 2021-05-14
 
 toc: true
