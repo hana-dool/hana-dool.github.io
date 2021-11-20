@@ -15,7 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-# <center><font size="10">1. Monte Carlo Approximation</font></center>
+# [Monte Carlo Approximation](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Monte Carlo Approximation
 
 - 일반적으로, 확률 변수에 대한 분포를 계산하는것은 매우 어렵습니다. 그래서 정확하게 분포를 계산하기 보다는, 몬테카를로 근사법을 이용하는 방법이 실용적으로 많이 쓰입니다. 
 
@@ -35,9 +37,7 @@ use_math: true
 >
 > $$ median (x_1, ..., x_N) \approx median(X) $$
 
-<br>
-
-# <center><font size="10">2. LLN and Monte Carlo</font></center>
+> ## LLN and Monte Carlo
 
 - 위의 Montecarlo 방법이 가능한 이유는 Law of Large number 덕분입니다.
 
@@ -47,9 +47,7 @@ use_math: true
 
 ![png](/assets/images/Stat/5_2.png)
 
-<br>
-
-# <center><font size="10">3. Example: estimating $\pi$</font></center>
+> ## Example: estimating $\pi$
 
 - 반지름이 r인 원의 면적을 $I$ 라고 합시다. 
 - Indicator Function을 사용하여 면적을 나타내면 아래와 같습니다.
@@ -61,9 +59,7 @@ use_math: true
 
 > $$ I = (2r)(2r) \int \int f(x, y) p(x) p(y) dx dy \approx 4r^2 \frac{1}{N} \Sigma_{i=1}^N f(x_i, y_i) $$
 
-<br>
-
-# <center><font size="7">4. Accuracy of Monte Carlo Approximation</font></center>
+> ## Accuracy of Monte Carlo Approximation
 
 - 기본적으로 몬테카를로 근사법은 표본의 크기가 클수록 정확도가 높아집니다.
 
@@ -82,9 +78,9 @@ use_math: true
 - 이 때 $\sqrt{ \frac{\hat{\sigma^2}} {N}}$ 는 Numerical(Empirical) Standard Error 라고 불리며, 이는 $\mu$ 의 추정량에 대한 불확실성에 대한 추정치 입니다.
 - 만약 우리가 95%의 확률로 $\pm \epsilon$ 내부에 위치할 만큼 정확한 Report를 원한다면 우리는 $1.96 \sqrt{ \frac{\hat{\sigma}^2}{N}} \le \epsilon$ 을 만족시키는 N 개의 Sample이 필요합니다.
 
-<br>
+---
 
-# Ref
+**Ref**
 
 - http://www.math.chalmers.se/Stat/Grundutb/CTH/tms150/1516/MC_20151008.pdf
 - https://en.wikipedia.org/wiki/Law_of_large_numbers

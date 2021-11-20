@@ -1,5 +1,5 @@
 ---
-title:  "English Expression"
+title:  "English Expression for 기호"
 excerpt: "영어 표현식으로는 어떻게 말할까?"
 categories:
   - Others

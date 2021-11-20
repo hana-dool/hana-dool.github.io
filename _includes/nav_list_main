@@ -110,6 +110,22 @@
                 {% endfor %}
             </ul>
 
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Operating_System" %}
+                        <li><a href="/categories/Operating_System" class=""> Operating System ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Terms" %}
+                        <li><a href="/categories/Terms" class="">CS Terms ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
 
         <span class="nav__sub-title">Python </span>
             <ul>
@@ -391,6 +407,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Git" %}
                         <li><a href="/categories/Git" class="">Git ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "docker" %}
+                        <li><a href="/categories/docker" class=""> Docker ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

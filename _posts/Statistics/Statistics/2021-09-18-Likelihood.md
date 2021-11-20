@@ -18,6 +18,8 @@ use_math: true
 
 # [Probability And Likelihood](#link){: .btn .btn--primary}{: .align-center}
 
+> ## Probability And Likelihood
+
 - 우선 확률은 당연히 빈도론자 (또는 현대 통계학의 일반적인 정의) 하에서 생각합시다. 
   - 베이지안 입장에서 생각하면 확률은 그냥 '주관적인 확률~' 이라고 퉁쳐버리고 끝나는거라서요 
 
@@ -41,7 +43,7 @@ $$L(\theta\mid x)$$
     - Data? 지금 데이터는 고정하고 있습니다! 
 - 이는 어디까지나 고정된 $\theta$ 에 대한 추론에 불과하므로 가능성의 합은 1이 아닙니다.
 
-# [Ronald Fisher 의 해석](#link){: .btn .btn--primary}
+> ## [Ronald Fisher 의 해석](#link){: .btn .btn--primary}
 
 - 통계학의 레전드, 피셔는 다음과 같이 말했습니다.
 
@@ -54,7 +56,7 @@ Knowing the population we can express our incomplete knowledge of, or expectatio
   - 이는 고정된 population 에 대한 추론과정입니다. 주어진 데이터를 가장 잘 표현하는 모수를 탐색하는것을 그래프로 보여준게 Likelihood 입니다.
   - 추론은 그저 , '아 내 데이터를 가정하면 parameter 는 ~일거같아~' 라고 말하는것이므로 확률일리가 없습니다.
 
-# [그럼 왜 이게 왜 헷갈리는가?](#link){: .btn .btn--primary} 
+> ## [그럼 왜 이게 왜 헷갈리는가?](#link){: .btn .btn--primary} 
 
 - 이는 Likelihood 과 probability 가 같은 form 을 가질때가 많기 때문입니다.
 
