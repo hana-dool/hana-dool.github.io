@@ -101,11 +101,11 @@ for all $$x_{1} \in \mathcal{D}_{X_{1}}$$
 
 > Definition : Continuous marginal pdf
 
-First consider the discrete case. Let $$\mathcal{D}_{X_{1}}$$ be the support of $X_{1}$. For $x_{1} \in \mathcal{D}_{X_{1}}$, Equation (2.1.7) is equivalent to
+First consider the discrete case. Let $$\mathcal{D}_{X_{1}}$$ be the support of $X_{1}$. For $x_{1} \in \mathcal{D}_{X_{1}}$, Equation $$F_{X_{1}}\left(x_{1}\right)=P\left[X_{1} \leq x_{1},-\infty<X_{2}<\infty\right]$$ equivalent to
 
 $$F_{X_{1}}\left(x_{1}\right)=\sum_{w_{1} \leq x_{1},-\infty<x_{2}<\infty} p_{X_{1}, X_{2}}\left(w_{1}, x_{2}\right)=\sum_{w_{1} \leq x_{1}}\left\{\sum_{x_{2}<\infty} p_{X_{1}, X_{2}}\left(w_{1}, x_{2}\right)\right\}$$
 
-We next consider the continuous case. Let $$\mathcal{D}_{X_{1}}$$ be the support of $X_{1}$. For $x_{1} \in \mathcal{D}_{X_{1}}$, Equation (2.1.7) is equivalent to
+We next consider the continuous case. Let $$\mathcal{D}_{X_{1}}$$ be the support of $X_{1}$. For $x_{1} \in \mathcal{D}_{X_{1}}$, Equation $$F_{X_{1}}\left(x_{1}\right)=P\left[X_{1} \leq x_{1},-\infty<X_{2}<\infty\right]$$ is equivalent to
 
 $$F_{X_{1}}\left(x_{1}\right)=\int_{-\infty}^{x_{1}} \int_{-\infty}^{\infty} f_{X_{1}, X_{2}}\left(w_{1}, x_{2}\right) d x_{2} d w_{1}=\int_{-\infty}^{x_{1}}\left\{\int_{-\infty}^{\infty} f_{X_{1}, X_{2}}\left(w_{1}, x_{2}\right) d x_{2}\right\} d w_{1}$$
 
@@ -114,6 +114,10 @@ By the uniqueness of cdfs, the quantity in braces must be the pdf of $X_{1}$, ev
 $$f_{X_{1}}\left(x_{1}\right)=\int_{-\infty}^{\infty} f_{X_{1}, X_{2}}\left(x_{1}, x_{2}\right) d x_{2}$$
 
 for all $$x_{1} \in \mathcal{D}_{X_{1}}$$. Hence, in the continuous case the marginal pdf of $X_{1}$ is found by integrating out $x_{2}$. Similarly, the marginal pdf of $X_{2}$ is found by integrating out $x_{1} .$
+
+> Note
+
+- 즉 주변확률 분포는, $$F_{X_{1}}\left(x_{1}\right)=P\left[X_{1} \leq x_{1},-\infty<X_{2}<\infty\right]$$ 라는 cdf 의 당연한 정리에서 위처럼 도출해 낼 수 있습니다.
 
 > ## Example : marginal probability
 
@@ -202,60 +206,72 @@ $$E\left(g\left(X_{2}\right)\right)=\int_{-\infty}^{\infty} \int_{-\infty}^{\inf
 
 the latter single integral being obtained from the double integral by integrating on $x_{1}$ first. 
 
+> Note 
+
+- 위에서, corollary 는 의외로 시사하는 바가 큽니다. 다변수일지라도, Expectation 에 특정한 변수가 없다면, 그 변수를 제외하고 고려해도 기댓값은 같다는 것입니다!
+
 > ## Example 
 
 > Example
 
 Example 2.1.5. Let $X_{1}$ and $X_{2}$ have the pdf
-$$
-f\left(x_{1}, x_{2}\right)= \begin{cases}8 x_{1} x_{2} & 0<x_{1}<x_{2}<1 \\ 0 & \text { elsewhere }\end{cases}
-$$
-Then
-$$
-\begin{aligned}
+
+$$f\left(x_{1}, x_{2}\right)= \begin{cases}8 x_{1} x_{2} & 0<x_{1}<x_{2}<1 \\ 0 & \text { elsewhere }\end{cases}$$
+
+> $E\left(X_{1} X_{2}^{2}\right)$
+
+$$\begin{aligned}
 E\left(X_{1} X_{2}^{2}\right) &=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x_{1} x_{2}^{2} f\left(x_{1}, x_{2}\right) d x_{1} d x_{2} \\
 &=\int_{0}^{1} \int_{0}^{x_{2}} 8 x_{1}^{2} x_{2}^{3} d x_{1} d x_{2} \\
 &=\int_{0}^{1} \frac{8}{3} x_{2}^{6} d x_{2}=\frac{8}{21}
-\end{aligned}
-$$
-In addition,
-$$
-E\left(X_{2}\right)=\int_{0}^{1} \int_{0}^{x_{2}} x_{2}\left(8 x_{1} x_{2}\right) d x_{1} d x_{2}=\frac{4}{5}
-$$
+\end{aligned}$$
+
+> $E\left(X_{2}\right)$
+
+$$E\left(X_{2}\right)=\int_{0}^{1} \int_{0}^{x_{2}} x_{2}\left(8 x_{1} x_{2}\right) d x_{1} d x_{2}=\frac{4}{5}$$
+
 Since $X_{2}$ has the $\operatorname{pdf} f_{2}\left(x_{2}\right)=4 x_{2}^{3}, 0<x_{2}<1$, zero elsewhere, the latter expectation can be found by
-$$
-E\left(X_{2}\right)=\int_{0}^{1} x_{2}\left(4 x_{2}^{3}\right) d x_{2}=\frac{4}{5}
-$$
-Thus
-$$
-\begin{aligned}
+
+$$E\left(X_{2}\right)=\int_{0}^{1} x_{2}\left(4 x_{2}^{3}\right) d x_{2}=\frac{4}{5}$$
+
+> $$E\left(7 X_{1} X_{2}^{2}+5 X_{2}\right)$$
+
+$$\begin{aligned}
 E\left(7 X_{1} X_{2}^{2}+5 X_{2}\right) &=7 E\left(X_{1} X_{2}^{2}\right)+5 E\left(X_{2}\right) \\
 &=(7)\left(\frac{8}{21}\right)+(5)\left(\frac{4}{5}\right)=\frac{20}{3}
-\end{aligned}
-$$
+\end{aligned}$$
+
+> $E\left(\frac{X_{1}}{X_{2}}\right)$
+
 suppose the random variable $Y$ is defined by $Y=X_{1} / X_{2} .$ We determine $E(Y)$ in two ways. The first way is by definition; i.e., find the distribution of $Y$ and then determine its expectation. The cdf of $Y$, for $0<y \leq 1$, is
-$$
-\begin{aligned}
+
+$$\begin{aligned}
 F_{Y}(y) &=P(Y \leq y)=P\left(X_{1} \leq y X_{2}\right)=\int_{0}^{1} \int_{0}^{y x_{2}} 8 x_{1} x_{2} d x_{1} d x_{2} \\
 &=\int_{0}^{1} 4 y^{2} x_{2}^{3} d x_{2}=y^{2}
-\end{aligned}
-$$
+\end{aligned}$$
+
 Hence, the pdf of $Y$ is
-$$
-f_{Y}(y)=F_{Y}^{\prime}(y)= \begin{cases}2 y & 0<y<1 \\ 0 & \text { elsewhere }\end{cases}
-$$
+
+$$f_{Y}(y)=F_{Y}^{\prime}(y)= \begin{cases}2 y & 0<y<1 \\ 0 & \text { elsewhere }\end{cases}$$
+
 which leads to
-$$
-E(Y)=\int_{0}^{1} y(2 y) d y=\frac{2}{3}
-$$
+
+$$E(Y)=\int_{0}^{1} y(2 y) d y=\frac{2}{3}$$
+
 For the second way, we make use of expression $(2.1 .10)$ and find $E(Y)$ directly by
-$$
-\begin{aligned}
+
+$$\begin{aligned}
 E(Y) &=E\left(\frac{X_{1}}{X_{2}}\right)=\int_{0}^{1}\left\{\int_{0}^{x_{2}}\left(\frac{x_{1}}{x_{2}}\right) 8 x_{1} x_{2} d x_{1}\right\} d x_{2} \\
 &=\int_{0}^{1} \frac{8}{3} x_{2}^{3} d x_{2}=\frac{2}{3}
-\end{aligned}
-$$
-We next define the moment generating function of a random vector.
+\end{aligned}$$
+
+# [Moment generating function](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Definition : Moment Generating Function
+
+> Definition
+
+Let $$\mathbf{X}=$$ $$\left(X_{1}, X_{2}\right)^{\prime}$$ be a random vector. If $E\left(e^{t_{1} X_{1}+t_{2} X_{2}}\right)$ exists for $$\mid t_{1}\mid <h_{1}$$ and $$ \mid t_{2}\mid <$$ $h_{2}$, where $h_{1}$ and $h_{2}$ are positive, it is denoted by $M_{X_{1}, X_{2}}\left(t_{1}, t_{2}\right)$ and is called the moment generating function ( $m g f$ ) of $\mathbf{X}$.
 
 ---
 

@@ -3,7 +3,7 @@ title:  "Computer System Overview"
 excerpt: "컴퓨터 시스템 오버뷰"
 categories:
   - Operating_System
-last_modified_at: 2021-11-20
+last_modified_at: 2021-11-21
 
 toc: true
 toc_label: "Table Of Contents"

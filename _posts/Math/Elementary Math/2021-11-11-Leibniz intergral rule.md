@@ -1,6 +1,6 @@
 ---
 title:  "Leibniz integral rules"
-excerpt: "MGF 를 다루어 보기"
+excerpt: "적분의 순서를 바꾸어도 유효하게 만들기"
 categories:
   - Elementary_Math
 last_modified_at: 2021-11-10
