@@ -3,7 +3,7 @@ title:  "Hypothesis Testing and Confidence interval"
 excerpt: "Hypothesis Testing 과 CI Testing"
 categories:
   - Stat_Testing
-last_modified_at: 2021-11-14
+last_modified_at: 2021-11-21
 
 toc: true
 toc_label: "Table Of Contents"
@@ -199,6 +199,21 @@ An advantage of doing so is again that the interpretation of the confidence inte
   - <https://courses.lumenlearning.com/wmopen-concepts-statistics/chapter/hypothesis-test-for-difference-in-two-population-proportions-3-of-6/>
 - Not pooled variance
   - <https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Book%3A_Introductory_Statistics_(Shafer_and_Zhang)/09%3A_Two-Sample_Problems/9.04%3A_Comparison_of_Two_Population_Proportions>
+
+> ## Practical Solutions
+
+- Proportion Testing 을 산업에 이용하는 경우는 바로 Conversion 에 대한 A/B Testing 이다. (A/B Testing)
+- 이러한 경우, 우리의 p-value 와 align 시키기 위하여, Confidence interval 을 변형하기도 한다. 
+  - https://nancyyanyu.github.io/posts/17c5bb19/ (Udacity A/B Testing)
+  -  https://towardsdatascience.com/a-b-test-statistics-made-easy-8805ac2533d6
+  - https://www.amazon.com/Statistical-Methods-Online-Testing-commerce/dp/1694079724
+- 위의 경우, Confidence interval 을 아래와 같이 사용합니다.
+
+$$\hat{p}_{1}-\hat{p}_{2} \pm z_{\alpha / 2} \sqrt{\frac{\hat{p}\left(1-\hat{p}\right)}{n_{1}}+\frac{\hat{p}\left(1-\hat{p}\right)}{n_{2}}}$$
+
+- 정확히 보면 Null hypothesis 의 정보를 CI 에 넣는다는것은 Statistical 적으로는 다소 맞지 않지만, Practically assigned with Test results 가 되기 위하여 이렇게 설정하는듯 합니다.
+
+
 
 ---
 
