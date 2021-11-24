@@ -79,6 +79,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Mathematical_Distribution" %}
+                        <li><a href="/categories/Mathematical_Distribution" class="">Distribution ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Mathematical_Testing" %}
                         <li><a href="/categories/Mathematical_Testing" class=""> Mathematical Testing ({{category[1].size}})</a></li>
                     {% endif %}
@@ -428,6 +435,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Fig_Basic" %}
                         <li><a href="/categories/Fig_Basic" class="">Figma ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Source_Tree" %}
+                        <li><a href="/categories/Source_Tree" class="">Sourcetree ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

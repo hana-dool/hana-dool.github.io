@@ -21,7 +21,7 @@ use_math: true
 
 > Theorem
 
-Let $T=\sum_{i=1}^{n} a_{i} X_{i} .$ Provided $E\left[\left|X_{i}\right|\right]<\infty$, for $i=1, \ldots, n$ Then
+Let $T=\sum_{i=1}^{n} a_{i} X_{i} .$ Provided $$E\left[\mid X_{i}\mid \right]<\infty$$, for $i=1, \ldots, n$ Then
 
 $$E(T)=\sum_{i=1}^{n} a_{i} E\left(X_{i}\right)$$
 
@@ -50,7 +50,7 @@ $$\operatorname{Var}(T)=\operatorname{Cov}(T, T)=\sum_{i=1}^{n} a_{i}^{2} \opera
 
 If $X_{1}, \ldots, X_{n}$ are independent random variables with finite variances, then
 
-$$$$
+$$\operatorname{Var}(T)=\sum_{i=1}^{n} a_{i}^{2} \operatorname{Var}\left(X_{i}\right)$$
 
 Note that we need only $X_{i}$ and $X_{j}$ to be uncorrelated for all $i \neq j$ to obtain this result; for example, $\operatorname{Cov}\left(X_{i}, X_{j}\right)=0, i \neq j$, which is true when $X_{1}, \ldots, X_{n}$ are independent.
 
