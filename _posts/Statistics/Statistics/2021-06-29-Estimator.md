@@ -3,8 +3,6 @@ title:  "Estimator"
 excerpt: "좋은 추정량의 조건"
 categories:
   - Stat
-tags:
-  - 1
 last_modified_at: 2021-06-29
 
 toc: true
@@ -35,8 +33,6 @@ use_math: true
 - 위를 만족하는 추정량 $t_n$ 을 Unbiased 라 부른다. 
 - 이러한 성질을 가져야 좋은 Estimator 인것은 매우 당연해보인다.
 
-<br>
-
 > ## 2. Consistency
 
 > $\lim_{n\to \infty} P(\mid t_n - \theta \mid < \epsilon ) = 1$
@@ -51,9 +47,7 @@ use_math: true
 - 위처럼 샘플수가 많아지면, 정확해지는것이 Consistency 이다. 
 - inconsistency 하다면, 정확해지기 위하여 어떤 방법을 써야하는지가 매우 난해할 것이다..
 
-<br>
-
-# <center><font size="10">3. Efficiency</font></center>
+> ## 3. Efficiency
 
 >$Var(t_n)$ 이 작을수록 좋다.
 >
@@ -64,9 +58,7 @@ use_math: true
 - 물론 Efficiency 를 따질때에는 Unbiased Estimator 끼리의 분산을 보고 비교하긴 하거나, RCLB 를 달성하는것으로 간주하긴 한다.
 - 하지만, 다양한 분야에서 혼용해서 쓰이는 개념으로, 위처럼 추정시 분산이 작다는것으로 생각해도 된다.
 
-<br>
-
-# <center><font size="10">4. Robustness</font></center>
+> ## 4. Robustness
 
 >가정의 침해에도, 추정량이 크게 영향받지 않을떄 Robust 하다.
 
@@ -74,9 +66,7 @@ use_math: true
 - 이러한 경우 Outlier 가 생길 수 있기떄문에, 평균을 추정할때에 Sample mean 은 좋지 못하다.
 - 즉 위같은 상황을 피하기 위해서, Sample mean 을 사용하되, 상위 1% 와 하위 99% 의 데이터를 Trim 해서 사용하기도 한다. 
 
-<br>
-
-# <center><font size="10">5. Asymptotic normality</font></center>
+> ## 5. Asymptotic normality
 
 > sample size 가 커질수록, 추정량이 Normal 극한분포를 따른다는 것
 >
@@ -88,7 +78,9 @@ use_math: true
 - 그러므로 훨씬 더 많은것이 가능해집니다. 
 - 물론 극한분포가 아니라 Exact 분포, 다른 극한분포일 수 있고 이러한 경우도 선호됩니다. 
 
-# ref
+---
+
+**ref**
 
 - https://multithreaded.stitchfix.com/blog/2020/09/24/what-makes-a-good-estimator/
 

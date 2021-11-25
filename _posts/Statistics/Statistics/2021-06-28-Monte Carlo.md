@@ -3,8 +3,6 @@ title:  "Monte Carlo Approximation"
 excerpt: "샘플 수로 찍어누르기"
 categories:
   - Stat
-tags:
-  - 1
 last_modified_at: 2021-06-28
 
 toc: true

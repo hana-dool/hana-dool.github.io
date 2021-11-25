@@ -3,8 +3,6 @@ title:  "Frequentist VS Baysian"
 excerpt: "빈도통계와 베이즈의 차이"
 categories:
   - Stat
-tags:
-  - 1
 last_modified_at: 2021-06-27
 
 toc: true
