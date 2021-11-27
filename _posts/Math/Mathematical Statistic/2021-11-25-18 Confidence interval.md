@@ -3,7 +3,7 @@ title:  "Interval Estimation"
 excerpt: "신뢰 구간에 대해서 알아보기"
 categories:
   - Mathematical_Statistics
-last_modified_at: 2021-11-19
+last_modified_at: 2021-11-25
 
 toc: true
 toc_label: "Table Of Contents"

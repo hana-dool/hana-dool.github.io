@@ -98,12 +98,32 @@ $$\hat{\theta}_{m l e}=\max _{\theta} \log L(\theta)=\max _{\theta} \sum_{i=1}^{
 
 $$\frac{\partial l(\theta)}{\partial \theta}=0$$
 
-where $l(\theta)=\log L(\theta)$.
-- Ans, we also need to check $$\frac{\partial^{2} l(\theta)}{\partial \theta^{2}}\mid_{\theta=\hat{\theta}}<0$$.
+- where $l(\theta)=\log L(\theta)$.
+- And we also need to check $$\frac{\partial^{2} l(\theta)}{\partial \theta^{2}}\mid_{\theta=\hat{\theta}}<0$$.
 
 > Note
 
 - 즉 위와 같이 두가지 Rule 을 이용하여 최댓값을 구할 수 있습니다.
+
+> ## Example 
+
+> Example
+
+Suppose the common pdf of the random sample $X_{1}, X_{2}, \ldots, X_{n}$ is the $\Gamma(1, \theta)$ density Find mle estimator of $\theta$
+
+> Answer
+
+The log of the likelihood function is given by
+
+$$l(\theta)=\log \prod_{i=1}^{n} \frac{1}{\theta} e^{-x_{i} / \theta}=-n \log \theta-\theta^{-1} \sum_{i=1}^{n} x_{i}$$
+
+The first partial of the log-likelihood with respect to $\theta$ is
+
+$$\frac{\partial l(\theta)}{\partial \theta}=-n \theta^{-1}+\theta^{-2} \sum_{i=1}^{n} x_{i}$$
+
+Setting this partial to 0 and solving for $\theta$, we obtain the solution $\bar{x}$. There is only one critical value and, furthermore, the second partial of the log-likelihood evaluated at $\bar{x}$ is strictly negative, verifying that it provides a maximum. Hence, for this example, the statistic $\widehat{\theta}=\bar{X}$ is the mle of $\theta$. Because $E(X)=\theta$, we have that $E(\bar{X})=\theta$ and, hence, $\widehat{\theta}$ is an unbiased estimator of $\theta$
+
+
 
 ---
 
