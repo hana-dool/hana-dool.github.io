@@ -150,7 +150,9 @@ f_{Z_{1}}\left(z_{1}\right) &=\int_{z_{1}}^{1} f\left(z_{1}, z_{2}\right) d z_{2
 &=6 z_{1}\left(1-z_{1}\right), 0<z_{1}<1
 \end{aligned}$$
 
+> Note
 
+- 위처럼, Joint pdf 의 경우에도 order statsitics 를 구할 수 있습니다.
 
 ---
 

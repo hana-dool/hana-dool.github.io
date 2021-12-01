@@ -266,13 +266,16 @@ def run_sklearn_modeling(self, X, y, n_estimator):
 - log_metric (혹은 log_metrics)
   - 머신러닝 혹은 딥러닝 모델의 metric(평가 지표)를 logging
   - metric이라고 하면 정확도(accuarcy), f1-score, precision, recall 등임
-
 - log_param(혹은 log_params)
   - 모델에서 사용되는 파라미터 값을 저장
   - log_param은 하나하나 저장할 때 사용하며 json 형태로 한 번에 저장하고 싶으면 log_params를 사용
 - log_model
   - machine learnnig model이나 deep learnnig model을 저장
   - 본 포스팅에서는 tensorflow2.X keras 딥러닝 모델과 scikit-learn의 머신러닝 모델을 저장함
+
+> ## 실행
+
+
 
 **Reference**
 
