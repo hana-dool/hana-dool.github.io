@@ -1,5 +1,5 @@
 ---
-title:  "mysql with DBeaver"
+title:  "Connect mysql with DBeaver (Hombrew)"
 excerpt: "Dbeaver 사용법"
 categories:
   - DBeaver

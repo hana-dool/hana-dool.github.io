@@ -1,6 +1,6 @@
 ---
 title:  "Deadlock"
-excerpt: " "
+excerpt: "프로세스가 막힌 상태"
 categories:
   - Operating_System
 last_modified_at: 2021-11-30

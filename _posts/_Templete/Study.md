@@ -144,3 +144,8 @@
 
 - 5 6 8 9 10 
   - https://lee-jaejoon.github.io/ESL-%EC%8B%9C%EC%9E%91%ED%95%98%EB%A9%B0/
+
+# SQL
+
+- https://araikuma.tistory.com/504?category=785111
+

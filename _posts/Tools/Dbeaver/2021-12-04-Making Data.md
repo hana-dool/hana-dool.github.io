@@ -1,9 +1,9 @@
 ---
 title:  "Making Data"
-excerpt: "데이터 만들기"
+excerpt: "실습 데이터 만들어보기"
 categories:
   - DBeaver
-last_modified_at: 2021-12-01
+last_modified_at: 2021-12-04
 
 toc: true
 toc_label: "Table Of Contents"
@@ -248,18 +248,13 @@ INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_i
 
 ```
 
-- 위를 실행하면, 다양한 데이터셋을 이용할 수 있습니다.
+- 위를 실행하면, 다양한 데이터셋을 이용할 수 있습니다. 이를 이용하여 여러 실습을 진행할 수 있습니다!
 
 ---
 
 **reference**
 
-- <https://twinparadox.tistory.com/619>
-- <https://m.blog.naver.com/pareko/221758528826>
-- <https://velog.io/@noyo0123/MYSQL-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EC%9E%90-%EA%B6%8C%ED%95%9C-%EC%84%A4%EC%A0%95>
-- <https://velog.io/@kozi15/MAC-m1-MySQL-MySQL-%EC%84%A4%EC%B9%98>
-- <https://whitepaek.tistory.com/16>
-- <https://wakestand.tistory.com/496>
+- <https://www.sqltutorial.org/sql-distinct/>
 
 
 
