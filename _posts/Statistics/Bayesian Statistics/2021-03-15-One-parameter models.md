@@ -34,7 +34,7 @@ $$Y_i =  \begin{cases} 1 \ \ \text{참가자 i 가 행복하다고 답함} \newl
 
 - **posterior**
 
-$$p(\theta \mid y_1, …, y_{129}) \\= \frac{y_1, …, y_{129})p(\theta)}{p(y_1, …, y_{129})} \text{# p($\theta$)=1  }\\= p(y_1, …, y_{129}\mid\theta) \times \frac{1}{p(y_1, …, y_{129})} \text{#분모는 $\theta$ 와 상관없다.}\\ \propto p(y_1, …, y_{129}\mid\theta)$$
+$$p(\theta \mid y_1, …, y_{129}) \\= \frac{y_1, …, y_{129})p(\theta)}{p(y_1, …, y_{129})} \text{(Note : p($\theta$)=1)  }\\= p(y_1, …, y_{129}\mid\theta) \times \frac{1}{p(y_1, …, y_{129})} \text{ (분모는 $\theta$ 와 상관없다.)}\\ \propto p(y_1, …, y_{129}\mid\theta)$$
 
 - 위의 과정을 통해서 구할 수 있다. 위 과정을 정리하면 아래 그림과 같아진다.
 

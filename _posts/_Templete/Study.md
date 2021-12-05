@@ -149,3 +149,11 @@
 
 - https://araikuma.tistory.com/504?category=785111
 
+
+
+# P-value
+
+- https://link.springer.com/article/10.1007%2Fs10654-016-0149-3
+
+
+
