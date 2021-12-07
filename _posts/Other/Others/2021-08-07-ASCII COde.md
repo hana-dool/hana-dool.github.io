@@ -15,9 +15,7 @@ toc_sticky: true
 use_math : true
 ---
 
-<br>
-
-# Python
+# [Python](#link){: .btn .btn--primary}{: .align-center}
 
 - 파이썬에서 아래와 같은 아스키코드를 이용할 수 있습니다. 
 
@@ -31,16 +29,12 @@ ord('a') # 97
 ord('z') # 122
 ```
 
-
-
 ```python
 chr(65) # A
 chr(90) # Z
 ```
 
-<Br>
-
-# Ascii Code
+> ## Ascii Code
 
 | DEC  | OCT  | HEX  |   BIN    | Symbol | HTML Number | HTML Name | Description                  |
 | :--: | :--: | :--: | :------: | :----: | :---------: | :-------: | :--------------------------- |
@@ -77,9 +71,7 @@ chr(90) # Z
 |  30  | 036  |  1E  | 00011110 |   RS   |   &#030;    |           | Record Separator             |
 |  31  | 037  |  1F  | 00011111 |   US   |   &#031;    |           | Unit Separator               |
 
-
-
-## ASCII printable characters (character code 32-127)
+> ## ASCII printable characters (character code 32-127)
 
 Codes 32-127 are common for all the different variations of the ASCII table, they are called printable characters, represent letters, digits, punctuation marks, and a few miscellaneous symbols. You will find almost every character on your keyboard. Character 127 represents the command DEL.
 
@@ -182,11 +174,9 @@ Codes 32-127 are common for all the different variations of the ASCII table, the
 | 126  | 176  |  7E  | 01111110 |   ~    |   &#126;    |           | Equivalency sign - tilde               |
 | 127  | 177  |  7F  | 01111111 |        |   &#127;    |           | Delete                                 |
 
+> ## The extended ASCII codes (character code 128-255)
 
-
-## The extended ASCII codes (character code 128-255)
-
-There are several different variations of the 8-bit ASCII table. The table below is according to Windows-1252 (CP-1252) which is a superset of ISO 8859-1, also called ISO Latin-1, in terms of printable characters, but differs from the IANA's ISO-8859-1 by using displayable characters rather than control characters in the 128 to 159 range. Characters that differ from ISO-8859-1 is marked by light blue color.
+- There are several different variations of the 8-bit ASCII table. The table below is according to Windows-1252 (CP-1252) which is a superset of ISO 8859-1, also called ISO Latin-1, in terms of printable characters, but differs from the IANA's ISO-8859-1 by using displayable characters rather than control characters in the 128 to 159 range. Characters that differ from ISO-8859-1 is marked by light blue color.
 
 | DEC  | OCT  | HEX  |   BIN    | Symbol | HTML Number | HTML Name | Description                                |
 | :--: | :--: | :--: | :------: | :----: | :---------: | :-------: | :----------------------------------------- |
@@ -318,8 +308,6 @@ There are several different variations of the 8-bit ASCII table. The table below
 | 253  | 375  |  FD  | 11111101 |   ý    |   &#253;    | &yacute;  | Latin small letter y with acute            |
 | 254  | 376  |  FE  | 11111110 |   þ    |   &#254;    |  &thorn;  | Latin small letter thorn                   |
 | 255  | 377  |  FF  | 11111111 |   ÿ    |   &#255;    |  &yuml;   | Latin small letter y with diaeresis        |
-
-<br>
 
 # Refer 
 

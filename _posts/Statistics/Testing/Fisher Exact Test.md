@@ -1,5 +1,5 @@
 ---
-title:  "PooL or Not to Pool (Prop)"
+title:  "Fisher Exact Test"
 excerpt: "Pooled 를 사용해야할까 말까"
 categories:
   - Stat_Testing

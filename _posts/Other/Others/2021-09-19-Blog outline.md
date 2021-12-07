@@ -38,15 +38,6 @@ use_math : true
 Example 을 사용할떄는 지금과 같이 회색 박스를 사용합니다. 
 {: .notice}
 
-- 새로운 공식을 제안할때에는 아래와 같이 중앙정렬 수식과 회색 박스를 사용합니다. 
-
-$$\xi (x) = \operatorname{argmin}_{g \in G}\, \mathcal{L}(f, g, \pi_x) + \Omega(g)$$
-
-L : 해석가능한 g 가 원래 모델 f 와 얼마나 가까운지를 재는 척도<br>
-$\pi$ : 인스턴스 간의 거리 정의<br>
-$\Omega$ : Complexity 를 매져하는 함수
-{: .notice}
-
 ---
 
 **Reference**

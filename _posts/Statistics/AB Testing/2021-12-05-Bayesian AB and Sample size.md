@@ -22,15 +22,14 @@ Sample Size 가 필요 없...나?
 
 - 다양한 출처에서, Bayesian A/B Testing 의 경우 고정된 Sample Size 가 필요 없다고 합니다. 
 
-> https://vwo.com/tools/ab-test-sample-size-calculator/ : vwo 가이드
+> <https://vwo.com/tools/ab-test-sample-size-calculator/> : vwo 가이드
 
 [VWO SmartStats](https://vwo.com/why-us/technology/bayesian-statistics/) relies on Bayesian inference which unlike a frequentist approach doesn’t need a minimum sample size. This allows you to run A/B tests on parts of your website or apps that might not get a lot of traffic to improve them. However, getting more traffic on your tests allows VWO to determine your conversion rates with more certainty allowing you to be more confident about your test results.
 {: .notice}
 
-> https://mobiledevmemo.com/its-time-to-abandon-a-b-testing/ 
+> <https://mobiledevmemo.com/its-time-to-abandon-a-b-testing/>
 
 Bayesian tests do not require fixed sample sizes to provide valid results. You can even evaluate the results repeatedly (which is considered almost a blasphemy with NHST) and the results will still hold
-
 {: .notice}
 
 - 이러한 맥락에서 왜 Bayesian A/B Testing 의 경우 Sample size 가 필요 없는지에 대해서 알아보도록 합시다.

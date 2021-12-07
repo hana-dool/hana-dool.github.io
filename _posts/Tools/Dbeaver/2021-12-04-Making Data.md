@@ -248,7 +248,7 @@ INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_i
 
 ```
 
-- 위를 실행하면, 다양한 데이터셋을 이용할 수 있습니다. 이를 이용하여 여러 실습을 진행할 수 있습니다!
+- 위의 값들을 이용하여 다양한 실습을 진행해보세요!
 
 ---
 

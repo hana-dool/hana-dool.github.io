@@ -20,7 +20,7 @@ use_math: true
 
 > ## Python Docstring Generator 
 
-- docstring 을 자동으로 생성시켜주는 Extension 입니다.
+-  docstring 을 자동으로 생성시켜주는 Extension 입니다.
 
 ![png](/assets/images/Python/57_1.png)
 
