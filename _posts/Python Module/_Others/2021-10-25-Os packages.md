@@ -25,8 +25,6 @@ use_math : true
 os.getcwd()
 ```
 
-
-
 ```
 'C:\\Users\\goran\\Desktop\\Bayesian-with-Python-master\\Bayesian-with-Python-master\\Chap02-MorePyMC'
 ```

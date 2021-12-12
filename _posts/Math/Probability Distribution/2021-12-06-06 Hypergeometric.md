@@ -85,6 +85,70 @@ n-x
 
 $$P(X=x)=\frac{\left(\begin{array}{l}K \\ x\end{array}\right)\left(\begin{array}{c}N-K \\ n-x\end{array}\right)}{\left(\begin{array}{l}N \\ n\end{array}\right)} \quad$ where $x=0,1,2, \cdots, K$$
 
+> ## Proof : Vendermonde's Identity
+
+> Theorem 
+
+$$\left(\begin{array}{c}
+m+n \\
+r
+\end{array}\right)=\sum_{k=0}^{r}\left(\begin{array}{c}
+m \\
+k
+\end{array}\right)\left(\begin{array}{c}
+n \\
+r-k
+\end{array}\right)$$
+
+> Proof
+
+- Binomial theorem 로부터
+
+$$\begin{aligned}
+\sum_{r=0}^{m+n}\left(\begin{array}{c}
+m+n \\
+r
+\end{array}\right) x^{r} &=(1+x)^{m+n} \\
+&=(1+x)^{m}(1+x)^{n} \\
+&=\left[\sum_{i=0}^{m}\left(\begin{array}{c}
+m \\
+i
+\end{array}\right) x^{i}\right]\left[\sum_{j=0}^{n}\left(\begin{array}{c}
+n \\
+j
+\end{array}\right) x^{j}\right]
+\end{aligned}$$
+
+- 이 때, 2 개의 다항식의 곱을 전개하면 다음과 같이 정리된다.
+
+$$\left(\sum_{i=0}^{m} a_{i} x^{i}\right)\left(\sum_{j=0}^{n} b_{j} x^{j}\right)=\sum_{r=0}^{m+n}\left(\sum_{k=0}^{r} a_{k} b_{r-k}\right) x^{r}$$
+
+이를 그대로 마지막 줄에 적용하면,
+
+$$\sum_{r=0}^{m+n}\left(\begin{array}{c}
+m+n \\
+r
+\end{array}\right) x^{r}=\sum_{r=0}^{m+n}\left[\sum_{k=0}^{r}\left(\begin{array}{c}
+m \\
+k
+\end{array}\right)\left(\begin{array}{c}
+n \\
+r-k
+\end{array}\right)\right] x^{r}$$
+
+따라서 계수 비교법에 의해,
+
+$$\left(\begin{array}{c}
+m+n \\
+r
+\end{array}\right)=\sum_{k=0}^{r}\left(\begin{array}{c}
+m \\
+k
+\end{array}\right)\left(\begin{array}{c}
+n \\
+r-k
+\end{array}\right)$$
+
 
 
 ---

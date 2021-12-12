@@ -17,7 +17,7 @@ use_math: true
 
 > ## 단축키 수정하기
 
-- Dbeaver 를 실행할때 대표적으로 짜증나는게 실행 (Ctrl + Enter) 입니다. 맥의 경우 Option + Enter 를 잘못 누르는 경우가 많은데, 이 경우에 두개가 충돌이 일어나는 
+- Dbeaver 를 실행할때 대표적으로 짜증나는게 실행 (Ctrl + Enter) 입니다. 맥의 경우 Option + Enter 를 잘못 누르는 경우가 많은데, 이 경우에 두개가 충돌이 일어나는 경우도 있죠...
 - Deveaber $\to$ Preference $\to$ User Interface $\to$ 키
 
 .![jpg](/assets/images/Program/42_1.jpg)

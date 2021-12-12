@@ -40,7 +40,15 @@ diagnostics.include_raw             |OFF  |2021-12-04 13:25:51|      |
 ...
 ```
 
+- 하지만 위처럼 오른쪽 클릭으로 되지 않을때에는 다음과 같은 방법을 이용합니다. 
 
+> ## By Connection
+
+- your db connection => Edit connection => Connection settings => Initialization => Default schema
+
+![jpg](/assets/images/Program/52_1.jpg)
+
+- 위와 같이 default DB 를 업데이트 하면 설정이 됩니다.
 
 ---
 
