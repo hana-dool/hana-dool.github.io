@@ -3,8 +3,6 @@ title: "2.Data Source"
 excerpt: "데이터 소스"
 categories:
   - Data_Infra
-tags:
-  - 3
 last_modified_at: 2021-05-09
 
 toc: true
@@ -14,8 +12,6 @@ toc_sticky: true
 
 use_math : true
 ---
-
-
 
 ## Intro
 

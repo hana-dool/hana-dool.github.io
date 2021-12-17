@@ -1,10 +1,8 @@
 ---
-title:  "Grouping Function"
-excerpt: "그룹함수로 데이터 요약"
+title: "Grouping Function"
+excerpt: "COUNT/SUM/AVG/MIN/STDDEV/VARIANCE"
 categories:
   - SQL_Basic_Grammer
-tags:
-  - 1
 last_modified_at: 2021-05-02
 
 toc: true
@@ -101,5 +99,4 @@ FROM employees ;
  SELECT MIN(salary)
  FROM employees ; 
 ```
-
 
