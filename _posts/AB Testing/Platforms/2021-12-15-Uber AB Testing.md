@@ -252,7 +252,6 @@ $$\Lambda_{n}^{H, \theta_{0}}=\int_{\Theta} \prod_{m=1}^{n} \frac{f_{\theta}\lef
 ![jpg](/assets/images/Stat/123_7.jpg)
 
 Figure The sequential test methodology indicates a significant difference between our treatment and control groups, as identified in Plot B. In contrast, no significant difference is identified in Plot A. 
-
 {: .notice}
 
 -  위와 같이 특정 실험에 대한 주요 비즈니스 메트릭을 모니터링한다고 가정합니다.
