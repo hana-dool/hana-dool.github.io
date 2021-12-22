@@ -176,21 +176,49 @@ df.first()
 
 > ## Dataframe 의 트랜스포메이션
 
-> Dataframe 생성하기
+- 지금까지 Dataframe 의 핵심 영역을 간단히 살펴 보았습니다.
+- 이어서 Dataframe 을 다루는 방법에 대해서 알아봅시다.
+  - 로우나 컬럼 추가
+  - 로우나 컬럼 제거
+  - 로우를 컬럼으로 변환하거나 그 반대로 변환
+  - 컬럼값을 기준으로 로우 순서 변경
+- 이러한 모든 유형의 작업은 트랜스포메이션으로 변환할 수 있습니다. 
 
-- 원시 데이터소스에서 Dataframe 을 생성할수 있다.
+>  Dataframe 생성하기
 
+- 원시 데이터소스에서 Dataframe 을 생성할수 있습니다.
+
+```python
+df = spark.read.format("json").load("data/flight-data/json/2015-summary.json")
+df.createOrReplaceTempView("dfTable")
 ```
-myManualSchema=T.StructType([
-  T.StructField("some", T.StringType(), True),
-  T.StructField("col", T.StringType(), True),
-  T.StructField("names", T.LongType(), True),
+
+- 우선 위와 같이 SQL 의 기본 트랜스포메이션을 확인하기 위해서 위처럼 dfTable 이라는 임시 뷰를 등록해 보도록 하겠습니다.
+
+```sql
+from pyspark.sql import Row
+from pyspark.sql.types import StructField, StructType, StringType, LongType
+myManualSchema = StructType([
+  StructField("some", StringType(), True),
+  StructField("col", StringType(), True),
+  StructField("names", LongType(), False)
 ])
+myRow = Row("Hello", None, 1)
+myDf = spark.createDataFrame([myRow], myManualSchema)
+myDf.show()
 ```
 
+```
++-----+----+-----+
+| some| col|names|
++-----+----+-----+
+|Hello|null|    1|
++-----+----+-----+
+```
+
+- 위처럼 데이터 프레임을 만들어낼 수 있습니다. (어떻게 만드는지는 Spark 함수를 살펴보도록 합시다.)
 
 
-- 각 
 
 **Reference**
 

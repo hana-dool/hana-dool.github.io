@@ -127,27 +127,57 @@ arithmetic mean + (3 * standard deviation)
 
 > ## 분포 고려하기
 
-- [신뢰 구간](https://cxl.com/blog/confidence-intervals/) 을 계산하는 전통적인 방법 은 데이터가 [정규 분포](https://en.wikipedia.org/wiki/Normal_distribution) 를 따른다고 가정 하지만 방문자당 평균 수익과 같은 특정 측정항목과 마찬가지로 일반적으로 현실이 작동하는 방식이 아닙니다.
-- Julia Engelmann 박사의 블로그에 대한 멋진 기사의 다른 섹션에서 그녀는 이 차이를 묘사하는 그래픽을 공유했습니다. 왼쪽 그래픽은 완벽한(이론적) 정규 분포를 보여줍니다. 주문 수는 양의 평균 값을 중심으로 변동합니다. 이 예에서 대부분의 고객은 5번 주문합니다. 더 많거나 더 적은 주문이 덜 자주 발생합니다.
-- 오른쪽의 그래픽은 씁쓸한 현실을 보여줍니다. 평균 전환율을 5%로 가정하면 방문자의 약 95%가 구매하지 않습니다. 대부분의 구매자는 한 두 번 정도 주문을 했을 것이고, 극소수 주문을 하는 고객도 있을 것입니다.
+- [신뢰 구간](https://cxl.com/blog/confidence-intervals/) 을 계산하는 전통적인 방법 은 데이터가 [정규 분포](https://en.wikipedia.org/wiki/Normal_distribution) 를 따른다고 가정 하지만 방문자당 평균 수익같은 경우는 이러한 방법이 작동하지 않습니다. 
 
 ![jpg](/assets/images/Stat/122_5.jpg)
 
-- 기본적으로 문제는 분포가 정상이라고 가정할 때 발생합니다. 실제로 우리는 오른쪽으로 치우친 분포와 같은 작업을 하고 있습니다. 신뢰 구간은 더 이상 안정적으로 계산할 수 없습니다.
+- Julia Engelmann의 블로그에에서 왼쪽 그림은 이론적인 정규 분포를 보여줍니다. 이떄 주문 수는 양의 평균 값을 중심으로 변동합니다. 이 예시에서 고객은 평균적으로 5번 주문합니다만, 주문의 수는 Normal 분포를 따르지 않습니다.
+- 오른쪽의 그림은 이러한 Revenue 분포에 대한 현실을 보여줍니다. 대부분의 고객은 주문을 하지 않고, 한다고 하더라도 평균(5) 보다 훨씬 낮은 수의 주문을 하게 됩니다. 그리고 소수의 Outlier 가 위치하게 됩니다.
+
+- 기본적으로 우리는 분포가 Normal이라고 가정한 상태에서 AB Test 를 진행하게 됩니자. 즉  아래와 같이 치우친 Revenue 와 같은 분포의 경우 , 우리의 테스트가 잘 작동하지 않죠...
 
 ![jpg](/assets/images/Stat/122_6.jpg)
 
-- 평균적인 [전자 상거래 사이트](https://cxl.com/ecommerce-best-practices/) 에서는 고객의 최소 90%가 아무 것도 구매하지 않을 것입니다. 따라서 데이터에서 "0"의 비율이 극단적이고 대량 주문으로 인해 말단을 포함하여 일반적으로 편차가 엄청납니다.
+- 그러므로 Assumption 을 제대로 지키고 있는지를 알아보기 위하여 [Shapiro-Wilk 테스트를](https://en.wikipedia.org/wiki/Shapiro–Wilk_test) 사용하여서 데이터의 정규 분포를 [테스트](https://en.wikipedia.org/wiki/Shapiro–Wilk_test) 하는것을 추천드립니다. 
+  - 만일 Normality Test 가 작동하지 않는 경우 t-검정이 아닌 다른 방법을 사용하여 데이터를 살펴보는 것이 좋습니다. 
 
-이 경우 t-검정이 아닌 다른 방법을 사용하여 데이터를 살펴보는 것이 좋습니다. ( [그런데 Shapiro-Wilk 테스트를](https://en.wikipedia.org/wiki/Shapiro–Wilk_test) 사용하면 데이터의 정규 분포를 [테스트](https://en.wikipedia.org/wiki/Shapiro–Wilk_test) 할 수 있습니다.) [이 기사에서는 이 모든 것을 제안했습니다.](https://cxl.com/blog/testing-statistics-mistakes/)
+> ## 다른 테스트 방법론 사용
 
-**Mann-Whitney U-검정** . Mann-Whitney U-검정은 데이터가 정규 분포에서 크게 벗어날 때 t-검정의 대안입니다.
+- **Mann-Whitney U-검정** . Mann-Whitney U-검정은 데이터가 정규 분포에서 크게 벗어날 때 , T - Test의 대안으로서 사용할 수 있습니다.
 
-**강력한 통계** . [강력한 통계의](https://www.rci.rutgers.edu/~dtyler/ShortCourse.pdf) 방법 은 데이터가 정규 분포를 따르지 않거나 이상값에 의해 왜곡될 때 사용됩니다. 여기에서 평균값과 분산은 비정상적으로 높거나 낮은 값의 영향을 받지 않도록 계산됩니다.
+- **Robust statistics** :  [**Robust statistics**](https://www.rci.rutgers.edu/~dtyler/ShortCourse.pdf) 방법은 데이터가 정규 분포를 따르지 않거나 이상값에 의해 왜곡될 때 사용할 수 있습니다. 여기에서 평균값과 분산은 비정상적으로 높거나 낮은 값의 영향을 받지 않도록 계산됩니다. (Winsorizing 방법론에서 설명했음)
 
-**부트스트래핑** . [이 소위 비모수 절차](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) 는 분포 가정과 독립적으로 작동하며 신뢰 수준 및 구간에 대한 신뢰할 수 있는 추정치를 제공합니다.
+- **Bootstrapping** :   [Bootstrap](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)) 이 방법론은 분포 가정과 독립적으로 작동합니다. 신뢰 수준 및 구간에 대한 신뢰할 수 있는 추정치를 제공하기 떄문에 매우 강력합니다. 이 방법론의 핵심은 무작위 샘플링 절차를 통해 관찰된 데이터(통계량)를 기반으로 변수 분포의 신뢰할 수 있는 추정치를 제공해 줍니다. 
 
-그 핵심은 무작위 샘플링 절차를 통해 관찰된 데이터를 기반으로 변수 분포의 신뢰할 수 있는 추정치를 제공하는 리샘플링 방법에 속합니다.
+> ## 이상치 가치를 고려하기
+
+- 방문자당 수익의 분포를 보았듯이 메트릭의 분포는 대게 비정상적일떄가 많습니다.  
+  - 소수의 갑부 구매자가 데이터 세트를 극단으로 치우치게 하는 상황은 매우 일반적인 상황입니다. 
+  - 이런경우에 이상값 탐지는 매우 어렵게 됩니다.
+- 데이터 분석에서 이상치를 버리지 말아야 할 필요도 있습니다.
+  - 데이터들을 [세분화](https://cxl.com/blog/audience-segmentation/) 하고 더 깊이 분석해야 합니다. 
+  - 어떤 인구 통계학적 특성, 행동 특성 또는 기업 통계학적 특성이 구매 행동과 관련이 있을까요? 
+  - 그리고 거기에서 어떤 인과관계를 알아내기 위해 어떻게 실험을 실행할 수 있을까요?
+- 위와 같은 질문들은 단순한 A/B 테스트보다 더 깊이 생각해야 되는 질문들입니다. 이러한 Segmentation 분석을 잘 하면, AB 테스트에 대해 더 깊은 이해를 할 수 있습니다.
+
+# [Conclusion](#link){: .btn .btn--primary}{: .align-center}
+
+> ## 어떤 일이라도 해라
+
+- Dan Begley-Groth [는 Richrelevance 블로그에](https://www.richrelevance.com/blog/2014/02/25/tipping-point-outliers-ab-testing-dan-begley-roth/) 다음과 [같이 썼습니다](https://www.richrelevance.com/blog/2014/02/25/tipping-point-outliers-ab-testing-dan-begley-roth/) .
+
+테스트가 통계적으로 유효하려면 테스트가 시작되기 전에 테스트에 대한 모든 규칙이 먼저 결정되어야 합니다. 그렇지 않다면, 테스트 진행 추이에 따라 우리 주관이 영향을 받을 수 있기 때문입니다. 그러므로 우리는 테스트 전에 이상치의 임계값을 결정하고 (RichRelevance 테스트의 경우 평균에서 3개의 표준 편차) 이를 제거하는 방법론을 설정해서, A/B 테스트 해석시에 무작위 노이즈와 주관성을 크게 감소시킬 수 있습니다. 
+{: .notice}
+
+- 이상치는 테스트의 품질을 떨어트리게 됩니다. 그러므로 우리는 늘 outlier 를 제거하려는 노력을 하는것이 중요합니다.
+
+> ## Conclusion
+
+- 이상치는 테스트에서, 결과에 영향을 미치는 중요한 요인입니다.
+  - 작은 표본 크기에서 하나 또는 두 개의 높은 이상치는 우리의 Decision 을 완전히 왜곡시킬 수 있습니다.
+- 대부분의 경우에, 데이터가 이러한 극단적인 경우의 영향을 받는 경우, 이상치를 제외하고 대표값으로 대체할 수 있습니다. (이러한 기준은 value 의 최대 / 최소값 등이 될 수 있습니다.)
+- 또 다른 방법은 post-test data 를 가지고.각 메트릭 사례별로 이상값의 영향을 확인합니다. *그런 다음* 이상치 값을 제거, 변경 또는 유지할지 여부를 결정하는 방법이 있습니다.
+- 데이터의 이상값을 처리하는 방법은 많이 있습니다. (구글에서는 이걸로 특허를냄...) 그러므로 이상치에 대해서는 항상 잘 제거하는 방법이 필요..
 
 ---
 

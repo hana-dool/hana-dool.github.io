@@ -253,6 +253,19 @@ use_math: true
   - Direct mapping으로 page frame 번호 확인
   - 최근에 사용했으므로 해당 PMT entry를 TLB에 적재함
 
+> ## Memory Management
+
+- Page와 같은 크기로 미리 분할 하여 관리/사용
+  - Page frame
+  - FPM 기법과 유사
+- Frame table
+  - Page frame당 하나의 entry
+  - 구성
+    - Allocated/available field
+    - PID field (페이지가 올라갔는지의 여부)
+    - Link field : For free list (사용가능 한 빈 공간들을 관리, 연결) 
+    - AV : Free list header (free list의 시작점)
+
 ---
 
 **Reference**

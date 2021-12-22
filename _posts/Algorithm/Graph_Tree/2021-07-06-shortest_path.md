@@ -3,8 +3,6 @@ title:  "Dijkstra 최단경로"
 excerpt: "다익스트라 최단경로문제"
 categories:
   - AL_Graph_Tree
-tags:
-  - 1
 last_modified_at: 2021-07-06
 
 toc: true
@@ -15,9 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [다익스트라 알고리즘](#link){: .btn .btn--primary}{: .align-center}
 
-# 다익스트라 알고리즘
+> ## 다익스트라 알고리즘
 
 - 다익스트라 최단경로 알고리즘은, 그래프에서 여러개의 노드가 있을때, 특정한 노드에서 출발해 다른 노드로 가는 각각의 최단 경로를 구해주는 알고리즘이다. 
 - 다익스트라 최단 경로 알고리즘은 '음의 간선' 이 없을떄에 정상적으로 작동한다.
@@ -39,9 +37,7 @@ use_math: true
 
 - 방법 2를 달달 외울떄까지 숙달하도록 하자. 
 
-<BR>
-
-## 다익스트라 알고리즘 구현
+> ## 다익스트라 알고리즘 구현
 
 - 이 방법을 사용한다면, 최악의 경우에도 시간복잡도 $O(Elog V)$ 를 보장한다.  (V : 노드의 갯수, E : 간선의 갯수)
 - 간단한 다익스트라 알고리즘은 최단거리가 가장 짧은 노드를 찾기 위해서 매번 최단 거리 테이블을 선형적으로 탐색해야 했다.
@@ -102,9 +98,7 @@ for i in range(1,n+1):
         print(distance[i])
 ```
 
-<br>
-
-## 실전 사용
+> ## 실전 사용
 
 - <https://www.acmicpc.net/problem/1753>
 
@@ -141,9 +135,7 @@ for i in distance[1:]:
     print(i if i != inf else "INF")
 ```
 
-<br>
-
-## 응용
+> ## 응용
 
 - https://www.acmicpc.net/problem/4485
 - 꼭 그래프가 아니라, 아래처럼 matrix 이동시의 최소값 을 요구하기도 한다.

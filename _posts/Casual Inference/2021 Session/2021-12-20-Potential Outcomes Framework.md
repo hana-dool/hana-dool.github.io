@@ -1,6 +1,6 @@
 ---
-title:  "Potential Outcomes Framework &#58; Causal Mindset"
-excerpt: "대표적인 인과추론의 프레임워크들"
+title:  "인과추론의 다양한 접근법"
+excerpt: ""
 categories:
   - Casual_Inference_Session2021
 last_modified_at: 2021-12-19

@@ -92,6 +92,23 @@
                 {% endfor %}
             </ul>
 
+        <span class="nav__sub-title">Casual Inference</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Casual_Inference_in_Statistics" %}
+                        <li><a href="/categories/Casual_Inference_in_Statistics" class="">Primer Book ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Casual_Inference_Session2021" %}
+                        <li><a href="/categories/Casual_Inference_Session2021" class=""> Session2021 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
         <span class="nav__sub-title">AB Testing</span>
             <ul>
                 {% for category in site.categories %}
@@ -317,6 +334,35 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Spark_Datatype" %}
+                        <li><a href="/categories/Spark_Datatype" class="">Data Type ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Spark_df_method" %}
+                        <li><a href="/categories/Spark_df_method" class="">Dataframe Method ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Spark_Function" %}
+                        <li><a href="/categories/Spark_Function" class="">functions Method ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Spark_other_method" %}
+                        <li><a href="/categories/Spark_other_method" class="">Other Method ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
 
         <span class="nav__sub-title">SQL</span>
             <ul>

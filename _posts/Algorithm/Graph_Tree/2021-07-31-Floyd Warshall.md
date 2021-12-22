@@ -3,8 +3,6 @@ title:  "Floyd Warshall 알고리즘"
 excerpt: "플로이드 와셜 알고리즘"
 categories:
   - AL_Graph_Tree
-tags:
-  - 1
 last_modified_at: 2021-07-31
 
 toc: true
@@ -15,9 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [플로이드 워셜 알고리즘](#link){: .btn .btn--primary}{: .align-center}
 
-# 플로이드 워셜 알고리즘
+> ## 플로이드 워셜 알고리즘
 
 - 다익스트라 알고리즘은 한 지점에서 다른 특정 지점까지의 최단 경로를 구해야 하는 경우에 사용되는 알고리즘이다.
 - 그에 반해서 플로이드 워셜을 모든 지점에서 다른 모든 지점까지의 최단 경로를 모두 구해야 하는 경우에 사용됩니다.
@@ -73,9 +71,7 @@ for i in range(1,n+1):
     print()
 ```
 
-<br>
-
-## 실전 사용
+> ## EX : 실전 사용
 
 - <https://www.acmicpc.net/problem/11404>
 
@@ -111,9 +107,7 @@ for i in range(1,n+1) :
     print()
 ```
 
-<br>
-
-# 순환을 포함하는 문제
+> ## EX : 순환을 포함하는 문제
 
 ```python
 import sys 

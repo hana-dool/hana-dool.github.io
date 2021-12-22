@@ -15,9 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [벨만포드 알고리즘](#link){: .btn .btn--primary}{: .align-center}
 
-# 개요
+> ## 개요
 
 ![png](/assets/images/Algorithm/15.png)
 
@@ -30,7 +30,7 @@ use_math: true
 
 ![png](/assets/images/Algorithm/14.png)
 
-# 구현
+> ## 구현
 
 ```python
 import sys

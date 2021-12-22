@@ -15,9 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [유니온파인드](#link){: .btn .btn--primary}{: .align-center}
 
-# 서로소 집합
+> ## 서로소 집합
 
 ![png](/assets/images/Python/19_1.png)
 
@@ -87,9 +87,7 @@ for i in range(1,v+1) :
 print(parent)
 ```
 
-<br>
-
-# 집합의 표현
+> ## Example : 집합의 표현
 
 - <https://www.acmicpc.net/problem/1717>
 

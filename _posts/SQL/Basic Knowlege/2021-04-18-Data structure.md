@@ -25,8 +25,6 @@ use_math: true
 
 ![png](/assets/images/SQL_Basic/1_8.png)
 
-
-
 # 데이터의 유형
 
 오라클은 다음과 같이 데이터 타입들이 있다. 우리는 Buit in data type 부터 보도록 하겠다. 맨 마지막의 파란색은 큰 데이터라는 의미이다. 

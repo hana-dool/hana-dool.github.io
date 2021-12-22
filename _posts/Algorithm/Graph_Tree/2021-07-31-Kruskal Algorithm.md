@@ -15,9 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [크루스칼 알고리즘](#link){: .btn .btn--primary}{: .align-center}
 
-# 크루스칼 알고리즘
+> ## 크루스칼 알고리즘
 
 - 크루스칼 알고리즘은 "그래프를 최소 비용으로 모두 연결하고자 할 떄에" 사용되는 알고리즘입니다. 
 
@@ -33,7 +33,7 @@ use_math: true
 - 간선의 갯수가 E 개일때에 $O(ElogE)$ 의 시간복잡도를 가집니다. 
   - 크루스칼 알고리즘에서 제일 오래 걸리는 부분은 간선 정렬 부분이고 E 개의 ㄷ이터를 정렬할떄의 시간 복잡도는 O(ElogE) 이기 때문입니다. 
 
-# 구현
+> ## 구현
 
 ```python
 def find_parent(parent,x):
@@ -84,11 +84,7 @@ for edge in edges :
 print(result)
 ```
 
-
-
-<br>
-
-## 실전 사용
+> ## 실전 사용
 
 - <https://www.acmicpc.net/problem/1922>
 

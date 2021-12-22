@@ -1,10 +1,8 @@
 ---
-title:  "순횐 찾기"
+title:  "순환 찾기"
 excerpt: "무향 / 유향 그래프"
 categories:
   - AL_Graph_Tree
-tags:
-  - 1
 last_modified_at: 2021-08-28
 
 toc: true
@@ -15,9 +13,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [순열 사이클 ](#link){: .btn .btn--primary}{: .align-center}
 
-# 순열 사이클 
+> ## 순열 사이클
 
 - 위 문제는, 아주 쉬운버전으로, 재귀를 이용해 사이클의 유무를 판단하는것이 핵심입니다.
   - 이런 아이디어가 뒤에서도 사용되므로 잘 익히도록합시다.
@@ -46,7 +44,7 @@ for _ in range(T) :
     print(cnt)
 ```
 
-# 무향 그래프
+> ## 무향 그래프
 
 - 기본적으로 Union Find 를 통해 가능합니다. 
 - https://www.acmicpc.net/problem/20040
@@ -86,9 +84,7 @@ print(0)
 - 위처럼 union_parent 부분에 return True 를 넣으면 됩니다.
   - 왜냐하면, 이미 부모가 같은 상태에서 , 또 합쳐버리면 사이클이 되기 떄문
 
-<Br>
-
-# 유향 그래프 - 각 점에 대해서 판별
+> ## 유향 그래프 - 각 점에 대해서 판별
 
 ```python
 from collections import defaultdict
@@ -120,7 +116,7 @@ print(ans)
   - E 는 간선의 수 
 - 각각의 정점에 대해서 사이클이 있는지 없는지를 검사한다는 의미는 있지만, 시간이 많이 걸리게 됩니다. 
 
-# 유향 그래프 - 그래프에 대해서 판별
+> ## 유향 그래프 - 그래프에 대해서 판별
 
 - https://hongl.tistory.com/60?category=922907
 

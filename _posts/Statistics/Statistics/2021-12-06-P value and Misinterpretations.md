@@ -34,8 +34,6 @@ use_math: true
 - 어떠한 저널은 모든 통계 테스트, 신뢰 구간과 같은 통계적 방법론을 금지하기까지 하고 있습니다.
   - 이러한 금지에 대한 장점에 대해서는 상당한 논쟁 부분입니다.
 
-
-
 # [misinterpretations of single P values](#link){: .btn .btn--primary}{: .align-center}
 
 > ## p 값은 테스트가 참일 확률이다.

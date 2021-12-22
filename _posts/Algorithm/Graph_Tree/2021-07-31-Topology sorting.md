@@ -15,9 +15,9 @@ toc_sticky: true
 use_math: true
 ---
 
-<br>
+# [위상정렬 알고리즘](#link){: .btn .btn--primary}{: .align-center}
 
-# 위상 정렬 알고리즘
+> ## 위상 정렬 알고리즘
 
 ![png](/assets/images/Python/20_1.png)
 
@@ -27,9 +27,7 @@ use_math: true
 
 ![png](/assets/images/Python/20_3.png)
 
-<br>
-
-# 위상 정렬 예시
+> ## 위상 정렬 예시
 
 ![png](/assets/images/Python/20_4.png)
 
@@ -56,9 +54,7 @@ use_math: true
 
 ![png](/assets/images/Python/20_14.png)
 
-<br>
-
-# 코드 구현
+> ## 코드 구현
 
 ```python
 from collections import deque
@@ -102,9 +98,7 @@ def topology_sort():
 topology_sort()
 ```
 
-<br>
-
-# 실전
+> ## 실전
 
 - <https://www.acmicpc.net/problem/1766>
 - 아래의 경우는 heap 과 같이쓰인 특수한 경우입니다!
@@ -140,7 +134,7 @@ while q :
 print(*rst)
 ```
 
-# 선수 과목
+> ## Example : 선수 과목
 
 - https://www.acmicpc.net/problem/14567
 
