@@ -48,24 +48,16 @@ FROM df
 - SELECT 문에 대한 연산은 위에서 아래로 수행된다. 
 - ORDER BY 는 맨 끝에 기술된다.
 
-<BR>
-
-<BR>
-
-# <center><font size="15"> UNION </font></center>
+> ## UNION 
 
 - SQL 문을 이용하여, SELECT 문의 실행 결과를 집합 하나로 묶을 수 잇다.
-- 즉 각기 다른 SELECT 문을 이용해 실행한 결과를 하날 묶어서 출력할 수 있다.
+- 즉 각기 다른 SELECT 문을 이용해 실행한 결과를 하나로 출력할 수 있다.
 
 ![png](/assets/images/SQL_Basic/7_1.png)
 
-위 출력결과가 의미하는것은 employees 테이블과, department 테이블에서, 유일한 값을 가지는 department_id 데이터가 총 28 건이라는 의미이다.
+- 위 출력결과가 의미하는것은 employees 테이블과, department 테이블에서, 유일한 값을 가지는 department_id 데이터가 총 28 건이라는 의미이다.
 
-<br>
-
-<br>
-
-# UNION ALL
+> ## UNION ALL
 
 - UNION ALL 은 UNION 과 거의 동일하지만, 중복열도 모두 출력한다는것이 다르다. 
 
@@ -73,11 +65,7 @@ FROM df
 
 위 출력결과가 의미하는것은, employees 07개 데이터와 department 27개 데이터를 합쳐서 134건을 출력한 것이다.
 
-<br>
-
-<br>
-
-# <center><font size="15"> INTERSECT</font></center>
+> ## INTERSECT
 
 - INTERSECT 는 양쪽 SELECT 에 겹치는 데이터만 출력한다. 
 
@@ -85,11 +73,7 @@ FROM df
 
 양쪽 SELECT 문에 모두 존재하는 행이 출력되었다. 이 값들은 employees 데이터와 department 데이터에 같이 겹치는 deparment_id 이다.
 
-<br>
-
-<br>
-
-# <center><font size="15"> MINUS</font></center>
+> ## MINUS
 
 - MUNUS 연산자는 첫번째 SELECT 결과 - 두번쨰 SELECT 결과 로 이루어져 있습니다. 
 - 차집합이라고 생각하시면 됩니다. 

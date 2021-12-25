@@ -1,5 +1,5 @@
 ---
-title:  "Examples of Casual Mindset"
+title:  "인과적 사고방식"
 excerpt: ""
 categories:
   - Casual_Inference_Session2021

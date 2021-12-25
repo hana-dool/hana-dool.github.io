@@ -13,7 +13,7 @@ toc_sticky: true
 use_math: true
 ---
 
- 통계를 하게되면 확률에 대한 두가지 관점인 베이지안과 Frequentist 두가지 관점에 대해서 배우게 됩니다. 두개의 차이에 대해서 짧게 알아보도록 합니다. 
+ 인과성을 왜 연구할까
 {: .notice--warning}
 
 # [Introduction](#link){: .btn .btn--primary}{: .align-center}
@@ -116,10 +116,8 @@ $$\begin{array}{lll}
   4) 모형과 데이터에 포함된 인과 가정의 결합으로부터 결론을 이끌어내는 방법
 - 이 책의 1 장과 2 장은 인과 가정을 모형화하고, 이를 데이터에 연결하는 방법을 제공하는 데 초점을 맞추고 있으므로, 3 장에서는 인과 문제에 대한 답을 찾기 위해 이 러한 가정 및 데이터를 이용할 수 있다. 그러나 계속 진행하기 전에 우리는 인과성 (causation)을 정의해야 한다. 직관적이거나 단순해 보일지 모르지만 일반적으로 합의된 인과성의 정의는 수 세기 동안 통계학자와 철학자를 비켜 갔다. 우리의 목적에 부합하는 인과성의 정의는 간단하면서, 약간 은유적인 면이 있다. 어떤 식으로든 변수 $Y$ 가 변수 $X$ 에 의존하면 변수 $X$ 는 변수 $Y$ 의 원인 (cause)이다. 나중에 인과성에 대한 정의를 약 간 확장할 것이지만, 지금은 인과성을 듣기의 한 형태 (a form of listening)로 생각하기 바란다. $Y$ 가 $X$ 를 든고, 듣는 것에 따라 값을 결정하면 $X$ 는 $Y$ 의 원인이 된다. $(X$ is a cause of $Y$ if $Y$ listens to $X$ and decides its value in response to what it hears.)
 
-
-
 ---
 
 **Reference**
 
-- <https://bayestour.github.io/blog/docs/previous/mpsl/0103>
+- 책
