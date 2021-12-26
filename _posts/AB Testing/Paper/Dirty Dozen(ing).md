@@ -159,6 +159,41 @@ $$\text { Avg CTR/User }=\frac{\sum_{\text {users }}\left(\frac{\sharp \text { c
 2. 클라이언트에서 할당하는 이벤트의 sequence number 사이에 빈틈이 있는지 파악합니다.
 3. 메트릭들은 가능하다면 클라 사이드 이벤트보다 서버 사이드의 이벤트 기반으로 카운트 되어야 합니다. less lossy, more uniform합니다.
 
+> ## 4. Assuming Underpowered Metrics had no Change
+
+- MSN 홈페이지에서 일어나는 실험들 중에서, total number of page views per user 은 중요한 OEC metric입니다. 특정 실험에서 대조군 대비 실험군에서 0.5%의 metric 향상이 있었다고 합시다.
+  - 하지만 P-value가 통계적으로 유의하지 않았습니다.
+- mature 단계에 있는 MSN과 같은 온라인 비즈니스에서는 **0.5%의 향상도 비즈니스에 큰 임팩트로 해석됩니다.**
+
+> About the Pitfall
+
+- 검정 과정을 살펴보니 신뢰 구간을 계산하는 데에 사용한 검정력(power)가 80%를 사용했습니다. 
+- 이 케이스에서의 실험군, 대조군 샘플 수와 power = 80% 의 조건에서는, 대조군과 실험군이 7.8% 이상의 차이가 나야 p-value가 통계적으로 유의하다고 나옵니다. 
+  - 하지만 성숙한 비즈니스에서 7.8% 이상의 차이를 내기는 쉽지 않습니다.
+- 즉, 샘플 수를 power analysis를 통해 결정하지 않았기 때문에 발생한 문제입니다.
+
+> How to avoid
+
+- Priori power analysis을 진행하여, OEC와 가드레일 메트릭에서 비즈니스에서 충분히 크다고 판단되는 임팩트(%)를 감지할 수 있을 샘플 사이즈를 선정합니다.
+- 이러한 선행 전력 분석의 권장사항은 주어진 제품에 대한 일반적인 실험 시나리오에 대해 단순화할 수 있습니다. 
+  - 예를 들어 미국에서 실행되는 Bing 실험의 경우 테스트 중인 기능이 대부분의 사용자에게 영향을 미칠 경우 최소 10%의 사용자에 대해서 1주일동안 실험하는게 좋습니다.
+- 떄로는 탐지하고자 MDE 와 Power 를 기반으로 Sample Size 를 계산해 보았더니, 권장하는 샘플 수가, 서비스에서 가용할 수 있는 모든 트래픽 이상일수도 있습니다
+- 이러한 경우에도, 실험자들이, 현재 모든 트래픽을 사용했을떄에 우리가 얻을 수 있는 MDE 가 어느정도 수준인지 파악하는것도 중요합니다. 
+- 이때 Power 의 수준은 결과를 적절하게 평가하기 위해 OEC 와 가드레일 메트릭의 작은 변화를 탐지할 수 있는 최소 80%의 Power 로 설정하는게 좋습니다.
+
+> ## Claiming Success with a Borderline P-value
+
+- 마이크로소프트의 또다른 웹 페이지 [Bing.com](http://bing.com/) 에서 실험 A를 진행했습니다. 실험군, 대조군 간의 OEC metric 증분을 검정한 결과 0.029의 p-value가 나왔습니다.
+  - 이 OEC metric은 유저의 만족도 지표고, 유저의 잔존에 직결되는 leading indicator입니다. 대부분의 실험이 이 metric을 개선하는 데에 성공하지 못했습니다.
+  - P-value로 실험 A의 성공을 확신하지 않고, 검증용으로 동일한 실험을 독립적으로 시행했습니다. 실험군, 대조군 트래픽을 2배로 늘려서 실험을 시행한 결과, 동일한 OEC metric 증분을 검정했지만 통계적으로 유의하지 않았습니다.
+
+> About the pitfall
+
+- P-value가 0.05에 가까운 boundary에 있을 때, 다른 추가 근거를 고려하지 않고 귀무가설을 단순하게 기각하는 경우 발생합니다. Borderline p-value(0.05의 경계에 가까운 값)을 보일 때, 1종 오류(False Positive)의 경고일 수 있습니다.
+- P-value가 0.05의 경계에 가깝지 않은 OEC metric에 더 중점을 두고 실험을 평가합니다.
+- 실험군, 대조군 유저 수 트래픽을 키워서 동일한 실험을 새로운 유저들에게 시행합니다.
+- 두 가지 방법이 다 불가능하거나 2번을 시행해도 여전히 borderline p-value가 나온다면 [Fisher’s Method](https://en.wikipedia.org/wiki/Fisher's_method)를 활용합니다. (샘플 수가 적거나, 카테고리가 많고 범주형 자료일 때 사용하는 검정법)
+
 ---
 
 **reference**

@@ -46,7 +46,7 @@ use_math: true
 
 > ## How Do SRMs Impact A/B Tests?
 
-![png](/assets/images/Stat/133_1.png)
+![jpg](/assets/images/Stat/133_1.jpg)
 
 - MSN의 한 팀은 이미지 뷰어의 변경 사항을 테스트한 적이 있습니다. 
   - 이떄 탐색할 수 있는 카드의 수가 12개(A)에서 16개(B)로 증가하면 사용자의 경험(UX) 이 더 좋아질것으로 예상했습니다.
@@ -75,7 +75,7 @@ use_math: true
   - 마지막으로*분석 단계* (예: 분석을 분할하기 위해 편향된 조건 사용). 단계와 직교하는 SRM은 *A/B 테스터* 가 실험 변형을 고르지 않게 늘리거나 사용자가 변형에 너무 쉽게 자체 할당하도록 *하여 언제든지 발생할* 수도 있습니다 . 
 - 포괄적인 분류는 아래 그림을 참조하거나 당사 보고서를 참조하십시오[4]
 
-![png](/assets/images/Stat/133_2.png)
+![jpg](/assets/images/Stat/133_2.jpg)
 
 - 위와 같은 SRM 에 대한 분류 체계는 , SRM 문제를 좀 더 자세하게 이해할 수 있도록 해줍니다. 하지만 어떤것이 A/B Test 를 편향시키는것인가? 에 대해서는 답해주지 않습니다.
 - 다음 절에서는 이러한 방법에 대해서 조사해 봅시다.
@@ -144,7 +144,7 @@ use_math: true
 
 - A/B 테스터에게 SRM 이 Localized (즉 일부 세그먼트에 국한) 되어 있는지 , 널리 퍼져있는지에 대해 통찰력을 제공하기 위해서, 사용 가능한 모든 세그먼트가 셀로 표현되는 직관적인 시각화를 제공합니다.
 
-![png](/assets/images/Stat/133_3.png)
+![jpg](/assets/images/Stat/133_3.jpg)
 
 - 위에서 빨간색 셀은 SRM을 나타내고 회색 셀은 해당 세그먼트에 대해 SRM이 감지되지 않았음을 나타냅니다. 
 - 셀의 크기는 세그먼트의 크기에 비례합니다. 큰 셀은 큰 세그먼트를 가리키고 그 반대도 마찬가지입니다. 
@@ -154,7 +154,7 @@ use_math: true
 
 > ## Was the SRM caused by the configured condition?
 
-![png](/assets/images/Stat/133_3.png)
+![jpg](/assets/images/Stat/133_3.jpg)
 
 - zoomed-in A/B 분석(특정한 하위 집단에 대한 AB 테스트)의 경우, Zooming condition 이 SRM 의 근본 원인인지 아닌지 검정하는 기능도 제공합니다
 - 위에서 설명했었던 대로, 주어진 A/B 테스트에 대해 이 조건을 사용하지 않은 근본 원인인지 여부에 대한 진단 정보를 제공합니다. 

@@ -22,7 +22,7 @@ use_math: true
 
 - 우리는 몇주, 몇달동안 새로운 기능을 개발하고 사용자에게 릴리즈 했습니다. 하지만 출시 이에 서비스에 대한 사용가 관심을 추적하는 핵심 지표가 꾸준히 감소하는것을 관찰할 수 있었습니다.
 
-![png](/assets/images/Stat/135_1.png)
+![jpg](/assets/images/Stat/135_1.jpg)
 
 - 위 Metric 은 User Engagement with our service 를 나타냅니다. 우리 Feature 가 릴리즈 한 이후에 메트릭이 꾸준히 감소하고 있는것을 알 수 있습니다.
   - 이때에 우리는 어떻게 해야할까요? Update 내용을 Roll Back 해야할까요? 
@@ -36,14 +36,14 @@ use_math: true
 
 - A/B 테스트는 사용자그룹이 2개로 나뉘고, 아래 그림처럼 랜덤하게 하나의 유저에 대해서 Control 과 Treatment 가 표시되고 그 효과를 비교하게 됩니다.( 아래는 Azure ID의 A/B 테스트 예시)
 
-![png](/assets/images/Stat/135_2.png)
+![jpg](/assets/images/Stat/135_2.jpg)
 
 - 이떄 외부 영향 (마케팅 효과, 시계적인 이벤트, 계절성 등) 은 두 사용자 모두에게 영향을 미치게 됩니다. 
   - 그러므로 우리는 Treatment 가 기능에 미치는 영향을 올바르게 추정할 수 있습니다. (즉 인과추론을 바르게 추정할 수 있다는 것입니다.)
 
 > AB Test with Time Series Graph
 
-![png](/assets/images/Stat/135_3.png)
+![jpg](/assets/images/Stat/135_3.jpg)
 
 - 위 그림의 상단 그림은 시간 흐름에 따라서 A와 B 차이에 대한 신뢰 구간 그래프를 나타냅니다.
 - 하단 그림은 메트릭의 '실제' 값을 나타냅니다. 
