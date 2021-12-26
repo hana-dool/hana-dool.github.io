@@ -1,5 +1,5 @@
 ---
-title:  "Virtual Memory"
+ title:  "Virtual Memory"
 excerpt: "가상메모리"
 categories:
   - Operating_System

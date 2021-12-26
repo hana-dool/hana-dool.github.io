@@ -331,32 +331,12 @@ print(torch.cat([x.unsqueeze(0), y.unsqueeze(0), z.unsqueeze(0)], dim=0))
   - 그러므로 .unsqueeze(0)을 하므로서 3개의 벡터는 전부 (1, 2)의 크기의 2차원 텐서로 변경됩니다. 
   - 여기에 연결(concatenate)를 의미하는 cat을 사용하면 (3 x 2) 텐서가 됩니다.
 
-> ## Zero , One tensor
-
-```python
-x = torch.FloatTensor([[0, 1, 2], [2, 1, 0]])
-print(x)
-#tensor([[0., 1., 2.],
-#        [2., 1., 0.]])
-```
-
-```python
-print(torch.ones_like(x)) # 입력 텐서와 크기를 동일하게 하면서 값을 1로 채우기
-#tensor([[1., 1., 1.],
-#        [1., 1., 1.]])
-```
-
-```python
-print(torch.zeros_like(x)) # 입력 텐서와 크기를 동일하게 하면서 값을 0으로 채우기
-#tensor([[0., 0., 0.],
-#        [0., 0., 0.]])
-```
-
-- 위와 같이, x 와 동일한 크기를 가지는 1, 0 tensor 를 만들어낼 수 있습니다.
-
 **Reference**
 
 - <https://wikidocs.net/52460>
+- <https://tempdev.tistory.com/9>
+
+
 
 ing
 {: .notice--success}
