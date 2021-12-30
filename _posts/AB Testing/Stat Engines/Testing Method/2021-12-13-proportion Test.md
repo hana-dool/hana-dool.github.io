@@ -1,10 +1,10 @@
 ---
 title: "z-test t-test chi-square fisher-exact"
 excerpt: "proportion 을 검정하기 위한 다양한 방법들"
-categories:
+tags:
   - AB_Stat
-last_modified_at: 2021-12-13
 
+last_modified_at: 2021-12-13
 toc: true
 toc_label: "Table Of Contents"
 toc_icon: "cog"

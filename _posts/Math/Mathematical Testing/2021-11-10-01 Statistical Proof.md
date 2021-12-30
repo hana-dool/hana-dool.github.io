@@ -108,7 +108,7 @@ E(X+Y) &=\iint(x+y) f(x, y) d x d y \\
 &=\int x\left[\int f(x, y) d y\right] d x+\int y\left[\int f(x, y) d x\right] d y \\
 &=\int x f_{X}(x) d x+\int y f_{Y}(y) d y \\
 &=E(X)+E(Y)
-\end{aligned}​
+\end{aligned}
 $$
 
 

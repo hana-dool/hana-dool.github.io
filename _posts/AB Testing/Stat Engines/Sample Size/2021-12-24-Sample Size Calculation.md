@@ -1,7 +1,7 @@
 ---
 title: "Calculate Sample Size"
 excerpt: "샘플 사이즈를 계산하는 공식"
-Tags:
+tags:
   - AB_Stat
 last_modified_at: 2021-12-13
 

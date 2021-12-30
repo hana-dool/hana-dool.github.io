@@ -1,10 +1,10 @@
 ---
 title: "A/B/n Testing and False Positive"
 excerpt: "A/B/n 테스트와 문제점 그리고 이를 해결하는법"
-categories:
+tags:
   - AB_Stat
-last_modified_at: 2021-11-07
 
+last_modified_at: 2021-11-07
 toc: true
 toc_label: "Table Of Contents"
 toc_icon: "cog"
@@ -92,6 +92,24 @@ $$FWER(\alpha , m) = 1 - (1-\alpha)^m$$
   - 하지만 이러한 작업은 결국 Trade off 가 존재하는데, 여기에서는 각 실험의 1종 오류율을 낮추었으므로 결과적으로 Power 가 감소하게 될 것입니다. 
 - 그러므로 일반적으로 같은 Power 을 유지하고자 하면 '각각의 A/B Testing' 을 진행할때에 보다 더 많은 샘플이 필요하게 될 것입니다. 
 - 사실 Multiple Testing 에서 통용될만한 Sample size Calcultion 은 아직 없는듯 합니다.. (이 부분은 나중에 추가 예정) 
+
+# [Example For other Platform](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Naver Search
+
+- 네이버 서치에서는 FDR 를 컨트롤하여 조절
+
+> ## Hackle
+
+- 최대한 Multiple Test 를 하지 않는것으로
+
+> ## Booking.com
+
+- AB Test Calculator 를 기반으로 추론해볼때, Sidak - Correlation 을 사용하는것으로 생각됩
+
+
+
+
 
 **reference**
 

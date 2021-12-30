@@ -1,6 +1,6 @@
 ---
-title:  "Negative Bimonial Distribution"
-excerpt: "음이항분포에 대해서 알아보자"
+title:  "Negative Bimonial"
+excerpt: ""
 categories:
   - Mathematical_Distribution
 last_modified_at: 2021-11-24

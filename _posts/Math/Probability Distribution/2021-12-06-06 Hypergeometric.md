@@ -1,6 +1,6 @@
 ---
 title:  "Hyper Geometric"
-excerpt: "균등분포 대해서 알아보자"
+excerpt: ""
 categories:
   - Mathematical_Distribution
 last_modified_at: 2021-11-24

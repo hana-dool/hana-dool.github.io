@@ -1,8 +1,8 @@
 ---
-title: "Stack Exchange A/B Test (2015)"
-excerpt: "Freq에서 Bayes 로 전환하지 않는 이유"
+title: "Bayesian Test Early Stopping"
+excerpt: "Early Stopping 에 이슈는 없는가?"
 categories:
-  - AB_Bayes
+  - AB_Stat
 last_modified_at: 2021-12-05
 
 toc: true
