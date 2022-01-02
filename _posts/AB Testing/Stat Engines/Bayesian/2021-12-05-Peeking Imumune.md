@@ -1,7 +1,7 @@
 ---
 title: "Bayesian Test Early Stopping"
 excerpt: "Early Stopping 에 이슈는 없는가?"
-Tags :
+tags :
   - AB_Stat
 last_modified_at: 2021-12-05
 

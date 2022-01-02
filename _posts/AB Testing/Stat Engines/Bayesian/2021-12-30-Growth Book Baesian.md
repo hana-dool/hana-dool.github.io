@@ -1,7 +1,7 @@
 ---
 title: "Growth Book Bayesian Statistics Engine"
 excerpt: "CLT 를 활용한 Bayesian Framework"
-Tags :
+tags :
   - AB_Stat
 last_modified_at: 2021-12-30
 

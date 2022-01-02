@@ -16,7 +16,7 @@ use_math: true
  음이항분포
 {: .notice--warning}
 
-# [Geometric Distribution](#link){: .btn .btn--primary}{: .align-center}
+# [Negative binomial](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Definition
 
