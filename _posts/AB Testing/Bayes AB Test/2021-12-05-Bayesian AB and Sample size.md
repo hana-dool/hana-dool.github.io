@@ -1,5 +1,5 @@
 ---
-title: "Bayesian AB and Sample Size"
+ntitle: "Bayesian AB and Sample Size"
 excerpt: "베이즈 AB Test 에서 샘플 사이즈가 필요 없는가"
 categories:
   - AB_Bayes

@@ -1,9 +1,10 @@
 ---
-title: "A Dirty Dozen &#58; Twelve Common Metric Interpretation Pitfalls in Online Controlled Experiments"
-excerpt: "Microsoft 에서 실험에서 만나게 되는 12가지 Pitfall"
+title: "Applying the Delta Method in Metric Analytics:
+A Practical Guide with Novel Ideas"
+excerpt: "Delta 방법론을 이용한 분석"
 categories:
   - AB_Paper
-last_modified_at: 2021-11-06
+last_modified_at: 2022-01-01
 
 toc: true
 toc_label: "Table Of Contents"
@@ -13,14 +14,12 @@ toc_sticky: true
 use_math: true
 ---
 
- Microsoft Data Analysis & Experimentation team Data Scientist **Somit Gupta** 가 **KDD2017**에서 발표한  논문입니다. <https://medium.com/bondata> 님의 서술과 논문을 참고하였습니다.
+ 델타 방법론
 {: .notice--warning}
 
 - <https://hyperconnect.github.io/2021/02/26/auto-stats-test.html>
 
 # [Introduction](#link){: .btn .btn--primary}{: .align-center}
-
-> ## 
 
 ---
 
