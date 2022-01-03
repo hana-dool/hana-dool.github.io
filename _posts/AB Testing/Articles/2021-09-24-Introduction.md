@@ -70,7 +70,6 @@ use_math: true
   - <https://hana-dool.github.io/ab_testing/Trustworthy-Principles-and-Platform-Features/>
 - Peeking A/B and Bayesian
   - https://blog.acolyer.org/2017/09/28/peeking-at-ab-tests-continuous-monitoring-without-pain/
-- 
 
 # [AB Testing Material](#link){: .btn .btn--primary}{: .align-center}
 
