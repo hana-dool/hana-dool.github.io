@@ -1,5 +1,5 @@
 ---
-title: "Bayesian Test Early Stopping"
+title: "Online,Offline AA Simulation"
 excerpt: "AA Testing Simulation?"
 tags:
   - AB_Stat
@@ -13,10 +13,10 @@ toc_sticky: true
 use_math: true
 ---
 
-Stack Exchange 에서 A/B 테스트를 수행하는 방식을 Freq 에서 Bayes 로 바꾸지 않고 Freq 를 유지했던 이유는?
+AA 테스트를 통해서 어떤 이득을 얻을 수 있을까?
 {: .notice--warning}
 
-# [A/B Testing at StackExchange](#link){: .btn .btn--primary}{: .align-center}
+# [AA testing](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Run more A/A tests
 

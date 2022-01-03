@@ -80,6 +80,9 @@ $$\begin{aligned}
 
 - Hoggs Introduction to Mathematical Statistics 7ed
 - <https://elementary-physics.tistory.com/139>
+- <https://mast.queensu.ca/~stat455/lecturenotes/set4.pdf>
+
+
 
 
 

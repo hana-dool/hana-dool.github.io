@@ -78,7 +78,7 @@ $$P_{A} \mid X_{A} \sim \operatorname{Beta}\left(\alpha+x_{A}, \beta+n_{A}-x_{A}
 - Count , Duration, Revenue 와 같은 메트릭의 경우 우리는 Gaussian prior parameter $\mu_{0}, n_{0},\sigma^2_0$ 을 사용합니다. 
 - 그리고 Prior 는 $\mu_{0}=0, \sigma_{0}^{2}=1, n_{0}=0$ 를 사용하게 됩니다
   - 즉 평균에 대해서 $N(0,1)$ 을 가정합니다.
-- 이때 주어진 Sample Average $\bar{X}_{A}$ 와 Sample standard deviation $s_{A}$, 에 대해서 우리는 아래와 같이 Posterior Distribution 을 얻을 수 있습니다.
+- 이때 주어진 Sample Average $$\bar{X}_{A}$$ 와 Sample standard deviation $$s_{A}$$, 에 대해서 우리는 아래와 같이 Posterior Distribution 을 얻을 수 있습니다.
   - 이떄 각각의 평균은 각각의 Inverse Variance 로 Weighted Mean 이 들어가게 됩니다.
 
 $$\mu_{A} \mid X_{A} \sim N\left(\left(\frac{n_{A}}{s^{2}{ }_{A}}+\frac{n_{0}}{\sigma_{0}^{2}}\right)^{-1}\left(\frac{n_{A}}{s_{A}^{2}} \cdot \bar{X}_{A}+\frac{n_{0}}{\sigma^{2}{ }_{0}} \cdot \mu_{0}\right),\left(\frac{n_{A}}{s_{A}^{2}}+\frac{n_{0}}{\sigma^{2}{ }_{0}}\right)^{-1}\right)$$
@@ -87,7 +87,7 @@ $$\mu_{A} \mid X_{A} \sim N\left(\left(\frac{n_{A}}{s^{2}{ }_{A}}+\frac{n_{0}}{\
 
 > ## Continuous Posterior 를 이끌어내기
 
-- 당연히, Binomial 과 같은 경우에는 Beta Prior 가 적용되는게 너무 간단하므로, 그냥 
+- 당연히, Binomial 과 같은 경우에는 Beta Prior 가 적용되는게 너무 간단하고 명확하므로 , 여기에서는 생략하도록 하겠습니다.
 
 > Fixed variance $\left(\sigma^{2}\right)$, random mean $(\mu)$ Normal Conjugates
 
@@ -165,7 +165,7 @@ $$\bar{X_A} \sim \mathcal{N}(\mu,\frac{s_A^2}{n_A})$$
 
 - 이 경우 극도로 치우처진 분포의 경우, 사이트의 트래픽을 사용하더라도 CLT 가 작동하지 않을 수 있습니다.
   - 이 경우 metric 에 대해서 capping 을 지원합니다. 
-- 즉 일반적으로 주문값이 5달러이지만, 10만 달러와 같은 주문ㅇ늬 경우에는 Filtering 한 이후에 분석할 수 있습니다. 
+- 즉 일반적으로 주문값이 5달러이지만, 10만 달러와 같은 주문의 경우에는 Filtering 한 이후에 분석할 수 있습니다. 
   - 이러한 Capping 과 같이 Continuous 지표를 사용하게 되면, 모든 연속분포 메트릭에 대해서 CLT 를 성립하게 할 수 있습니다.
 
 # [Introduction](#link){: .btn .btn--primary}{: .align-center}
