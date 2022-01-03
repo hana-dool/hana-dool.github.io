@@ -21,8 +21,8 @@ use_math: true
 > ## Abstract
 
 - A/B 테스트 분석에 접근하는 방법은 여러 가지가 있습니다. 
-- Growth BOok 에서는 사람들이 A/B 테스트 결과를 볼 때 가장 흔히 갖는 세 가지 질문, 즉 "어느 버전이 더 나은가?", "얼마나 더 나은가?", "지금 테스트를 호출하기에 충분한 데이터가 있는가"에 대한 직관적인 결과를 제공하기 위해 오픈 소스 베이지안 통계 엔진을 개발했다.
-- 이러한 질문에 답함과 동시에 AB Testing 에서 흔히 발생할 수 있는 Pitfall 인 SRM 이라던지, Fixed Horizon Peeking Problem 등의 문제를 해결하는데에도 도움을 줍니다.
+- Growth BOok 에서는 사람들이 A/B 테스트 결과를 볼 때 가장 흔히 갖는 세 가지 질문, 즉 "어느 버전이 더 나은가?", "얼마나 더 나은가?", "이제 결론을 내릴만큼 충분한 데이터가 있는가" 에 대한 질문에 명쾌하게 답하기 위해서 베이지안 방법론을 도입했습니다.
+- 또한 이러한 질문에 답함과 동시에 AB Testing 에서 흔히 발생할 수 있는 Pitfall 인 SRM 이라던지, Fixed Horizon Peeking Problem 등의 문제를 해결하는데에도 도움을 주었습니다.
 
 > ## The Problem
 
@@ -33,9 +33,10 @@ use_math: true
 
 - 먼저 실험을 실행하기 전에 표본 크기를 미리 결정해야 합니다. 이를 고정 지평선이라고 합니다. 
   - p - value 등의 통계적 유효성을 유지하기 위해서는 어떤 이유로든 실험을 조기에 중단할 수 없습니다.
-- 하지만 이때 조기 탈출을 결정할 수 있는 버튼이 없다면, 승패가 분명한 실험도 전체 기간동안 계속 실행되게 됩니다.
-  - 하지만 이러한 조기종료를 무시하게 되면 Peeking Problem 이라고 하는 Pitfall 이 발생하게 됩니다. (유의수준에 도달하게 되면 바로 중지해버리는 이슈)
+- 하지만 이때 조기 중단을 결정할 수 있는 버튼이 없다면, 승패가 분명한 실험도 전체 기간동안 계속 실행되게 됩니다. (즉 샘플의 낭비라도고 할 수 있죠.)
+- 그렇다고 조기종료를 남발하자니, Peeking Problem 이라고 하는 Pitfall 이 발생하게 됩니다. (유의수준에 도달하게 되면 바로 중지해버리는 이슈)
   - 이렇게 하면 False - Positive 의 확률이 엄청나게 늘어납니다.
+- Note : Microsoft 에서는 조기종료를 주어진 기간 stamp (1일에 한번 등) 으로 제한하면 이러한 False Positive Inflation 을 크게 줄일 수 있다고 합니다. 
 
 > Second Problem
 
@@ -51,7 +52,7 @@ use_math: true
 > ## Bayesian Statsitics
 
 - 베이지안 접근법에 의하면, 고정된 Horizon 이 없습니다.
-  - 결과를 보고싶을떄마다 봐도, 추론이 정확할 수 있습니다.
+  - 결과를 보고싶을떄마다 봐도, 추론이 정확할 수 있습니다. (이건 솔직히 통계적 관점의 차이일뿐이지 중간에 보고싶을때마다 보는게 용납되는지는 잘 모르겠음.. )
 - 또한 베이즈 통계는 불확실성을 결과에 포함하기 떄문에 사람들이 해석하기가 매우 쉽습니다.
   - 즉 사람들이 생각하는 방식인 '새로운 버튼이 더 나을 확률은 95% 이다' 와 같은 해석이 가능하다는 것입니다.
 
@@ -59,7 +60,7 @@ use_math: true
 
 - 베이지안 가설 검정은 실험을 시작하기 전에 모집단에 대해 알고 있는 것을 나타내는 사전 분포로 시작합니다. 
 - Growth Book에서는 Uninformative Prior 를 사용합니다. 
-  - 물론 Informative Prior 를 사용하면 실험 시간을 단축할 수 있고, 데이의 정규화에 좀 더 도움을 줍니다. 물론 현재는 이러한 Informative Prior 를 지원하지 않지만, 나중에 추가하여 우리의 통계 엔진을 더 강력하게 만들려고 합니다.
+  - 물론 Informative Prior 를 사용하면 실험 시간을 단축할 수 있고, 데이의 정규화에 좀 더 도움을 줍니다. 현재는 이러한 Informative Prior 를 지원하지 않지만, 나중에 추가하여 우리의 통계 엔진을 더 강력하게 만들려고 합니다.
 - 실험이 실행되고 데이터가 수집되면, 사전분포가 사후분포로 업데이트 되게 됩니다.
 
 > Binomial Metric
@@ -83,11 +84,12 @@ $$P_{A} \mid X_{A} \sim \operatorname{Beta}\left(\alpha+x_{A}, \beta+n_{A}-x_{A}
 
 $$\mu_{A} \mid X_{A} \sim N\left(\left(\frac{n_{A}}{s^{2}{ }_{A}}+\frac{n_{0}}{\sigma_{0}^{2}}\right)^{-1}\left(\frac{n_{A}}{s_{A}^{2}} \cdot \bar{X}_{A}+\frac{n_{0}}{\sigma^{2}{ }_{0}} \cdot \mu_{0}\right),\left(\frac{n_{A}}{s_{A}^{2}}+\frac{n_{0}}{\sigma^{2}{ }_{0}}\right)^{-1}\right)$$
 
-- 이때 위의 Update Rule 은 사실 잘 생각해보면 Normal with Known variance 일떄의 추정과 같습니다.
+- 이때 위의 Update Rule 은 사실 잘 생각해보면 Normal with Known variance 일떄의 Conjugate 추정과 같다는것을 기억하세요
 
 > ## Continuous Posterior 를 이끌어내기
 
-- 당연히, Binomial 과 같은 경우에는 Beta Prior 가 적용되는게 너무 간단하고 명확하므로 , 여기에서는 생략하도록 하겠습니다.
+- 당연히, Binomial 과 같은 경우에는 Beta Prior 가 적용되는게 너무 간단하고 명확하므로 , 여기에서는 생략하도록 하겠습니다. 
+- 그러므로 Continuous Posetior 를 어떤 과정을 거쳐서 위와 같은  Form 으로 끌어내게 되었는지를 살펴봅시다!
 
 > Fixed variance $\left(\sigma^{2}\right)$, random mean $(\mu)$ Normal Conjugates
 
@@ -117,12 +119,15 @@ $$\mu \mid \bar{X_A} \sim \mathcal{N}\left(\left(\frac{1}{\sigma_{0}^{2}}+\frac{
 
 > what is $n_0$
 
-- 이 경우에도, 우리가 사전에 살펴보았든 $n_0$ 의 존재가 궁금해지는데요, 이 값은 바로 prior 의 강도를 나타냅니다. 
+- 이 경우, Growth Book 에서는 $n_0$ 을 설정하는데요, 이 값은 어떤것을 의미할까요? 
+  - 이 값은 바로 prior 의 강도를 나타냅니다. 
+
 - Assume $\bar{X_A} \mid \mu \sim \mathcal{N}\left(\mu, s_A^{2}/n_A\right)$ and $\mu \sim \mathcal{N}\left(\mu_{0}, \sigma_{0}^{2}/n_0\right)$ 
 
 $$\mu \mid \bar{X_A} \sim \mathcal{N}\left(\left(\frac{n_0}{\sigma_{0}^{2}}+\frac{n_A}{s_A^{2}}\right)^{-1}\left(\frac{n_0}{\sigma_{0}^{2}}\mu_{0}+\frac{n_A}{s_A^{2}}\bar{X_A}\right),\left(\frac{n_0}{\sigma_{0}^{2}}+\frac{n_A}{s_A^{2}}\right)^{-1}\right)$$
 
-- 즉 위와 같이 알 수 있습니다. prior 는 쉽게 말해서 데이터의 갯수가 $n_0$ 개일때에 Sample mean 에 대한 prior 를 나타내게 됩니다. 
+- 즉 위와 같이 Growth Book 에서 설명하고 있는 Prior 와 완전히 같은 Prior 를 이끌어 내었습니다. 
+- prior 는 쉽게 말해서 데이터의 갯수가 $n_0$ 개일때에 Sample mean 에 대한 prior 를 나타내게 됩니다. 
 
 > ## Comparison with Freq 
 
@@ -152,18 +157,18 @@ $$\bar{X} \sim \mathcal{N}(\mu,\frac{\sigma^2}{n})$$
 
 $$\bar{X_A} \sim \mathcal{N}(\mu,\frac{s_A^2}{n_A})$$
 
-- 그렇습니다! 위와 같은 방법을 사용한다고는 하지만, 결국에 CLT 와 같은 방법론을 사용하는것이죠. 
+- 그렇습니다! 위와 같은 방법을 사용한다고는 하지만, 결국에 CLT 와 같은 방법론을 사용하는것과 비슷하죠.
   - 이는 Bayesian 의 Born-mises thm 과도 연결됩니다. (Bayesian CLT 에 대해서는 나중에 더 알아보도록 해요..)
 
 > ## Justification
 
 - 아마 특정한 메트릭 (수익, 체류시간 등) 은 Gaussian Distribution 을 따르지 않기 때문에, 일반적으로 Likelihood 를 명시해야 하는 Bayesian 방법론의 경우 잘 계산되지 않습니다.
-- 하지만 다행히 중심극한정리 (CLT) 의 경우는 데이터 자체가 아니라 표본 평균의 분포를 다루기 떄문에 , 메트릭의 생김새와는 상관없이 대부분 성립하게 됩니다.
-  - 그러므로 위와 같이 평균 메트릭에 대해서 Likelihood 를 Normal 로 정의하고 그 Conjugate 를 이끌어낼 수 있습니다.
+- 하지만 다행히 중심극한정리 (CLT) 의 경우는 데이터 자체가 아니라 표본 평균의 분포를 다루기 떄문에 , 메트릭의 생김새와는 상관없이 대부분 표본평균의 likelihood 는 Normal 임이 성립하게 됩니다.
+- 그러므로 위와 같이 평균 메트릭에 대해서 Likelihood 를 Normal 로 정의하고 그 Conjugate 를 이끌어낼 수 있습니다.
 
 > Note
 
-- 이 경우 극도로 치우처진 분포의 경우, 사이트의 트래픽을 사용하더라도 CLT 가 작동하지 않을 수 있습니다.
+- 이때 극도로 치우처진 분포의 경우, (Exponential 등) 사이트의 트래픽을 사용하더라도 CLT 가 작동하지 않을 수 있습니다.
   - 이 경우 metric 에 대해서 capping 을 지원합니다. 
 - 즉 일반적으로 주문값이 5달러이지만, 10만 달러와 같은 주문의 경우에는 Filtering 한 이후에 분석할 수 있습니다. 
   - 이러한 Capping 과 같이 Continuous 지표를 사용하게 되면, 모든 연속분포 메트릭에 대해서 CLT 를 성립하게 할 수 있습니다.
