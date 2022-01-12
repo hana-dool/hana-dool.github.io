@@ -146,7 +146,57 @@ $$\begin{array}{|c|c|}
 \hline
 \end{array}$$
 
+> ## Note : None Zero Null Hypotheis
 
+- 사실 일반적인 Hypothesis 는 아래와 같습니다.
+
+$$\begin{aligned}
+&H_{0}: p_{x}- p_{y} =D\\
+&H_{A}: p_x - p_{y} \neq D \text { or } H_{A}: p_x- p_{y}> D\text { or } H_{A}: p_x- p_{y}<D
+\end{aligned}$$
+
+- 위처럼 그 차이에 대해서 검정하는것이 일반적입니다.
+
+>  Statistic
+
+$$\begin{aligned}
+\frac{\left(\hat{p}_{X}-\hat{p}_{Y}\right)-\left(p_{X}-p_{Y}\right)}{\sqrt{\frac{p_{X}\left(1-p_{X}\right)}{n}+\frac{p_{Y}\left(1-p_{Y}\right)}{m}}} &=\frac{\left(\hat{p}_{X}-\hat{p}_{Y}\right)-D}{\sqrt{\frac{p_x(1-p_x)}{n}+\frac{p_y(1-p_y)}{m}}}
+\end{aligned}$$
+
+- 통계량의 경우, 위의 값을 사용하게 됩니다. 
+
+> Note : 왜 Pooled 안쓰나요?
+
+- 우리가 이전에 Pooled 를 사용 가능했던것은 아래와 같이 Null Hypothesis 가 "두 값이 같음" 을 가정했기 때문입니다. 
+
+$$p_X = p_Y = p$$
+
+- 위를 이용해서 p 를  $$\hat{p}=\frac{X+Y}{n+m}$$ 값을 overall proportion 으로서 , $p$ 를 추정하는것이 바로 Pooled Variance 였죠. 
+- 하지만 지금과 같은 경우에는 두 Propoirtion 의 비율이 다르기때문에, Pooled 를 합쳐서 추정할 수 없는것입니다. 그에 따라서 그냥 위처럼 추정이 이루어지게 되죠.
+
+> ## Note : Align with Confidence Interval
+
+- Two sample propotion Test 를 진행할때에, $H0$ 을 가정한 상태에서, 정보를 최대한 이용하기 위해서 Pooled Variance 와 같이 약간의 기교를 부려서 Power 를 조금이나마 높히려고 하는데요, 이렇게 할 경우에 사실 Confindece interval 과 align 이 되지 않는다는 문제가 있습니다. 
+- 그 이유는 아래와 같이 Confidence Interval 을 구하는 과정을 보면 알 수 있는데요, 
+
+> Confidence intervals for difference in proportions
+
+- $X_{1}, \ldots, X_{n} \stackrel{i i d}{\sim} \operatorname{Bernoulli}\left(p_{1}\right)$ and $Y_{1}, \ldots, Y_{n} \stackrel{i i d}{\sim} \operatorname{Bernoulli}\left(p_{2}\right)$
+
+- $(1-\alpha) \times 100 \%$ confidence interval for $p_{1}-p_{2}$
+
+$$\hat{p}_{1}-\hat{p}_{2} \pm z_{\alpha / 2} \sqrt{\hat{p}_{1}\left(1-\hat{p}_{1}\right) / n_{1}+\hat{p}_{2}\left(1-\hat{p}_{2}\right) / n_{2}}$$
+
+> note
+
+- 위처럼 Confidence interval 과 우리의
+
+
+
+
+
+- 해롭지 않은 경제학
+  - Most harmness economics  
 
 ---
 

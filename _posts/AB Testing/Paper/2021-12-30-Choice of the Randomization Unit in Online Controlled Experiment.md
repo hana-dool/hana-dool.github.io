@@ -74,17 +74,17 @@ use_math: true
 - 보다 구체적으로 말하게 된다면, 사용자 수준 메트릭은 사용자 수준애 대한 평균입니다.
   - 이때 User 는 Control 또는 Treatment 수준으로 무작위화되므로,  사용자 수준 측정은 독립적이고 동일하게 분포되어 있다고 가정해도 무방할 것입니다 .
 
-- 섹션 1의 계층 모형에서는, 이는 각 사용자에 대해 독립적으로 $(\mu_i, \sigma^2_i)$를 가정한 다음,  특정 사용자에 대한 사용자 수준 측정을 해당 분포에서 도출한다는 것을 의미한다.
-  -  $\widetilde{X}_{T} \text { and } \widetilde{X}_{C}$ 가 제어 및 처리하는 사용자 수준 측정 기준을 나타내며, 이 측정 기준은 독립적이라는 것이 분명합니다. 중심 한계 정리에 의해
+- 섹션 1의 계층 모형에서는, 이는 각 사용자에 대해 독립적으로 $$(\mu_i, \sigma^2_i)$$를 가정한 다음,  특정 사용자에 대한 사용자 수준 측정을 해당 분포에서 도출한다는 것을 의미한다.
+  -  $$\widetilde{X}_{T} \text { and } \widetilde{X}_{C}$$ 가 제어 및 처리하는 사용자 수준 측정 기준을 나타내며, 이 측정 기준은 독립적이라는 것이 분명합니다. 중심 한계 정리에 의해
 
 
 $$\frac{\widetilde{X}_{T}-\widetilde{X}_{C}}{\sqrt{\operatorname{Var}\left\{\widetilde{X}_{T}-\widetilde{X}_{C}\right\}}} \rightarrow Z \qquad ...(1)$$
 
-- where $Z$ is standard normal. The two sample t-test is to replace $\mathbb{V} \operatorname{ar}\left\{\widetilde{X}_{\widetilde{T}}-\widetilde{X}_{C}\right\}$ by its estimate. 
-- In this particular case since $\widetilde{X}_{T}$ and $\widetilde{X}_{C}$ independent, $\operatorname{Var}\left\{\widetilde{X}_{T}-\widetilde{X}_{C}\right\}=$ $\mathbb{V} a r \widetilde{X}_{T}+\mathbb{V} a r \widetilde{X}_{C}$ and both terms in the right hand side can be simply estimated via sample variances. 
+- where $Z$ is standard normal. The two sample t-test is to replace $$\mathbb{V} \operatorname{ar}\left\{\widetilde{X}_{\widetilde{T}}-\widetilde{X}_{C}\right\}$$ by its estimate. 
+- In this particular case since $\widetilde{X}_{T}$ and $\widetilde{X}_{C}$ independent, $$\operatorname{Var}\left\{\widetilde{X}_{T}-\widetilde{X}_{C}\right\}= \mathbb{V} a r \widetilde{X}_{T}+\mathbb{V} a r \widetilde{X}_{C}$$ and both terms in the right hand side can be simply estimated via sample variances. 
 - Also, for web experiment, $n$ is large (much much larger than most applications of two sample t-test). Therefore we might as well treat t-statistics as standard normal.
 - For page view level metrics, $(1)$ still holds when $\widetilde{X}_{T}$ and $\widetilde{X}_{C}$ are replaced by page view level metrics $\bar{X}_{T}$ and $\bar{X}_{C}$. 
-- However, $\mathbb{V} a r\left\{\bar{X}_{T}-\bar{X}_{C}\right\}$ can not be estimated by sample variances. Delta method is needed for variance estimation of $\mathbb{V} a r \bar{X}_{g}$, $g=T, C ;$ see Section 2.1. Moreover, when randomization unit is not user, $\bar{X}_{T}$ and $\bar{X}_{C}$ are not even independent and we need to estimate $\mathbb{V} a r\left\{\bar{X}_{T}-\bar{X}_{C}\right\}$ directly. This will be our topic in Section 3 .
+- However, $$\mathbb{V} a r\left\{\bar{X}_{T}-\bar{X}_{C}\right\}$$ can not be estimated by sample variances. Delta method is needed for variance estimation of $$\mathbb{V} a r \bar{X}_{g} , \ g=T,C$$ see Section 2.1. Moreover, when randomization unit is not user, $\bar{X}_{T}$ and $\bar{X}_{C}$ are not even independent and we need to estimate $\mathbb{V} a r\left\{\bar{X}_{T}-\bar{X}_{C}\right\}$ directly. This will be our topic in Section 3 .
 
 > ## 2.1 Page Level Metrics and Delta Method
 
