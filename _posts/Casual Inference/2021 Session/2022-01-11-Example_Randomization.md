@@ -87,8 +87,6 @@ use_math: true
 
 ![jpg](/assets/images/Stat/147_4.jpg)
 
-![image-20220111043857894](img/2022-01-11-Example_Randomization/image-20220111043857894.png)
-
 - 위처럼 got me home 또는 got me to work 를 누르게 되면 commuting 루트라고 할 수 있음 (treatment)
 - got me somewhere (non-commuting route) 는 commuting 하는 사람이 아닐것이라고 생각할 수 있음 (control)
 
@@ -275,7 +273,7 @@ $$\left(\mathrm{O}_{2}-\mathrm{O}_{1}\right)-\left(\mathrm{O}_{4}-\mathrm{O}_{3}
 
 > ## Comparison Matching : Covariate balance
 
-$d_{X}=\frac{\left|M_{X_{t}}-M_{X_{p}}\right|}{\sqrt{\frac{S_{X_{t}}^{2}+S_{X_{p}}^{2}}{2}}}$ and $d_{X m}=\frac{\left|M_{X_{t}}-M_{X_{C}}\right|}{\sqrt{\frac{S_{X_{t}}^{2}+S_{X_{C}}^{2}}{2}}}$
+$d_{X}=\frac{\mid M_{X_{t}}-M_{X_{p}}\mid}{\sqrt{\frac{S_{X_{t}}^{2}+S_{X_{p}}^{2}}{2}}}$ and $d_{X m}=\frac{\mid M_{X_{t}}-M_{X_{C}}\mid}{\sqrt{\frac{S_{X_{t}}^{2}+S_{X_{C}}^{2}}{2}}}$
 
 - Control 그룹과 Treatment 그룹간의 mean 차이가 얼마나 큰지를 matching 전과 후에 대해서  테스트 해 보았습니다.
 
