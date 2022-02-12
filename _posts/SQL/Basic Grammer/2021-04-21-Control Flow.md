@@ -1,10 +1,8 @@
 ---
 title:  "Control Flow"
-excerpt: "흐름 제어문의 구현"
+excerpt: "decode/case"
 categories:
   - SQL_Basic_Grammer
-tags:
-  - 1
 last_modified_at: 2021-05-29
 
 toc: true

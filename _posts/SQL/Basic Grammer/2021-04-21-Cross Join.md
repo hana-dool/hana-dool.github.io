@@ -1,5 +1,5 @@
 ---
-title:  "JOIN"
+title:  "Cross Join"
 excerpt: "여러개의 테이블을 연결하기"
 categories:
   - SQL_Basic_Grammer
