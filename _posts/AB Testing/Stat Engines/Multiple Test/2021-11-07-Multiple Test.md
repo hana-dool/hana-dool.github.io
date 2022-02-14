@@ -107,10 +107,6 @@ $$FWER(\alpha , m) = 1 - (1-\alpha)^m$$
 
 - AB Test Calculator 를 기반으로 추론해볼때, Sidak - Correlation 을 사용하는것으로 생각됩
 
-
-
-
-
 **reference**
 
 - Statistical Methods in Online A/B Testing (Books)

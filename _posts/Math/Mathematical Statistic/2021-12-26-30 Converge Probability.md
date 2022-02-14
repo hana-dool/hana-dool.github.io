@@ -290,8 +290,10 @@ $$F_{X}(x-\epsilon) \leq \lim _{n \rightarrow \infty} F_{X_{n}}(x) \leq F_{X}(x+
 - 이 정리는 표준정규확률변수 $Z$ 로 분포수렴하는 확률변수 $Z_{n}$ 의 열에 대해 자주 응용된다. $Z^{2}$ 의 분포는 $\chi^{2}(1)$ 이므로 정리 $5.2 .4$ 에 의해 $Z_{n}^{2}$ 은 $\chi^{2}(1)$ 분포에 분포수렴한다.
 
 >  정리 $5.2 .5$ [슬러츠키 정리]
-> $X_{n}, X, A_{n}, B_{n}$ 이 확률변수이고 $a$ 와 $b$ 가 상수라고 하자. $X_{n} \stackrel{D}{\rightarrow} X, A_{n} \stackrel{P}{\rightarrow} a, B_{n} \stackrel{P}{\rightarrow} b$ 이면
-> $A_{n}+B_{n} X_{n} \stackrel{D}{\rightarrow} a+b X$
+>  $X_{n}, X, A_{n}, B_{n}$ 이 확률변수이고 $a$ 와 $b$ 가 상수라고 하자. $X_{n} \stackrel{D}{\rightarrow} X, A_{n} \stackrel{P}{\rightarrow} a, B_{n} \stackrel{P}{\rightarrow} b$ 이면
+>  $A_{n}+B_{n} X_{n} \stackrel{D}{\rightarrow} a+b X$
+
+# [Boundness in Probability](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Boundness in Probability
 
@@ -300,84 +302,82 @@ $$F_{X}(x-\epsilon) \leq \lim _{n \rightarrow \infty} F_{X_{n}}(x) \leq F_{X}(x+
 - 우선 $\operatorname{cdf} F_{X}(x)$ 를 가진 어떤 확률변수 $X$ 가 있다면 $\epsilon>0$ 이 주어졌을 때 다음과 같은 방범으 로 $X$ 의 한계를 정할 수 있다.
 -  $F_{X}$ 의 하한이 0 이고 상한이 1 이므로 다음을 만족하는 $\eta$ 과 $\eta_{2}$ 를 구 할 수 있다.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &x \leq \eta_{1} \text { 에 대해 } F_{X}(x)<\epsilon / 2 \\
 &x \geq \eta_{2} \text { 에 대해 } F_{X}(x)>1-(\epsilon / 2)
-\end{aligned}
-$$
+\end{aligned}$$
+
 - $\eta=\max \left\{\left|\eta_{1}\right|,\left|\eta_{2}\right|\right\}$  라고 하면
 
-$$
-P[|X| \leq \eta]=F_{X}(\eta)-F_{X}(-\eta-0) \geq 1-(\epsilon / 2)-(\epsilon / 2)=1-\epsilon
-$$
+$$P[|X| \leq \eta]=F_{X}(\eta)-F_{X}(-\eta-0) \geq 1-(\epsilon / 2)-(\epsilon / 2)=1-\epsilon$$
+
 - 따라서 한계가 없는 확률변수[예: $X$ 가 $N(0,1)]$ 도 이러한 확률 방식으로 한계가 주어지게 됩니다.
   - 이것은 다음에 정의하는 확률변수 열에 대해 유용한 개념입니다.
 
+> ## Definition
 
-> Converge in Probability
+- The sequence of random variables $\left\{X_{n}\right\}$ is said to be bounded in probability, written as $X_{n}=O_{p}(1)$, 
+- 모든 $\epsilon>0$ 에 대해 아래 식을 만족하는 $\eta>0$ and an integer $N$ 가 존재할때 Bounded in Probability 라고 합니다.
 
-- 모든 $\epsilon>0$ 에 대해 다음과 같은 상수 $B_{\epsilon}>0$ 과 정수 $N_{\mathrm{c}}$ 이 존재하면 확률변수 열 $\left\{X_{n}\right\}$ 은 확률유계라고 한다
-
- $n \geq N_{\epsilon} \Rightarrow P\left[\left|X_{n}\right| \leq B_{\epsilon}\right] \geq 1-\epsilon$
-
-> Definition.
-
-The sequence of random variables $\left\{X_{n}\right\}$ is said to be bounded in probability, written as $X_{n}=O_{p}(1)$, if there exists a constant $\eta>0$ and an integer $N$ such that
-$$
-\begin{aligned}
+$$\begin{aligned}
 n \geq N & \Rightarrow P\left(\left|X_{n}\right| \leq \eta\right) \geq 1-\epsilon \\
 & \Rightarrow P\left(\left|X_{n}\right|>\eta\right) \leq \epsilon
-\end{aligned}
-$$
-for $\epsilon>0$.
-
-> Example 
-
-- 다음으로 cdf $F$ 를 가진 확률변수 $X$ 로 분포수렴하는 확률변수 Seq $\left\{X_{n}\right\}$ 을 고려하자. $\epsilon>0$ 일 때 $X$ 에 대해 식 $(5.2 .7)$ 이 성립하는 $\eta$ 를 선택하자. $\eta$ 와 $-\eta$ 가 $F$ 의 연속인 점이 되도록 항상 $\eta$ 를 선택할 수 있다. 그러면 다음을 얻는다.
-
-$$
-\begin{aligned}
-\lim _{n \rightarrow \infty} P\left[\left|X_{n}\right|\right.&\leq \eta] \geq \lim _{n \rightarrow \infty} F_{X_{n}}(\eta)-\lim _{n \rightarrow \infty} F_{X_{n}}(-\eta-0) \\
-&=F_{X}(\eta)-F_{X}(-\eta) \geq 1-\epsilon
-\end{aligned}
-$$
-정확하게 하기 위해 $n \geq N$ 에 대해 $P\left[\left|X_{n}\right| \leq \eta\right] \geq 1-\epsilon$ 이 성립하도록 충분히 큰 $N$ 을 선택할 수 있다. 이와 같은 방법으로 다음 정리를 증명한다.
-
-> THeorem
-
-$\left\{X_{n}\right\}$ 이 확률변수 열이고 $X$ 가 확률변수라고 하자. $X_{n} \rightarrow X$ 로 분포수렴하면 $\left\{X_{n}\right\}$ 은 획률육계 이다.
-
-- 아래 예제에서 보듯이, 사실 이 정리의 역은 성립하지 않습니다.
+\end{aligned}$$
 
 > Example
 
-예제 $5.2 .5\left\{X_{n}\right\}$ 이 다음과 같은 퇴화확률변수 열이라고 하자. 짝수 $n=2 m$ 에 대해 $X_{2 m}=2$ $+(1 /(2 m))$ 일 확률이 1 이고, 홀수 $n=2 m-1$ 에 대해 $X_{2 m-1}=1+(1 /(2 m))$ 일 확률이 1 이 다. 그러면 열 $\left\{X_{2}, X_{4}, X_{6}, \cdots\right\}$ 은 퇴화확률변수 $Y=2$ 에 분포수렴하고, 열 $\left\{X_{1}, X_{3}, X_{5}, \cdots\right\}$ 는 퇴화확률변수 $W=1$ 에 분포수렴한다. $Y$ 와 $W$ 의 분포가 동일하지 않으므로 열 $\left\{X_{n}\right\}$ 은 분포 수렴하지 않는다. 그러나 열 $\left\{X_{n}\right\}$ 의 모든 값이 구간 $[1,5 / 2]$ 안에 있으므로 열 $\left\{X_{n}\right\}$ 은 확률유 계이다.
+![jpg](/assets/images/Stat/150_1.jpg)
 
-확률유계인 열(또는 확률변수로 분포수렴하는 것)을 생각하는 한 가지 방법은 $\left|X_{n}\right|$ 의 확률질 량이 $\infty$ 로 벗어나지 않는다는 것이다. 종종 분포수렴 대신 확률유계성을 이용할 수 있다. 다음 정리는 앞으로 필요하게 될 성질이다.
+- 위처럼 $\{X_n\}$ 이 Normal 로 수렴한다고 합시다. 그러면 $\eta$ 를 크게 할수록 양 끝의 Probability 는 매우 작아질 수 있으므로 Bounded in Probability 라고 할 수 있습니다.
+
+> ## Theorem : 분포수렴 $\to$ 확률유계
+
+- cdf $F$ 를 가진 확률변수 $X$ 로 분포수렴하는 확률변수 Seq $\left\{X_{n}\right\}$ 을 고려하자.
+-  $\epsilon>0$ 일 때 $X$ 에 대해 식 $(5.2 .7)$ 이 성립하는 $\eta$ 를 선택하자. $\eta$ 와 $-\eta$ 가 $F$ 의 연속인 점이 되도록 항상 $\eta$ 를 선택할 수 있다. 그러면 다음을 얻는다.
+
+$$\begin{aligned}
+\lim _{n \rightarrow \infty} P\left[\left|X_{n}\right|\right.&\leq \eta] \geq \lim _{n \rightarrow \infty} F_{X_{n}}(\eta)-\lim _{n \rightarrow \infty} F_{X_{n}}(-\eta-0) \\
+&=F_{X}(\eta)-F_{X}(-\eta) \geq 1-\epsilon
+\end{aligned}$$
+
+- 정확하게 하기 위해 $n \geq N$ 에 대해 $P\left[\left|X_{n}\right| \leq \eta\right] \geq 1-\epsilon$ 이 성립하도록 충분히 큰 $N$ 을 선택할 수 있다. 
+- 즉 분포수렴 $\to$ 확률 유계 입니다.
+
+> ## Example : 확률유계 $\not \to$  분포 수렴
+
+- $\quad\left\{X_{n}\right\}$ 이 다음과 같은 퇴화확률변수 열이라고 하자. 
+  - 짝수 $n=2 m$ 에 대해 $X_{2 m}=2$ $+(1 /(2 m))$ 일 확률이 1 이고, 
+  - 홀수 $n=2 m-1$ 에 대해 $X_{2 m-1}=1+(1 /(2 m))$ 일 확률이 1 이다. 
+- 그러면 열 $\left\{X_{2}, X_{4}, X_{6}, \cdots\right\}$ 은 퇴화확률변수 $Y=2$ 에 분포수렴하고, 열 $\left\{X_{1}, X_{3}, X_{5}, \cdots\right\}$ 는 퇴화확률변수 $W=1$ 에 분포수렴한다.
+-  $Y$ 와 $W$ 의 분포가 동일하지 않으므로 열 $\left\{X_{n}\right\}$ 은 분포 수렴하지 않는다. 
+- 그러나 열 $\left\{X_{n}\right\}$ 의 모든 값이 구간 $[1,5 / 2]$ 안에 있으므로 열 $\left\{X_{n}\right\}$ 은 확률유계이다.
+
+> ## Intuition
+
+- 확률유계인 열(또는 확률변수로 분포수렴하는 것)을 생각하는 한 가지 방법은 $\left|X_{n}\right|$ 의 확률질 량이 $\infty$ 로 벗어나지 않는다는 것이다. 
+  - 종종 분포수렴 대신 확률유계성을 이용할 수 있다. 다음 정리는 앞으로 필요하게 될 성질이다.
 
 > ## Theorem
 
 > Theorem
 
 $\left\{X_{n}\right\}$ 이 획률유계인 확률변수 열이고 $\left\{Y_{n}\right\}$ 이 0으로 확률수렴하는 확률변수 열이라면
-$$
-X_{n} Y_{n} \stackrel{P}{\rightarrow} 0
-$$
+
+$$X_{n} Y_{n} \stackrel{P}{\rightarrow} 0$$
+
 > Proof
 
-$\epsilon>0$ 이라고 하자. 다음이 성립하도록 $B_{\epsilon}>0$ 과 정수 $N_{\epsilon}$ 을 선택한다.
-$$
-n \geq N_{\epsilon} \Rightarrow P\left[\left|X_{n}\right| \leq B_{\epsilon}\right] \geq 1-\epsilon
-$$
-그러면 다음과 같으며, 이것으로부터 원하는 결과가 도출된다.
-$$
-\begin{aligned}
+- $\epsilon>0$ 이라고 하자. 다음이 성립하도록 $B_{\epsilon}>0$ 과 정수 $N_{\epsilon}$ 을 선택한다.
+
+$$n \geq N_{\epsilon} \Rightarrow P\left[\left|X_{n}\right| \leq B_{\epsilon}\right] \geq 1-\epsilon$$
+
+- 그러면 다음과 같으며, 이것으로부터 원하는 결과가 도출된다.
+
+$$\begin{aligned}
 \varlimsup_{n \rightarrow \infty} P\left[\left|X_{n} Y_{n}\right| \geq \epsilon\right] \leq & \varlimsup_{n \rightarrow \infty} P\left[\left|X_{n} Y_{n}\right| \geq \epsilon,\left|X_{n}\right| \leq B_{\epsilon}\right] \\
 &+\varlimsup_{n \rightarrow \infty} P\left[\left|X_{n} Y_{n}\right| \geq \epsilon,\left|X_{n}\right|>B_{\epsilon}\right] \\
 \leq & \varlimsup_{n \rightarrow \infty} P\left[\left|Y_{n}\right| \geq \epsilon / B_{\epsilon}\right]+\epsilon=\epsilon
-\end{aligned}
-$$
+\end{aligned}$$
 
 > ## Delta Method
 
@@ -388,15 +388,13 @@ $$
 g(y)=g(x)+g^{\prime}(x)(y-x)+o(|y-x|)
 $$
 
-= 여기서 기호 $o$ 는 다음을 의미한다.
-$$
-b \rightarrow 0 \text { 일 때 } \frac{a}{b} \rightarrow 0 \text { 인 경우에 한하여 } a=o(b)
-$$
+- 여기서 기호 $o$ 는 다음을 의미한다.
+
+$$b \rightarrow 0 \text { 일 때 } \frac{a}{b} \rightarrow 0 \text { 인 경우에 한하여 } a=o(b)$$
+
 - 작은 $o($ little $o)$ 는 확률수렴의 개념으로도 이용된다. 종종 $o_{p}\left(X_{n}\right)$ 은 다음과 같은 의미로 쓰인다.
 
-$$
-n \rightarrow \infty \text { 일 때 } \frac{Y_{n}}{X_{n}} \stackrel{P}{\rightarrow} 0 \text { 인 경우에 한하여 } Y_{n}=o_{p}\left(X_{n}\right) 
-$$
+$$n \rightarrow \infty \text { 일 때 } \frac{Y_{n}}{X_{n}} \stackrel{P}{\rightarrow} 0 \text { 인 경우에 한하여 } Y_{n}=o_{p}\left(X_{n}\right)$$
 
 - 큰 $O_{p}\left(\operatorname{big} O_{p}\right)$ 는 다음을 의미한다. 
   - $$ n \rightarrow \infty \text { 일 때 } \frac{Y_{n}}{X_{n}} \text { 이 확률유계인 경우에 한하여 } Y_{n}=O_{p}\left(X_{n}\right) $$ 
@@ -475,33 +473,32 @@ $$
 
 > ## Delta Method
 
-다음과 같은 확률변수 열을 $\left\{X_{n}\right\}$ 이라고 하자. $$ \sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right) $$ 함수 $g(x)$ 가 $\theta$ 에서 미분 가능하고 $g^{\prime}(\theta) \neq 0$ 라고 하면 $$ \sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left(g^{\prime}(\theta)\right)^{2}\right) $$ 
+- 다음과 같은 확률변수 열을 $\left\{X_{n}\right\}$ 이라고 하자.
+-  $$ \sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right) $$ 함수 $g(x)$ 가 $\theta$ 에서 미분 가능하고 $g^{\prime}(\theta) \neq 0$ 라고 하면 
+
+$$ \sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left(g^{\prime}(\theta)\right)^{2}\right) $$ 
 
 > Proof
 
--  Let $\left\{X_{n}\right\}$ be a sequence of random variables such that
-$$
-\sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right)
-$$
+-  Let $$\left\{X_{n}\right\}$$ be a sequence of random variables such that
+
+$$\sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right)$$
+
 - Suppose the function $g(x)$ is differentiable at $\theta$ and $g^{\prime}(\theta) \neq 0$. Then
 
-$$
-\sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left\{g^{\prime}(\theta)\right\}^{2}\right) .
-$$
+$$\sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left\{g^{\prime}(\theta)\right\}^{2}\right) .$$
+
 - Proof. Using the Taylor series expansion, we have
 
-$$
-g\left(X_{n}\right)=g(\theta)+g^{\prime}(\theta)\left(X_{n}-\theta\right)+o_{p}\left(\left|X_{n}-\theta\right|\right)
-$$
+$$g\left(X_{n}\right)=g(\theta)+g^{\prime}(\theta)\left(X_{n}-\theta\right)+o_{p}\left(\left|X_{n}-\theta\right|\right)$$
+
 - where $o_{p}(h) / h \stackrel{P}{\rightarrow} 0$ as $h \rightarrow 0$. Rearranging the expression, we have
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) &=g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right)+o_{p}\left(\sqrt{n}\left|X_{n}-\theta\right|\right) \\
 & \stackrel{P}{\rightarrow} g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right) \\
 & \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left\{g^{\prime}(\theta)\right\}^{2}\right)
-\end{aligned}
-$$
+\end{aligned}$$
 
 > ## Example 
 

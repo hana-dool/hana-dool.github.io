@@ -1,6 +1,6 @@
 ---
-title: "Outlier Filter in Oath"
-excerpt: ""
+title: "Ebay_winthorize "
+excerpt: "(ing)"
 tags:
   - AB_Stat
 last_modified_at: 2021-12-13
