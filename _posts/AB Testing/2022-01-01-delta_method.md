@@ -1,5 +1,5 @@
 ---
-title: "Delta Method in AB test"
+title: "Delta Method"
 excerpt: "Delta 방법론"
 tags :
   - AB_Stat
@@ -16,7 +16,7 @@ use_math: true
 Analysis Unit 과 Randomization Unit 이 다른 경우 Ratio metric 에 대해서 어떻게 분석할까?
 {: .notice--warning}
 
-# [Randomization Unit](#link){: .btn .btn--primary}{: .align-center}
+# [Delta Method](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Introduction
 
@@ -137,7 +137,7 @@ $$\nabla f(\vec{\mu})=\left[\begin{array}{c}
 \end{array}\right]$$
 
 - 또한 $\left[\begin{array}{l}\bar{y} \\ \bar{x}\end{array}\right]$ 에 대한 variance covariance matrix of the vector 를 구해야 합니다.
-  - 즉 $\Sigma$ = $\left[\begin{array}{cc}\operatorname{var}(\bar{x}) & \operatorname{cov}(\bar{x}, \bar{y}) \\ \operatorname{cov}(\bar{x}, \bar{y}) & \operatorname{var}(\bar{y})\end{array}\right]$를 구해야 됩니다.
+  - 즉 $\Sigma$ = $$\left[\begin{array}{cc}\operatorname{var}(\bar{x}) & \operatorname{cov}(\bar{x}, \bar{y}) \\ \operatorname{cov}(\bar{x}, \bar{y}) & \operatorname{var}(\bar{y})\end{array}\right]$$를 구해야 됩니다.
 
 
 - 이는 아래와 같이 계산됩니다. ($$\sigma^2_x = var(x)$ , $\sigma_{xy} = cov(x,y)$$) 
@@ -205,7 +205,7 @@ $$\left(\frac{\bar{y}}{\bar{x}}-1\right) \sim N\left(0, \sigma_{R}^{2}\right)$$
 
 - 이때 $\sigma^2_R$ 도 추정해야 하므로 최종적으로 아래와 같이 추정됩니다.
   - True Variance : $$\sigma_{R}^{2}=\frac{\sigma_{y}^{2}}{n \mu_{x}^{2}}-2 \frac{\mu_{y} \sigma_{x y}}{n\mu_{x}^{3}}+\frac{\sigma_{x}^{2} \mu_{y}^{2}}{n \mu_{x}^{4}},$$
-  - Estimated Variance : $$\hat{\sigma^2_R} =\frac{s_{y}^{2}}{n \bar{x}^{2}}-2 \frac{\bar{y} s_{x y}}{ns_{x}^{3}}+\frac{s_{x}^{2} \bar{y}^{2}}{n \bar{x}^{4}} $$
+  - Estimated Variance : $$\hat{\sigma^2_R} =\frac{s_{y}^{2}}{n \bar{x}^{2}}-2 \frac{\bar{y} s_{x y}}{n\bar{x}^{3}}+\frac{s_{x}^{2} \bar{y}^{2}}{n \bar{x}^{4}} $$
 
 $$\left(\frac{\bar{y}}{\bar{x}}-1\right) \sim N\left(0, \hat\sigma_{R}^{2}\right)$$
 
@@ -308,9 +308,199 @@ def ttest(mean_control,mean_treatment,var_control,var_treatment):
     p_val = stats.norm.sf(abs(z))*2
 
     result = {'mean_control':mean_control,
-             'mean_experiment':mean_experiment,
+             'mean_treatment':mean_treatment,
              'var_control':var_control,
-             'var_experiment':var_treatment,
+             'var_treatment':var_treatment,
+             'difference':diff,
+             'lower_bound':lower,
+             'upper_bound':upper,
+             'p-value':p_val}
+    return pd.DataFrame(result,index=[0])
+
+var_control = var_ratio(control['click'],control['view'])
+var_treatment = var_ratio(treatment['click'],treatment['view'])
+mean_control = control['click'].sum()/control['view'].sum()
+mean_treatment = treatment['click'].sum()/treatment['view'].sum()
+
+ttest(mean_control,mean_treatment,var_control,var_treatment)
+```
+
+# [Real Application](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Two Sample T Test : When Analysis unit = Randomization Unit
+
+| row  | experiment_key | User_id | # User | Clicks |
+| ---- | -------------- | ------- | ------ | ------ |
+| 1    | A              | 142     | 1      | 13     |
+| 2    | B              | 155     | 1      | 9      |
+| 3    | A              | 160     | 1      | 10     |
+| 4    | B              | 324     | 1      | 0      |
+| 5    | B              | 992     | 1      | 2      |
+
+- 위와 같이 유저당 클릭수 값에 대해서  A 와 B 를 비교하는 경우에는 딱히 Delta Method 가 아니라 T-Test 를 써도 될 것입니다. (왜냐하면 면  Analysis Unit 과 Randomization Unit 이 같기 때문이죠.)
+  - 하지만 이런 경우에 어떻게든 Delta Method 를 쓰게 되면 어떤 일이 벌어질까요? 
+  - 혹시 그 결과가 달라지지는 않을까요? 
+
+> Delta Method
+
+- 먼저 Delta Method 에 대해서 Remind 해 봅시다.
+- 먼저 아래와 같이 값들을 정의합시다.
+  - control 의 분자평균 : $\mu^C_y$
+  - control 의 분모평균 : $\mu^C_x$
+  - Treatment 의 분자평균 : $\mu^T_y$
+  - Treatment 의 분모평균 : $\mu^T_x$
+- 이제 Test 에 대한 Hypothesis 는 아래와 같습니다.
+  - $H_0$ : $\frac{\mu^C_y}{\mu^C_x}-\frac{\mu^T_y}{\mu^T_x} = 0 $  vs $H_0$ : $\frac{\mu^C_y}{\mu^C_x}-\frac{\mu^T_y}{\mu^T_x} \not= 0 $ 
+- 위에 대해서 이제 각각 아래의 같은 정리가 성립합니다.
+  - Control : $$\left(\frac{\bar{y^C}}{\bar{x^C}}-\frac{\mu^C_{y}}{\mu^C_{x}}\right) \sim N\left(0, \sigma_{R}^{C^{2}}\right)$$
+  - Treatment : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\mu^T_{y}}{\mu^T_{x}}\right) \sim N\left(0, \sigma_{R}^{T^{2}}\right)$$
+- 위 정리를 이용하면 Null Hypothesis 하에서 아래와 같은 Test - Estimator 를 얻을 수 있습니다
+  - Two Sample : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right) \sim N\left(0, \sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}\right)$$
+- 이제 위 Procedure 를 똑같이 Two Sample Test 로 수행해 보겠습니다.
+
+> $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$ 계산
+
+- 이때 위의 계산은 'x' 가 샘플 수로 계산되므로, mean 으로 계산한다면 $\bar{x}^T = \bar{x}^C =1$ 입니다. 
+- 즉 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}=\bar{y^T} - \bar{y^C}$ 가 됩니다.
+
+> $\sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}$ 계산
+
+- 우선 일반적인 $\sigma_R^{2}$ 에 대해서 계산해봅시다. 이때 $$\sigma_{R}^{2}=\frac{\sigma_{y}^{2}}{n \mu_{x}^{2}}-2 \frac{\mu_{y} \sigma_{x y}}{n\mu_{x}^{3}}+\frac{\sigma_{x}^{2} \mu_{y}^{2}}{n \mu_{x}^{4}}$$ 입니다.
+- 여기에서 $X = \{x_1,x_2...x_n\} = \{1,1,1,...1\}$ 을 고려하면 $\mu_x = 1$ ,$\sigma_x = 0$ 입니다. 
+  - 즉 $$\sigma_{R}^{2}=\frac{\sigma_{y}^{2}}{n}-2 \frac{\mu_{y} \sigma_{x y}}{n}$$ 가 됩니다.
+- 그리고 $Cov(x,y) = E[(X-\mu_x)(Y-\mu_y)]=E[(0)(Y-\mu_y)]=0$ 이 됩니다.
+  - 즉 $$\sigma_{R}^{2}=\frac{\sigma_{y}^{2}}{n}$$ 가 됩니다. 
+- 즉 $\sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}} =\frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}$ 가 됩니다.
+
+> 계산
+
+- 즉 이를 종합하면 아래와 같이 계산되게 됩니다.
+- Two Sample : $$\bar{y^T} - \bar{y^C} \sim N\left(0, \frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}\right)$$
+- 앗! 이는 Two Sample Mean Test 와 같은 형식입니다.
+  - 즉 Delta Method 를 적용한다고 하더라도 Two Sample Z Test 와 같은 테스트를 하게 되는 것입니다.
+
+> 추정시에도 동일한가? 
+
+- $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$ 은 $\frac{\bar{y^T}}{n_T}-\frac{\bar{y^C}}{n_C}$ 로 추정됩니다. 
+- $$\hat{\sigma^2_R} =\frac{s_{y}^{2}}{n \bar{x}^{2}}-2 \frac{\bar{y} s_{x y}}{n\bar{x}^{3}}+\frac{s_{x}^{2} \bar{y}^{2}}{n \bar{x}^{4}}$$ 
+  - $$s_{xy}=\operatorname{Cov}(X, Y)=\frac{\sum_{i}^{n}\left(X_{i}-\bar{X}\right)\left(Y_{i}-\bar{Y}\right)}{n-1}$$ 으로 추정됩니다. 이때 $X = \{x_1,x_2...x_n\} = \{1,1,1,...1\}$ 을 고려하면 $s_{xy} =0$ 입니다.
+  - $\bar{x} = 1$ , $s_x=0$ 입니다. 
+- 즉 정리하면 $$\hat{\sigma^2_R}= \frac{s_y^2}{n}$$ 으로 추정되고, 이는 Two Sample Mean Test 와 같은 값을 가지게 될 것입니다.
+
+> 결론
+
+- Delta Method 의 Test Statistics : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right) /\sqrt{\left( \sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}\right)}$$
+- $x_T$ 에 Analysis Unit 이 적용될때의 Delta Method Test Statistics : $$\left(\frac{\bar{y^T}}{n_T}-\frac{\bar{y^C}}{n_C}\right) /\sqrt{\left( \frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}\right)}$$
+- Two-Sample Z Test 의 Test Statistics :  $$\left(\frac{\bar{y^T}}{n_T}-\frac{\bar{y^C}}{n_C}\right) /\sqrt{\left( \frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}\right)}$$
+- 즉, 위에 따라서 Analysis Unit 과 Randomization Unit 이 같다면 Two Sample T Test 와 Delta Method 는 같은 결론을 내게 됩니다.
+
+> ## Two Sample T Test : Filter 
+
+| row  | experiment_key | User_id | # User | Clicks |
+| ---- | -------------- | ------- | ------ | ------ |
+| 1    | A              | 142     | 0      | 0      |
+| 2    | B              | 155     | 1      | 9      |
+| 3    | A              | 160     | 1      | 10     |
+| 4    | B              | 324     | 0      | 0      |
+| 5    | B              | 992     | 1      | 2      |
+
+- 위와 같이 "Randomization Unit" 과 "Analysis Unit" 이 같긴 하지만, 유저를 필터링해서 분석하는 경우도 있습니다.
+  - 한 예시로 웹페이지 메뉴의 "help" 메뉴를 개선했다고 합시다. 그러면 help 메뉴를 사용하는 유저에 한해서 메트릭을 분석하고자 하려는 니즈가 있을 것입니다.
+  - 그런 경우에 위와같이 User 집계시에 필터링을 걸어서 그 유저에 대해서만 분석하려고 할 수 있습니다. (0 : 필터링 되어서 제외된 유저)
+- 필터링된 유저에 대해서는 Two - Sample - T Test 를 수행할 수 있습니다.
+- 물론 이때 쌩으로 Delta Method 를 적용하더라도 평균은 같게 비교하게 됩니다.
+  - $n'$  = 필터링되고 남은 유저 수 라고 합시다. 그러면 위 표의 전체 사람에 대해서 $n'=3$ 이 됩니다.
+  - 그리고 $n'$ 를 이용해서 계산된 평균을 $\bar{x}'$ 라고 합시다. 그러면 위 표에서 B variation 의 평균은 (9+2) / 2 입니다.
+  - 즉 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}= \frac{\sum y^T}{\sum x^T} - \frac{\sum y^C}{\sum{x^C}} = \frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 가 됩니다. 
+  - 즉 Delta method 의 비교시에는 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$  을 쓰고, T Test 시에는 $\frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 를 사용하는데 두 값이 같으므로 차이는 같게 추정하게 되죠. 
+- 그러면 Delta method 를 적용했을떄와 T-Test 를 적용했을때의 결과가 같게 될까요? (즉 분산 추정도 같게 될까요?)
+
+> Delta Method
+
+- 다시 Delta Method 에 대해서 Remind 해 봅시다.
+- 먼저 아래와 같이 값들을 정의합시다.
+  - control 의 분자평균 : $\mu^C_y$
+  - control 의 분모평균 : $\mu^C_x$
+  - Treatment 의 분자평균 : $\mu^T_y$
+  - Treatment 의 분모평균 : $\mu^T_x$
+- 이제 Test 에 대한 Hypothesis 는 아래와 같습니다.
+  - $H_0$ : $\frac{\mu^C_y}{\mu^C_x}-\frac{\mu^T_y}{\mu^T_x} = 0 $  vs $H_0$ : $\frac{\mu^C_y}{\mu^C_x}-\frac{\mu^T_y}{\mu^T_x} \not= 0 $ 
+- 위에 대해서 이제 각각 아래의 같은 정리가 성립합니다.
+  - Control : $$\left(\frac{\bar{y^C}}{\bar{x^C}}-\frac{\mu^C_{y}}{\mu^C_{x}}\right) \sim N\left(0, \sigma_{R}^{C^{2}}\right)$$
+  - Treatment : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\mu^T_{y}}{\mu^T_{x}}\right) \sim N\left(0, \sigma_{R}^{T^{2}}\right)$$
+- 위 정리를 이용하면 Null Hypothesis 하에서 아래와 같은 Test - Estimator 를 얻을 수 있습니다
+  - Two Sample : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right) \sim N\left(0, \sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}\right)$$
+- 이제 위 Procedure 를 똑같이 Two Sample Test 로 수행해 보겠습니다.
+
+> $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$ 계산
+
+- $n'$  = 필터링되고 남은 유저 수 라고 합시다. 그러면 위 표에서 $n'=3$ 이 됩니다.
+- 그리고 $n'$ 를 이용해서 계산된 평균을 $\bar{x}'$ 라고 합시다. 그러면 위 표에서 B variation 의 평균은 (9+2) / 2 입니다.
+- 즉 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}= \frac{\sum y^T}{\sum x^T} - \frac{\sum y^C}{\sum{x^C}} = \frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 가 됩니다.
+
+> $\sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}$ 계산
+
+- 우선 일반적인 $\sigma_R^{2}$ 에 대해서 계산해봅시다. 이때 $$\sigma_{R}^{2}=\frac{\sigma_{y}^{2}}{n \mu_{x}^{2}}-2 \frac{\mu_{y} \sigma_{x y}}{n\mu_{x}^{3}}+\frac{\sigma_{x}^{2} \mu_{y}^{2}}{n \mu_{x}^{4}}$$ 입니다.
+- 여기에서 $X = \{x_1,x_2...x_n\} = \{1,0,0,...1\}$ 을 고려하면 $\mu_x = n'/n$ ,$\sigma_x^2 = (n-n')n'/n^2$ 입니다. 
+  - 즉 $$\sigma_{R}^{2}=\frac{n\sigma_{y}^{2}}{n'^2}-2 \frac{n^2\mu_{y}\sigma_{xy}}{n'^3}+\frac{n(n-n') \mu_{y}^{2}}{n'^3}$$ 가 됩니다.
+- 그리고 $Cov(x,y) = E[(X-\mu_x)(Y-\mu_y)]=E[XY]-\mu_x\mu_y=\mu_y-(n'/n)\mu_y$ 이 됩니다.
+  - 즉 $$\sigma_{R}^{2}=\frac{\sigma_{y}^{2}}{n}$$ 가 됩니다. 
+- 즉 $$\sigma_{R}^{2}=\frac{n\sigma_{y}^{2}}{n'^2}-2 \frac{n^2\mu_{y}\frac{n-n'}{n}\mu_y}{n'^3}+\frac{n(n-n') \mu_{y}^{2}}{n'^3} = \frac{n\sigma_{y}^{2}}{n'^2}-\frac{n(n-n') \mu_{y}^{2}}{n'^3} $$
+
+> Conclusion
+
+- 즉 값이 다르게 됩니다. (실제 코드 레벨로 볼때 다름..)
+- 이 이유는 사실 Two Sample T - Test 의 경우 'Filter' 된 데이터만이 모집단이라고 생각하고 계산되고, 그에 반해서 Delta Method 는 필터되기 전 값 모두를 모집단이라고 생각하기때문에 여기에서 차이가 나게 됩니다.
+
+> ## Two Sample Proportion Test : When Analysis unit = Randomization Uni
+
+- 이 경우에는 다소 당연하지만 , 일치합니다. 
+  - 이전과 같은 로직 따라가면 되어요. 
+  - 어짜피 Proportion Test 도 결국에는 Mean Test 이니깐용
+- 그런데.. 이떄  Agg Unit 이 안되는 경우의 CTR 도 존재하기 땜시... 
+
+> ## Code Level Check
+
+```python
+import pandas as pd
+import numpy as np
+from random import randint
+from scipy import stats 
+
+#dummy variables
+click_control = [randint(0,20) for i in range(10000)]
+view_control = [randint(1,60) for i in range(10000)]
+
+click_treatment = [randint(0,21) for i in range(10000)]
+view_treatment = [randint(1,60) for i in range(10000)]
+
+control = pd.DataFrame({'click':click_control,'view':view_control})
+treatment = pd.DataFrame({'click':click_treatment,'view':view_treatment})
+
+#variance estimation of metrics ratio
+def var_ratio(x,y): #x/y
+    mean_x = np.mean(x)
+    mean_y = np.mean(y)
+    var_x = np.var(x,ddof=1)
+    var_y = np.var(y,ddof=1)
+    cov_xy = np.cov(x,y,ddof=1)[0][1]
+    result = (var_x/mean_x**2 + var_y/mean_y**2 - 2*cov_xy/(mean_x*mean_y))*(mean_x*mean_x)/(mean_y*mean_y*len(x))
+    return result
+    
+#ttest calculation 
+def ttest(mean_control,mean_treatment,var_control,var_treatment):
+    diff = mean_treatment - mean_control
+    var = var_control+var_treatment
+    stde = 1.96*np.sqrt(var)
+    lower = diff - stde 
+    upper = diff + stde
+    z = diff/np.sqrt(var)
+    p_val = stats.norm.sf(abs(z))*2
+
+    result = {'mean_control':mean_control,
+             'mean_treatment':mean_treatment,
+             'var_control':var_control,
+             'var_treatment':var_treatment,
              'difference':diff,
              'lower_bound':lower,
              'upper_bound':upper,
