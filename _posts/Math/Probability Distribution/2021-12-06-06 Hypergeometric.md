@@ -16,7 +16,7 @@ use_math: true
  Binomial Distribution
 {: .notice--warning}
 
-# [Uniform Distribution](#link){: .btn .btn--primary}{: .align-center}
+# [Hyper Geometric](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Definition
 

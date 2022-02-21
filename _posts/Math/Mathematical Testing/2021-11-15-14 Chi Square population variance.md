@@ -1,5 +1,5 @@
 ---
-title:  "Chi-square test for population variance"
+ㅏtitle:  "Chi-square test for population variance"
 excerpt: "카이제곱 분산 테스트"
 categories:
   - Mathematical_Testing
