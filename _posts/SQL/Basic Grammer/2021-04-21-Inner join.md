@@ -35,7 +35,7 @@ use_math: true
 
 ![jpg](/assets/images/Program/49_1.jpg)
 
-- Inner join 동등 조인이란, 양쪽 테이블에서 조인 조건이 일치하는 행만 가져오는 일반적인 join 법이다. 
+- Inner join 동등 조인이란, 양쪽 테이블에서 조인 조건이 일치하는 행만 가져오는 일반적인 join 법입니다. 
 
 ```sql
 SELECT *
@@ -45,52 +45,110 @@ WHERE df1.col1 , = df2.col2
 ```
 
 ```sql
-SELECT *
-FROM df1 
-INNER JOIN df2 on df1.sal = df2.sal  ; 
+SELECT
+    select_list
+FROM t1
+INNER JOIN t2 ON join_condition1
+INNER JOIN t3 ON join_condition2
+...;
 ```
 
-![png](/assets/images/SQL_Basic/6_1.png)
-
-- 위와 같이 같을 열 (department_id) 을 기준으로 join 을 하였다. 그러자 이름 뒤에 1 이 붙여져서 구분이 되고 있음을 알 수 있다.
-
-![png](/assets/images/SQL_Basic/6_2.png)
-
-- 위는 AND 연산자를 활용하여, join 조건을 추가한 것이다. 이 실행은 어떻게 이루어지는 것일까? 아래처럼 먼저 A 와 B 를 join 한 이후에 B 와 C 를 join 하게 된다.
-
-![png](/assets/images/SQL_Basic/6_3.png)
-
-- 위와 같이 하지 않고, 아래와 같이 명령어를 짤 수도 있습니다. 
-
-![png](/assets/images/SQL/9_1.png)
-
-> ## Example
+> ## Note : inner join 의 순서가 중요할까? 
 
 ```sql
-SELECT ename,loc 
-FROM emp, dept 
-WHERE emp.deptno = dept.deptno ;
+-- A
+select *
+from   a left join b
+           on <blahblah>
+       left join c
+           on <blahblan>
+-- B
+select *
+from   a left join c
+           on <blahblah>
+       left join b
+           on <blahblan>  
+-- C
+select *
+from   a join b
+           on <blahblah>
+       join c
+           on <blahblan>
+-- D
+select *
+from   a join c
+           on <blahblah>
+       join b
+           on <blahblan>  
+```
+
+- 위와 같이 데이터의 inner join 순서가 있다고 합시다. 
+  - 위 4개의 경우 모두 같은 결과를 내게 될까요? 
+- 결론은 모두 같다는 것입니다! 
+  - inner join 은 합집합이라는것을 명심합시다. 즉 $A\cap B \cap C$ = $A\cap C \cap B$ .... 모두 수학적으로 일치하므로 같은 결과를 내게 되는것입니다.
+
+# [Example](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Basic Example
+
+```sql
+SELECT 
+    productCode, 
+    productName
+FROM
+    products t1
+INNER JOIN productlines t2 
+    ON t1.productline = t2.productline;
 ```
 
 ```
-ename |loc     |
-------+--------+
-CLARK |NEW YORK|
-KING  |NEW YORK|
-MILLER|NEW YORK|
-SMITH |DALLAS  |
-JONES |DALLAS  |
-SCOTT |DALLAS  |
-ADAMS |DALLAS  |
+productCode|productName                                |
+-----------+-------------------------------------------+
+S10_1949   |1952 Alpine Renault 1300                   |
+S10_4757   |1972 Alfa Romeo GTA                        |
+S10_4962   |1962 LanciaA Delta 16V                     |
+S12_1099   |1968 Ford Mustang                          |
+S12_1108   |2001 Ferrari Enzo                          |
+S12_3148   |1969 Corvair Monza                         |
+S12_3380   |1968 Dodge Charger                         |
 .....
 ```
 
-- 위와 같이 Inner join 을 쓰면 department_id 와 department_id 를 이용해서 조인하게 됩니다
+- Inner join 을 이용하면 productline 를 키로 하여서 합치게 합니다.
+
+> ## Using 을 사용한 join
+
+```sql
+SELECT 
+    productCode, 
+    productName
+FROM
+    products
+INNER JOIN productlines USING (productline);
+```
+
+```sql
+SELECT 
+    productCode, 
+    productName
+FROM
+    products t1
+INNER JOIN productlines t2 
+    ON t1.productline = t2.productline;
+```
+
+- 이떄 `products` 테이블과 `productlines` 테이블이 같은 key 이름 (productline) 을 가지고 있기 떄문에 using 을 사용해서 위처럼 합칠 수 있습니다. ( 위 두 예시는 같은 예시입니다. ) 
 
 > ## 조건과 Inner join
 
-- inner join 을 쓸때마다 테이블의 이름을 쓰기가 귀찮습니다.
-- 이떄에는 별칭을 이용하여 아래와 같이 join 을 합니다.
+- 추가적으로 조건을 써 넣을 수 있습니다.
+
+```sql
+SELECT ename,loc, job, e.deptno 
+FROM emp e
+INNER JOIN dept d
+ON e.deptno = d.deptno AND e.job = 'ANALYST';
+```
 
 ```sql
 SELECT ename,loc, job, e.deptno 
@@ -105,101 +163,52 @@ SCOTT|DALLAS|ANALYST|    20|
 FORD |DALLAS|ANALYST|    20|
 ```
 
-- 위처럼 `ANALYIST` 의 조건을 걸 
+- 위처럼 `ANALYIST` 인 사람에만 제한한다는 조건을 걸어서 추가적인 join 조건을 걸수도 있습니다.
 
 > ## 여러개의  Table join
 
-> Employees
+![jpg](/assets/images/Program/66_1.jpg)
 
-```
-employee_id|first_name |last_name  |email                            |phone_number|hire_date |job_id|salary  |manager_id|department_id|
------------+-----------+-----------+---------------------------------+------------+----------+------+--------+----------+-------------+
-        100|Steven     |King       |steven.king@sqltutorial.org      |515.123.4567|1987-06-17|     4|24000.00|          |            9|
-        101|Neena      |Kochhar    |neena.kochhar@sqltutorial.org    |515.123.4568|1989-09-21|     5|17000.00|       100|            9|
-        102|Lex        |De Haan    |lex.de haan@sqltutorial.org      |515.123.4569|1993-01-13|     5|17000.00|       100|            9|
-        103|Alexander  |Hunold     |alexander.hunold@sqltutorial.org |590.423.4567|1990-01-03|     9| 9000.00|       102|            6|
-        104|Bruce      |Ernst      |bruce.ernst@sqltutorial.org      |590.423.4568|1991-05-21|     9| 6000.00|       103|            6|
-        105|David      |Austin     |david.austin@sqltutorial.org     |590.423.4569|1997-06-25|     9| 4800.00|       103|            6|
-.........
-```
-
-> departments
-
-```
-department_id|department_name |location_id|
--------------+----------------+-----------+
-            1|Administration  |       1700|
-            2|Marketing       |       1800|
-            3|Purchasing      |       1700|
-            4|Human Resources |       2400|
-            5|Shipping        |       1500|
-            6|IT              |       1400|
-....
-```
-
-> Jobs
-
-```
-job_id|job_title                      |min_salary|max_salary|
-------+-------------------------------+----------+----------+
-     1|Public Accountant              |   4200.00|   9000.00|
-     2|Accounting Manager             |   8200.00|  16000.00|
-     3|Administration Assistant       |   3000.00|   6000.00|
-     4|President                      |  20000.00|  40000.00|
-     5|Administration Vice President  |  15000.00|  30000.00|
-.....
-```
-
-> Three Join
+- 위와 같이 3개의 테이블에 대해서 join 을 실시한다고 합시다.
+- 이때 `orders` 가 중심이 되어서,`orderdetails` 와 `products` 두개의 테이블을 join 하는 형태입니다.
 
 ```sql
-SELECT
-	e.department_id,
-	e.job_id,
-	first_name,
-	last_name,
-	job_title,
-	department_name
+SELECT 
+    orderNumber,
+    orderDate,
+    orderLineNumber,
+    productName,
+    quantityOrdered,
+    priceEach
 FROM
-	employees e
-INNER JOIN departments d ON
-	e.department_id = d.department_id
-INNER JOIN jobs j ON
-	e.job_id = j.job_id
-WHERE
-	e.department_id IN (1, 2, 3) ;
+    orders
+INNER JOIN
+    orderdetails USING (orderNumber)
+INNER JOIN
+    products USING (productCode)
+ORDER BY 
+    orderNumber, 
+    orderLineNumber;
 ```
 
 ```
-department_id|job_id|first_name|last_name |job_title               |department_name|
--------------+------+----------+----------+------------------------+---------------+
-            1|     3|Jennifer  |Whalen    |Administration Assistant|Administration |
-            2|    10|Michael   |Hartstein |Marketing Manager       |Marketing      |
-            2|    11|Pat       |Fay       |Marketing Representative|Marketing      |
-            3|    14|Den       |Raphaely  |Purchasing Manager      |Purchasing     |
-            3|    13|Alexander |Khoo      |Purchasing Clerk        |Purchasing     |
-            3|    13|Shelli    |Baida     |Purchasing Clerk        |Purchasing     |
-            3|    13|Sigal     |Tobias    |Purchasing Clerk        |Purchasing     |
-            3|    13|Guy       |Himuro    |Purchasing Clerk        |Purchasing     |
-            3|    13|Karen     |Colmenares|Purchasing Clerk        |Purchasing     |
+orderNumber|orderDate |orderLineNumber|productName                              |quantityOrdered|priceEach|
+-----------+----------+---------------+-----------------------------------------+---------------+---------+
+      10100|2003-01-06|              1|1936 Mercedes Benz 500k Roadster         |             49|    35.29|
+      10100|2003-01-06|              2|1911 Ford Town Car                       |             50|    55.09|
+      10100|2003-01-06|              3|1917 Grand Touring Sedan                 |             30|   136.00|
+      10100|2003-01-06|              4|1932 Alfa Romeo 8C2300 Spider Sport      |             22|    75.46|
+      10101|2003-01-09|              1|1928 Mercedes-Benz SSK                   |             26|   167.06|
+      10101|2003-01-09|              2|1938 Cadillac V-16 Presidential Limousine|             46|    44.35|
+      10101|2003-01-09|              3|1939 Chevrolet Deluxe Coupe              |             45|    32.53|
+      10101|2003-01-09|              4|1932 Model A Ford J-Coupe                |             25|   108.06|
+      10102|2003-01-10|              1|1936 Mercedes-Benz 500K Special Roadster |             41|    43.13|
+      10102|2003-01-10|              2|1937 Lincoln Berline                     |             39|    95.55|
+      10103|2003-01-29|              1|1962 Volkswagen Microbus                 |             36|   107.34|
+      10103|2003-01-29|              2|1926 Ford Fire Engine                    |             22|    58.34|
+      10103|2003-01-29|              3|1980’s GM Manhattan Express              |             31|    92.46|
+      10103|2003-01-29|              4|1962 LanciaA Delta 16V                   |             42|   119.67|
+      10103|2003-01-29|              5|1940s Ford truck                         |             36|    98.07|
 ```
 
-- 위와 같이 여러 조건을 이용해서 inner join 을 이용할 수 있습니다.
-
-```sql
-SELECT
-	first_name,
-	last_name,
-	job_title,
-	department_name
-FROM
-	employees e,
-	departments d,
-	jobs j
-WHERE
-	e.department_id = d.department_id
-	AND e.job_id = j.job_id
-	AND e.department_id  IN (1,2,3) ; 
-```
-
-- 위도 같은 조건입니다.
+- 위처럼 3개의 테이블을 합칠 수 있습니다.

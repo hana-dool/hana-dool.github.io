@@ -56,6 +56,21 @@ WHERE 별칭 >= 100
 
 - 위와 같게 지정하면 에러가 납니다.  WHERE 에서 이후에 지정되는 별칭을 미리 사용했기 때문입니다.
 
+> ## 상세 구문 순서 
+
+- https://www.eversql.com/sql-order-of-operations-sql-query-order-of-execution/
+
+1. FROM, including JOINs
+2. WHERE
+3. GROUP BY
+4. HAVING
+5. WINDOW functions
+6. SELECT
+7. DISTINCT
+8. UNION
+9. ORDER BY
+10. LIMIT and OFFSET
+
 > ## 문법 작성 순서
 
 - ① SELECT 컬럼명
