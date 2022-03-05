@@ -1,5 +1,5 @@
 ---
-title:  "Logical Operators"
+title:  "Logical Functions"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer
@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true 
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 논리연산자는 어떤게 있는지만 짧게 알아봅시다. (각각의 operator 에 대해서 자세한것은 개별 문서 참조)

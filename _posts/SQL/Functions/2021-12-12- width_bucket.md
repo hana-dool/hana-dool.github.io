@@ -2,7 +2,7 @@
 title:  "width_bucket"
 excerpt: ""
 categories:
-  - SQL_Basic_Grammer
+  - SQL_functions
 last_modified_at: 2021-12-11
 
 toc: true

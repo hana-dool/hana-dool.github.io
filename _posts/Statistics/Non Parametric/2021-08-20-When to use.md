@@ -13,6 +13,8 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+
+typora-root-url: /Users/gorany/Desktop/Github/hana-dool.github.io
 ---
 
 <br>

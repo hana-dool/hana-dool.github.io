@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 #<center> 사칙연산을 이용한 변수 생성</center>

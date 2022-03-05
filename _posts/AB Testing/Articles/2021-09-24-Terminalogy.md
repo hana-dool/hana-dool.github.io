@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  A/B Testing 을 하다보면 맞딱뜨리는 용어에 대해서 알아봅시다. 

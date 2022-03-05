@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3142835 의 논문 리뷰 

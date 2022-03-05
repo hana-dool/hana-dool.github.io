@@ -2,7 +2,7 @@
 title: "Implicit type conversion"
 excerpt: ""
 categories:
-  - SQL_Basic_Grammer
+  - SQL_Basic_Knowledge
 last_modified_at: 2022-02-27
 
 toc: true

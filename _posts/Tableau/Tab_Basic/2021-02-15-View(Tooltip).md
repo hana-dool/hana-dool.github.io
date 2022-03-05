@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 - 뷰를 만들고 난 이후에, 데이터에 대한 자세한 정보를 마우스 오버를 통해 바로 알려주고 싶다면 도구설명 Visualization 을 추가하면 된다.

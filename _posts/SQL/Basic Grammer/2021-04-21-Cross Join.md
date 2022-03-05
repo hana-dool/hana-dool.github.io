@@ -1,6 +1,6 @@
 ---
 title:  "Cross Join"
-excerpt: "여러개의 테이블을 연결하기"
+excerpt: ""
 categories:
   - SQL_Basic_Grammer
 last_modified_at: 2021-05-06
@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # [Cross Join](#link){: .btn .btn--primary}{: .align-center}

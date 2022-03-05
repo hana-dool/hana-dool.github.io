@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  메트릭의 Construction 을 위하여 어떻게 하면 Conversion Funnel 을 이용할 수 있는지에 대해서 알아봅시다. Artice from Apptimize CEO Nanc Hua 

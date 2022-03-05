@@ -1,6 +1,6 @@
 ---
 title: "[Introduction]"
-excerpt: "기본적으로 지켜야할것"
+excerpt: "기본적으로 알아둬야 하는것"
 categories:
   - SQL_Basic_Grammer
 tags:
@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # [Indtroduction](#link){: .btn .btn--primary}{: .align-center}

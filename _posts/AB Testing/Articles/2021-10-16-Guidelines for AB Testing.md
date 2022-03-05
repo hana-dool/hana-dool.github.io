@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Etsy 에서 A/B Testing 을 담당했던 A/B Test Datascientist 의 12가지 조언입니다. 

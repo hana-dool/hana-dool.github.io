@@ -1,6 +1,6 @@
 ---
 title: "Grouping Function"
-excerpt: "COUNT/SUM/AVG/MIN/STDDEV/VARIANCE"
+excerpt: ""
 categories:
   - SQL_Basic_Grammer
 last_modified_at: 2021-05-02
@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # [Group Function](#link){: .btn .btn--primary}{: .align-center}

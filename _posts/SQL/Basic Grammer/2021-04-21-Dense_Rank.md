@@ -11,7 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
-
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # [Dense_Rank](#link){: .btn .btn--primary}{: .align-center}

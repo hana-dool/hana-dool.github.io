@@ -1,10 +1,8 @@
 ---
-title:  "Single-Row Function"
-excerpt: "단일행 함수"
+title:  "Single Row Function"
+excerpt: ""
 categories:
   - SQL_Basic_Grammer
-tags:
-  - 1
 last_modified_at: 2021-05-02
 
 toc: true
@@ -13,11 +11,12 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
-<br>
+# [Single Row Function](#link){: .btn .btn--primary}{: .align-center}
 
-# 단일행  함수란?
+> ## 단일행  함수란?
 
 한번에 하나의 데이터를 처리한 함수. 즉 그룹핑처럼 aggregate 하는게 아니라 각각의 값에 대해서 연산을 해준다고 생각하면 된다. 
 
@@ -28,9 +27,7 @@ use_math: true
 - 함수속의 함수처럼 중첩해서 사용 가능. 
 - 중첩해서 사용할 경우 가장 안쪽 단계에서 바깥쪽 단계의 순서가 된다.
 
-<br>
-
-# 데이터 타입
+> ## 데이터 타입
 
 테이블의 열은 한가지 데이터 타입으로 지정되어 있다. 지정된 데이터 타잊과 일치하는 타입만 저장할 수 있다.
 
@@ -53,9 +50,7 @@ note) 이외에도 타입이 많으나, 나중에 더 알아보도록 하자.
 | 변환 타입 | 임의의 데이터 타입의 값을 다른 데이터 타입으로 변환 |
 | 일반      | NVL, CASE, WHEN, 순위함수 등                        |
 
-<Br>
-
-# 문자 타입 함수
+> ## 문자 타입 함수
 
 | 함수    | 설명                               | 형식                                                         | 예                    | 결과 |
 | ------- | ---------------------------------- | ------------------------------------------------------------ | --------------------- | ---- |
@@ -126,11 +121,7 @@ SELECT LPAD('s',ROUND(SAL/1000),'s')
 FROM emp ; 
 ```
 
-
-
-<br>
-
-# 숫자 타입 함수
+> ## 숫자 타입 함수
 
 | 함수  | 설명                          | 형식            | 예   |
 | ----- | ----------------------------- | --------------- | ---- |
@@ -142,8 +133,6 @@ FROM emp ;
 | SIGN  | 양수(1), 음수(-1), 영(0) 구별 | SIGN(0.001)     | 1    |
 | POWER | 거듭제곱                      | POWER(2,4)      | 16   |
 | SQRT  | 제곱근                        | SQRT(4)         | 2    |
-
-
 
 ```sql
 -- employees 테이블에서 salary 를 30으로 나눈 값의 소숫점 둘쨰자리에서 반올림한값
@@ -157,9 +146,7 @@ SELECT TRUNC(salary/30,2)
 FROM employees ; 
 ```
 
-<Br>
-
-# 날짜 타입 함수
+> ## 날짜 타입 함수
 
 날짜 타입의 경우, 타입이 특이하기 떄문에 계산 법칙이 달라집니다. 그러므로 아래와 같이 먼저 날짜타입의 연산이 어떻게 이루어지는지 확인해봅시다.
 
@@ -192,12 +179,9 @@ FROM employees
 WHERE (100 <= employee_id) AND (employee_id <= 106) ; 
 ```
 
-<br>
-
-# 변환 함수
+> ## 변환 함수
 
 오라클 시스템은 각 열에 대해 데이터 타입을 규정하고 있다. 그러므로, sql 을 실행하기 위해서 데이터의 형식을 바꾸어야할 경우가 있다. 
-<Br>
 
 **자동 데이터 타입 변환**
 
@@ -217,8 +201,6 @@ FROM DUAL ;
 
 위의 출력 결과는 3이 나오게 된다.  즉 문자를 연산하였는데 Number 가 올바르게 나온것이다. 
 
-<br>
-
 **수동 데이터 타입 변환**
 
 SQL 은 사용자가, 데이터 타입을 자유롭게 변환할 수 있도록 지원한다.
@@ -229,9 +211,7 @@ SQL 은 사용자가, 데이터 타입을 자유롭게 변환할 수 있도록 �
 | TO_NUMBER | 문자를 숫자타입으로                                      |
 | TO_DATE   | 날짜를 나타내는 문자열을 날짜타입으로 변환               |
 
-
-
-## TO_CHAR(날짜,'지정형식')
+> ## TO_CHAR(날짜,'지정형식')
 
 날짜 지정 형식
 
@@ -243,8 +223,6 @@ SQL 은 사용자가, 데이터 타입을 자유롭게 변환할 수 있도록 �
 | MM                  | 두자리월  | TO_CHAR(21/02/04,'MM')   | 02     |
 | DAY                 | 요일 이름 | TO_CHAR(21/02/04,'DAY')  | 토요일 |
 |                     |           |                          |        |
-
-<BR>
 
 시간 지정 형식을 지정할 수도 있습니다. 
 
@@ -271,9 +249,7 @@ FROM DUAL ;
 -- 2021/04/27 12:23:29 의 값이 나오게 됩니다.
 ```
 
-
-
-## TO_CHAR(숫자,'지정형식')
+>TO_CHAR(숫자,'지정형식')
 
 숫자값을 지정한 형식의 문자열로 바꾸어준다. 
 
@@ -285,143 +261,3 @@ FROM DUAL ;
 | L         | 지역 화폐 기호(원)   | TO_CHAR(salary,'L99999')   | ₩230               |
 | .         | 명시한 위치에 소숫점 | TO_CHAR(salary,'99999.99') | 230.00             |
 | ,         | 명시한 위치에 쉼표   | TO_CHAR(salary,'9,9999')   | 1,0000             |
-
-
-
-## TO_NUMBER(숫자)
-
-숫자 타입의 문자열을 숫자 데이터 타입으로 변환한다. 출력 결과는 바뀌지 않고, 데이터 타입만 바뀐다. 
-
-```sql
-TO_NUMBER('11')
--- 이 출력은 11 이 나오게 된다.
-```
-
-
-
-## TO_DATE(문자열,'지정 형식')
-
-날짜를 나타내는 문자열을 명시된 날짜로 변환한다.
-
-```sql
-SELECT TO_DATE('20140301', 'YYMMDD')
-FROM DUAL ;
--- 14/03/01 의 값이 나오게 된다. 
-```
-
-<br>
-
-# 일반 함수
-
-## NVL
-
-null 값을 처리하는 함수이다. null 값은 다음과 같은 특성이 있다
-
-- 할당되지 않았거나, 알려져 있지 않아 적용이 불가능한 값 (0,공백과는 다르다)
-- null 값을 포함하는 산술 연산의 결과는 null
-
-아래와 같이, Null 을 포함하는 연산의 경우 Null 이 나오는것을 볼 수 있다. 
-
-![png](/assets/images/SQL_Basic/3_1.png)
-
-NVL(열 이름 , 치환 값) 을 하게되면, null 값을 일괄적으로 변환하게 된다.
-
-```sql
--- salary 와 work_month 를 곱하되, work_month 의 null 값에 대해서는 1로 치환하여 곱하기
-SELECT salary * NVL(work_month,1) -- NVL(열 이름 , 치환 값) 
-FROM employees ;
-```
-
-
-
-## DECODE
-
-IF THEN ELSE END 의 조건 논리를 가능하게 해주는 함수이다.
-
-```
-DECODE(열 이름, 조건 값, 치환 값, 기본 값)
-# 치환값 : 조건에 해당할 경우 출력할 값
-# 기본값 : 조건에 해당하지 않을경우 출력할 값
-
-DECODE(열 이름, 조건값1, 치환값1, 조건값2, 치환값2 .., 기본값)
-# 위와 같이 if elif elif .. else 처럼 구현할 수도 있다. 
-```
-
-```sql
--- employees 테이블에서 원래 봉급(salary) 를 출력하고, 
--- department_id 가 60 인 경우에는 10% 인상을 출력 나머지 경우에는 아니 나는? 을 출력
-SELECT salary 원_봉급,
-       DECODE(department_id, 60, '10%인상' ,'아니 나는?') 조정된_봉급
-FROM employees ;
-```
-
-DECODE(열 이름, 조건 )
-
-
-
-## CASE
-
-복잡한 조건식을 여러개 적용해야 할 때에는, DECODE 함수보다 CASE 표현식을 이용하는것이 유용하다. 
-
-```
-CASE
-	WHEN 조건1 THEN 출력1
-	WHEN 조건2 THEN 출력2
-	...
-	ELSE 출력3
-END
-```
-
-```sql
--- employees 테이블에서 job_id 가 IT_PROG 라면 employee_id, first_name, last_name, salary 출력하되
--- salary 가 9000 이상이면 '상위급여' , 6000~8999 사이면 '중위급여' 그 외는 '하위급여' 라고 출력
-SELECT employee_id, first_name , last_name , salary,
-        CASE 
-            WHEN salary >= 9000 THEN '상위급여'
-            WHEN salary between 6000 and 8999 then '중위급여'
-            ELSE '하위급여'
-        END AS 급여등급
-FROM employees 
-WHERE job_id = 'IT_PROG' ;
-```
-
-![png](/assets/images/SQL_Basic/3_2.png)
-
-## RANK, DENSE_RANK, ROW_NUMBER
-
-RANK, DENSE_RANK, ROW_NUMBER 는 데이터 값에 순위를 매기는 함수이다. 순위를 매기는것은 동일하지만 사용법이 조금씩 다르다. 
-
-| 함수       | 설명                                      | 순위 예       |
-| ---------- | ----------------------------------------- | ------------- |
-| RANK       | 공통 순위를 출력한다. 그 이후는 건너띈다. | 1 2 2 4 5 ... |
-| DENSE_RANK | 공통 순위를 출력한다. 그 이후는 이어진다. | 1 2 2 3 4 ... |
-| ROW_NUMBER | 공통 순위 없이 출력한다.                  | 1 2 3 4 5 ... |
-
-```
-RANK () OVER ([PARTITION BY 열이름] ORDER BY 열이름)
-# [PARTITION BY 열이름] : 그룹으로 묶어서 순위를 매겨야할때에 
-# ORDER BY 열이름 : 순위를 매길 열
-```
-
-```sql
--- RANK, DENSE_RANK , ROW_NUMBER 함수를 각각 이용하여, employees 테이블의 Salary 값이 높은 순서대로 순위를 매겨 출력
-SELECT salary,
-       RANK() OVER (ORDER BY salary) RANK,
-       DENSE_RANK() OVER (ORDER BY salary) DENSE_RANK ,
-       ROW_NUMBER() OVER (ORDER BY salary) ROW_NUMBER
-FROM employees ;
-```
-
-![png](/assets/images/SQL_Basic/3_4.png)
-
-## EXTRACT()
-
-- 입력된 날짜에서 추출하고자 하는 연,월,시간 등을 반환한다.
-
-```sql
-SELECT EXTRACT(YEAR FROM SYSDATE) AS YEAR
-           ,EXTRACT(MONTH FROM SYSDATE) AS MONTH
-           ,EXTRACT(DAY FROM SYSDATE) AS DAY
-           FROM df
-```
-

@@ -2,7 +2,7 @@
 title:  "Constraint &#58; Primary Key"
 excerpt: ""
 categories:
-  - SQL_Basic_Grammer
+  - SQL_Basic_Knowledge
 last_modified_at: 2021-05-21
 
 toc: true

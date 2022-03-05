@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 Outlier 와 A/B Testing
@@ -136,7 +137,6 @@ Outlier 와 A/B Testing
 **reference**
 
 - https://ianwhitestone.work/choosing-randomization-unit/
-
 
 
 

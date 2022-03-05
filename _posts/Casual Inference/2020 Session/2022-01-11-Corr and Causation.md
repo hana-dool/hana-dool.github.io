@@ -1,5 +1,6 @@
 ---
 title:  "상관관계와 인과관계"
+excerpt: ""
 categories:
   - Casual_Inference_Session2020
 last_modified_at: 2022-01-11
@@ -10,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  상관관계와 인과관계의 relationship

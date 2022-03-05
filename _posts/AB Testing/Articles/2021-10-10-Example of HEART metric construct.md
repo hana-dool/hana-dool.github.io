@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  이전의 논문에서 우리는 HEART 방법론이 어떤것인지 알아보았습니다. 여기에서는 HEART 에 대해서 논문리뷰가 아니라 실제적인 관점에서 간단히 알아보고, 그러한 Frame work 에 따라 Metric 을 가상으로 구축해보려 합니다.

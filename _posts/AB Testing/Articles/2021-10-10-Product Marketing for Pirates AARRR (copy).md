@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  AARRR metric 이라고 불리는 AARRR 프레임워크는 미국의 Dave McClure 가 2007년 6월에 Product Marketing for Pirates : AARRR 라는 이름으로 처음 선보였습니다. 스타트업을 해적으로 표현하여, 스타트업의 Product marketing 을 위한 도구로서 AARRR 을 가지고 온 것입니다. 

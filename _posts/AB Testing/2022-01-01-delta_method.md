@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 Analysis Unit 과 Randomization Unit 이 다른 경우 Ratio metric 에 대해서 어떻게 분석할까?

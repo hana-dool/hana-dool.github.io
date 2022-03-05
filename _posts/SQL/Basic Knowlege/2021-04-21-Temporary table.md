@@ -2,7 +2,7 @@
 title:  "Derived tables"
 excerpt: ""
 categories:
-  - SQL_Basic_Grammer
+  - SQL_Basic_Knowledge
 last_modified_at: 2021-12-11
 
 toc: true

@@ -2,7 +2,7 @@
 title: "[Introduction]"
 excerpt: "기본적으로 지켜야할것"
 categories:
-  - SQL_Basic_Grammer
+  - SQL_Advanced
 tags:
   - 1
 last_modified_at: 2021-08-22
