@@ -35,6 +35,3 @@ use_math: true
 - 기본 키 열에 는 테이블 [에 새 행을 삽입할](https://www.mysqltutorial.org/mysql-insert-statement.aspx)`AUTO_INCREMENT` 때마다 자동으로 순차 정수를 생성하는 속성 이 있는 경우가 많습니다.
 - 테이블에 대해서 primary key 를 지정하면 mysql 은 자동적으로 인덱스를 생성합니다.
 
-
-> ## 
-

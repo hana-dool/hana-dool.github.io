@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  AB Testing 을 하게되면 늘 골칫덩어리는 어떤 Metric 을 사용해야 할지일 것입니다. 메트릭을 구성하는 방법중 하나인 HEART Framework 에 대해서 알아보겠습니다. 특별한 방법론은 아니고 각 메트릭을 5개의 범주로 나눈 뒤 관리하는 방법론이라 할 수 있겠습니다.

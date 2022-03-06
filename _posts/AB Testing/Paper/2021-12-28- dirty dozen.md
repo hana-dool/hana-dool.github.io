@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Microsoft Data Analysis & Experimentation team Data Scientist **Somit Gupta** 가 **KDD2017**에서 발표한  논문입니다. <https://medium.com/bondata> 님의 서술과 논문을 참고하였습니다.

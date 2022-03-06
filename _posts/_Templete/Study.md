@@ -155,3 +155,11 @@
 
 - https://link.springer.com/article/10.1007%2Fs10654-016-0149-3
 
+
+
+
+
+# 개꿀
+
+- 개발자 사이트들 후덜덜
+  - https://limeeyojung.tistory.com/12

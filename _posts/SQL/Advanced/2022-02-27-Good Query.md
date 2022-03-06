@@ -1,10 +1,8 @@
 ---
-title: "[Introduction]"
+title: "Introduction"
 excerpt: "기본적으로 지켜야할것"
 categories:
   - SQL_Advanced
-tags:
-  - 1
 last_modified_at: 2021-08-22
 
 toc: true
@@ -16,8 +14,6 @@ use_math: true
 ---
 
 # [Indtroduction](#link){: .btn .btn--primary}{: .align-center}
-
-## 
 
 - 실무에서 데이터 분석가에게 가장 필요한 기술 중 하나는 SQL 쿼리를 작성하는 능력입니다. 
 - 이 때, 단순히 원하는 데이터를 추출하는 것에서 더 나아가 가독성 좋은 구문을 작성할 수 있다면 더욱 좋겠죠. 

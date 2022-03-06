@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  이 논문에서는 A/B Testing 에서 Metric 의 설계 원칙을 설명합니다. 실험을 설계할때에 나타나는 몇개의 문제점을 공유하고 이러한 함정을 피하기 위한 해결책을 공유하려 합니다.

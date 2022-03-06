@@ -1,5 +1,5 @@
 ---
-title:  "Logical Functions"
+title:  "Functions &#58; Logical"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

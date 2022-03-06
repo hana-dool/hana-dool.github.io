@@ -1,5 +1,5 @@
 ---
-title:  "Inner Join"
+title:  "Join &#58; Inner"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

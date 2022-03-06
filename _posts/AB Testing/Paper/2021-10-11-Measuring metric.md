@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  우리가 측정하지 못하는것에 대해서는 알 수 없습니다. 즉 metric 은 조직의 goal 과 실험을 이어주는 아주 중요한 실험 구성 요소입니다. 많은 실험기획자들은 좋은 metric 을 사용하려 합니다. 그래서 sucess , delight , loyalty, engagement 와 같이 추상적인 개념을 이용하여 좋은 메트릭의 기준을 세우려 하였습니다. 하지만 어떻게 할 떄에 , 우리는 정량적으로 메트릭을 비교할 수 있을까요? 이 논문에서는 빙에서의 메트릭 평가 시스템에 대해서 설명하고자 합니다. 

@@ -1,5 +1,5 @@
 ---
-title:  "Cross Join"
+title:  "Join &#58; Cross"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

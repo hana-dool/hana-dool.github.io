@@ -1,5 +1,5 @@
 ---
-title:  "Single Row Function"
+title:  "Functions &#58; Single Row"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

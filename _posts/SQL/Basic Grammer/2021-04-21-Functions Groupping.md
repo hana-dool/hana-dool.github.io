@@ -1,5 +1,5 @@
 ---
-title: "Grouping Function"
+title: "Functions &#58; Grouping"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

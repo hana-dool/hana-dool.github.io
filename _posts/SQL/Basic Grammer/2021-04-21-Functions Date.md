@@ -1,5 +1,5 @@
 ---
-title:  "Date Functions"
+title:  "Functions &#58; Date"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

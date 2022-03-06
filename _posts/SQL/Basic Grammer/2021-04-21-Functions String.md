@@ -1,5 +1,5 @@
 ---
-title:  "String Functions"
+title:  "Functions &#58; String"
 excerpt: ""
 categories:
   - SQL_Basic_Grammer

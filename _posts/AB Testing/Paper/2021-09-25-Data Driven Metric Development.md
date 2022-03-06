@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  A/B 테스트라고 불리는 Online Controlled experiment 는 많은 웹 기업에서 데이터 중심 의사 결정을 위한 방법론으로 많이 쓰이고 있습니다. 이에 대한 연구로는 많은 설계 기법이나 다양한 문제에 대해 초점을 맞춘 연구가 있었습니다. 하지만 메트릭 자체를 중심적으로 연구한것은 거의 없었습니다. 이 논문에서는 온라인 서비스에서 유용한 메트릭을 개발하는 방법에 초점을 맞춥니다. 

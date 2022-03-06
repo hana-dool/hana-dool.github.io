@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Metric 을 분석할때 Randomization Unit 과 Analysis Unit 이 다를때에는 어떻게 해야 될까

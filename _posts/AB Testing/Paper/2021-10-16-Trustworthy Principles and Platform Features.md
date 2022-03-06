@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  비록 학사 논문이지만, 그 수준이나 연구 내용이 매우 광범위하고 깊어서 리뷰해 보았습니다.  
