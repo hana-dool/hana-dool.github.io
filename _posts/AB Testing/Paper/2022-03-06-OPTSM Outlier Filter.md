@@ -1,9 +1,9 @@
 ---
-title: "Implementation of A Robust Universal Outlier Filter for Online Experimentation"
-excerpt: "Negative Binomial 을 활용한 Outlier 검정방법"
+title: "Peeking at A/B Tests"
+excerpt: "Sequential Test"
 categories:
   - AB_Paper
-last_modified_at: 2022-03-06
+last_modified_at: 2022-03-10
 
 toc: true
 toc_label: "Table Of Contents"
