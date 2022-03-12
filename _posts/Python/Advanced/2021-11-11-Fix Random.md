@@ -10,6 +10,7 @@ toc_label: "Table Of Contents"
 toc_icon: "cog"
 
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  random seed 를 고정하여 Reproductive 한 파이썬 코딩하기
@@ -68,8 +69,6 @@ def seed_everything(seed: int = 42):
     torch.backends.cudnn.benchmark = True  # type: ignore
 seed_everything(config.seed)
 ```
-
-
 
 > ## Tensorflow
 

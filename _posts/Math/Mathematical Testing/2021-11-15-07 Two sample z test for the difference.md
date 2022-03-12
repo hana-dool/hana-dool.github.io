@@ -53,6 +53,25 @@ $$\frac{(\bar{X}-\bar{Y})-\left(\mu_{X}-\mu_{Y}\right)}{\sqrt{\frac{\sigma_{X}^{
 
 - 즉 위의 정리를 이용하면 우리는 two sample z test for difference of population of meas 를 계산할 수 잇을것입니다.
 
+> ## Note : Large Sample 
+
+> CLT 
+
+- 만약 확률 변수 $X_{1}, X_{2}, \cdots$ 들이
+  - 서로 독립적이고,
+  - 같은 확률 분포를 가지고,
+  - 그 확률 분포의 기댓값 $\mu$ 와 표준편차 $\sigma$ 가 유한하다면, 
+- 평균 $S_{n}=\left(X_{1}+\cdots+X_{n}\right) / n$ 의 분포는 기댓값 $\mu$, 표준편차 $\sigma / \sqrt{n}$ 인 정규 분포 $\mathrm{N}\left(\mu, \sigma^{2} / n\right)$ 에 분포수렴한다. 즉,
+
+$$\sqrt{n}\left(\left(\frac{1}{n} \sum_{i=1}^{n} X_{i}\right)-\mu\right) \stackrel{d}{\rightarrow} \mathcal{N}\left(0, \sigma^{2}\right)$$
+
+> CLT with Two Sample Mean Test 
+
+- 즉 위와 같은 정리에서, 우리는 샘플수가 많다면 다음과 같은 정리가 성립함을 알 수 있습니다.
+  - $$\bar{X} \sim N\left(\mu_{X}, \frac{\sigma_{X}^{2}}{n}\right)$$ and $$\bar{Y} \sim N\left(\mu_{Y}, \frac{\sigma_{Y}^{2}}{m}\right) $$
+- 즉 위의 정리를 이용하면 $$Z=\frac{(\bar{X}-\bar{Y})-\left(\mu_{X}-\mu_{Y}\right)}{\sqrt{\frac{\sigma_{X}^{2}}{n}+\frac{\sigma_{Y}^{2}}{m}}} \sim N(0,1)$$ 의 등식이 성립합니다. 
+- 이는 Large Sample 에서 Two Sample Z Test 를 쓸 수 있다는 의미입니다.
+
 # [Test Procedure](#link){: .btn .btn--primary}{: .align-center}
 
 > ## When can this test be used?

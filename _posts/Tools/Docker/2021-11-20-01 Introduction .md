@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  말로만 듣던 도커.... 공부 한다한다 하다가 이제야 좀 하게 되네요

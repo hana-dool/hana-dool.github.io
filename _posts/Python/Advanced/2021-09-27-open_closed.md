@@ -10,6 +10,7 @@ toc_label: "Table Of Contents"
 toc_icon: "cog"
 
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  파일을 읽고 저장하는 함수에 대해서 알아봅시다. 분석을 하다 보면 파일의 결과를 관리해야될 순간이 옵니다. 이를 위해서 결과를 저장하는 방법에 대해서 알아봅시다. 
