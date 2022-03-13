@@ -1,9 +1,9 @@
 ---
-title:  "K Means"
+title:  "Clustering"
 excerpt: ""
 tags:
   - ML_Model
-last_modified_at: 2021-10-05
+last_modified_at: 2022-03-13
 
 toc: true
 toc_label: "Table Of Contents"
