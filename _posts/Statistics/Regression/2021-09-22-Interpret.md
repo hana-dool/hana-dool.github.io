@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 OLS 에서 변수의 중요도를 해석하라고 하면 어떻게 할까요? 대부분은 그냥 Weight 를 reporing , p-value 를 reporting 하고 끝내려고 합니다. 하지만 이러한 방법론은 옳지 않습니다. 아래에서 더 정확한 방법론에 대해서 알아보도록 합시다.

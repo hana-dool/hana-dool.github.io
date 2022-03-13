@@ -242,9 +242,13 @@ whitelist:
 category_archive:
   type: liquid
   path: /categories/
+
+# 수정수정
 # tag_archive:
 #   type: liquid
 #   path: /tags/
+
+
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:

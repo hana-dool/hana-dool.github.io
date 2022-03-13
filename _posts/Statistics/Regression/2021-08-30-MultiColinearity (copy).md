@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # 1. 맞는 해석이 여러개일 수 있음
