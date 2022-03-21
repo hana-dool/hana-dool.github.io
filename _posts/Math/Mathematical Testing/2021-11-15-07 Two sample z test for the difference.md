@@ -70,6 +70,8 @@ $$\sqrt{n}\left(\left(\frac{1}{n} \sum_{i=1}^{n} X_{i}\right)-\mu\right) \stackr
 - 즉 위와 같은 정리에서, 우리는 샘플수가 많다면 다음과 같은 정리가 성립함을 알 수 있습니다.
   - $$\bar{X} \sim N\left(\mu_{X}, \frac{\sigma_{X}^{2}}{n}\right)$$ and $$\bar{Y} \sim N\left(\mu_{Y}, \frac{\sigma_{Y}^{2}}{m}\right) $$
 - 즉 위의 정리를 이용하면 $$Z=\frac{(\bar{X}-\bar{Y})-\left(\mu_{X}-\mu_{Y}\right)}{\sqrt{\frac{\sigma_{X}^{2}}{n}+\frac{\sigma_{Y}^{2}}{m}}} \sim N(0,1)$$ 의 등식이 성립합니다. 
+  - 이때 위에서 $\sigma^2$ 는 표본분산 ($s^2$) 으로 추정합니다.
+
 - 이는 Large Sample 에서 Two Sample Z Test 를 쓸 수 있다는 의미입니다.
 
 # [Test Procedure](#link){: .btn .btn--primary}{: .align-center}
@@ -136,7 +138,9 @@ $$
 \end{array}
 $$
 
+> ## Note 
 
+- 몇개의 샘플이 있어야 Large Sample 을 이용해서 Means Test 를 이용할 수 있다! 와 같은 기준은 없습니다. 일반적으로 50개 이상의 데이터가 있을때에 사용한다고 합니다. (WikiPedia)
 
 ---
 

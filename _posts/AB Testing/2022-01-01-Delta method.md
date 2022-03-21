@@ -11,15 +11,15 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
-typora-root-url: ../../../../hana-dool.github.io
+typora-root-url: ../../../hana-dool.github.io
 ---
 
 Analysis Unit 과 Randomization Unit 이 다른 경우 Ratio metric 에 대해서 어떻게 분석할까?
 {: .notice--warning}
 
-# [Delta Method](#link){: .btn .btn--primary}{: .align-center}
+# [Introduction to Delta Test](#link){: .btn .btn--primary}{: .align-center}
 
-> ## Introduction
+> ## Introduction : Two Sample T Test
 
 > Test Procedure
 
@@ -34,7 +34,7 @@ $$T=\frac{\bar{X}_{B}-\bar{X}_{A}}{\sqrt{\operatorname{Var}\left(\bar{X}_{A}\rig
 
 $$\operatorname{Var}(X)=\frac{1}{n-1} \sum_{i}^{n}\left(X_{i}-\bar{X}\right)^{2}$$
 
-- 이때 위처럼 표현된 통계량 T 는 사실 T-distribution 을 따르지만 샘플 수가 커지면 Normal 을 따르게 됩니다. 
+- 이때 위처럼 표현된 통계량 T 는 T-distribution 을 따르지만 샘플 수가 커지면 Normal 을 따르게 됩니다. 
 
 > Problem1 : IID
 
@@ -73,23 +73,138 @@ $$\operatorname{Var}(X)=\frac{1}{n-1} \sum_{i}^{n}\left(X_{i}-\bar{X}\right)^{2}
   - 오로지 randomization unit 과 analysis unit 이 일치할때에만 ratio metric 을 쓸 수 있는것일까요? 
 - 아래 세션에서는 이런 경우에 어떻게 하면 분석할 수 있는지에 대해서 알아보겠습니다.
 
-> ## Note : Delta Method
+> ## 
 
-- 우선 Delta Method 가 어떤것인지부터 알아봅시다.
-  - https://en.wikipedia.org/wiki/Delta_method#Multivariate_delta_method 
+# [Delta Method](#link){: .btn .btn--primary}{: .align-center}
 
-- By definition, a consistent estimator $B$ converges in probability to its true value $\beta$
-- Then often a central limit theorem can be applied to obtain asymptotic normality:
+> ## Lemma 1
+
+> Lemma 1
+
+- $$P_{f, n, a}(x)=f(a)+f^{\prime}(a)(x-a)+\frac{f^{\prime \prime}(a)}{2}(x-a)^{2}+\cdots+\frac{f^{(n)}(a)}{n !}(x-a)^{n}$$ 이라 합시다. 그럼
+- Let $f$ be $n$ times differentiable at $a$. Then
+
+$$\lim _{x \rightarrow a} \frac{f(x)-P_{f, n, a}(x)}{(x-a)^{n}}=0$$
+
+- or using the "little $o$ " notation,
+
+$$f(x)=P_{f, n, a}(x)+o\left((x-a)^{n}\right) \quad \text { as } x \rightarrow a$$
+
+> Proof 
+
+- 먼저 함수 f 가 2번 미분 가능하다고 가정합시다. 
+
+$$\frac{f(x)-P_{f, 2, a}(x)}{(x-a)^{2}} .$$
+
+- 위의 값은 By L'Hopital's rule 에 의하여
+
+$$\lim _{x \rightarrow a} \frac{f(x)-P_{f, 2, a}(x)}{(x-a)^{2}}=\lim _{x \rightarrow a} \frac{f^{\prime}(x)-P_{f^{\prime}, 1, a}(x)}{2(x-a)}$$
+
+- 이떄 우측항의 값이 존재한다면, 로피탈의 정리를 쓸 수 있을것입니다. 위 값이 존재하는지 따져보기 위해서 다시한번 로피탈의 정리를 사용해봅시다.
+
+$$\lim _{x \rightarrow a} \frac{f^{\prime}(x)-P_{f^{\prime}, 1, a}(x)}{2(x-a)}=\lim _{x \rightarrow a} \frac{f^{\prime \prime}(x)-P_{f^{\prime \prime}, 0, a}(x)}{2}$$
+
+- 즉 우측값은 0 이므로
+
+$$\lim _{x \rightarrow a} \frac{f(x)-P_{f, 2, a}(x)}{(x-a)^{2}}=0$$
+
+- Equivalently, we an use the "little $o$ " notation,
+
+$$f(x)=P_{f, 2, a}(x)+o\left((x-a)^{2}\right) \quad \text { as } x \rightarrow a .$$
+
+- 즉 위와 같이, Taylor Expansion 에 대해서 로피탈 정리를 이용하면 , little o expansion 으로 테일러 정리를 표시할 수 있음을 알 수 있습니다.
+
+> ## Lemma 2
+
+> Lemma 2
+
+- $\left\{Y_{n}\right\}$ 이 확률유계인 확률변수 열이라고 하자. $X_{n}=o_{p}\left(Y_{n}\right)$ 이면 $n \rightarrow \infty$ 일 때 $X_{n} \stackrel{P}{\rightarrow} 0$ 이다.
+
+> Lemma Proof
+
+- 증명: $\epsilon>0$ 이라고 하자. 열 $\left\{Y_{n}\right\}$ 이 확률유계이므로 다음과 같은 양의 상수 $N_{c}$ 과 $B_{\epsilon}$ 이 존재한다.
+
+$$
+n \geq N_{\epsilon} \Longrightarrow P\left[\left|Y_{n}\right| \leq B_{\epsilon}\right] \geq 1-\epsilon \quad ...(1)
+$$
+
+- 또한 $X_{n}=o_{p}\left(Y_{n}\right)$ 이므로 $n \rightarrow \infty$ 일 때 다음을 얻는다.
+
+$$
+\frac{X_{n}}{Y_{n}} \stackrel{P}{\rightarrow} 0 \quad ...(2)
+$$
+
+- 그러면
+
+$$
+\begin{aligned}
+P\left(\left|Y_{n}\right| \geq \epsilon\right) &=P\left(\left|Y_{n}\right| \geq \epsilon,\left|X_{n}\right| \leq B_{\epsilon}\right)+P\left(\left|Y_{n}\right| \geq \epsilon,\left|X_{n}\right|>B_{\epsilon}\right) \\
+& \leq P\left(\left|Y_{n}\right| \geq \epsilon,\left|X_{n}\right| \leq B_{\epsilon}\right)+P\left(\left|X_{n}\right|>B_{\epsilon}\right) \\
+& \leq P\left(\left|\frac{Y_{n}}{X_{n}}\right| \geq \frac{\epsilon}{B_{\epsilon}}\right)+P\left(\left|X_{n}\right|>B_{\epsilon}\right) \rightarrow 0,
+\end{aligned}
+$$
+
+- (1) 과 (2) 에의해 오른쪽의 첫째($$P\left(\left|\frac{Y_{n}}{X_{n}}\right| \geq \frac{\epsilon}{B_{\epsilon}}\right)$$)와 둘째 항 ( $$P\left(\left|X_{n}\right|>B_{\epsilon}\right)$$ )은 $n$ 을 충분히 크게 함으로써 얼마든지 작게 만들 수 있습니다. 즉 따라서 이 결과는 성립하게 됩니다.
+
+> ## Delta Method Proof 
+
+>  Delta Method
+
+- 다음과 같은 확률변수 열을 $\left\{X_{n}\right\}$ 이라고 하자.
+- $$ \sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right) $$ 함수 $g(x)$ 가 $\theta$ 에서 미분 가능하고 $g^{\prime}(\theta) \neq 0$ 라고 하면 
+
+$$ \sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left(g^{\prime}(\theta)\right)^{2}\right) $$
+
+> Step 1 : 함수 $g$ 를 테일러시리즈로 분해하기
+
+- $g(x)$ 가 $x$ 에서 미분 가능하면 다음과 같이 나타낼 수 있습니다. (By Lemma 1)
+
+$$g(y)=g(x)+g^{\prime}(x)(y-x)+o(|y-x|)$$
+
+- 여기서 기호 $o$ 에 대해서 다시 상기하면 아래와 같습니다.
+  - $b \rightarrow 0$ 일 때 $\frac{a}{b} \rightarrow 0$ 인 경우에 한하여 $a=o(b)$
+- 이떄 $o($ little $o)$ 는 확률수렴의 개념으로도 이용됩니다. 종종 $o_{p}\left(X_{n}\right)$ 은 다음과 같은 의미로 쓰입니다.
+  - $n \rightarrow \infty$ 일 때 $\frac{Y_{n}}{X_{n}} \stackrel{P}{\rightarrow} 0$ 인 경우에 한하여 $Y_{n}=o_{p}\left(X_{n}\right)$
+
+> Step 2 : 분해한 값 Convergence 증명하기
+
+- Using the Taylor series expansion, we have
+
+$$g\left(X_{n}\right)=g(\theta)+g^{\prime}(\theta)\left(X_{n}-\theta\right)+o_{p}\left(\left|X_{n}-\theta\right|\right)$$
+
+- 이떄 위의 식을 재배치하면 아래가 성립합니다.
+
+$$\begin{aligned}
+\sqrt{n}\left(g\left(X_{n}\right)-g(\theta)\right) &=g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right)+o_{p}\left(\sqrt{n}\left|X_{n}-\theta\right|\right) \\
+& \stackrel{P}{\rightarrow} g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right) \\
+& \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left\{g^{\prime}(\theta)\right\}^{2}\right)
+\end{aligned}$$
+
+> Step 2 상세
+
+- $$ \sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right) $$ 가 성립하므로 , $\sqrt{n}\left|X_{n}-\theta\right|$ 는 Bounded in Probabaility 입니다.
+  - 왜냐하면 Converge in Distribution $\to$ Converge in Probability 가 성립하기 때문입니다.
+- 그러므로 $$g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right)+o_{p}\left(\sqrt{n}\left|X_{n}-\theta\right|\right)
+  \stackrel{P}{\rightarrow} g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right)$$ 가 성립합니다.
+  - 왜냐하면 이전 lemma 에서  $\left\{Y_{n}\right\}$ 이 확률유계인 확률변수 열이라고 할때 $X_{n}=o_{p}\left(Y_{n}\right)$ 이면 $n \rightarrow \infty$ 일 때 $X_{n} \stackrel{P}{\rightarrow} 0$ 라는것을 증명했던것을 기억하나요?
+  - 즉 현재 $\sqrt{n}\left|X_{n}-\theta\right|$ 가 확률유계이므로 $o_p(\sqrt{n}\left|X_{n}-\theta\right|) \stackrel{P}{\rightarrow} 0$ 이 성립하기 떄문입니다.
+- 이제 $$ \sqrt{n}\left(X_{n}-\theta\right) \stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\right) $$ 이므로 $$g^{\prime}(\theta) \sqrt{n}\left(X_{n}-\theta\right)\stackrel{D}{\rightarrow} N\left(0, \sigma^{2}\left\{g^{\prime}(\theta)\right\}^{2}\right)$$ 가 성립합니다.
+
+> ## Multivariate Case Proof
+
+- Multivariate 의 경우에도, Univariate 에서의 증명과 비슷한 로직을 따릅니다.
+- 우선 consistent estimator 인 $B$ 가 converges in probability to its true value $\beta$ 라고 합시다.
+- 그러면 CLT 에 의해서 아래와 같은 Asymptotic Normality 가 성립하게 됩니다.
 
 $$\sqrt{n}(B-\beta) \stackrel{L}{\longrightarrow} N(0, \Sigma)$$
 
-- where $n$ is the number of observations and $\sum$ is a (symmetric positive semi-definite) covariance matrix.
-- Suppose we want to estimate the variance of a scalar-valued function $h$ of the estimator $B$. 
-- Keeping only the first two terms of the Taylor series, and using vector notation for the gradient, we can estimate $h$ (B) as
+- 이때  $n$ 은 number of observations, $\sum$  는 (symmetric positive semi-definite) covariance matrix 입니다.
+- 이때 scalar-valued function $h$ of the estimator $B$. 의 Variance 를 추정하고 싶다고 합시다.
+- 이전에 Univariate 예시에서도, 그랬  Taylor series 의 first two terms 만 Approximation 으로 이용하면 아래와 같은 근사식이 나오게 됩니다. 
 
 $$h(B) \approx h(\beta)+\nabla h(\beta)^{T} \cdot(B-\beta)$$
 
-- which implies the variance of $h(B)$ is approximately
+- 이는 variance of $h(B)$ 가 아래와 같이 추정된다는것을 의미합니다.
 
 $$\begin{aligned}
 \operatorname{Var}(h(B)) & \approx \operatorname{Var}\left(h(\beta)+\nabla h(\beta)^{T} \cdot(B-\beta)\right) \\
@@ -108,7 +223,9 @@ $$\sqrt{n}(h(B)-h(\beta)) \stackrel{\nu}{\longrightarrow} N\left(0, \nabla h(\be
 
 $$\sqrt{n}(h(B)-h(\beta)) \stackrel{\nu}{\longrightarrow} N\left(0, \sigma^{2} \cdot\left(h^{\prime}(\beta)\right)^{2}\right) .$$
 
-> ## Ratio 메트릭에 대한 Delta Method
+# [Ratio Delta Method](#link){: .btn .btn--primary}{: .align-center}
+
+> ## Ratio Metric Delta Method
 
 - Ratio metric 의 경우에는 CLT 를 어떻게 적용할 수 있을까요?
   - 먼저 아래와 같이 공식에 대해서 다시 Remind 해 봅시다.
@@ -216,9 +333,18 @@ $$\left(\frac{\bar{y}}{\bar{x}}-1\right) \sim N\left(0, \sigma_{R}^{2}\right)$$
 
 $$\left(\frac{\bar{y}}{\bar{x}}-1\right) \sim N\left(0, \hat\sigma_{R}^{2}\right)$$
 
+> Test Statistics 
+
+- 위의 정리에 의하여, Test Statistics 는 아래와 같습니다.
+
+$$ Z = \frac{(\frac{\bar{y}}{\bar{x}}-1)}{\hat{\sigma_R}} =\frac{(\frac{\bar{y}}{\bar{x}}-1)}{\sqrt{{\frac{s_{y}^{2}}{n \bar{x}^{2}}-2 \frac{\bar{y} s_{x y}}{n\bar{x}^{3}}+\frac{s_{x}^{2} \bar{y}^{2}}{n \bar{x}^{4}} }}} \sim N(0,1^2)$$
+
+- $\mid Z\mid  > z_{1-\alpha/2}$ :  귀무가설 기각 ( 즉 $\mu_x \not= \mu_y$ )
+- $\mid Z\mid  < z_{1-\alpha/2}$ :  귀무가설 기각하지 못함  ( 즉 $\mu_x = \mu_y$ )
+
 > Confidence Interval
 
-- 이때 Confidence interval 은 위에 의해서 아래와 같이 추정됩니다.
+- 이때 Confidence interval 은 아래와 같이 추정됩니다.
 
 $$\underbrace{\frac{\bar{Y}}{\bar{X}}-1}_{\text {point estimate }} \pm \underbrace{\frac{z_{\alpha / 2}}{\sqrt{n} \bar{X}} \sqrt{s_{y}^{2}-2 \frac{\bar{Y}}{\bar{X}} s_{x y}+\frac{\bar{Y}^{2}}{\bar{X}^{2}} s_{x}^{2}}}_{\text {uncertainty quantification }}$$
 
@@ -251,6 +377,18 @@ $$Z=\frac{(\bar{X}-\bar{Y})-\left(\mu_{X}-\mu_{Y}\right)}{\sqrt{\frac{\sigma_{X}
 - 위 정리를 이용하면 Null Hypothesis 하에서 아래와 같은 Test - Estimator 를 얻을 수 있습니다
   - Two Sample : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right) \sim N\left(0, \sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}\right)$$
 - 이제 위를 이용해서 Testing 을 하면 됩니다!
+
+> Test Statistics
+
+$$Z = \left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right)/ (\hat\sigma_{R}^{C^{2}} + \hat\sigma_{R}^{T^{2}}) \sim N\left(0,1\right)$$ 
+
+> Confidence Interval 
+
+- 이때 Confidence interval 은 아래와 같이 추정됩니다.
+
+$$\underbrace{\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right)}_{\text {point estimate }} \pm \underbrace{z_{\alpha / 2} \sqrt{(\hat\sigma_{R}^{C^{2}} + \hat\sigma_{R}^{T^{2}})}}_{\text {uncertainty quantification }}$$
+
+# [Code Level Example](#link){: .btn .btn--primary}{: .align-center}
 
 > ## Two Variation Example
 
@@ -346,7 +484,7 @@ ttest(mean_control,mean_treatment,var_control,var_treatment)
 
 - 위와 같이 유저당 클릭수 값에 대해서  A 와 B 를 비교하는 경우에는 딱히 Delta Method 가 아니라 T-Test 를 써도 될 것입니다. (왜냐하면 면  Analysis Unit 과 Randomization Unit 이 같기 때문이죠.)
   - 하지만 이런 경우에 어떻게든 Delta Method 를 쓰게 되면 어떤 일이 벌어질까요? 
-  - 혹시 그 결과가 달라지지는 않을까요? 
+  - 혹시 그 결과가 달라지지는 않을까요? 이에 대해서 한번 점검해봅시다.
 
 > Delta Method
 
@@ -394,14 +532,14 @@ ttest(mean_control,mean_treatment,var_control,var_treatment)
   - $\bar{x} = 1$ , $s_x=0$ 입니다. 
 - 즉 정리하면 $$\hat{\sigma^2_R}= \frac{s_y^2}{n}$$ 으로 추정되고, 이는 Two Sample Mean Test 와 같은 값을 가지게 될 것입니다.
 
-> 결론
+> 정리 (Conclusion)
 
 - Delta Method 의 Test Statistics : $$\left(\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}\right) /\sqrt{\left( \sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}\right)}$$
-- $x_T$ 에 Analysis Unit 이 적용될때의 Delta Method Test Statistics : $$\left(\frac{\bar{y^T}}{n_T}-\frac{\bar{y^C}}{n_C}\right) /\sqrt{\left( \frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}\right)}$$
+- $x$ = Analysis Unit 일때의 Delta Method Test Statistics : $$\left(\frac{\bar{y^T}}{n_T}-\frac{\bar{y^C}}{n_C}\right) /\sqrt{\left( \frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}\right)}$$
 - Two-Sample Z Test 의 Test Statistics :  $$\left(\frac{\bar{y^T}}{n_T}-\frac{\bar{y^C}}{n_C}\right) /\sqrt{\left( \frac{\sigma_{y}^{C^2}}{n_C}+ \frac{\sigma_{y}^{T^2}}{n_T}\right)}$$
 - 즉, 위에 따라서 Analysis Unit 과 Randomization Unit 이 같다면 Two Sample T Test 와 Delta Method 는 같은 결론을 내게 됩니다.
 
-> ## Two Sample T Test : Filter 
+> ## Two Sample T Test : Analysis unit = Randomization Unit and Filter
 
 | row  | experiment_key | User_id | # User | Clicks |
 | ---- | -------------- | ------- | ------ | ------ |
@@ -411,15 +549,44 @@ ttest(mean_control,mean_treatment,var_control,var_treatment)
 | 4    | B              | 324     | 0      | 0      |
 | 5    | B              | 992     | 1      | 2      |
 
-- 위와 같이 "Randomization Unit" 과 "Analysis Unit" 이 같긴 하지만, 유저를 필터링해서 분석하는 경우도 있습니다.
-  - 한 예시로 웹페이지 메뉴의 "help" 메뉴를 개선했다고 합시다. 그러면 help 메뉴를 사용하는 유저에 한해서 메트릭을 분석하고자 하려는 니즈가 있을 것입니다.
-  - 그런 경우에 위와같이 User 집계시에 필터링을 걸어서 그 유저에 대해서만 분석하려고 할 수 있습니다. (0 : 필터링 되어서 제외된 유저)
-- 필터링된 유저에 대해서는 Two - Sample - T Test 를 수행할 수 있습니다.
-- 물론 이때 쌩으로 Delta Method 를 적용하더라도 평균은 같게 비교하게 됩니다.
-  - $n'$  = 필터링되고 남은 유저 수 라고 합시다. 그러면 위 표의 전체 사람에 대해서 $n'=3$ 이 됩니다.
-  - 그리고 $n'$ 를 이용해서 계산된 평균을 $\bar{x}'$ 라고 합시다. 그러면 위 표에서 B variation 의 평균은 (9+2) / 2 입니다.
-  - 즉 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}= \frac{\sum y^T}{\sum x^T} - \frac{\sum y^C}{\sum{x^C}} = \frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 가 됩니다. 
-  - 즉 Delta method 의 비교시에는 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$  을 쓰고, T Test 시에는 $\frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 를 사용하는데 두 값이 같으므로 차이는 같게 추정하게 되죠. 
+- 위와 같이 "Randomization Unit" 과 "Analysis Unit" 이 같긴 하지만, "유저를 필터링"해서 분석하는 경우도 있습니다.
+  - 한 예시로 웹페이지 메뉴의 "help" 메뉴를 개선했다고 합시다. 그러면 help 메뉴를 사용하는 유저에 대해서만 제한해서 메트릭을 분석하고자 하려고 할 수 있을것입니다.
+  - 그런 경우에 위와 같이 User 집계시에 필터링을 걸어서 그 유저에 대해서만 분석하려고 할 수 있습니다. (0 : 필터링 되어서 제외된 유저)
+
+> 필터링 한 유저에 대해서 어떤 분석이 가능한가?
+
+- 이때 우리는 4가지 방식의 분석이 가능할 것입니다. 
+  - (1) : Filtering 된 유저에 대해서만 Two Sample T Test
+  - (2) : Filtering 된 유저에 대해서만 Delta Method
+  - (3) : 모든 유저에 대해서 Two Sample T Test 
+  - (4) : 모든 유저에 대해서 Delta Method 
+- (1) 과 (2) 는 분석 결과가 같을것입니다. 이 두 결과는 Resonable 합니다.
+- (3) 으로 분석을 하게 되면, 필터링을 한 의미가 거의 없게됩니다. 그러므로 바람직하지 않습니다.
+  - 또한 "필터링된 유저에 대해서 평균" 을 계산하는게 목적인데 전체 유저에 대해서 계산하게 되면 이러한 추정을 하지 못합니다.
+- (4) 의 경우에, 우리가 원하는 "필터링된 유저에 대한 평균" 값 자체는 동일하게 추정하나, 분산을 다르게 추정하게 됩니다.
+  - 이러한 분석은 우리가 원하는게 아닙니다.
+
+![jpg](/assets/images/Stat/162_3.jpg){: .align-center}
+
+- 위 그림처럼 구글 메인에서, 로그인 하는 화면을 바꿨다고 합시다. 이때"로그인 화면을 누른 유저" 만 그 변화를 경험하게 되므로, 이러한 유저를 필터링해서 분석하는것이 필요합니다.
+- 이떄 로그인 화면을 누른 유저를 빨간색, 로그인 화면을 누르지 않은 유저를 회색으로 색칠했다고 합시다. 
+  - 회색 유저들 A,B 에서 모두 같은 경험을 하게 되므로, 이들은 모두 "노이즈" 로 작용하게 됩니다.
+
+> Note 
+
+| row  | experiment_key | User_id | # User | Clicks |
+| ---- | -------------- | ------- | ------ | ------ |
+| 1    | A              | 142     | 0      | 0      |
+| 2    | B              | 155     | 1      | 9      |
+| 3    | A              | 160     | 1      | 10     |
+| 4    | B              | 324     | 0      | 0      |
+| 5    | B              | 992     | 1      | 2      |
+
+- 물론 이때 (4) 처럼 Delta Method 를 적용하는것과, (1) 처럼 필터링한 경우에서도 Point Estimator 는 같습니다.이를 한번 계산해볼까요? 
+- $n'$  = 필터링되고 남은 유저 수 라고 합시다. 그러면 위 표의 전체 사람에 대해서 $n'=3$ 이 됩니다. 
+- 그리고 $n'$ 를 이용해서 계산된 평균을 $\bar{x}'$ 라고 합시다. 그러면 위 표에서 B variation 의 평균은 (9+2) / 2 입니다.
+- 그러면 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}= \frac{\sum y^T}{\sum x^T} - \frac{\sum y^C}{\sum{x^C}} = \frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 가 됩니다. 
+- 즉 Delta method 의 비교시에는 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$  을 쓰고, T Test 시에는 $\frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 를 사용하는데 두 값이 같으므로 차이는 "같게" 추정하게 되죠. 
 - 그러면 Delta method 를 적용했을떄와 T-Test 를 적용했을때의 결과가 같게 될까요? (즉 분산 추정도 같게 될까요?)
 
 > Delta Method
@@ -441,8 +608,8 @@ ttest(mean_control,mean_treatment,var_control,var_treatment)
 
 > $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}$ 계산
 
-- $n'$  = 필터링되고 남은 유저 수 라고 합시다. 그러면 위 표에서 $n'=3$ 이 됩니다.
-- 그리고 $n'$ 를 이용해서 계산된 평균을 $\bar{x}'$ 라고 합시다. 그러면 위 표에서 B variation 의 평균은 (9+2) / 2 입니다.
+- $n'$  = 필터링되고 남은 유저 수 라고 합시다. ( ex : 그러면 위 표에서 $n'=3$ 이 됩니다. )
+- 그리고 $n'$ 를 이용해서 계산된 평균을 $\bar{x}'$ 라고 합시다. ( ex : 그러면 위 표에서 B variation 의 평균은 (9+2) / 2 입니다. )
 - 즉 $\frac{\bar{y^T}}{\bar{x^T}}-\frac{\bar{y^C}}{\bar{x^C}}= \frac{\sum y^T}{\sum x^T} - \frac{\sum y^C}{\sum{x^C}} = \frac{\bar{y^T}'}{\bar{x^T}'}-\frac{\bar{y^C}'}{\bar{x^C}'}$ 가 됩니다.
 
 > $\sigma_{R}^{C^{2}} + \sigma_{R}^{T^{2}}$ 계산
@@ -456,15 +623,14 @@ ttest(mean_control,mean_treatment,var_control,var_treatment)
 
 > Conclusion
 
-- 즉 값이 다르게 됩니다. (실제 코드 레벨로 볼때 다름..)
-- 이 이유는 사실 Two Sample T - Test 의 경우 'Filter' 된 데이터만이 모집단이라고 생각하고 계산되고, 그에 반해서 Delta Method 는 필터되기 전 값 모두를 모집단이라고 생각하기때문에 여기에서 차이가 나게 됩니다.
+- 즉 값이 같게 추정되지 않습니다.
+- 이 이유는 사실 Two Sample T - Test 의 경우 'Filter' 된 데이터만이 모집단이라고 생각하고 계산되고, 그에 반해서 Delta Method 는 필터되기 전 값 모두를 모집단이라고 생각하기때문에 , 이러한 부분에서 차이가 발생하는 것입니다! 
 
-> ## Two Sample Proportion Test : When Analysis unit = Randomization Uni
+> ## Two Sample Proportion Test 
 
 - 이 경우에는 다소 당연하지만 , 일치합니다. 
   - 이전과 같은 로직 따라가면 되어요. 
-  - 어짜피 Proportion Test 도 결국에는 Mean Test 이니깐용
-- 그런데.. 이떄  Agg Unit 이 안되는 경우의 CTR 도 존재하기 땜시... 
+  - 어짜피 Proportion Test 도 결국에는 Mean Test 이니깐요.. 
 
 > ## Code Level Check
 
@@ -573,6 +739,7 @@ ttest(mean_control,mean_treatment,var_control,var_treatment)
 - https://stats.stackexchange.com/questions/398436/a-b-testing-ratio-of-sums
 - http://www.stat.rice.edu/~dobelman/notes_papers/math/TaylorAppDeltaMethod.pdf
 - https://stats.stackexchange.com/questions/291594/estimation-of-population-ratio-using-delta-method/291652
-
-
+- https://en.wikipedia.org/wiki/Delta_method
+- https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/dm.html
+- hogg 수리통계학 7ed
 

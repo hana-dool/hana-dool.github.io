@@ -10,6 +10,7 @@ toc_label: "Table Of Contents"
 toc_icon: "cog"
 toc_sticky: true
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  확률수렴과 그 밖의 성질들!
@@ -345,7 +346,7 @@ $$\begin{aligned}
 
 > ## Example : 확률유계 $\not \to$  분포 수렴
 
-- $\quad\left\{X_{n}\right\}$ 이 다음과 같은 퇴화확률변수 열이라고 하자. 
+- $\left\{X_{n}\right\}$ 이 다음과 같은 퇴화확률변수 열이라고 하자. 
   - 짝수 $n=2 m$ 에 대해 $X_{2 m}=2$ $+(1 /(2 m))$ 일 확률이 1 이고, 
   - 홀수 $n=2 m-1$ 에 대해 $X_{2 m-1}=1+(1 /(2 m))$ 일 확률이 1 이다. 
 - 그러면 열 $\left\{X_{2}, X_{4}, X_{6}, \cdots\right\}$ 은 퇴화확률변수 $Y=2$ 에 분포수렴하고, 열 $\left\{X_{1}, X_{3}, X_{5}, \cdots\right\}$ 는 퇴화확률변수 $W=1$ 에 분포수렴한다.
@@ -354,7 +355,7 @@ $$\begin{aligned}
 
 > ## Intuition
 
-- 확률유계인 열(또는 확률변수로 분포수렴하는 것)을 생각하는 한 가지 방법은 $\left|X_{n}\right|$ 의 확률질 량이 $\infty$ 로 벗어나지 않는다는 것이다. 
+- 확률유계인 열(또는 확률변수로 분포수렴하는 것)을 생각하는 한 가지 방법은 $\left|X_{n}\right|$ 의 확률질량이 $\infty$ 로 벗어나지 않는다는 것이다. 
   - 종종 분포수렴 대신 확률유계성을 이용할 수 있다. 다음 정리는 앞으로 필요하게 될 성질이다.
 
 > ## Theorem
@@ -398,54 +399,6 @@ $$n \rightarrow \infty \text { 일 때 } \frac{Y_{n}}{X_{n}} \stackrel{P}{\right
 
 - 큰 $O_{p}\left(\operatorname{big} O_{p}\right)$ 는 다음을 의미한다. 
   - $$ n \rightarrow \infty \text { 일 때 } \frac{Y_{n}}{X_{n}} \text { 이 확률유계인 경우에 한하여 } Y_{n}=O_{p}\left(X_{n}\right) $$ 
-
-> ## BIg o And Little o
-
-> Big - o 
-
-"Big Op" (big oh-pee), or in algebraic terms $O_{p}$, is a shorthand means of characterising the convergence in probability of a set of random variables. It directly builds on the same sort of convergence ideas that were discussed in Chapters 5 and $6 .$
-Big Op means that some given random variable is stochastically bounded. If we have some random variable $X_{n}$ and some constant $a_{n}$ (where $\mathrm{n}$ indexes both sets), then
-$$
-X_{n}=O_{p}\left(a_{n}\right)
-$$
-is the same as saying that
-$$
-P\left(\left|\frac{X_{n}}{a_{n}}\right|>\delta\right)<\epsilon, \forall n>N
-$$
-$M$ and $N$ here are just finite numbers, and $\epsilon$ is some arbitrary (small) number. In plain English, $O_{p}$ means that for a large enough $n$ there is some number $(M)$ such that the probability that the random variable $\frac{X_{n}}{a_{n}}$ is larger than that number is essentially zero. It is "bounded in probability" (Vaart 1998, Section 2.2).
-
-> Little - o
-
-"Little op" (litle oh-pee), or $o_{p}$, refers to convergence in probability towards zero. $X_{n}=o_{p}(1)$ is the same as saying
-$$
-\lim _{n \rightarrow \infty}\left(P\left|X_{n}\right| \geq \epsilon\right)=0, \forall \epsilon>0
-$$
-By definition of the notation, if $X_{n}=o_{p}\left(a_{n}\right)$ then
-$$
-\frac{x_{n}}{a_{n}}=o_{p}(1)
-$$
-In turn, we can therefore express $X_{n}=o_{p}\left(a_{n}\right)$ as
-$$
-\lim _{n \rightarrow \infty}\left(P\left|\frac{X_{n}}{a_{n}}\right| \geq \epsilon\right)=0, \forall \epsilon>0 .
-$$
-In other words, $X_{n}=o_{p}\left(a_{n}\right)$ if and only if $\frac{X_{n}}{a_{n}} \stackrel{p}{\rightarrow} 0 .$
-
-> Relation
-
-$O_{p}$ and $o_{p}$ may seem quite similar, and that's because they are! Another way to express $X_{n}=O_{p}\left(a_{n}\right)$, is
-$$
-\forall \epsilon \exists N_{\epsilon}, \delta_{\epsilon} \text { s.t. } \forall n>N_{\epsilon}, \quad P\left(\left|\frac{X_{n}}{a_{n}}\right| \geq \delta_{\epsilon}\right) \leq \epsilon .
-$$
-This restatement makes it clear that the values of $\delta$ and $N$ are to be found with respect to $\epsilon$. That is, we only have to find one value of $N$ and $\delta$ for each epsilon, and these can differ across $\epsilon$ 's.
-Using the same notation, $X_{n}=o_{p}\left(a_{n}\right)$ can be expressed as
-$$
-\forall \epsilon, \delta \exists N_{\epsilon, \delta} \text { s.t. } \forall n>N_{\epsilon, \delta}, \quad P\left(\left|\frac{X_{n}}{a_{n}}\right| \geq \delta\right) \leq \epsilon .
-$$
-$o_{p}$ is therefore a more general statement, ranging over all values of $\epsilon$ and $\delta$, and hence any combination of those two values. In other words, for any given pair of values for $\epsilon$ and $\delta$ there must be some $N$ that satisfies the above inequality (assuming $X_{n}=o_{p}\left(a_{n}\right)$ ).
-
-Note also, therefore that $o_{p}\left(a_{n}\right)$ entails $O_{p}\left(a_{n}\right)$, but that the inverse is not true. If for all $\epsilon$ and $\delta$ there is some $N_{\epsilon, \delta}$ that satisfies the inequality, then it must be the case that for all $\epsilon$ there exists some $\delta$ such that the inequality also holds. But just because for some $\delta_{\epsilon}$ the inequality holds, this does not mean that it will hold for all $\delta$.
-
-- https://bookdown.org/ts_robinson1994/10_fundamental_theorems_for_econometrics/big-op-and-little-op.html
 
 > ## Theorem
 
