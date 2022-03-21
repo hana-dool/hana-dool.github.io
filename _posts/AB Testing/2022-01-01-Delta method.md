@@ -124,25 +124,19 @@ $$f(x)=P_{f, 2, a}(x)+o\left((x-a)^{2}\right) \quad \text { as } x \rightarrow a
 
 - 증명: $\epsilon>0$ 이라고 하자. 열 $\left\{Y_{n}\right\}$ 이 확률유계이므로 다음과 같은 양의 상수 $N_{c}$ 과 $B_{\epsilon}$ 이 존재한다.
 
-$$
-n \geq N_{\epsilon} \Longrightarrow P\left[\left|Y_{n}\right| \leq B_{\epsilon}\right] \geq 1-\epsilon \quad ...(1)
-$$
+$$n \geq N_{\epsilon} \Longrightarrow P\left[\left|Y_{n}\right| \leq B_{\epsilon}\right] \geq 1-\epsilon \quad ...(1)$$
 
 - 또한 $X_{n}=o_{p}\left(Y_{n}\right)$ 이므로 $n \rightarrow \infty$ 일 때 다음을 얻는다.
 
-$$
-\frac{X_{n}}{Y_{n}} \stackrel{P}{\rightarrow} 0 \quad ...(2)
-$$
+$$\frac{X_{n}}{Y_{n}} \stackrel{P}{\rightarrow} 0 \quad ...(2)$$
 
 - 그러면
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 P\left(\left|Y_{n}\right| \geq \epsilon\right) &=P\left(\left|Y_{n}\right| \geq \epsilon,\left|X_{n}\right| \leq B_{\epsilon}\right)+P\left(\left|Y_{n}\right| \geq \epsilon,\left|X_{n}\right|>B_{\epsilon}\right) \\
 & \leq P\left(\left|Y_{n}\right| \geq \epsilon,\left|X_{n}\right| \leq B_{\epsilon}\right)+P\left(\left|X_{n}\right|>B_{\epsilon}\right) \\
 & \leq P\left(\left|\frac{Y_{n}}{X_{n}}\right| \geq \frac{\epsilon}{B_{\epsilon}}\right)+P\left(\left|X_{n}\right|>B_{\epsilon}\right) \rightarrow 0,
-\end{aligned}
-$$
+\end{aligned}$$
 
 - (1) 과 (2) 에의해 오른쪽의 첫째($$P\left(\left|\frac{Y_{n}}{X_{n}}\right| \geq \frac{\epsilon}{B_{\epsilon}}\right)$$)와 둘째 항 ( $$P\left(\left|X_{n}\right|>B_{\epsilon}\right)$$ )은 $n$ 을 충분히 크게 함으로써 얼마든지 작게 만들 수 있습니다. 즉 따라서 이 결과는 성립하게 됩니다.
 
@@ -337,7 +331,7 @@ $$\left(\frac{\bar{y}}{\bar{x}}-1\right) \sim N\left(0, \hat\sigma_{R}^{2}\right
 
 - 위의 정리에 의하여, Test Statistics 는 아래와 같습니다.
 
-$$ Z = \frac{(\frac{\bar{y}}{\bar{x}}-1)}{\hat{\sigma_R}} =\frac{(\frac{\bar{y}}{\bar{x}}-1)}{\sqrt{{\frac{s_{y}^{2}}{n \bar{x}^{2}}-2 \frac{\bar{y} s_{x y}}{n\bar{x}^{3}}+\frac{s_{x}^{2} \bar{y}^{2}}{n \bar{x}^{4}} }}} \sim N(0,1^2)$$
+$$Z=\frac{\left(\frac{\bar{y}}{\overline{\bar{x}}}-1\right)}{\hat{\sigma}_{R}}=\frac{\left(\frac{\bar{y}}{\bar{x}}-1\right)}{\sqrt{\frac{s_{y}^{2}}{n \bar{x}^{2}}-2 \frac{\bar{y} s_{x y}}{n \bar{x}^{3}}+\frac{s_x^{2} \bar{y}^{2}}{n \bar{x}^{4}}}} \sim N\left(0,1^{2}\right)$$
 
 - $\mid Z\mid  > z_{1-\alpha/2}$ :  귀무가설 기각 ( 즉 $\mu_x \not= \mu_y$ )
 - $\mid Z\mid  < z_{1-\alpha/2}$ :  귀무가설 기각하지 못함  ( 즉 $\mu_x = \mu_y$ )
