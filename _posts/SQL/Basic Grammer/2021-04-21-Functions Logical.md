@@ -22,7 +22,8 @@ typora-root-url: ../../../../hana-dool.github.io
 > ## 논리 연산자
 
 - 우리는 이전에 `Where `에 대해서 배울때에, SQL 의 Logical Operation 을 통하여 where 절을 좀 더 다채롭게 구성할 수 있다는것을 배웠습니다. 
-- 논리연산자를 사용하면게 조건에 대하여 True , False , Unkown 값을 반환하게 됩니다.
+- SQL은 모든 논리 연산자는 `TRUE` , `FALSE` 또는 `NULL` ( `UNKNOWN` )에 평가됩니다. MySQL 그럼, 이들은 1 ( `TRUE` ), 0 ( `FALSE` ) 및 `NULL` 로 구현됩니다. 이 대부분은 다양한 SQL 데이터베이스 서버에 공통입니다. 그러나 일부 서버는 `TRUE` 0이 아닌 임의의 값을 돌려주는 경우가 있습니다.
+- 논리연산자를 사용하면게 조건에 대하여 True , False , Unkown(Null) 값을 반환하게 됩니다.
 
 | **Operator** | **Meaning**                                                  |
 | :----------- | :----------------------------------------------------------- |
@@ -145,6 +146,22 @@ Shelley   |Higgins  |12000.00|
 ```
 
 - 위에서 9000 ~ 12000 의 값이 있는것을 잘 기억하세요!
+
+> ## Exist
+
+- Exist 는 하위 쿼리의 행이 1개 이상이면 true 를 리턴합니다.
+- Exist 의 특징으로는, 행을 1개라도 찾게되면 바로 process 를 종료하게 되므로 효율적입니다.
+
+```sql
+SELECT 
+    select_list
+FROM
+    a_table
+WHERE
+    [NOT] EXISTS(subquery);
+```
+
+- Exist 는 주로 위와 같이 쓰입니다.
 
 > ## in
 

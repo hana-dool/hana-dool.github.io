@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  파이썬을 파이썬 답게 코딩하는 방법에 대해서 알아봅시다.

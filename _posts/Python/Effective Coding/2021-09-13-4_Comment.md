@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  다음의 Convension 은 기본적으로 Pep8 을 따릅니다. 일부 모호한 기준은 Google 의 python style guide 를 따르고 있으며, 다른 Style guide (Numpy , Scipy Style guide) 등을 따르기도 합니다. 제가 조사한것이니 만큼, 저의 주관이 다소 들어가있습니다.
