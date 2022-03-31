@@ -20,12 +20,12 @@ Outlier 와 A/B Testing
 # [randomization unit in online A/B tests](#link){: .btn .btn--primary}{: .align-center}
 
 - 이전 게시물에서 무작위 단위가 (Randomization unit) 독립적이지 않을때에 온라인 실험에서 발생하는 문제에 대해서 알아보았습니다.
-- 여기에서는 무작위 단위를 세션으로 유지하지만, 분석 단위 (Randomization Unit)   를 유지할떄에 어떤 일이 일어날지에 대해서 알아봅시다.
+- 여기에서는 Randomization Unit 을 유저로 유지하지만 , Analysis Unit 을 세션으로 고집할떄에 어떤 일이 일어날지에 대해서 알아봅시다.! 
 
 > ## Comparing two proportions
 
-- Randomization Unit 이 Analysis Unit 과 다를때에 어떤 일이 일어나는지 알아보기 위하여, 테스트의 작동이 어떻게 일어나는지에 대해서 아주 짧게 알아봅시다.
-- 기본적으로는 아래와 같이 Two Sampl z test 를 이용해 계산합니다. (Large Sample 일 경우에는 T - Test 와 동일함)
+- Randomization Unit 이 Analysis Unit 과 다를때에 어떤 일이 일어나는지 알아보기 위하여, 우선 일반적으로 테스트가 어떻게 일어나는지에 대해서 아주 짧게 알아봅시다.
+- 기본적으로는 Conversion Test 의 경우 아래와 같이 Two Sampl z test 를 이용해 계산합니다. (Large Sample 일 경우에는 T - Test 와 동일함)
 
 > Algorithm
 
@@ -39,15 +39,15 @@ $$Z=\frac{\left(\hat{p}_{T}-\hat{p}_{C}\right)-\left(p_{T}-p_{C}\right)}{\sqrt{\
 
 > Note
 
-- 위와 같은 계산 방식에서 우리는 샘플이 iid 이거나 최소한 상관관계가 없다고 가정합니다. 
-- 하지만 Randomization Unit 이 Analysis 과 다를때에는 위와 같이 iid 가 아닙니다.
+- 하지만 위와 같은 테스트를 수행하려면 우리는 샘플이 iid 이거나 최소한 상관관계가 없다고 가정합니다.  (즉 각 세션들은 독립적이라고 가정합니다.)
+- 하지만 Randomization Unit 이 Analysis 과 다를때에는 위 샘플이 iid 가 아닙니다.
   - 각 측정값들은 독립이 아니기 때문이죠.
 
 > ## Naive Test
 
 ![jpg](/assets/images/Stat/143_1.jpg)
 
-- 우리는 분석시에 사용자당 세션과 , 세션 전환율이 독립적이라는 가정을 한 상태에서 분석을 진행했습니다. (즉 각 세션이 독립적이다! 라고 가정하고 분석하기 위해서, 어떤 사용자가 세션을 발생시키던, 각 세션당  Conversion 은 동일하다고 가정한셈이죠)
+- 우리는 이전에 분석시에 사용자당 세션과, 세션 전환율이 독립적이라는 가정을 한 상태에서 분석을 진행했습니다. (즉 각 세션이 독립적이다! 라고 가정하고 분석하기 위해서, 어떤 사용자가 세션을 발생시키던, 각 세션당  Conversion 은 동일하다고 가정한셈이죠)
   - 즉 위 그림의 파란색처럼 "유저가 세션을 얼마나 발생시키던지, Session Conversion 은 각 세션당 일치 한다!" 를 가정한 셈입니다.
 - 그러나 현실 세계에서는 일반적으로 그렇지 않습니다. 일부 사용자는 첫 번째 세션에서 전환할 수 있지만 다른 사용자는 전환을 위해 여러 세션을 사용할 수 있습니다. 아래 예시를 볼까요?
 
@@ -59,6 +59,8 @@ $$Z=\frac{\left(\hat{p}_{T}-\hat{p}_{C}\right)-\left(p_{T}-p_{C}\right)}{\sqrt{\
 - 그러므로 일반적으로 아래와 같은 그래프를 그리게 됩니다.
 
 ![jpg](/assets/images/Stat/143_3.jpg)
+
+- 즉 정리하자면 "현실세계에서 세션은 독립적일수가 없다! 가 됩니다."
 
 > ## Varying the sessions per user distribution
 
@@ -72,14 +74,14 @@ $$Z=\frac{\left(\hat{p}_{T}-\hat{p}_{C}\right)-\left(p_{T}-p_{C}\right)}{\sqrt{\
 ![jpg](/assets/images/Stat/143_4.gif)
 
 - 위 그래프의 경우 
-  - 좌측상단 그래프는 유저당 세션수를 나타낸다. (추이를 보면 점점 Skewed 되고 있다. 즉 대다수는 세션을 조금 일으키고 , 소수의 Outlier 가 있음을 알 수 있다.)
+  - 좌측상단 그래프는 유저당 세션수를 나타낸다. (추이를 보면 점점 Skewed 되고 있다. 즉 대다수는 세션을 조금 일으키고 , 소수의 Outlier 가 있음을 알 수 있습니다.)
   - 우측상든 그래프는 '유저당 Conversion' 의 그래프 (즉 유저가 세션을 많이 generate 한다고 해도, 전환율은 똑같이 유지한다.) 
   - 이때 Conversion 은 '평균은 동일' 하게 유지되기는 하지만 , 각각 유저에게 어느정도의 Noise 가 존재합니다. ( 여기에서는 beta 분포로 generating 하였습니다. )
 - Randomization Unit 이 유저이므로, 좌하단의 p-value 계산을 할때에, 유저별로 나뉜 뒤에, 세션당 성공율이 Test 되게 됩니다. (Radomization 은 유저 / Analysis 는 세션)
   - 이때 점점 Session Per User 가 극단적이 될수록 p-value 그래프도 False Postiive 가 늘어나는것을 볼 수 있습니다.
   - 이는 Session 수가 엄청 많은 유저의 경우, 어떤 Variant 에 할당되느냐에 따라서 그 값이 크게 변하기 때문입니다.
 - 우하단의 그래프는 Uniform 분포와 같은지 아닌지를 Testing 한 결과를 나타냅니다. (KS 그래프)
-  - 그래프를 볼때 그 차이가 엄청 커지므로 Uniform 이 아니라는것을 알 수 있습니다.
+  - **그래프를 볼때 그 차이가 엄청 커지므로 Uniform 이 아니라는것을 알 수 있습니다.**
 
 > Note 
 
