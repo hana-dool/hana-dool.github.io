@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  이번에는 Bayesian 방법을 이용하여 어떻게 하면 좀 더 정확한 A/B Testing 을 할 수 있는지에 대해서 알아보겠습니다. 하이퍼커넥트의 성혁화 님이 글을 너무 잘쓰셔서, 대부분은 그 서술을 그대로 인용하였습니다. 

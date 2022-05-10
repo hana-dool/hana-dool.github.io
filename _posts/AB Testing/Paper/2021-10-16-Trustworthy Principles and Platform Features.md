@@ -21,7 +21,7 @@ typora-root-url: ../../../../hana-dool.github.io
 
 > ## Experiments Phase
 
-- 많은 문헌의 연구로부터 세가지 실험 단계들을 확립할 수 있었습니다. 
+- 많은 문헌의 연구로부터 세가지 실험 단계들을 확립할 수 있었습니다.
 
 ![png](/assets/images/Stat/83_1.png)
 

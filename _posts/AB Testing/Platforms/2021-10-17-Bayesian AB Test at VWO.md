@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  VWO 에서 사용하는 Bayesian A/B Testing 방법에 대해서 technical Whitepaper 가 있어서 이를 리뷰해보고자 합니다. 중간중간 다소 난해한 부분이 있기는 하지만 전체적으로 적당한 수준인것 같아요. 

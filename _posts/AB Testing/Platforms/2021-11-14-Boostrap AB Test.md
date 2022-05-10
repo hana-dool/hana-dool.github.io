@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Bootstrap 을 이용하여 Testing 을 진행하는 방법은 익히 알려져 있는데요, 이를 A/B Testing 에 어떻게 하면 적용할 수 있는지에 대해서 알아봅시다. (근데 뭐... 별로 이론적인 이야기를 하는것같지는 않네요)

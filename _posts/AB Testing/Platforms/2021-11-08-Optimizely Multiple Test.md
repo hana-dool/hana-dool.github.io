@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Optimizely 에서 어떻게 다변수 테스트를 수행하고 있는지에 대해서 알아봅시다. 
