@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  AB 테스트가 Covid 에서 어떻게 이루어지는지 알아봅시다.

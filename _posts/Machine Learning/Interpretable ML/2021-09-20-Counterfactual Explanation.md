@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
   반 사실적인 방법론이란 사실, 우리가 원하는 예측치에 도달하는 Sample 들을 자세히 살펴보는 방법론입니다. 이를 어떻게 구현할 수 있고 장단점이 무엇인지 살펴봅시다.

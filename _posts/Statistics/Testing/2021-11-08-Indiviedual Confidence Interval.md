@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  우리가 Mean Comparison 을 실시할때에 늘 A-B 의 신뢰구간이 0 을 포함하는지 아닌지를 검정하게 됩니다. 하지만 이때 그냥 각각의 A, B 의 Meam 에 대한 Confidence interval 을 생성한 뒤, 이 각각을 비교한다면 더 편할텐데 왜 이렇게 하지 않을까요? 이 방법이 왜 잘 작동하지 않는지에 대해서 알아봅시다. 

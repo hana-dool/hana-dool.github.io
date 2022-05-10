@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  AB Test 시에 Metric 에 대해서 이 녀석이 얼마나 좋은 Metric 인지 궁금하지 않나요? 이에 대해서 Microsoft Teams 에서 어떻게 Metric 을 평가하고 , 안좋은 녀석에 대해서는 어떻게 조치하였는지에 대해서 알아봅시다! 

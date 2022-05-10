@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../../hana-dool.github.io
 ---
 
 CUPED 방법론을 활용해서 Metric 의 Sensitivity 를 높히는 방법

@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 Pixel Federation 에서 A/B 테스트를 수행하는 방식을 Freq 에서 Bayesian 으로 바꾼 이유는 뭘까요?

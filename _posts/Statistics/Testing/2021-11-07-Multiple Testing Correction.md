@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  다중 비교는 False Positive Inflation 이라는 문제점을 가지고 있습니다. 이러한 문제점을 해결하기 위해서 어떤방법을 활용할 수 있을까요? 
@@ -102,8 +103,6 @@ $$FWER(\alpha,m) = 1- (1 - \alpha_{SID})^m = \alpha$$
   - <http://www.stat.uchicago.edu/~yibi/teaching/stat222/2017/Lectures/C05.pdf>
 - 하지만 이러한 방법론들은 결국에 ANOVA 의 Assumption (그룹별로 Normal 분포 등) 를 공유합니다.
   - 여기에서는 그러한 제한이 있는 방법론은 일단 다루지 않으려고 합니다. (나중에 ANOVA 와 그 이후 방법론에 대해서는 정리하도록 하겠습니다.) 
-
-
 
 # [Multiple Test Correlation : FDR](#link){: .btn .btn--primary}{: .align-center}
 

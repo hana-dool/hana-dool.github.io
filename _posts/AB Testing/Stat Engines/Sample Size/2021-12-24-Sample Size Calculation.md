@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../../hana-dool.github.io
 ---
 
 A/B Testing 에서 샘플 사이즈를 계산하는 공식
@@ -46,7 +47,7 @@ $$\begin{aligned}
 
 > Note
 
-![jpg](/assets/images/Stat/132_1.jpg)
+![jpg](/assets/images/Stat/132_1.jpg) 
 
 -  $\mu_{0}+z_{\alpha} \sigma / \sqrt{n}$ under the $H_{0}$ distribution 일때에, 오른쪽 면적은 Alpha (1종 오류) 가 됩니다.
 -  $\mu_{0}+z_{\alpha} \sigma / \sqrt{n}$ under the $H_{1}$ distribution 일때 오른쪽 면적은  power $=1-\beta$. 가 됩니다.
@@ -85,7 +86,7 @@ $$\begin{aligned}
 
 > Note
 
-![jpg](/assets/images/Stat/132_2.jpg)
+![jpg](/assets/images/Stat/132_2.jpg) 
 
 - 위처럼 계산됩니다.
 

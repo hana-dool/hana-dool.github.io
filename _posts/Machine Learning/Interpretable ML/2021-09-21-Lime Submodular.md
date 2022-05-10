@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Lime 이란게 사실, 국소적인 데이터의 설명을 위해서 만들어진거라 특정 instance 에 대한 해석은 어느정도 훌륭히 해내는데에 비해서, 모델이 전체적으로 어떻게 해석하는지에 대한 능력은 약했습니다. 이를 해결하고자 한 방법론이 바로 Submodular Pick 방법론입니다.

@@ -98,11 +98,11 @@ $$
 
 > Comparison
 
-- big O $f(x)$ = $O(g(x))$ 
+- big O : $f(x)$ = $O(g(x))$ 
   - $$|f(x)| \leq \varepsilon g(x) \quad \text { for all } x \geq x_{0}$$ 을 만족하는 $\epsilon , x_0 $ 이 존재한다. 
   - $\limsup _{x \rightarrow a}\left|\frac{f(x)}{g(x)}\right|<\infty$.
   - 근본적으로 $f(x)$ 의 증가율이 $g(x)$ 보다 같거나 더 커야함
-- Little o $f(x)$ = $o(g(x))$ 
+- Little o : $f(x)$ = $o(g(x))$ 
   - 어떠한 $\varepsilon >0$ 에 대해서도, $$|f(x)| \leq \varepsilon g(x) \quad \text { for all } x \geq x_{0}$$ 을 만족하는 $x_{0}$ 이 존재한다.
   - $$\lim _{x \rightarrow \infty} \frac{f(x)}{g(x)}=0$$
   - 근본적으로 $f(x)$ 의 증가율이 $g(x)$ 보다 더 커야함

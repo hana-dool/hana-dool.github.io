@@ -12,6 +12,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Likelihood Test 3개를 짧게 소개해보고 비교해보는 시간을 가져봅시다.

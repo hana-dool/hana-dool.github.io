@@ -12,6 +12,7 @@ toc_label: "Table Of Contents"
 toc_icon: "cog"
 toc_sticky: true
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # 1. Array List

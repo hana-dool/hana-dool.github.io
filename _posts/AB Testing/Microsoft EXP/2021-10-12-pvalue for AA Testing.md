@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  A/A 테스팅과 이를 어떻게 Metric 과 연관지어서 생각할 수 있는지 알아봅시다.

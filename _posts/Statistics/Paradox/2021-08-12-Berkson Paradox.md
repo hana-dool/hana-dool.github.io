@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # [Berkson's Padadox](#link){: .btn .btn--primary}{: .align-center}

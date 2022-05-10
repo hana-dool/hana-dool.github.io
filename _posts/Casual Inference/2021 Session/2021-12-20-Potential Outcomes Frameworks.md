@@ -12,9 +12,10 @@ toc_sticky: true
 
 use_math: true
 typora-root-url: ../../../../hana-dool.github.io
+
 ---
 
- Casual Inference 와 철학
+ Casual Inference 와202 철학
 {: .notice--warning}
 
 > ## Empiricism (경험주의)
@@ -33,7 +34,7 @@ typora-root-url: ../../../../hana-dool.github.io
 
 > Example
 
-![jpg](/assets/images/Stat/126_1.jpg)
+![jpg](assets/images/Stat/126_1.jpg)
 
 - 우리는 먹구름이 끼면 비가 곧 오게 될 것이라는것을 알고있음
 - 그런데 이는 실제 미래에 올 비를 경험해서 아는게 아니라, 먹구름에 대한 인상과 관념을 떠올랐을떄, 그동안 우리 경험에 비추어봤을때 먹구름 이후에 항상 비가 온다라는 또다른 관념이 연이어 우리 머리속에 떠올랐기 떄문에 인과관계에 대해서 말할 수 있을것입니다.
@@ -63,7 +64,7 @@ typora-root-url: ../../../../hana-dool.github.io
 
 > ## 인과관계 프레임워크
 
-![jpg](/assets/images/Stat/126_2.jpg)
+![jpg](assets/images/Stat/126_2.jpg)
 
 > (1)  이론에 기반한 가설적인 인과관계 
 
@@ -99,7 +100,7 @@ typora-root-url: ../../../../hana-dool.github.io
 
 > ## Various Approach to Casuation
 
-![jpg](/assets/images/Stat/126_3.jpg)
+![jpg](assets/images/Stat/126_3.jpg)
 
 > Statistic - Based -Approach
 
@@ -126,7 +127,7 @@ typora-root-url: ../../../../hana-dool.github.io
 
 > ## 관계의 도식화
 
-![jpg](/assets/images/Stat/126_4.jpg)
+![jpg](assets/images/Stat/126_4.jpg)
 
 - 위와 같은 도식을 통해서 Framework 는 서로 보완하는 관계로 되어있음을 한눈에 파악할 수 있음
 - Statistics - Based - Approach 는 보다 구체적인 데이터 분석 결과에 대해서는 제시할 수 없는 한계

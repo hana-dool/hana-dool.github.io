@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  통계를 하게되면 확률에 대한 두가지 관점인 베이지안과 Frequentist 두가지 관점에 대해서 배우게 됩니다. 두개의 차이에 대해서 짧게 알아보도록 합니다. 

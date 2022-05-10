@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  졸업하고 한참 지나니까 제일 기초적인 적분도 까먹네요.. 여기에서는 기본적인 적분의 방법론엗 대해서 대충 알아보겠습니다.

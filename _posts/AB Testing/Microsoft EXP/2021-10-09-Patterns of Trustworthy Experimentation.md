@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  AB Testing 도중에 실험이 얼마나 유의한지, 중단해야 하지는 않는지, 우리가 예측하는 효과대로 흘러가고 있는지 에 대해서 알아보는 방법에 대해서 알아봅시다.

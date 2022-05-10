@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  터미널은 어떤 명령어를 사용할까요
@@ -258,14 +259,4 @@ gorany@goranys-MacBook-Air R % rm 기러기
 - <https://wiseworld.tistory.com/47>
 - <https://jh-make.tistory.com/category/%EB%A7%A5%20%ED%84%B0%EB%AF%B8%EB%84%90%20%EB%AA%85%EB%A0%B9%EC%96%B4>
   - 요기가 짱인것 같아요. 더 알고싶으면 여기를 보도록 합시다.
-
-
-
-
-
-
-
-
-힘들어...
-{: .notice--success}
 

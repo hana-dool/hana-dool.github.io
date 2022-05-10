@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Practical significace 현실에 의미있는 차이를 다룹니다. 이에 대해서 알아봅시다.

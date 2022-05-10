@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  우리가 Testing 을 할때에는 주로 p-value 를 이용해서 테스트를 하게 되는데요. 사실 이러한 기준은 좋지 않습니다. 여기에서는 p-value 보다 왜 신뢰구간이 선호되어야 하는지에 대해서 논의합니다.

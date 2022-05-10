@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  다중 비교는 False Positive Inflation 이라는 문제점을 가지고 있습니다. 이러한 문제점을 해결하기 위해서 어떤방법을 활용할 수 있을까요? 

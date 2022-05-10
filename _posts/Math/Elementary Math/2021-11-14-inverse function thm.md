@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  졸업하고 한참 지나니까 기초적인것도 까먹네요.. 수학과인데.. 

@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+
 ---
 
 A/B Testing 을 할때 우리는 대규모 앱이여서 유저가 수십만씩 존재하므로 괜찮아! 라고 하는 경우도 있습니다. 즉 Sample size 에 대해서 별로 신경쓰지 않는다는것인데요, 과연 이런 생각이 맞을까요?

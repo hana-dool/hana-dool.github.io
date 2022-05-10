@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  어떻게 하면 적은 데이터로도 신뢰있는 결과를 이끌어낼 수 있을지에 대해서 알아봅시다.

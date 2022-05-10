@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  신뢰성 있는 실험을 하기 위하여, 실험 전에는 어떠한 세팅을 할 수 있는지에 대해서 알아봅시다.

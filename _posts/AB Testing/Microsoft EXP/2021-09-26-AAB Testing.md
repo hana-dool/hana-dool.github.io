@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  마이크로소프트 Teams 가 마주친 이상한 상황에서 어떻게 문제를 해결하였는지 살펴봅시다. 이 실험의 교훈도 있는편이여서 읽어보시면 좋을것같아요~

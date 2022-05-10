@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  신뢰성 있는 실험을 하기 위하여 SRM 을 보고 왜 이것을 살펴봐야 하는지에 대해서 알아보자.

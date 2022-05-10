@@ -13,6 +13,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 # [Statistical Paradox](#link){: .btn .btn--primary}{: .align-center}

@@ -13,11 +13,10 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math : true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
-
-
-# <center><font size="15"> 배열(Array) </font></center>
+# 배열(Array)
 
 ## 특징
 
@@ -63,11 +62,7 @@ use_math : true
 
 ![png](/assets/images/Py_Basic/1_2.png)
 
-<br>
-
-<br>
-
-# <center><font size="15"> List </font></center>
+# List
 
 - 리스트는 배열이 가지고 있는 인덱스라는 장점을 버리고 대신 빈틈없는 데이터의 적재라는 장점을 취한 데이터 스트럭쳐 
 

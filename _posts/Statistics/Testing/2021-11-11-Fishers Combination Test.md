@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
  Null Hypothesis 가 맞다면 p-value 가 Uniform 을 따르는것은 알 수 있습니다. 그렇다면 이렇게 'Null 이 맞을때의 분포' 를 알고있는데 테스트를 안하는것은 너무 억울하지 않나요? 이를 이용한 방법이 바로 Fister 의 Combinations Testing 입니다. 

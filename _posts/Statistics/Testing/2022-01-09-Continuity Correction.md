@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
 
 연속성을 수정하면 테스트의 질이 쪼오끔 올라갑니다.

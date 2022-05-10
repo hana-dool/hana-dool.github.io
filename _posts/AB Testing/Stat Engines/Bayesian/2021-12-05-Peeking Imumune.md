@@ -11,6 +11,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../../hana-dool.github.io
 ---
 
 Stack Exchange 에서 A/B 테스트를 수행하는 방식을 Freq 에서 Bayes 로 바꾸지 않고 Freq 를 유지했던 이유는?

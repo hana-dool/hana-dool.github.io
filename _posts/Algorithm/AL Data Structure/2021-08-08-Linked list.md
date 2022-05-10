@@ -11,9 +11,8 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../hana-dool.github.io
 ---
-
-<br>
 
 # Linked List
 
@@ -37,8 +36,6 @@ use_math: true
 - 또한 탐색이 느립니다. 
   - 중간 노드를 탐색하기 위해서는 순차적으로 탐색해야하게 때문입니다. 
 
-<br>
-
 # 노드
 
 - 연결리스트는 노드라는 객체로 이루어져있습니다.
@@ -49,8 +46,6 @@ use_math: true
 - 사용자가 입력하를 정보를 DATA 영역에 담게됩니다.
 - 노드가 추가 될때마다 Next Address 를 이용하여 다음 노드와 연결합니다.
 
-<br>
-
 # 연결리스트의 구조
 
 ![png](/assets/images/Python/25_2.png)
@@ -60,13 +55,9 @@ use_math: true
 - 그러면 마지막 노드는 어떻게 알 수 있을까요?
 - 노드가 가리키는 다음 주소가 NULL이면 이 노드는 마지막 노드라고 할 수 있습니다.
 
-<br>
-
 # 구현
 
 - 연결 리스트를 구현하기 위해서는 초기화(init) / 삽입(Insert) / 삭제(Remove) 를 구현해야 합니다. 
-
-<br>
 
 ## 초기화
 
@@ -76,8 +67,6 @@ use_math: true
 - 초기화하는 과정에서 **다음 주소를 가리키는 포인터는 null로 설정**합니다. null은 '**가리키는 노드가 없음**' 을 의미합니다. 
 
 ![png](/assets/images/Python/25_3.png)
-
-<br>
 
 ## 삽입
 
@@ -128,8 +117,6 @@ use_math: true
 1. 탐색을 통해 삭제할 노드를 cur이 가리키게 하고 , 삭제할 노드의 바로 전 노드를 pre가 가리키게 합니다.
 2. pre가 가리키는 노드의 다음 주소 --> cur이 가리키는 다음 주소 
 3. cur이 가리키는 노드는 free합니다.
-
-<br>
 
 # Refer
 

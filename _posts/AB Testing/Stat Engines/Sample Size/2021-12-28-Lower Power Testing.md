@@ -10,6 +10,7 @@ toc_icon: "cog"
 toc_sticky: true
 
 use_math: true
+typora-root-url: ../../../../../hana-dool.github.io
 ---
 
 우리는 A/B Testing 을 진행할때에 샘플 사이즈를 먼저 계산하는것을 원칙으로 합니다. 하지만 이때 샘플 사이즈를 잘 맞추지 못해서, Testing 의 Power 가 너무 낮으면 어떤 일이 일어날까요? 
